@@ -58,10 +58,18 @@
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wbb-20-CyN">
                                 <rect key="frame" x="340" y="200.66666666666666" width="30" height="29.000000000000028"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="HaV-nR-QmN"/>
                                     <constraint firstAttribute="height" constant="30" id="i9b-xN-kRy"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WTg-04-kfk" appends="YES" id="W4I-CQ-V5y"/>
+                                </connections>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S1T-ub-Bv4">
                                 <rect key="frame" x="0.0" y="285" width="393" height="464"/>
@@ -69,10 +77,17 @@
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-rI-rZd">
                                 <rect key="frame" x="343" y="250.33333333333334" width="25" height="24.666666666666657"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="1jB-Jo-t4T"/>
                                     <constraint firstAttribute="height" constant="25" id="W6n-Pz-0uF"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="YuA-8z-YhE" appends="YES" id="wav-Qf-44K"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -101,8 +116,46 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WTg-04-kfk">
+                    <connections>
+                        <segue destination="CF6-8B-6oo" kind="show" id="s9h-0L-4Pb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="YuA-8z-YhE">
+                    <connections>
+                        <segue destination="CF6-8B-6oo" kind="show" id="Jhh-lM-h4E"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1761.0687022900763" y="3.5211267605633805"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n6d-uD-A3M">
+            <objects>
+                <viewController id="CF6-8B-6oo" customClass="ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gp2-bk-DFs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gE-Vy-neZ">
+                                <rect key="frame" x="148.66666666666666" y="415.66666666666669" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ydv-15-zve"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9gE-Vy-neZ" firstAttribute="centerX" secondItem="Gp2-bk-DFs" secondAttribute="centerX" id="7SY-le-QPE"/>
+                            <constraint firstItem="9gE-Vy-neZ" firstAttribute="centerY" secondItem="Gp2-bk-DFs" secondAttribute="centerY" id="rFt-C5-B8d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wuL-8j-oQr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4BY-4u-9Rg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2507" y="-4"/>
         </scene>
         <!--Item-->
         <scene sceneID="E6a-GZ-4Rn">
@@ -144,6 +197,9 @@
             <point key="canvasLocation" x="-92.36641221374046" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jhh-lM-h4E"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
