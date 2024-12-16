@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SalaryCell" rowHeight="139" id="KGk-i7-Jjw" customClass="SalaryInputCell" customModule="testfinalfinal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="422" height="139"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="422" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueJ-QK-Gx0">
+                        <rect key="frame" x="19.999999999999993" y="20" width="121.33333333333331" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Uv8-ZK-Cjo">
+                        <rect key="frame" x="56" y="64" width="290" height="40"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWe-UH-yAh">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Zyn-xx-MP4"/>
+                                    <constraint firstAttribute="width" constant="120" id="fjB-gG-NRd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTD-og-fDs">
+                                <rect key="frame" x="170" y="0.0" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ak3-Xr-nia"/>
+                                    <constraint firstAttribute="width" constant="120" id="dr7-NV-LZ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v72-bv-n7j">
+                        <rect key="frame" x="227" y="20" width="143" height="20.333333333333332"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="v72-bv-n7j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="8Vb-oM-5dj"/>
+                    <constraint firstItem="ueJ-QK-Gx0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="AwA-gA-rIL"/>
+                    <constraint firstAttribute="trailing" secondItem="v72-bv-n7j" secondAttribute="trailing" constant="52" id="F5R-m4-QhT"/>
+                    <constraint firstItem="Uv8-ZK-Cjo" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-10" id="FNU-dO-5zc"/>
+                    <constraint firstItem="Uv8-ZK-Cjo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="14.5" id="GgW-U1-mf4"/>
+                    <constraint firstItem="ueJ-QK-Gx0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="KQb-7i-XFh"/>
+                    <constraint firstItem="Uv8-ZK-Cjo" firstAttribute="top" secondItem="v72-bv-n7j" secondAttribute="bottom" constant="23.666666666666671" id="k4q-az-xzq"/>
+                    <constraint firstItem="v72-bv-n7j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="227" id="ybd-p0-n89"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="maxSalaryTextField" destination="sTD-og-fDs" id="aXN-1v-i12"/>
+                <outlet property="minSalaryTextField" destination="KWe-UH-yAh" id="uZG-Lg-MfA"/>
+            </connections>
+            <point key="canvasLocation" x="143.5114503816794" y="52.464788732394368"/>
+        </tableViewCell>
+    </objects>
+</document>
