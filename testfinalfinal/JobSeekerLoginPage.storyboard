@@ -56,74 +56,110 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wbb-20-CyN">
-                                <rect key="frame" x="340" y="200.66666666666666" width="30" height="29.000000000000028"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
-                                </accessibility>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="HaV-nR-QmN"/>
-                                    <constraint firstAttribute="height" constant="30" id="i9b-xN-kRy"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="WTg-04-kfk" appends="YES" id="W4I-CQ-V5y"/>
-                                </connections>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S1T-ub-Bv4">
                                 <rect key="frame" x="0.0" y="285" width="393" height="464"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-rI-rZd">
-                                <rect key="frame" x="343" y="250.33333333333334" width="25" height="24.666666666666657"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
-                                </accessibility>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-ka-a0x" userLabel="Bell View">
+                                <rect key="frame" x="343" y="200" width="30" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wbb-20-CyN">
+                                        <rect key="frame" x="0.0" y="0.66666666666666607" width="30" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
+                                        </accessibility>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="HaV-nR-QmN"/>
+                                            <constraint firstAttribute="height" constant="30" id="i9b-xN-kRy"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="1jB-Jo-t4T"/>
-                                    <constraint firstAttribute="height" constant="25" id="W6n-Pz-0uF"/>
+                                    <constraint firstAttribute="height" constant="30" id="462-7l-6rA"/>
+                                    <constraint firstItem="wbb-20-CyN" firstAttribute="leading" secondItem="cEU-ka-a0x" secondAttribute="leading" id="Cxd-8e-94z"/>
+                                    <constraint firstItem="wbb-20-CyN" firstAttribute="top" secondItem="cEU-ka-a0x" secondAttribute="top" id="Qwt-M3-WZA"/>
+                                    <constraint firstAttribute="width" constant="30" id="kNG-WY-LMq"/>
+                                    <constraint firstAttribute="trailing" secondItem="wbb-20-CyN" secondAttribute="trailing" id="mM0-L4-xeH"/>
+                                    <constraint firstAttribute="bottom" secondItem="wbb-20-CyN" secondAttribute="bottom" id="oXA-Zs-EVI"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="YuA-8z-YhE" appends="YES" id="wav-Qf-44K"/>
+                                    <outletCollection property="gestureRecognizers" destination="eFw-Jf-Phf" appends="YES" id="uF8-mL-TGv"/>
                                 </connections>
-                            </imageView>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4Q-xR-WND" userLabel="BookMark view">
+                                <rect key="frame" x="345.66666666666669" y="238" width="25" height="25"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-rI-rZd">
+                                        <rect key="frame" x="0.0" y="0.33333333333333215" width="25" height="24.666666666666668"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
+                                        </accessibility>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="1jB-Jo-t4T"/>
+                                            <constraint firstAttribute="height" constant="25" id="W6n-Pz-0uF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="1nY-dY-mOa" appends="YES" id="bTd-Py-64g"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lh3-rI-rZd" secondAttribute="trailing" id="b9f-0Q-YfU"/>
+                                    <constraint firstAttribute="bottom" secondItem="lh3-rI-rZd" secondAttribute="bottom" id="fOb-hF-MFa"/>
+                                    <constraint firstAttribute="width" constant="25" id="p7t-5k-M6N"/>
+                                    <constraint firstItem="lh3-rI-rZd" firstAttribute="top" secondItem="x4Q-xR-WND" secondAttribute="top" id="uON-4J-QtQ"/>
+                                    <constraint firstItem="lh3-rI-rZd" firstAttribute="leading" secondItem="x4Q-xR-WND" secondAttribute="leading" id="vNn-rm-B0p"/>
+                                    <constraint firstAttribute="height" constant="25" id="y52-8L-i2Z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wbb-20-CyN" secondAttribute="trailing" constant="23" id="3ec-Ck-N2E"/>
                             <constraint firstItem="DYZ-uJ-wMc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="92p-94-naX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="S1T-ub-Bv4" secondAttribute="trailing" id="9gY-Hg-szi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DYZ-uJ-wMc" secondAttribute="trailing" constant="70" id="9n5-Zl-8WJ"/>
                             <constraint firstItem="t9X-EO-LKj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="APU-4m-t1X"/>
                             <constraint firstItem="S1T-ub-Bv4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CCB-cP-9R0"/>
                             <constraint firstItem="t9X-EO-LKj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="7" id="Ft9-II-Dmi"/>
-                            <constraint firstItem="S1T-ub-Bv4" firstAttribute="top" secondItem="lh3-rI-rZd" secondAttribute="bottom" constant="10" id="II1-wq-oYH"/>
+                            <constraint firstItem="cEU-ka-a0x" firstAttribute="centerY" secondItem="DYZ-uJ-wMc" secondAttribute="centerY" id="Gj0-Qy-7eB"/>
                             <constraint firstItem="DYZ-uJ-wMc" firstAttribute="top" secondItem="t9X-EO-LKj" secondAttribute="bottom" constant="20" id="IVS-fG-ImR"/>
-                            <constraint firstItem="lh3-rI-rZd" firstAttribute="top" secondItem="wbb-20-CyN" secondAttribute="bottom" constant="20" id="LtQ-0d-zAu"/>
+                            <constraint firstItem="x4Q-xR-WND" firstAttribute="top" secondItem="cEU-ka-a0x" secondAttribute="bottom" constant="8" symbolic="YES" id="KbN-Vv-izG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="t9X-EO-LKj" secondAttribute="trailing" constant="16" id="NFE-D0-60N"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="S1T-ub-Bv4" secondAttribute="bottom" constant="20" id="RLV-6Z-YPN"/>
-                            <constraint firstItem="wbb-20-CyN" firstAttribute="centerY" secondItem="DYZ-uJ-wMc" secondAttribute="centerY" id="b0m-m2-E3U"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lh3-rI-rZd" secondAttribute="trailing" constant="25" id="esk-e0-2Ku"/>
+                            <constraint firstItem="S1T-ub-Bv4" firstAttribute="top" secondItem="x4Q-xR-WND" secondAttribute="bottom" constant="22" id="cZz-db-BuL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cEU-ka-a0x" secondAttribute="trailing" constant="20" id="ewV-si-B0n"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="x4Q-xR-WND" secondAttribute="trailing" constant="22.329999999999998" id="rFO-ZP-QxB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4rS-Vo-ba2"/>
                     <connections>
+                        <outlet property="FilterPic" destination="pHq-co-jdm" id="0RC-vQ-Xq4"/>
+                        <outlet property="SearchBar" destination="i43-60-BPz" id="HcF-aV-n8Y"/>
+                        <outlet property="bookmark" destination="lh3-rI-rZd" id="y4w-jF-hMq"/>
                         <outlet property="collectionView" destination="DYZ-uJ-wMc" id="eUw-Bn-Xhk"/>
+                        <outlet property="profilePic" destination="oup-hh-NGF" id="stf-QC-SUU"/>
                         <outlet property="tableView" destination="S1T-ub-Bv4" id="4Gj-id-nAo"/>
+                        <segue destination="9pf-kN-YRY" kind="show" identifier="test" id="Siu-sm-Ol4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="WTg-04-kfk">
+                <tapGestureRecognizer id="eFw-Jf-Phf">
                     <connections>
-                        <segue destination="CF6-8B-6oo" kind="show" id="s9h-0L-4Pb"/>
+                        <segue destination="CF6-8B-6oo" kind="show" id="hf9-z6-JuO"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="YuA-8z-YhE">
+                <tapGestureRecognizer id="jnG-V3-2TG"/>
+                <tapGestureRecognizer id="1nY-dY-mOa">
                     <connections>
-                        <segue destination="CF6-8B-6oo" kind="show" id="Jhh-lM-h4E"/>
+                        <segue destination="CF6-8B-6oo" kind="show" id="tpv-la-7rH"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -157,6 +193,34 @@
             </objects>
             <point key="canvasLocation" x="2507" y="-4"/>
         </scene>
+        <!--test-->
+        <scene sceneID="nRy-xm-IvK">
+            <objects>
+                <viewController storyboardIdentifier="test" title="test" id="9pf-kN-YRY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p35-rc-mFc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNh-GA-Z2d">
+                                <rect key="frame" x="170" y="415.66666666666669" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iWi-VN-S7b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CNh-GA-Z2d" firstAttribute="centerY" secondItem="p35-rc-mFc" secondAttribute="centerY" id="3X0-E1-xYT"/>
+                            <constraint firstItem="CNh-GA-Z2d" firstAttribute="centerX" secondItem="p35-rc-mFc" secondAttribute="centerX" id="iWG-tl-GTy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="swi-WK-p5y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIa-Ih-VIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231.2977099236641" y="-4.2253521126760569"/>
+        </scene>
         <!--Item-->
         <scene sceneID="E6a-GZ-4Rn">
             <objects>
@@ -181,7 +245,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="xvI-g3-58G">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xuf-eQ-6ix" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="xuf-eQ-6ix" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k8F-Pn-B1Z">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -198,7 +262,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jhh-lM-h4E"/>
+        <segue reference="hf9-z6-JuO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bell" catalog="system" width="125" height="128"/>

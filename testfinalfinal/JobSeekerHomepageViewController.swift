@@ -13,7 +13,14 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     @IBOutlet weak var collectionView: UICollectionView!
     let tags = ["Senior designer", "Designer", "Full-time", "Part-time", "Remote", "Freelance", "UI/UX", "Contract"]
         
-        override func viewDidLoad() {
+    @IBOutlet weak var profilePic: UIImageView!
+    
+    @IBOutlet weak var FilterPic: UIImageView!
+    
+    @IBOutlet weak var SearchBar: UISearchBar!
+    
+    @IBOutlet weak var bookmark: UIImageView!
+    override func viewDidLoad() {
             super.viewDidLoad()
             // Register the custom cell
             collectionView.register(TagCollectionViewCell.nib(), forCellWithReuseIdentifier: TagCollectionViewCell.identifier)
@@ -36,7 +43,29 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             tableView.delegate = self
             tableView.dataSource = self
             tableView.register(JobListingCardTableViewCell.nib(), forCellReuseIdentifier: JobListingCardTableViewCell.identifier)
+            
+            
+            
+            
+//            adding tap gestures
+            profilePic.isUserInteractionEnabled = true
+            FilterPic.isUserInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleProfilePicTap))
+            profilePic.addGestureRecognizer(tapGestureRecognizer)
+            
+            let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(handleFilterPicTap))
+            FilterPic.addGestureRecognizer(tapGestureRecognizer2)
+        bookmark.isUserInteractionEnabled = true
         }
+    @objc func handleFilterPicTap() {
+        print("Filter tapped")
+        
+        performSegue(withIdentifier: "test", sender: nil)
+    }
+    @objc func handleProfilePicTap() {
+        print("Profile tapped")
+        performSegue(withIdentifier: "test", sender: nil)
+    }
     }
 
     // MARK: - UICollectionViewDataSource & Delegate
@@ -70,3 +99,5 @@ extension JobSeekerHomepageViewController: UICollectionViewDataSource, UICollect
     }
     
 }
+
+
