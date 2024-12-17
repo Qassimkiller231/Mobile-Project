@@ -20,6 +20,19 @@ class advancedFiltersViewController: UIViewController,UITableViewDelegate,UITabl
         table.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true // Hide the tab bar
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false // Show the tab bar again
+    }
+    
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -35,7 +48,6 @@ class advancedFiltersViewController: UIViewController,UITableViewDelegate,UITabl
 
         if sectionData.title == "Salary" && indexPath.row == 0 {
             // Handle the SalaryCell
-            print("Dequeueing SalaryInputCell for section \(indexPath.section)")
             let cell = tableView.dequeueReusableCell(withIdentifier: "SalaryCell", for: indexPath) as! SalaryInputCell
             cell.delegate = self // Set the delegate to handle slider changes
 //            cell.configure(minSalary: sectionData.minSalary, maxSalary: sectionData.maxSalary) // Pass salary values to the cell

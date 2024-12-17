@@ -7,8 +7,8 @@
 //
 //import UIKit
 //
-//class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-//    
+//class test: UIViewController,UITableViewDelegate,UITableViewDataSource {
+//
 //    @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var collectionView: UICollectionView!
 //    let tags = ["Senior designer", "Designer", "Full-time", "Part-time", "Remote", "Freelance", "UI/UX", "Contract"]

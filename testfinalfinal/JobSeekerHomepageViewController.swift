@@ -20,6 +20,13 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     @IBOutlet weak var SearchBar: UISearchBar!
     
     @IBOutlet weak var bookmark: UIImageView!
+    
+    
+    
+    
+    var bookmarkedOnly: Bool = false
+    
+    
     override func viewDidLoad() {
             super.viewDidLoad()
             // Register the custom cell
@@ -50,22 +57,72 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 //            adding tap gestures
             profilePic.isUserInteractionEnabled = true
             FilterPic.isUserInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleProfilePicTap))
-            profilePic.addGestureRecognizer(tapGestureRecognizer)
-            
-            let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(handleFilterPicTap))
-            FilterPic.addGestureRecognizer(tapGestureRecognizer2)
-        bookmark.isUserInteractionEnabled = true
-        }
-    @objc func handleFilterPicTap() {
-        print("Filter tapped")
+            bookmark.isUserInteractionEnabled = true
         
-        performSegue(withIdentifier: "test", sender: nil)
+            let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(bookmarkTapped))
+        bookmark.addGestureRecognizer(bookmarkTap)
+        }
+    
+    @objc func bookmarkTapped() {
+        
+        bookmarkedOnly = !bookmarkedOnly
+        bookmark.image = UIImage(systemName: bookmarkedOnly ? "bookmark.fill" : "bookmark")
+
+
+        if bookmarkedOnly && bookmarkedJobs.isEmpty {
+                print("No bookmarked jobs to display.")
+            }
+            
+            tableView.reloadData()
+        
+        
     }
-    @objc func handleProfilePicTap() {
-        print("Profile tapped")
-        performSegue(withIdentifier: "test", sender: nil)
-    }
+        
+    //    MARK: - Table view Functions
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            if bookmarkedOnly  {
+                return bookmarkedJobs.count
+            } else {
+                return jobs.count
+            }
+            
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: JobListingCardTableViewCell.identifier, for: indexPath) as! JobListingCardTableViewCell
+                
+            let currentJob = bookmarkedOnly ? bookmarkedJobs[indexPath.row] : jobs[indexPath.row]
+                cell.configure(with: currentJob)
+            cell.bookmarkImage.isUserInteractionEnabled = !bookmarkedOnly
+
+            cell.onBookmarkToggled = { [weak self] in
+                           guard self != nil else { return }
+                             
+                               // Toggle the isBookmarked property
+                               jobs[indexPath.row].isBookmarked.toggle()
+                               let currentJob = jobs[indexPath.row]
+                if let index = bookmarkedJobs.firstIndex(where: { $0.id == currentJob.id }) {
+                                       // Remove from bookmarkedJobs
+                                       bookmarkedJobs.remove(at: index)
+                                       print("Removed: \(currentJob.jobName)")
+                                   } else {
+                                       // Add to bookmarkedJobs
+                                       bookmarkedJobs.append(currentJob)
+                                       print("Added: \(currentJob.jobName)")
+                                       print(bookmarkedJobs.count)
+                                   }
+                               
+                               // Reload the specific row to update UI
+                               tableView.reloadRows(at: [indexPath], with: .none)
+                           }
+                
+                
+                // Set up the closure to handle bookmark toggling
+               
+            
+            return cell
+        }
+    
+    
     }
 
     // MARK: - UICollectionViewDataSource & Delegate
@@ -84,19 +141,6 @@ extension JobSeekerHomepageViewController: UICollectionViewDataSource, UICollect
             print("Selected: \(tags[indexPath.row])")
         }
     
-    
-    
-    
-    
-//    Table view functions
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobs.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: JobListingCardTableViewCell.identifier, for: indexPath) as! JobListingCardTableViewCell
-        cell.configure(with: jobs[indexPath.row])
-        return cell
-    }
     
 }
 
