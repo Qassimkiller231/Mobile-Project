@@ -32,32 +32,71 @@ struct job {
         self.id = job.ids
     }
 }
+
+// this is the section for advanced filters
+struct Section {
+    var title: String
+    var isExpanded: Bool = false
+    var options: [String]? = nil // Dropdown options for sections that use dropdowns
+    var selectedOption: String? = nil // Selected dropdown option (if applicable)
+    var minSalary: Int? = nil // Minimum Salary (as an integer value)
+    var maxSalary: Int? = nil // Maximum Salary (as an integer value)
+}
+
+
+
+// Arrays
+enum jobCategories {
+    case design
+    case softwareDevelopment
+    case cyberSecurity
+}
+var jobCategoriesArray :[String] = [
+    "design","software development","Cyber security"
+]
+var locations : [String] = [
+    "Manama","Muharraq","Isa town"
+]
+var jobTypes :[String] = [
+    "Full-time","Part-time","Project-based","Per hour"
+]
+//struct position {
+//    var jobCategory:jobCategories
+//    var name:String
+//}
+//var positions: [position] = [
+//    position(jobCategory: jobCategories.design, name: "designer"),
+//    position(jobCategory: jobCategories.softwareDevelopment, name: "Software Developer")
+//]
+var positionsArray : [String] = [
+    "Senior Developer","designer"
+]
+
+
+
+
+
 // this is the jobSeeker homepage job listing model
 var jobs: [job] = [
     job(jobName: "Senior Developer", profilePicture: "poly logo 4", companyName: "Bahrain", companyLocation: "Aali,Bahrain", filters: ["Senior","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
-    job(jobName: "Senior Developer", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
-    job(jobName: "Senior Developer", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
+    job(jobName: "Designer", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
+    job(jobName: "Help plz", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
+    job(jobName: "Janitor", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
     job(jobName: "Senior Developer", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo")
     
 ]
 var bookmarkedJobs: [job] = []
 
-// this is the section for advanced filters
-struct Section {
-    let title: String
-    var isExpanded: Bool
-    var options: [String] // Dropdown options for sections that use dropdowns
-    var selectedOption: String? // Selected dropdown option (if applicable)
-    var minSalary: Int? // Minimum Salary (as an integer value)
-    var maxSalary: Int? // Maximum Salary (as an integer value)
-}
+
 
 // this is the main advanced filters Model
 var sections: [Section] = [
-    Section(title: "Job Category", isExpanded: false, options: ["Option 1", "Option 2"], selectedOption: nil, minSalary: nil, maxSalary: nil),
-    Section(title: "Industry", isExpanded: false, options: ["Option 1", "Option 2"], selectedOption: nil, minSalary: nil, maxSalary: nil),
-    Section(title: "Location", isExpanded: false, options: ["Option 1", "Option 2","3","4"], selectedOption: nil, minSalary: nil, maxSalary: nil),
-    Section(title: "Salary", isExpanded: false, options: [], selectedOption: nil, minSalary: 0, maxSalary: 5), // Default salary values
-    Section(title: "Work Preference", isExpanded: false, options: ["Option 1", "Option 2"], selectedOption: nil, minSalary: nil, maxSalary: nil)
+    Section(title: "Job Category",options: jobCategoriesArray),
+    Section(title: "Location", options: locations),
+    Section(title: "Salary"), // Default salary values
+    Section(title: "Job Type", options: jobTypes),
+    Section(title: "Position", options: positionsArray)
 ]
+
+
 

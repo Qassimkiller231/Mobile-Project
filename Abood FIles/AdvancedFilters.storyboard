@@ -44,9 +44,11 @@
                     <navigationItem key="navigationItem" title="Filter" id="egN-4l-V1t"/>
                     <connections>
                         <outlet property="table" destination="WOl-JL-tWi" id="ldp-pL-sjW"/>
+                        <segue destination="nc9-gq-Kyj" kind="unwind" identifier="unwindToHomepage" unwindAction="unwindToHomepage:" id="hEr-aM-adQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNK-eP-Qf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="nc9-gq-Kyj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2678.6259541984732" y="38.732394366197184"/>
         </scene>

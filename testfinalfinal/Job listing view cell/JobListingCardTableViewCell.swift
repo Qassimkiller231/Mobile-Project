@@ -49,14 +49,14 @@ class JobListingCardTableViewCell: UITableViewCell {
         bookmarkImage.addGestureRecognizer(tapGesture)
     }
     @objc func toggleBookmark() {
-        
-           if bookmarkImage.image == UIImage(systemName: "bookmark") {
-               bookmarkImage.image = UIImage(systemName: "bookmark.fill")
-               
-           }else {
-               bookmarkImage.image = UIImage(systemName: "bookmark")
-           }
         onBookmarkToggled?()
+//           if bookmarkImage.image == UIImage(systemName: "bookmark") {
+//               bookmarkImage.image = UIImage(systemName: "bookmark.fill")
+//               
+//           }else {
+//               bookmarkImage.image = UIImage(systemName: "bookmark")
+//           }
+       
            // Notify the ViewController
            
     }
@@ -68,11 +68,11 @@ class JobListingCardTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        bookmarkImage.image = UIImage(systemName: "bookmark")
-//        onBookmarkToggled = nil
-//    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+//        bookmarkImage.image = UIImage(systemName: "bookmark") // Default state
+            onBookmarkToggled = nil
+    }
     
 
     
@@ -92,7 +92,7 @@ class JobListingCardTableViewCell: UITableViewCell {
                 label?.layer.cornerRadius = 8 // Adjust corner radius
                 label?.layer.masksToBounds = true // Clip content to bounds
             }
-        
+        print("Name: \(job.jobName) Bookmarked: \(job.isBookmarked)")
         bookmarkImage.image = job.isBookmarked ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
         
        
