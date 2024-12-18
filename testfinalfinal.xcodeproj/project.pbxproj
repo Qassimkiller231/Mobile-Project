@@ -106,9 +106,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		057AF8BD2D11D5F100C48872 /* cell12 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cell12;
+			sourceTree = "<group>";
+		};
 		6E74DBD02D10272F00F0B84E /* Employer Home page */ = {
 			isa = PBXGroup;
 			children = (
+				057AF8BD2D11D5F100C48872 /* cell12 */,
 				6E74DBD32D10276300F0B84E /* test.swift */,
 				6E74DBD12D10274D00F0B84E /* test.storyboard */,
 			);
