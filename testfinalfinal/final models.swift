@@ -130,7 +130,7 @@ struct jobMarketTrend{
     var industry: String
     var growthRate: String
 }
-struct estimatedJobs{
+struct estimatedJob{
     var jobTitle: String
     var minimumSalary: String
     var maximumSalary: String
@@ -256,8 +256,8 @@ class job1 {
 
 // MARK: Arrays / Models
 let weightCategories : [String] =  ["Light", "Medium", "Heavy"]
-
-
+let FinalEstimatedSalaries :[estimatedJob] = []
+let estimatedSalaries : [estimatedJob] = []
 
 
 
