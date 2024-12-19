@@ -51,6 +51,7 @@ enum jobCategories {
     case softwareDevelopment
     case cyberSecurity
 }
+
 var jobCategoriesArray :[String] = [
     "design","software development","Cyber security"
 ]
@@ -79,7 +80,7 @@ var positionsArray : [String] = [
 // this is the jobSeeker homepage job listing model
 var jobs: [job] = [
     job(jobName: "Senior Developer", profilePicture: "poly logo 4", companyName: "Bahrain", companyLocation: "Aali,Bahrain", filters: ["Senior","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
-    job(jobName: "Designer", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
+    job(jobName: "Designer", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["\(jobCategories.design)","\(jobCategories.design)","\(jobCategories.design)"], time: "25", salary: 60000, type: "Mo"),
     job(jobName: "Help plz", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
     job(jobName: "Janitor", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo"),
     job(jobName: "Senior Developer", profilePicture: "poly logo 4", companyName: "Bahrain Polytechnic", companyLocation: "Aali,Bahrain", filters: ["Senior develeoper","Designer","Full-time"], time: "25", salary: 60000, type: "Mo")
