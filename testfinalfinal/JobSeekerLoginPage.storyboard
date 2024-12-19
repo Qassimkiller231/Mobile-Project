@@ -275,11 +275,22 @@
                     </tabBar>
                     <connections>
                         <segue destination="2SG-kU-Slw" kind="relationship" relationship="viewControllers" id="ieL-SP-tRQ"/>
+                        <segue destination="Lgu-VV-vw4" kind="relationship" relationship="viewControllers" id="f7z-xU-NEk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSh-9D-B4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-92.36641221374046" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="-82" y="58"/>
+        </scene>
+        <!--CareerResource-->
+        <scene sceneID="bml-Dl-sEa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CareerResource" id="Lgu-VV-vw4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="69R-iK-vIg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q94-yp-sYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="317" y="401"/>
         </scene>
     </scenes>
     <resources>
