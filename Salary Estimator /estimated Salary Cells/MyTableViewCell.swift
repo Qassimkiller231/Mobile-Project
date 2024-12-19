@@ -25,9 +25,9 @@ class MyTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configure(with model: EstimatedSalary) {
-        self.jobLabel.text = model.jobName
-        self.SalaryLabel.text = String("\(model.minRange) - \(model.maxRange)")
+    func configure(with model: estimatedJob) {
+        self.jobLabel.text = model.jobTitle
+        self.SalaryLabel.text = String("\(model.minimumSalary) - \(model.maximumSalary)")
     }
     
 }

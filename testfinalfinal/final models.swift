@@ -256,8 +256,19 @@ class job1 {
 
 // MARK: Arrays / Models
 let weightCategories : [String] =  ["Light", "Medium", "Heavy"]
-let FinalEstimatedSalaries :[estimatedJob] = []
-let estimatedSalaries : [estimatedJob] = []
+let FinalEstimatedSalaries :[estimatedJob] = [
+    estimatedJob(jobTitle: "job1", minimumSalary: "500", maximumSalary: "750", experience: "3 years", industry: "IT"),
+    estimatedJob(jobTitle: "job4", minimumSalary: "800", maximumSalary: "1050", experience: "9 years", industry: "IT"),
+    estimatedJob(jobTitle: "job5", minimumSalary: "900", maximumSalary: "1150", experience: "11 years", industry: "IT")
+]
+let estimatedSalaries : [estimatedJob] = [
+    estimatedJob(jobTitle: "job1", minimumSalary: "500", maximumSalary: "750", experience: "3 years", industry: "IT"),
+    estimatedJob(jobTitle: "job2", minimumSalary: "600", maximumSalary: "850", experience: "5 years", industry: "IT"),
+    estimatedJob(jobTitle: "job3", minimumSalary: "700", maximumSalary: "950", experience: "7 years", industry: "IT"),
+    estimatedJob(jobTitle: "job4", minimumSalary: "800", maximumSalary: "1050", experience: "9 years", industry: "IT"),
+    estimatedJob(jobTitle: "job5", minimumSalary: "900", maximumSalary: "1150", experience: "11 years", industry: "IT"),
+    estimatedJob(jobTitle: "job6", minimumSalary: "1000", maximumSalary: "1250", experience: "13 years", industry: "IT")
+]
 
 
 

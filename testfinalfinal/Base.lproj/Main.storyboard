@@ -26,22 +26,13 @@
                                     <segue destination="KxD-uP-k7u" kind="show" id="BMO-Qm-gIR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-d9-KkS">
-                                <rect key="frame" x="95" y="495" width="151" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-Z6-QEM">
+                                <rect key="frame" x="107" y="476" width="181" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Advanced Filters"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Salary Estimator tool"/>
                                 <connections>
-                                    <segue destination="aRk-wg-lbL" kind="show" id="UMm-4O-d5W"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg7-fj-FW5">
-                                <rect key="frame" x="87" y="604" width="185" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Employer home Page"/>
-                                <connections>
-                                    <segue destination="y1p-Tu-Nh9" kind="show" id="fnT-uj-8Ub"/>
+                                    <segue destination="ZYz-bn-UYl" kind="show" id="Lwz-3V-ayw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,25 +56,15 @@
             </objects>
             <point key="canvasLocation" x="808" y="-77"/>
         </scene>
-        <!--AdvancedFilters-->
-        <scene sceneID="0l0-2h-J1l">
+        <!--Salay estimator tool-->
+        <scene sceneID="lk3-Rf-h3G">
             <objects>
-                <viewControllerPlaceholder storyboardName="AdvancedFilters" id="aRk-wg-lbL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="e2x-AU-zNX"/>
+                <viewControllerPlaceholder storyboardName="Salay estimator tool" id="ZYz-bn-UYl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zcG-kS-pDP"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dhM-I0-XaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGm-a9-FHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="54"/>
-        </scene>
-        <!--test-->
-        <scene sceneID="2tf-Vy-zG9">
-            <objects>
-                <viewControllerPlaceholder storyboardName="test" id="y1p-Tu-Nh9" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="XSr-by-73y"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IWy-hb-6W1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="721" y="167"/>
+            <point key="canvasLocation" x="795" y="129"/>
         </scene>
     </scenes>
     <resources>

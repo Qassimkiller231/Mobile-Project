@@ -365,7 +365,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fvA-bl-onT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LQ9-a1-Of7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="LQ9-a1-Of7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IiY-Km-BNf">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
