@@ -25,6 +25,7 @@
 		6E74DBF92D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DBF22D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift */; };
 		6E74DBFA2D149D0900F0B84E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DBF42D149D0900F0B84E /* LocationViewController.swift */; };
 		6E74DBFB2D149D0900F0B84E /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBEF2D149D0900F0B84E /* MyTableViewCell.xib */; };
+		6E74DBFD2D149E9A00F0B84E /* Salay estimator tool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBFC2D149E9A00F0B84E /* Salay estimator tool.storyboard */; };
 		6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */; };
 		6EE720482D0F906000E2801B /* JobSeekerHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */; };
 		6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */; };
@@ -76,6 +77,7 @@
 		6E74DBF22D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalEstimatedSalaryViewController.swift; sourceTree = "<group>"; };
 		6E74DBF32D149D0900F0B84E /* IndustryTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryTypeViewController.swift; sourceTree = "<group>"; };
 		6E74DBF42D149D0900F0B84E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		6E74DBFC2D149E9A00F0B84E /* Salay estimator tool.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Salay estimator tool.storyboard"; sourceTree = "<group>"; };
 		6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobSeekerLoginPage.storyboard; sourceTree = "<group>"; };
 		6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeekerHomepageViewController.swift; sourceTree = "<group>"; };
 		6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		6E74DBF52D149D0900F0B84E /* Salary Estimator  */ = {
 			isa = PBXGroup;
 			children = (
+				6E74DBFC2D149E9A00F0B84E /* Salay estimator tool.storyboard */,
 				6E74DBF02D149D0900F0B84E /* estimated Salary Cells */,
 				6E74DBF12D149D0900F0B84E /* EstimatedSalaryViewController.swift */,
 				6E74DBF22D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift */,
@@ -355,6 +358,7 @@
 			files = (
 				6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */,
 				6E74DBDF2D10BE2900F0B84E /* SalaryCell.xib in Resources */,
+				6E74DBFD2D149E9A00F0B84E /* Salay estimator tool.storyboard in Resources */,
 				6E74DBE02D10BE2900F0B84E /* dropdownCell.xib in Resources */,
 				6E74DBE12D10BE2900F0B84E /* AdvancedFilters.storyboard in Resources */,
 				6EE7204C2D0F923A00E2801B /* TagCollectionViewCell.xib in Resources */,
