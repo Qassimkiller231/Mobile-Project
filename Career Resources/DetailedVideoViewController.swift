@@ -12,11 +12,18 @@ class DetailedVideoViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     var video : Video?
+    var webinar : Webinar?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = video?.videoTitle
-        descriptionTextView.text = video?.videoDescription
+        if let video = video {
+            titleLabel.text = video.videoTitle
+            descriptionTextView.text = video.videoDescription
+        } else if let webinar = webinar {
+            titleLabel.text = webinar.WebnarTitle
+            descriptionTextView.text = webinar.webnarDescription
+        }
+        
         // Do any additional setup after loading the view.
     }
     

@@ -156,6 +156,14 @@ struct Video {
     var videoDescription: String
 }
 
+struct Webinar {
+    var WebnarTitle: String
+    var Date: String
+    var filters: [String]
+    var videoURL: String
+    var webnarDescription: String
+}
+
 
 // MARK: Classes
 
@@ -315,6 +323,12 @@ var videos : [Video] = [
     Video(videoTitle: "Video3", videoURL: "test", videoDescription: "This is the third video"),
     Video(videoTitle: "Video3", videoURL: "test", videoDescription: "This is the third video")
 
+]
+var webinars: [Webinar] = [
+    Webinar(WebnarTitle: "Webinar1", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the first webinar"),
+    Webinar(WebnarTitle: "Webinar2", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the second webinar"),
+    Webinar(WebnarTitle: "Webinar3", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the third webinar"),
+    
 ]
 //
 //

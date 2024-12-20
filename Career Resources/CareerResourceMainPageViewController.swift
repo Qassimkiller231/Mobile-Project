@@ -13,7 +13,6 @@ class CareerResourceMainPageViewController: UIViewController {
     @IBOutlet weak var guidesButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     

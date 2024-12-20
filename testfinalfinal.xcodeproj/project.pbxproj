@@ -37,6 +37,9 @@
 		6E74DC132D15674B00F0B84E /* CareerResourceMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC122D15674B00F0B84E /* CareerResourceMainPageViewController.swift */; };
 		6E74DC172D15848300F0B84E /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC162D15848300F0B84E /* VideoCollectionViewCell.swift */; };
 		6E74DC192D158B0900F0B84E /* DetailedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC182D158B0900F0B84E /* DetailedVideoViewController.swift */; };
+		6E74DC1B2D15D7CE00F0B84E /* WebinarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC1A2D15D7CE00F0B84E /* WebinarViewController.swift */; };
+		6E74DC1E2D15D80800F0B84E /* WebinarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC1D2D15D80800F0B84E /* WebinarTableViewCell.xib */; };
+		6E74DC1F2D15D80800F0B84E /* WebinarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC1C2D15D80800F0B84E /* WebinarTableViewCell.swift */; };
 		6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */; };
 		6EE720482D0F906000E2801B /* JobSeekerHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */; };
 		6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */; };
@@ -100,6 +103,9 @@
 		6E74DC122D15674B00F0B84E /* CareerResourceMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerResourceMainPageViewController.swift; sourceTree = "<group>"; };
 		6E74DC162D15848300F0B84E /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		6E74DC182D158B0900F0B84E /* DetailedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVideoViewController.swift; sourceTree = "<group>"; };
+		6E74DC1A2D15D7CE00F0B84E /* WebinarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebinarViewController.swift; sourceTree = "<group>"; };
+		6E74DC1C2D15D80800F0B84E /* WebinarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebinarTableViewCell.swift; sourceTree = "<group>"; };
+		6E74DC1D2D15D80800F0B84E /* WebinarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebinarTableViewCell.xib; sourceTree = "<group>"; };
 		6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobSeekerLoginPage.storyboard; sourceTree = "<group>"; };
 		6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeekerHomepageViewController.swift; sourceTree = "<group>"; };
 		6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -219,10 +225,12 @@
 				6E74DBFF2D14CBA900F0B84E /* Assets.xcassets */,
 				6E74DC002D14CBA900F0B84E /* CareerResource.storyboard */,
 				6E74DC112D14D50F00F0B84E /* Article view cell */,
+				6E74DC202D15D80F00F0B84E /* Webinar view cell */,
 				6E74DC122D15674B00F0B84E /* CareerResourceMainPageViewController.swift */,
 				6E74DC032D14CC0700F0B84E /* ArticlesViewController.swift */,
 				6E74DC182D158B0900F0B84E /* DetailedVideoViewController.swift */,
 				6E74DC162D15848300F0B84E /* VideoCollectionViewCell.swift */,
+				6E74DC1A2D15D7CE00F0B84E /* WebinarViewController.swift */,
 				6E74DC0B2D14CF5800F0B84E /* GuideDetailsViewController.swift */,
 				6E74DC052D14CEE400F0B84E /* PerfectResumeViewController.swift */,
 				6E74DC072D14CF1500F0B84E /* VideosViewController.swift */,
@@ -237,6 +245,15 @@
 				6E74DC0E2D14D50000F0B84E /* ArticleTableViewCell.xib */,
 			);
 			path = "Article view cell";
+			sourceTree = "<group>";
+		};
+		6E74DC202D15D80F00F0B84E /* Webinar view cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E74DC1C2D15D80800F0B84E /* WebinarTableViewCell.swift */,
+				6E74DC1D2D15D80800F0B84E /* WebinarTableViewCell.xib */,
+			);
+			path = "Webinar view cell";
 			sourceTree = "<group>";
 		};
 		AC2435712D05C1B700B21510 = {
@@ -409,6 +426,7 @@
 				6E74DBDF2D10BE2900F0B84E /* SalaryCell.xib in Resources */,
 				6E74DBFD2D149E9A00F0B84E /* Salay estimator tool.storyboard in Resources */,
 				6E74DBE02D10BE2900F0B84E /* dropdownCell.xib in Resources */,
+				6E74DC1E2D15D80800F0B84E /* WebinarTableViewCell.xib in Resources */,
 				6E74DC012D14CBA900F0B84E /* CareerResource.storyboard in Resources */,
 				6E74DC022D14CBA900F0B84E /* Assets.xcassets in Resources */,
 				6E74DBE12D10BE2900F0B84E /* AdvancedFilters.storyboard in Resources */,
@@ -445,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE720482D0F906000E2801B /* JobSeekerHomepageViewController.swift in Sources */,
+				6E74DC1B2D15D7CE00F0B84E /* WebinarViewController.swift in Sources */,
 				6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */,
 				AC2435822D05C1B700B21510 /* ViewController.swift in Sources */,
 				6E74DC042D14CC0700F0B84E /* ArticlesViewController.swift in Sources */,
@@ -459,6 +478,7 @@
 				6E74DBF92D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift in Sources */,
 				6E74DC082D14CF1500F0B84E /* VideosViewController.swift in Sources */,
 				6E74DBFA2D149D0900F0B84E /* LocationViewController.swift in Sources */,
+				6E74DC1F2D15D80800F0B84E /* WebinarTableViewCell.swift in Sources */,
 				6E74DBE32D10BE2900F0B84E /* SalaryInputCell.swift in Sources */,
 				6E74DBE42D10BE2900F0B84E /* dropdownCell.swift in Sources */,
 				6E74DC132D15674B00F0B84E /* CareerResourceMainPageViewController.swift in Sources */,

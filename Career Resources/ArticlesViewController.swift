@@ -39,6 +39,7 @@ class ArticlesViewController: UIViewController,UITableViewDataSource,UITableView
             return guides.count
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell") as! ArticleTableViewCell
         if currentType == .article {
