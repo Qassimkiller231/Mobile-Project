@@ -9,6 +9,15 @@ import UIKit
 
 class ArticlesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+   
+    enum Pagetype{
+        case article
+        case guide
+    }
+    
+    var currentType : Pagetype = .article
+    var articles : [Article] = []
+    var guides : [Guide] = []
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,25 +33,43 @@ class ArticlesViewController: UIViewController,UITableViewDataSource,UITableView
 //    MARK: Table View delegates and datasources
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        articles.count
+        if currentType == .article {
+            return articles.count
+        } else {
+            return guides.count
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell") as! ArticleTableViewCell
-        cell.configure(with: articles[indexPath.row].articleTitle)
+        if currentType == .article {
+            cell.configure(with: articles[indexPath.row].articleTitle)
+        } else if currentType == .guide {
+            cell.configure(with: guides[indexPath.row].guideTitle)
+        }
+        
         cell.backgroundColor = .clear
         return cell
     }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let spacerView = UIView()
-        spacerView.backgroundColor = .clear // Ensures the space is transparent
-        return spacerView
-    }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100 // Spacing between rows
-    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 225
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if currentType == .article {
+            let selectedArticle = articles[indexPath.row]
+            let storyboard = UIStoryboard(name: "CareerResource", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ArticleDetailsViewController") as! PerfectResumeViewController
+            vc.article = selectedArticle
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let selectedGuide = guides[indexPath.row]
+            let storyboard = UIStoryboard(name: "CareerResource", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "GuideDetailsViewController") as! GuideDetailsViewController
+            vc.guide = selectedGuide
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
     }
     
 

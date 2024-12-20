@@ -8,22 +8,21 @@
 import UIKit
 
 class GuideDetailsViewController: UIViewController {
-
+    
+    @IBOutlet weak var GuideTitleLabel: UILabel!
+    var guide : Guide?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        GuideTitleLabel.text = guide?.guideTitle
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Guide" {
+            let vc = segue.destination as! PerfectResumeViewController
+            vc.guide = guide
+        }
     }
-    */
 
 }

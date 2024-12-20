@@ -62,13 +62,13 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
             if searchText.isEmpty{
                 filteredLocations=locations
             } else {
-                filteredLocations=locations.filter({ $0.lowercased().contains(searchText.lowercased()) })
+                filteredLocations=locations.filter({ $0.lowercased().starts(with:searchText.lowercased()) })
             }
         } else if searchBar.tag==2{
             if searchText.isEmpty{
                 filteredExperiences=experience
             } else {
-                filteredExperiences=experience.filter({ $0.lowercased().contains(searchText.lowercased()) })
+                filteredExperiences=experience.filter({ $0.lowercased().starts(with: searchText.lowercased()) })
             }
         }
         if let tablevView = view.viewWithTag(searchBar.tag) as? UITableView{

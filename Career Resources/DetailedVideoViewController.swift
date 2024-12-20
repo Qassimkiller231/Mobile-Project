@@ -1,5 +1,5 @@
 //
-//  GuidesViewController.swift
+//  DetailedVideoViewController.swift
 //  testfinalfinal
 //
 //  Created by Sayed Qassim on 20/12/2024.
@@ -7,11 +7,16 @@
 
 import UIKit
 
-class GuidesViewController: UIViewController {
+class DetailedVideoViewController: UIViewController {
 
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
+    var video : Video?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        titleLabel.text = video?.videoTitle
+        descriptionTextView.text = video?.videoDescription
         // Do any additional setup after loading the view.
     }
     

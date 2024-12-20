@@ -25,6 +25,7 @@ class ArticleTableViewCell: UITableViewCell {
         titleButton.setTitle(article, for: .normal)
         
     }
+
     
     
 }
