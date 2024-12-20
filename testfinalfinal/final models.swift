@@ -330,6 +330,21 @@ var webinars: [Webinar] = [
     Webinar(WebnarTitle: "Webinar3", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the third webinar"),
     
 ]
+struct table{
+    var title: String
+    var isExpanded: Bool
+    var options: [String]
+    init(title: String,  options: [String]) {
+        self.title = title
+        self.isExpanded = false
+        self.options = options
+    }
+}
+var tableData: [table] = [
+    table(title: "Pick an Application", options: ["Application 1","Application 2","Application 3","Application 4","Application 5"]),
+    table(title: "Choose Weight", options: ["Default","Custom"])
+]
+
 //
 //
 //
