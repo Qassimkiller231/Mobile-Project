@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,12 +48,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="icon (1)" id="qzM-7L-hEr"/>
+                    <navigationItem key="navigationItem" id="ab8-vD-viT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="SnT-l3-YEb"/>
                 <tapGestureRecognizer id="EVP-k5-cgG"/>
             </objects>
-            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2919.8473282442746" y="3.5211267605633805"/>
         </scene>
         <!--JobSeekerLoginPage-->
         <scene sceneID="sLO-Ke-Uqc">
@@ -63,7 +65,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYd-AK-En4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="-77"/>
+            <point key="canvasLocation" x="3587.0229007633588" y="-77.464788732394368"/>
         </scene>
         <!--Salay estimator tool-->
         <scene sceneID="lk3-Rf-h3G">
@@ -73,7 +75,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGm-a9-FHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="49"/>
+            <point key="canvasLocation" x="3787.0229007633588" y="48.591549295774648"/>
         </scene>
         <!--JobCompatibilityScore-->
         <scene sceneID="Kew-2l-M6L">
@@ -83,10 +85,28 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvn-IY-5kC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="141"/>
+            <point key="canvasLocation" x="3594.6564885496182" y="140.84507042253523"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="AeB-1i-sVd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UH3-B5-Nvr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ld-1a-qwb">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="K7W-oj-Oxa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPn-JX-rUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993.1297709923663" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icon (1)" width="33" height="35"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
