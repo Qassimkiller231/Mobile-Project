@@ -35,6 +35,15 @@
                                     <segue destination="ZYz-bn-UYl" kind="show" id="Lwz-3V-ayw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-ot-4wn">
+                                <rect key="frame" x="113" y="567" width="169" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Application History"/>
+                                <connections>
+                                    <segue destination="J8D-l1-t0m" kind="show" id="ctB-J1-afr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,7 +73,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGm-a9-FHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="129"/>
+            <point key="canvasLocation" x="1007" y="49"/>
+        </scene>
+        <!--JobCompatibilityScore-->
+        <scene sceneID="Kew-2l-M6L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="JobCompatibilityScore" id="J8D-l1-t0m" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KKp-l8-dNR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pvn-IY-5kC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="141"/>
         </scene>
     </scenes>
     <resources>
