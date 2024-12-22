@@ -54,6 +54,11 @@
 		6E74DC462D16158300F0B84E /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC2B2D16158300F0B84E /* SliderCell.swift */; };
 		6E74DC472D16158300F0B84E /* notificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC382D16158300F0B84E /* notificationsView.swift */; };
 		6E74DC492D1615E900F0B84E /* HistoryTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC482D1615E900F0B84E /* HistoryTrackerViewController.swift */; };
+		6E74DC532D17FDAB00F0B84E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC502D17FDAB00F0B84E /* Resources.storyboard */; };
+		6E74DC542D17FDAB00F0B84E /* resourceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */; };
+		6E74DC552D17FDAB00F0B84E /* page4ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */; };
+		6E74DC562D17FDAB00F0B84E /* page3ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */; };
+		6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */; };
 		6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */; };
 		6EE720482D0F906000E2801B /* JobSeekerHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */; };
 		6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */; };
@@ -134,6 +139,11 @@
 		6E74DC362D16158300F0B84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E74DC382D16158300F0B84E /* notificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsView.swift; sourceTree = "<group>"; };
 		6E74DC482D1615E900F0B84E /* HistoryTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackerViewController.swift; sourceTree = "<group>"; };
+		6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page2ViewController 2.swift"; sourceTree = "<group>"; };
+		6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page3ViewController 2.swift"; sourceTree = "<group>"; };
+		6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page4ViewController 2.swift"; sourceTree = "<group>"; };
+		6E74DC4F2D17FDAB00F0B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
+		6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceMainViewController.swift; sourceTree = "<group>"; };
 		6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobSeekerLoginPage.storyboard; sourceTree = "<group>"; };
 		6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeekerHomepageViewController.swift; sourceTree = "<group>"; };
 		6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -353,9 +363,22 @@
 			path = "History Tracker";
 			sourceTree = "<group>";
 		};
+		6E74DC522D17FDAB00F0B84E /* market trends */ = {
+			isa = PBXGroup;
+			children = (
+				6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */,
+				6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */,
+				6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */,
+				6E74DC502D17FDAB00F0B84E /* Resources.storyboard */,
+				6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */,
+			);
+			path = "market trends";
+			sourceTree = "<group>";
+		};
 		AC2435712D05C1B700B21510 = {
 			isa = PBXGroup;
 			children = (
+				6E74DC522D17FDAB00F0B84E /* market trends */,
 				6E74DC392D16158300F0B84E /* Muntadher Files */,
 				6E74DBFE2D14CB9100F0B84E /* Career Resources */,
 				6E74DBF52D149D0900F0B84E /* Salary Estimator  */,
@@ -534,6 +557,7 @@
 				6E74DC3A2D16158300F0B84E /* JobListing.storyboard in Resources */,
 				6E74DC3B2D16158300F0B84E /* SliderCell.xib in Resources */,
 				6E74DC3C2D16158300F0B84E /* Assets.xcassets in Resources */,
+				6E74DC532D17FDAB00F0B84E /* Resources.storyboard in Resources */,
 				6E74DC3D2D16158300F0B84E /* JobCompatibilityScore.storyboard in Resources */,
 				6E74DC3E2D16158300F0B84E /* AdminResource.storyboard in Resources */,
 				6E74DC3F2D16158300F0B84E /* HistoryTracker.storyboard in Resources */,
@@ -589,6 +613,10 @@
 				6E74DBF92D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift in Sources */,
 				6E74DC082D14CF1500F0B84E /* VideosViewController.swift in Sources */,
 				6E74DBFA2D149D0900F0B84E /* LocationViewController.swift in Sources */,
+				6E74DC542D17FDAB00F0B84E /* resourceMainViewController.swift in Sources */,
+				6E74DC552D17FDAB00F0B84E /* page4ViewController 2.swift in Sources */,
+				6E74DC562D17FDAB00F0B84E /* page3ViewController 2.swift in Sources */,
+				6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */,
 				6E74DC1F2D15D80800F0B84E /* WebinarTableViewCell.swift in Sources */,
 				6E74DBE32D10BE2900F0B84E /* SalaryInputCell.swift in Sources */,
 				6E74DBE42D10BE2900F0B84E /* dropdownCell.swift in Sources */,
@@ -637,6 +665,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6E74DC502D17FDAB00F0B84E /* Resources.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E74DC4F2D17FDAB00F0B84E /* Base */,
+			);
+			name = Resources.storyboard;
+			sourceTree = "<group>";
+		};
 		AC2435832D05C1B700B21510 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
