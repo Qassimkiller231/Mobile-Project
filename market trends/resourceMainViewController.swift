@@ -8,23 +8,13 @@
 import UIKit
 
 class resourceMainViewController: UIViewController {
-
     
-    @IBOutlet weak var View1: UIView!
-    
-    @IBOutlet weak var View2: UIView!
-    
-    @IBOutlet weak var View3: UIView!
-    
-    
+   
+    @IBOutlet weak var view1234: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        View1.layer.cornerRadius = 25
-        View2.layer.cornerRadius = 25
-        View3.layer.cornerRadius = 25
-        
+        view1234.layer.cornerRadius = 10
         
     }
 

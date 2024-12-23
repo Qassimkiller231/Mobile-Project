@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notifcation View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="NotifcationViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-bW-F9P">
+                                <rect key="frame" x="92" y="103" width="209" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bellnotification" translatesAutoresizingMaskIntoConstraints="NO" id="jq1-Dv-mkC">
+                                <rect key="frame" x="323" y="98.666666666666671" width="37" height="51.000000000000014"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 30 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB7-aY-qC4">
+                                <rect key="frame" x="16" y="171" width="377" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-dw-PxF">
+                                <rect key="frame" x="16" y="208" width="361" height="610"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.94509804249999996" green="0.90196079019999997" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="l0X-dw-PxF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="1z5-gT-Va8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="l0X-dw-PxF" secondAttribute="bottom" id="AwZ-CC-wxI"/>
+                            <constraint firstItem="CeY-bW-F9P" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="H4K-My-mAb"/>
+                            <constraint firstItem="l0X-dw-PxF" firstAttribute="top" secondItem="mB7-aY-qC4" secondAttribute="bottom" constant="8" symbolic="YES" id="Kc5-IN-6XM"/>
+                            <constraint firstItem="mB7-aY-qC4" firstAttribute="top" secondItem="CeY-bW-F9P" secondAttribute="bottom" constant="26" id="Lva-6N-xf6"/>
+                            <constraint firstItem="mB7-aY-qC4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="UNt-MU-Scf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jq1-Dv-mkC" secondAttribute="trailing" constant="33" id="iTF-mU-Nrw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mB7-aY-qC4" secondAttribute="trailing" id="izo-ez-49n"/>
+                            <constraint firstItem="jq1-Dv-mkC" firstAttribute="centerY" secondItem="CeY-bW-F9P" secondAttribute="centerY" id="j81-yJ-0cX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l0X-dw-PxF" secondAttribute="trailing" constant="16" id="lpO-nc-A7c"/>
+                            <constraint firstItem="CeY-bW-F9P" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zWG-d9-fVs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="w6H-3B-ZOX"/>
+                    <connections>
+                        <outlet property="tableView" destination="l0X-dw-PxF" id="Nuu-t8-y4w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.4045801526718" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M9P-Si-kyp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LGq-3C-WPp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XnQ-1n-VUb">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Oee-dE-k7G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fm-ud-4mM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110.68702290076335" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bellnotification" width="37" height="51"/>
+    </resources>
+</document>

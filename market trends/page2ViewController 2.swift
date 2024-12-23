@@ -9,10 +9,10 @@ import UIKit
 
 class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableview: UITableView!
-    var sections: [Section] = [
-        Section(title: "Section 1", text: ["Item 1", "Item 2", "Item 3"]),
-        Section(title: "Section 2", text: ["Item 4", "Item 5", "Item 6"]),
-        Section(title: "Section 3", text: ["Item 7", "Item 8", "Item 9"])
+    var sections: [Section1] = [
+        Section1(title: "Section 1", text: ["Item 1", "Item 2", "Item 3"]),
+        Section1(title: "Section 2", text: ["Item 4", "Item 5", "Item 6"]),
+        Section1(title: "Section 3", text: ["Item 7", "Item 8", "Item 9"])
     ]
     override func viewDidLoad() {
         tableview.register(SuggestedPathsTableViewCell.nib(), forCellReuseIdentifier: SuggestedPathsTableViewCell.identifier)

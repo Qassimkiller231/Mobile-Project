@@ -166,7 +166,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="eFw-Jf-Phf" userLabel="notifications tap">
                     <connections>
-                        <segue destination="CF6-8B-6oo" kind="show" id="hf9-z6-JuO"/>
+                        <segue destination="tJW-Ku-zgW" kind="show" id="JBC-cN-1aG"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="IQC-Ix-t9v" userLabel="profile tap">
@@ -177,33 +177,15 @@
             </objects>
             <point key="canvasLocation" x="1761.0687022900763" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="n6d-uD-A3M">
+        <!--Notification-->
+        <scene sceneID="Vvk-1P-UhS">
             <objects>
-                <viewController id="CF6-8B-6oo" customClass="ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gp2-bk-DFs">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gE-Vy-neZ">
-                                <rect key="frame" x="148.66666666666666" y="415.66666666666669" width="96" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ydv-15-zve"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="9gE-Vy-neZ" firstAttribute="centerX" secondItem="Gp2-bk-DFs" secondAttribute="centerX" id="7SY-le-QPE"/>
-                            <constraint firstItem="9gE-Vy-neZ" firstAttribute="centerY" secondItem="Gp2-bk-DFs" secondAttribute="centerY" id="rFt-C5-B8d"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="wuL-8j-oQr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4BY-4u-9Rg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Notification" id="tJW-Ku-zgW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Bpq-H7-ol9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFf-pE-QsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2507" y="-4"/>
+            <point key="canvasLocation" x="2450" y="-185"/>
         </scene>
         <!--advancedFilters-->
         <scene sceneID="TPK-T9-wuj">

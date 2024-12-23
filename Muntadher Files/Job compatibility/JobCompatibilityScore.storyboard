@@ -85,6 +85,55 @@
             </objects>
             <point key="canvasLocation" x="4570.2290076335876" y="14.788732394366198"/>
         </scene>
+        <!--Tracker History View Controller-->
+        <scene sceneID="Jok-mr-2AA">
+            <objects>
+                <viewController id="59S-z1-Szm" customClass="Tracker_HistoryViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h04-yR-iev">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker &amp; history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-VK-Obs">
+                                <rect key="frame" x="58.666666666666657" y="103" width="275.66666666666674" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mGV-80-LEq">
+                                <rect key="frame" x="16" y="185" width="361" height="285"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="285" id="uwW-Hz-H7t"/>
+                                </constraints>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interview Dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N5-dc-5ca">
+                                <rect key="frame" x="69.666666666666686" y="507" width="254" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cnc-wr-0tB"/>
+                        <color key="backgroundColor" red="0.94509804249999996" green="0.90196079019999997" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="bc2-VK-Obs" firstAttribute="top" secondItem="cnc-wr-0tB" secondAttribute="top" id="0dS-pl-bDB"/>
+                            <constraint firstItem="0N5-dc-5ca" firstAttribute="centerX" secondItem="h04-yR-iev" secondAttribute="centerX" id="49U-iI-STH"/>
+                            <constraint firstItem="mGV-80-LEq" firstAttribute="leading" secondItem="cnc-wr-0tB" secondAttribute="leading" constant="16" id="ETd-r6-Wf4"/>
+                            <constraint firstItem="cnc-wr-0tB" firstAttribute="trailing" secondItem="mGV-80-LEq" secondAttribute="trailing" constant="16" id="hDY-R2-ETp"/>
+                            <constraint firstItem="0N5-dc-5ca" firstAttribute="top" secondItem="mGV-80-LEq" secondAttribute="bottom" constant="37" id="oyJ-du-6KA"/>
+                            <constraint firstItem="bc2-VK-Obs" firstAttribute="centerX" secondItem="h04-yR-iev" secondAttribute="centerX" id="r99-la-DK0"/>
+                            <constraint firstItem="mGV-80-LEq" firstAttribute="top" secondItem="bc2-VK-Obs" secondAttribute="bottom" constant="40" id="wZf-me-AY0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cCK-Zt-Xcr"/>
+                    <connections>
+                        <outlet property="tableView" destination="mGV-80-LEq" id="mQB-BP-E0u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ch0-Df-Vu0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884.7328244274809" y="-703.52112676056345"/>
+        </scene>
         <!--Check Compatibility View Controller-->
         <scene sceneID="zcb-cr-ty4">
             <objects>
@@ -97,7 +146,7 @@
                                 <rect key="frame" x="68" y="751" width="240" height="58"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQk-HR-2OV">
-                                <rect key="frame" x="0.0" y="121" width="393" height="72"/>
+                                <rect key="frame" x="0.0" y="77" width="393" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="evm-5R-b7R"/>
                                 </constraints>
@@ -108,7 +157,7 @@ Compatability</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9rG-Yg-v85">
-                                <rect key="frame" x="0.0" y="243" width="393" height="494"/>
+                                <rect key="frame" x="0.0" y="199" width="393" height="538"/>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -184,7 +233,7 @@ Compatability</string>
         <scene sceneID="c4W-Tf-xcK">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Rl0-do-TS7" customClass="JobCompView" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="2GS-3A-dEX">
+                    <view key="view" contentMode="scaleToFill" id="2GS-3A-dEX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -197,7 +246,7 @@ Compatability</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAr-UP-3mN">
-                                <rect key="frame" x="24" y="243.33333333333334" width="343" height="16.000000000000028"/>
+                                <rect key="frame" x="24" y="140.33333333333334" width="343" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="71h-SN-6nU"/>
                                 </constraints>
@@ -206,7 +255,7 @@ Compatability</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust Weight  Percentage" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k1-Im-lgk">
-                                <rect key="frame" x="0.0" y="165" width="393" height="57.333333333333343"/>
+                                <rect key="frame" x="0.0" y="62" width="393" height="57.333333333333343"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -228,11 +277,11 @@ Compatability</string>
                                 </buttonConfiguration>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="481-2h-wv1">
-                                <rect key="frame" x="0.0" y="288.33333333333326" width="393" height="443.66666666666674"/>
+                                <rect key="frame" x="0.0" y="185.33333333333334" width="393" height="443.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OO-Un-tVg">
-                                <rect key="frame" x="110" y="750" width="156" height="38.333333333333371"/>
+                                <rect key="frame" x="110" y="647" width="156" height="123"/>
                                 <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="APPLY NOW"/>
@@ -283,16 +332,16 @@ Compatability</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rMZ-VD-0a0" kind="relationship" relationship="rootViewController" id="UZc-NI-UA3"/>
+                        <segue destination="59S-z1-Szm" kind="relationship" relationship="rootViewController" id="DMY-5S-UYl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOX-jC-NSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="-111.26760563380282"/>
+            <point key="canvasLocation" x="871" y="-633"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hli-A3-rHD"/>
+        <segue reference="aJQ-bm-f9n"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Double Button" width="268" height="58"/>

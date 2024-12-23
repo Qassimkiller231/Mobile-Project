@@ -171,6 +171,11 @@ struct table{
     var selectedOption: String?
     
 }
+struct Section1 {
+    var title: String
+    var isExpanded: Bool = false
+    var text: [String]
+}
 
 
 // MARK: Classes
@@ -343,6 +348,7 @@ var tableData: [table] = [
     table(title: "Pick an Application", options: ["Application 1","Application 2","Application 3","Application 4","Application 5"]),
     table(title: "Choose Weight", options: ["Default","Custom"])
 ]
+
 
 //
 //
