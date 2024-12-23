@@ -360,11 +360,11 @@
 		6E74DC392D16158300F0B84E /* Muntadher Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E74DC362D16158300F0B84E /* Assets.xcassets */,
+				6E74DC382D16158300F0B84E /* notificationsView.swift */,
 				6E74DC272D16158300F0B84E /* Admin Resource page */,
 				6E74DC332D16158300F0B84E /* Job compatibility */,
 				6E74DC352D16158300F0B84E /* Job listing */,
-				6E74DC362D16158300F0B84E /* Assets.xcassets */,
-				6E74DC382D16158300F0B84E /* notificationsView.swift */,
 			);
 			path = "Muntadher Files";
 			sourceTree = "<group>";

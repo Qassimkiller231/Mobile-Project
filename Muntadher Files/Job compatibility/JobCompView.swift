@@ -62,6 +62,12 @@ class JobCompView: UIViewController, UITableViewDelegate, UITableViewDataSource{
         return model.count
     }
     
+    
+    @IBAction func CheckResultTapped(_ sender: Any) {
+        performSegue(withIdentifier: "adjustToFinal", sender: nil)
+    }
+    
+    
 
     
         
