@@ -122,12 +122,16 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             // Reload the specific row to update UI
             tableView.reloadRows(at: [indexPath], with: .none)
         }
-        
+    
         
         // Set up the closure to handle bookmark toggling
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "homepageToJobDetails", sender: nil)
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
