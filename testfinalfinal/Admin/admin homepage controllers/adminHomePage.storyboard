@@ -9,6 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Notification-->
+        <scene sceneID="iwE-IR-YAD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notification" id="beo-p2-Zkx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="i80-c6-0Up"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4e-XS-eTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2123" y="-429"/>
+        </scene>
         <!--Admin Home Page View Controller-->
         <scene sceneID="sSi-p2-mXv">
             <objects>
@@ -105,7 +115,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMp-40-Dec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xyX-dd-MXV" userLabel="notifications tap"/>
+                <tapGestureRecognizer id="xyX-dd-MXV" userLabel="notifications tap">
+                    <connections>
+                        <segue destination="beo-p2-Zkx" kind="show" id="DQi-F5-nSo"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <tapGestureRecognizer id="wBi-dP-Erx" userLabel="profile tap"/>
             </objects>
             <point key="canvasLocation" x="1761.0687022900763" y="3.5211267605633805"/>
@@ -300,7 +314,7 @@
                                     <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ApplyButtonTapped:" destination="fz8-dv-lE5" eventType="touchUpInside" id="d0a-Dp-SDQ"/>
+                                    <action selector="saveChangesButtonTapped:" destination="fz8-dv-lE5" eventType="touchUpInside" id="36M-5Y-tfA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfX-Mt-Gqc">
@@ -314,12 +328,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                     <color key="baseForegroundColor" systemColor="systemGray2Color"/>
                                 </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bk-1m-scK">
-                                <rect key="frame" x="154" y="725" width="75" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="deleteJobButtonTapped:" destination="fz8-dv-lE5" eventType="touchUpInside" id="DqM-bS-zzg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="offer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goe-C3-CWA" userLabel="offer text">
                                 <rect key="frame" x="66.666666666666686" y="611.66666666666663" width="260" height="17"/>
@@ -447,6 +458,9 @@
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                                     <color key="baseForegroundColor" systemColor="systemGray2Color"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="discardButtonTapped:" destination="cVd-i7-F6c" eventType="touchUpInside" id="4td-tZ-IIV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCE-uo-GRv">
                                                 <rect key="frame" x="166.33333333333334" y="-0.33333333333331439" width="84" height="31"/>
@@ -459,6 +473,9 @@
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                                     <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addButtonTapped:" destination="cVd-i7-F6c" eventType="touchUpInside" id="WHU-NL-Vu1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.90980386729999996" green="0.88235294819999999" blue="0.92549020049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -507,6 +524,7 @@
                     <navigationItem key="navigationItem" id="Qgv-8n-Orq"/>
                     <connections>
                         <outlet property="TitleButton" destination="Bl7-Xc-VKY" id="6iH-ZQ-Vd3"/>
+                        <outlet property="popupView" destination="ZIn-fB-tTl" id="355-Of-eHK"/>
                         <outlet property="textView" destination="2yO-fS-0Tz" id="vQv-ju-eDj"/>
                     </connections>
                 </viewController>
@@ -516,7 +534,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uNb-2v-cXg"/>
+        <segue reference="ed4-9r-kqT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Card 1" width="398" height="185"/>

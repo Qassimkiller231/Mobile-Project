@@ -16,6 +16,7 @@ class AdminHomePageViewController: UIViewController, UITableViewDelegate,UITable
     
     @IBOutlet weak var tableView: UITableView!
     var currentJob:job?
+    var displayedJobs:[job] = []
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,21 +25,36 @@ class AdminHomePageViewController: UIViewController, UITableViewDelegate,UITable
         tableView.dataSource = self
         searchBar.delegate = self
         tableView.register(AdminJobListingCardTableViewCell.nib(), forCellReuseIdentifier: AdminJobListingCardTableViewCell.identifier)
-        
+        displayedJobs = jobs
         
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        displayedJobs = jobs
+        tableView.reloadData()
+        print("Table view reloaded when returning to main view controller")
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobs.count
+        return displayedJobs.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AdminJobListingCardTableViewCell.identifier, for: indexPath) as! AdminJobListingCardTableViewCell
-        cell.configure(with: jobs[indexPath.row])
+        cell.configure(with: displayedJobs[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentJob = jobs[indexPath.row]
+        currentJob = displayedJobs[indexPath.row]
         performSegue(withIdentifier: "AdminToJobDetails", sender: nil)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            displayedJobs = jobs
+        } else {
+            displayedJobs = jobs.filter { $0.jobTitle.lowercased().starts(with:searchText.lowercased()) }
+        }
+        tableView.reloadData()
     }
     
 

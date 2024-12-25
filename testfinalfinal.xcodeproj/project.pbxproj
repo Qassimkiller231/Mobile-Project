@@ -55,6 +55,8 @@
 		6E74DC552D17FDAB00F0B84E /* page4ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */; };
 		6E74DC562D17FDAB00F0B84E /* page3ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */; };
 		6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */; };
+		6EC4411A2D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */; };
+		6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */; };
 		6ED0012F2D18003500644B5A /* SuggestedPathsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0012C2D18003500644B5A /* SuggestedPathsTableViewCell.swift */; };
 		6ED001302D18003500644B5A /* SuggestedPathsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0012D2D18003500644B5A /* SuggestedPathsTableViewCell.xib */; };
 		6ED001332D18259500644B5A /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED001322D18259500644B5A /* Notification.storyboard */; };
@@ -151,6 +153,8 @@
 		6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page4ViewController 2.swift"; sourceTree = "<group>"; };
 		6E74DC4F2D17FDAB00F0B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
 		6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceMainViewController.swift; sourceTree = "<group>"; };
+		6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminAdvancedFiltersViewController.swift; path = ../AdminAdvancedFiltersViewController.swift; sourceTree = "<group>"; };
+		6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = adminAdvancedFilters.storyboard; sourceTree = "<group>"; };
 		6ED0012C2D18003500644B5A /* SuggestedPathsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedPathsTableViewCell.swift; sourceTree = "<group>"; };
 		6ED0012D2D18003500644B5A /* SuggestedPathsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedPathsTableViewCell.xib; sourceTree = "<group>"; };
 		6ED001322D18259500644B5A /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -388,6 +392,17 @@
 			path = "market trends";
 			sourceTree = "<group>";
 		};
+		6EC441162D1CADF200D51114 /* admin homepage controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */,
+				6ED001712D1B712000644B5A /* adminHomePage.storyboard */,
+				05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */,
+				6ED001732D1B715800644B5A /* AdminHomePageViewController.swift */,
+			);
+			path = "admin homepage controllers";
+			sourceTree = "<group>";
+		};
 		6ED0012E2D18003500644B5A /* suggestedPathTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,16 +460,15 @@
 			path = "tag collection cells";
 			sourceTree = "<group>";
 		};
-		6ED001702D1B711100644B5A /* Admin homepage */ = {
+		6ED001702D1B711100644B5A /* Admin */ = {
 			isa = PBXGroup;
 			children = (
 				6ED001772D1B74E200644B5A /* admin Job listing view cell */,
-				6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */,
-				6ED001712D1B712000644B5A /* adminHomePage.storyboard */,
-				05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */,
-				6ED001732D1B715800644B5A /* AdminHomePageViewController.swift */,
+				6EC441162D1CADF200D51114 /* admin homepage controllers */,
+				6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */,
+				6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */,
 			);
-			path = "Admin homepage";
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		6ED001772D1B74E200644B5A /* admin Job listing view cell */ = {
@@ -495,7 +509,7 @@
 		AC24357C2D05C1B700B21510 /* testfinalfinal */ = {
 			isa = PBXGroup;
 			children = (
-				6ED001702D1B711100644B5A /* Admin homepage */,
+				6ED001702D1B711100644B5A /* Admin */,
 				6E74DBD02D10272F00F0B84E /* Employer Home page */,
 				6ED001312D18257B00644B5A /* Notification */,
 				6ED0016E2D1B70DC00644B5A /* Job seeker homepage */,
@@ -646,6 +660,7 @@
 				6E74DBCC2D0F99F200F0B84E /* JobListingCardTableViewCell.xib in Resources */,
 				6E74DBFB2D149D0900F0B84E /* MyTableViewCell.xib in Resources */,
 				6E74DC3A2D16158300F0B84E /* JobListing.storyboard in Resources */,
+				6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */,
 				6E74DC3B2D16158300F0B84E /* SliderCell.xib in Resources */,
 				6ED001302D18003500644B5A /* SuggestedPathsTableViewCell.xib in Resources */,
 				6E74DC532D17FDAB00F0B84E /* Resources.storyboard in Resources */,
@@ -699,6 +714,7 @@
 				6E74DBF72D149D0900F0B84E /* EstimatedSalaryViewController.swift in Sources */,
 				6E74DC192D158B0900F0B84E /* DetailedVideoViewController.swift in Sources */,
 				6E74DC102D14D50000F0B84E /* ArticleTableViewCell.swift in Sources */,
+				6EC4411A2D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift in Sources */,
 				6E74DC422D16158300F0B84E /* DropDownTableViewCell.swift in Sources */,
 				6E74DC432D16158300F0B84E /* JobCompView.swift in Sources */,
 				6E74DC442D16158300F0B84E /* CheckCompatibilityViewController.swift in Sources */,

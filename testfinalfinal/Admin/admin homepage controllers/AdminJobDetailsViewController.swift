@@ -69,6 +69,13 @@ class AdminJobDetailsViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    @IBAction func deleteJobButtonTapped(_ sender: UIButton) {
+        promptAndDeleteJob()
+    }
+    @IBAction func saveChangesButtonTapped(_ sender: UIButton) {
+        saveChangesToJob()
+    }
+    
     
 
     
@@ -81,16 +88,19 @@ class AdminJobDetailsViewController: UIViewController {
             let vc = segue.destination as! adminJobDetailsOverlayViewController
             vc.editTitle = "Edit About Us"
             vc.editDescription = job!.company.aboutUs
+            vc.delegate = self
         }
         if segue.identifier == "detailsToEditOffer" {
             let vc = segue.destination as! adminJobDetailsOverlayViewController
             vc.editTitle = "Edit Offer"
             vc.editDescription = job!.offer
+            vc.delegate = self
         }
         if segue.identifier == "detailsToEditDescription" {
             let vc = segue.destination as! adminJobDetailsOverlayViewController
             vc.editTitle = "Edit Description"
             vc.editDescription = job!.jobDescription
+            vc.delegate = self
         }
         if segue.identifier == "detailsToHomepage" {
             let vc = segue.destination as! JobSeekerHomepageViewController
@@ -100,6 +110,65 @@ class AdminJobDetailsViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+    func promptAndDeleteJob() {
+        let alert = UIAlertController(
+            title: "Delete Job",
+            message: "Are you sure you want to delete this job? This action cannot be undone.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            // Perform deletion
+            if let jobIndex = jobs.firstIndex(where: { $0.jobId == self.job?.jobId }) {
+                print(self.job?.jobTitle)
+                jobs.remove(at: jobIndex)
+                print(jobs.count)
+                print("Job deleted successfully")
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                print("Job not found in the array")
+            }
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func saveChangesToJob() {
+        guard let updatedJob = job else { return }
+        
+        updatedJob.jobDescription = descriptionTextLabel.text ?? ""
+        updatedJob.company.aboutUs = aboutUsTextLabel.text ?? ""
+        updatedJob.offer = offerTextLabel.text ?? ""
+        
+        if let jobIndex = jobs.firstIndex(where: { $0.jobId == updatedJob.jobId }) {
+            jobs[jobIndex] = updatedJob
+            print("Job updated successfully")
+            // Optionally, pop the view controller or show a success alert
+            let successAlert = UIAlertController(
+                title: "Success",
+                message: "Changes saved successfully.",
+                preferredStyle: .alert
+            )
+            successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(successAlert, animated: true, completion: nil)
+        } else {
+            print("Job not found in the array")
+        }
+    }
     
 
+}
+extension AdminJobDetailsViewController: EditDescriptionDelegate {
+    func didUpdateDescription(_ updatedDescription: String,  _ title: String) {
+        // Update the UI or model with the new description
+        if title == "Edit About Us" {
+            aboutUsTextLabel.text = updatedDescription
+        } else if title == "Edit Offer" {
+            offerTextLabel.text = updatedDescription
+        } else if title == "Edit Description" {
+            descriptionTextLabel.text = updatedDescription
+        }
+        print("Updated description: \(updatedDescription)")
+    }
 }

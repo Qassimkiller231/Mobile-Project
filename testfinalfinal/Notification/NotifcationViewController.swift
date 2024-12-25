@@ -18,6 +18,18 @@ class NotifcationViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.register(NotifcationTableViewCell.nib(), forCellReuseIdentifier: NotifcationTableViewCell.identifier)
         // Do any additional setup after loading the view.
     }
+    //    update the viewWillAppear so that the tabBar is hidden in this page
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            self.tabBarController?.tabBar.isHidden = true // Hide the tab bar
+        }
+        
+        
+    // add the tabbar back before going to another page
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            self.tabBarController?.tabBar.isHidden = false // Show the tab bar again
+        }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
