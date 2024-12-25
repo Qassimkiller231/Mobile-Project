@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="181"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drop Down2" translatesAutoresizingMaskIntoConstraints="NO" id="a3e-sN-DYF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drop Down" translatesAutoresizingMaskIntoConstraints="NO" id="a3e-sN-DYF">
                         <rect key="frame" x="28" y="52.666666666666657" width="304" height="76"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="76" id="jgx-em-Y5y"/>
@@ -48,6 +48,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Drop Down2" width="360" height="62"/>
+        <image name="Drop Down" width="360" height="62"/>
     </resources>
 </document>

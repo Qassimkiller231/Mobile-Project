@@ -19,11 +19,11 @@ enum SkillNames : String{
     case skill1
     case skill2
 }
-enum jobTypes1 : String{
-    case fullTime
-    case partTime
+enum jobTypes : String{
+    case fullTime = "fulltime"
+    case partTime = "part-time"
 }
-enum jobCategories1 : String{
+enum jobCategories : String{
     case software
     case hardware
     case finance
@@ -34,7 +34,7 @@ enum preferenceList: String{
     case skills
 }
 enum jobPositions: String{
-    case Designer
+    case Designer = "Designer"
     case softwareDev = "Software Developer"
 }
 enum SalaryType : String{
@@ -46,6 +46,10 @@ enum applicationStatus : String{
     case accepted
     case rejected
 }
+
+var locations : [String] = [
+    "Manama","Muharraq","Isa town"
+]
 
 
 
@@ -83,7 +87,7 @@ struct CareerPath{
 }
 struct Preference{
     var prefrence : preferenceList
-    var jobType: jobTypes1
+    var jobType: jobTypes
     
     
 }
@@ -114,9 +118,9 @@ struct Test {
 struct application {
     var dateOfApplication: Date
     var profile: Profile
-    var isShortlisted: Bool
+    var isShortlisted: Bool = false
     var interview: Interview?
-    var status: applicationStatus
+    var status: applicationStatus = .pending
 }
 struct Interview {
     var interviewDate: Date
@@ -171,10 +175,14 @@ struct table{
     var selectedOption: String?
     
 }
-struct Section1 {
+
+struct Section {
     var title: String
     var isExpanded: Bool = false
-    var text: [String]
+    var options: [String]? = nil // Dropdown options for sections that use dropdowns
+    var selectedOption: String? = nil // Selected dropdown option (if applicable)
+    var minSalary: Int? = nil // Minimum Salary (as an integer value)
+    var maxSalary: Int? = nil // Maximum Salary (as an integer value)
 }
 
 
@@ -182,12 +190,16 @@ struct Section1 {
 
 
 class User {
+    static var IDS = 1
+    var userID: Int
     var firstName: String
     var lastName: String
     var email: String
     var password: String
     var type: UserType
     init(firstName: String, lastName: String, email: String, password: String, type: UserType) {
+        self.userID = User.IDS
+        User.IDS += 1
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -196,13 +208,11 @@ class User {
     }
 }
 class Profile: User {
-    var user : User
     var profileImage: String
     var phoneNumber: String
     var location: String
     
-    init(user: User, profileImage: String, phoneNumber: String, location: String, firstName: String, lastName: String, email: String, password: String, type: UserType) {
-        self.user = user
+    init(profileImage: String, phoneNumber: String, location: String, firstName: String, lastName: String, email: String, password: String, type: UserType) {
         self.profileImage = profileImage
         self.phoneNumber = phoneNumber
         self.location = location
@@ -211,26 +221,29 @@ class Profile: User {
 }
 
 class Company: Profile {
+    var companyName: String
     var industry: String
     var website: String
     var aboutUs: String
-    init(industry: String, website: String, aboutUs: String, firstName: String, lastName: String, email: String, password: String, type: UserType, profileImage: String, phoneNumber: String, location: String) {
+    init(companyName: String,industry: String, website: String, aboutUs: String, firstName: String, lastName: String, email: String, password: String, type: UserType, profileImage: String, phoneNumber: String, location: String) {
+        self.companyName = companyName
         self.industry = industry
         self.website = website
         self.aboutUs = aboutUs
-        super.init(user: User(firstName: firstName, lastName: lastName, email: email, password: password, type: type), profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
+        super.init(profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
     }
 }
 
 class JobSeeker: Profile {
     var personalSummary: String
-    var educations: [Education]
-    var experiences: [Experience]
-    var skills: [Skill]
-    var preferences: [Preference]
+    var educations: [Education]?
+    var experiences: [Experience]?
+    var skills: [Skill]?
+    var preferences: [Preference]?
     var cv: String
-    var suggestedCareerPaths: [CareerPath]
-    init(personalSummary: String, educations: [Education], experiences: [Experience], skills: [Skill], preferences: [Preference], cv: String, suggestedCareerPaths: [CareerPath], firstName: String, lastName: String, email: String, password: String, type: UserType,profileImage: String, phoneNumber: String, location: String) {
+    var suggestedCareerPaths: [CareerPath]?
+    var applications: [application]?
+    init(personalSummary: String, educations: [Education]?, experiences: [Experience]?, skills: [Skill]?, preferences: [Preference]?, cv: String, suggestedCareerPaths: [CareerPath]?, firstName: String, lastName: String, email: String, password: String, type: UserType,profileImage: String, phoneNumber: String, location: String) {
         self.personalSummary = personalSummary
         self.educations = educations
         self.experiences = experiences
@@ -238,7 +251,7 @@ class JobSeeker: Profile {
         self.preferences = preferences
         self.cv = cv
         self.suggestedCareerPaths = suggestedCareerPaths
-        super.init(user: User(firstName: firstName, lastName: lastName, email: email, password: password, type: type), profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
+        super.init(profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
     }
     
     
@@ -258,14 +271,14 @@ class SkillAssessmentDashboard {
     
 
 }
-class job1 {
+class job {
     var jobTitle: String
     var company : Company
     var jobDescription: String
     var jobSalary: String
-    var jobType: jobTypes1
+    var jobType: jobTypes
     var jobId: String
-    var jobCategory: jobCategories1
+    var jobCategory: jobCategories
     var jobPosition : jobPositions
     var jobImage: String
     var jobSkills: [String]
@@ -273,8 +286,10 @@ class job1 {
     var SalaryType: SalaryType
     var timeFromPost: String
     var deadline: String
-    var applications: [application]
-    init(jobTitle: String, company: Company, jobDescription: String, jobSalary: String, jobType: jobTypes1, jobId: String, jobCategory: jobCategories1, jobPosition: jobPositions, jobImage: String, jobSkills: [String], jobPostedDate: String, SalaryType: SalaryType, timeFromPost: String, deadline: String, applications: [application]) {
+    var offer : String
+    var isBookmarked: Bool = false
+    var applications: [application]?
+    init(jobTitle: String, company: Company, jobDescription: String, jobSalary: String, jobType: jobTypes, jobId: String, jobCategory: jobCategories, jobPosition: jobPositions, jobImage: String, jobSkills: [String], jobPostedDate: String, SalaryType: SalaryType, timeFromPost: String, deadline: String, applications: [application]?, offer: String) {
         self.jobTitle = jobTitle
         self.company = company
         self.jobDescription = jobDescription
@@ -290,6 +305,7 @@ class job1 {
         self.timeFromPost = timeFromPost
         self.deadline = deadline
         self.applications = applications
+        self.offer = offer
     }
 }
 
@@ -348,6 +364,131 @@ var tableData: [table] = [
     table(title: "Pick an Application", options: ["Application 1","Application 2","Application 3","Application 4","Application 5"]),
     table(title: "Choose Weight", options: ["Default","Custom"])
 ]
+
+var companySample = Company(companyName: "Bahrain Polytechnic",industry: "IT", website: "no website", aboutUs: "this is Bahrain Polytechnic", firstName: "Ghassan", lastName: "Alshajjar", email: "Qassimahmed231@gmail.com", password: "1319", type: .employer, profileImage: "no", phoneNumber: "35140480", location: "Aali")
+var JobSeekerSample = JobSeeker(personalSummary: "this is my summary, i am a slave to my master", educations: [Education(educationFaculty: "ABG", educationLevel: "highSchool", degree: "highschool", startYear: 2010, endYear: 2022, city: "JidHafs")], experiences: nil, skills: nil, preferences: nil, cv: "idk", suggestedCareerPaths: nil, firstName: "Sayed Hamed", lastName: "idk", email: "SayedHamed2004@gmail.com", password: "slave", type: .jobSeeker, profileImage: "noimage", phoneNumber: "idk his phone num", location: "i forgot the location")
+
+
+var sections: [Section] = [
+    Section(title: "Job Category",options:["\(jobCategories.software)","\(jobCategories.hardware)","\(jobCategories.finance)"] ),
+    Section(title: "Location", options: locations),
+    Section(title: "Salary"), // Default salary values
+    Section(title: "Job Type", options: [jobTypes.fullTime.rawValue, jobTypes.partTime.rawValue]),
+    Section(title: "Position", options: [jobPositions.Designer.rawValue , jobPositions.softwareDev.rawValue])
+]
+
+
+
+//var positionsArray : [String] = [
+//    "Senior Developer","designer"
+//]
+//enum jobCategories {
+//    case design
+//    case softwareDevelopment
+//    case cyberSecurity
+//}
+//
+//var jobCategoriesArray :[String] = [
+//    "design","software development","Cyber security"
+//]
+
+//var jobTypes :[String] = [
+//    "Full-time","Part-time","Project-based","Per hour"
+//]
+var types :[Profile] = [companySample,JobSeekerSample]
+var jobs: [job] = [
+    job(
+        jobTitle: "Software Developer",
+        company: companySample,
+        jobDescription: "This is a software engineering job, you have no rights to work in this job.",
+        jobSalary: "7800",
+        jobType: .fullTime,
+        jobId: "1",
+        jobCategory: .software,
+        jobPosition: .Designer,
+        jobImage: "no",
+        jobSkills: ["Swift", "iOS Development"],
+        jobPostedDate: "2024-12-20",
+        SalaryType: .monthly,
+        timeFromPost: "1 hour ago",
+        deadline: "2024-12-31",
+        applications: nil,
+        offer: "This is our final offer, take it or leave it."
+    ),
+    job(
+        jobTitle: "Graphic Designer",
+        company: companySample,
+        jobDescription: "We need a creative graphic designer with a passion for visual storytelling.",
+        jobSalary: "5000",
+        jobType: .partTime,
+        jobId: "2",
+        jobCategory: .finance,
+        jobPosition: .Designer,
+        jobImage: "graphic_logo",
+        jobSkills: ["Photoshop", "Illustrator", "Figma"],
+        jobPostedDate: "2024-12-18",
+        SalaryType: .hourly,
+        timeFromPost: "3 days ago",
+        deadline: "2025-01-05",
+        applications: nil,
+        offer: "Flexible working hours and competitive pay."
+    ),
+    job(
+        jobTitle: "Data Scientist",
+        company: companySample,
+        jobDescription: "Analyze and interpret complex data to help improve business outcomes.",
+        jobSalary: "12000",
+        jobType: .fullTime,
+        jobId: "3",
+        jobCategory: .finance,
+        jobPosition: .Designer,
+        jobImage: "data_logo",
+        jobSkills: ["Python", "Machine Learning", "SQL"],
+        jobPostedDate: "2024-12-22",
+        SalaryType: .monthly,
+        timeFromPost: "2 days ago",
+        deadline: "2025-01-15",
+        applications: nil,
+        offer: "Generous benefits package and remote work options."
+    ),
+    job(
+        jobTitle: "Janitor",
+        company: companySample,
+        jobDescription: "Ensure cleanliness and orderliness in the office premises.",
+        jobSalary: "2500",
+        jobType: .fullTime,
+        jobId: "4",
+        jobCategory: .software,
+        jobPosition: .softwareDev,
+        jobImage: "janitor_logo",
+        jobSkills: ["Cleaning", "Organizing"],
+        jobPostedDate: "2024-12-10",
+        SalaryType: .monthly,
+        timeFromPost: "14 days ago",
+        deadline: "2024-12-31",
+        applications: nil,
+        offer: "Flexible hours and supportive team environment."
+    ),
+    job(
+        jobTitle: "Marketing Specialist",
+        company: companySample,
+        jobDescription: "Develop marketing strategies to increase brand awareness.",
+        jobSalary: "8500",
+        jobType: .fullTime,
+        jobId: "5",
+        jobCategory: .software,
+        jobPosition: .softwareDev,
+        jobImage: "marketing_logo",
+        jobSkills: ["SEO", "Content Marketing", "Social Media"],
+        jobPostedDate: "2024-12-15",
+        SalaryType: .monthly,
+        timeFromPost: "9 days ago",
+        deadline: "2025-01-10",
+        applications: nil,
+        offer: "Opportunity to work on high-impact campaigns."
+    )
+]
+
 
 
 //

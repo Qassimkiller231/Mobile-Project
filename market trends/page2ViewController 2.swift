@@ -9,10 +9,10 @@ import UIKit
 
 class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableview: UITableView!
-    var sections: [Section1] = [
-        Section1(title: "Section 1", text: ["Item 1", "Item 2", "Item 3"]),
-        Section1(title: "Section 2", text: ["Item 4", "Item 5", "Item 6"]),
-        Section1(title: "Section 3", text: ["Item 7", "Item 8", "Item 9"])
+    var sections: [Section] = [
+        Section(title: "Section 1", options: ["Item 1", "Item 2", "Item 3"]),
+        Section(title: "Section 2", options: ["Item 4", "Item 5", "Item 6"]),
+        Section(title: "Section 3", options: ["Item 7", "Item 8", "Item 9"])
     ]
     override func viewDidLoad() {
         tableview.register(SuggestedPathsTableViewCell.nib(), forCellReuseIdentifier: SuggestedPathsTableViewCell.identifier)
@@ -27,8 +27,9 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].isExpanded ? 1 + sections[section].text.count : 1
+        return sections[section].isExpanded ? 1 + (sections[section].options?.count ?? 0) : 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
@@ -39,7 +40,7 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else {
                 // Option cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: "OptionsCell", for: indexPath)
-                cell.textLabel?.text = sections[indexPath.section].text[indexPath.row - 1] // Adjust the index
+                cell.textLabel?.text = sections[indexPath.section].options?[indexPath.row - 1] // Adjust the index
                 return cell
             }
     }

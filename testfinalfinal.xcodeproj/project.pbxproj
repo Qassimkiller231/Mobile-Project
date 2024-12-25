@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6E74DBCC2D0F99F200F0B84E /* JobListingCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBCB2D0F99F200F0B84E /* JobListingCardTableViewCell.xib */; };
 		6E74DBCD2D0F99F200F0B84E /* JobListingCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DBCA2D0F99F200F0B84E /* JobListingCardTableViewCell.swift */; };
-		6E74DBCF2D0FA1BF00F0B84E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DBCE2D0FA1BF00F0B84E /* Models.swift */; };
 		6E74DBD22D10274D00F0B84E /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBD12D10274D00F0B84E /* test.storyboard */; };
 		6E74DBD42D10276300F0B84E /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DBD32D10276300F0B84E /* test.swift */; };
 		6E74DBDF2D10BE2900F0B84E /* SalaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBDC2D10BE2900F0B84E /* SalaryCell.xib */; };
@@ -27,7 +26,6 @@
 		6E74DBFB2D149D0900F0B84E /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBEF2D149D0900F0B84E /* MyTableViewCell.xib */; };
 		6E74DBFD2D149E9A00F0B84E /* Salay estimator tool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBFC2D149E9A00F0B84E /* Salay estimator tool.storyboard */; };
 		6E74DC012D14CBA900F0B84E /* CareerResource.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC002D14CBA900F0B84E /* CareerResource.storyboard */; };
-		6E74DC022D14CBA900F0B84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBFF2D14CBA900F0B84E /* Assets.xcassets */; };
 		6E74DC042D14CC0700F0B84E /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC032D14CC0700F0B84E /* ArticlesViewController.swift */; };
 		6E74DC062D14CEE400F0B84E /* PerfectResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC052D14CEE400F0B84E /* PerfectResumeViewController.swift */; };
 		6E74DC082D14CF1500F0B84E /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC072D14CF1500F0B84E /* VideosViewController.swift */; };
@@ -42,7 +40,6 @@
 		6E74DC1F2D15D80800F0B84E /* WebinarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC1C2D15D80800F0B84E /* WebinarTableViewCell.swift */; };
 		6E74DC3A2D16158300F0B84E /* JobListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC342D16158300F0B84E /* JobListing.storyboard */; };
 		6E74DC3B2D16158300F0B84E /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC2C2D16158300F0B84E /* SliderCell.xib */; };
-		6E74DC3C2D16158300F0B84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC362D16158300F0B84E /* Assets.xcassets */; };
 		6E74DC3D2D16158300F0B84E /* JobCompatibilityScore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC312D16158300F0B84E /* JobCompatibilityScore.storyboard */; };
 		6E74DC3E2D16158300F0B84E /* AdminResource.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC262D16158300F0B84E /* AdminResource.storyboard */; };
 		6E74DC402D16158300F0B84E /* DropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC292D16158300F0B84E /* DropDownTableViewCell.xib */; };
@@ -66,6 +63,13 @@
 		6ED0013D2D18391A00644B5A /* applicationHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0013B2D18391A00644B5A /* applicationHistoryTableViewCell.swift */; };
 		6ED0013E2D18391A00644B5A /* applicationHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0013C2D18391A00644B5A /* applicationHistoryTableViewCell.xib */; };
 		6ED001412D197C1500644B5A /* Tracker&HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED001402D197C1500644B5A /* Tracker&HistoryViewController.swift */; };
+		6ED0016B2D1ACF0200644B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0016A2D1ACF0200644B5A /* Assets.xcassets */; };
+		6ED0016D2D1AE49B00644B5A /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0016C2D1AE49B00644B5A /* JobDetailsViewController.swift */; };
+		6ED001722D1B712000644B5A /* adminHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED001712D1B712000644B5A /* adminHomePage.storyboard */; };
+		6ED001742D1B715800644B5A /* AdminHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED001732D1B715800644B5A /* AdminHomePageViewController.swift */; };
+		6ED001782D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED001762D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib */; };
+		6ED001792D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED001752D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift */; };
+		6ED0017B2D1B7DB100644B5A /* AdminJobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */; };
 		6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */; };
 		6EE720482D0F906000E2801B /* JobSeekerHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */; };
 		6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */; };
@@ -74,7 +78,6 @@
 		AC2435802D05C1B700B21510 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24357F2D05C1B700B21510 /* SceneDelegate.swift */; };
 		AC2435822D05C1B700B21510 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2435812D05C1B700B21510 /* ViewController.swift */; };
 		AC2435852D05C1B700B21510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435832D05C1B700B21510 /* Main.storyboard */; };
-		AC2435872D05C1BA00B21510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2435862D05C1BA00B21510 /* Assets.xcassets */; };
 		AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */; };
 		AC2435952D05C1BB00B21510 /* testfinalfinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2435942D05C1BB00B21510 /* testfinalfinalTests.swift */; };
 		AC24359F2D05C1BB00B21510 /* testfinalfinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24359E2D05C1BB00B21510 /* testfinalfinalUITests.swift */; };
@@ -101,7 +104,6 @@
 /* Begin PBXFileReference section */
 		6E74DBCA2D0F99F200F0B84E /* JobListingCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListingCardTableViewCell.swift; sourceTree = "<group>"; };
 		6E74DBCB2D0F99F200F0B84E /* JobListingCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobListingCardTableViewCell.xib; sourceTree = "<group>"; };
-		6E74DBCE2D0FA1BF00F0B84E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		6E74DBD12D10274D00F0B84E /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		6E74DBD32D10276300F0B84E /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		6E74DBD72D10BE2900F0B84E /* AdvancedFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdvancedFilters.storyboard; sourceTree = "<group>"; };
@@ -118,7 +120,6 @@
 		6E74DBF32D149D0900F0B84E /* IndustryTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryTypeViewController.swift; sourceTree = "<group>"; };
 		6E74DBF42D149D0900F0B84E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		6E74DBFC2D149E9A00F0B84E /* Salay estimator tool.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Salay estimator tool.storyboard"; sourceTree = "<group>"; };
-		6E74DBFF2D14CBA900F0B84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E74DC002D14CBA900F0B84E /* CareerResource.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CareerResource.storyboard; sourceTree = "<group>"; };
 		6E74DC032D14CC0700F0B84E /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		6E74DC052D14CEE400F0B84E /* PerfectResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectResumeViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +143,6 @@
 		6E74DC312D16158300F0B84E /* JobCompatibilityScore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobCompatibilityScore.storyboard; sourceTree = "<group>"; };
 		6E74DC322D16158300F0B84E /* JobCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCompView.swift; sourceTree = "<group>"; };
 		6E74DC342D16158300F0B84E /* JobListing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobListing.storyboard; sourceTree = "<group>"; };
-		6E74DC362D16158300F0B84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E74DC382D16158300F0B84E /* notificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsView.swift; sourceTree = "<group>"; };
 		6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page2ViewController 2.swift"; sourceTree = "<group>"; };
 		6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page3ViewController 2.swift"; sourceTree = "<group>"; };
@@ -158,6 +158,13 @@
 		6ED0013B2D18391A00644B5A /* applicationHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applicationHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		6ED0013C2D18391A00644B5A /* applicationHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = applicationHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		6ED001402D197C1500644B5A /* Tracker&HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tracker&HistoryViewController.swift"; sourceTree = "<group>"; };
+		6ED0016A2D1ACF0200644B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6ED0016C2D1AE49B00644B5A /* JobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
+		6ED001712D1B712000644B5A /* adminHomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = adminHomePage.storyboard; sourceTree = "<group>"; };
+		6ED001732D1B715800644B5A /* AdminHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomePageViewController.swift; sourceTree = "<group>"; };
+		6ED001752D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminJobListingCardTableViewCell.swift; sourceTree = "<group>"; };
+		6ED001762D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminJobListingCardTableViewCell.xib; sourceTree = "<group>"; };
+		6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminJobDetailsViewController.swift; sourceTree = "<group>"; };
 		6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobSeekerLoginPage.storyboard; sourceTree = "<group>"; };
 		6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeekerHomepageViewController.swift; sourceTree = "<group>"; };
 		6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -167,7 +174,6 @@
 		AC24357F2D05C1B700B21510 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AC2435812D05C1B700B21510 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC2435842D05C1B700B21510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AC2435862D05C1BA00B21510 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC2435892D05C1BA00B21510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC24358B2D05C1BA00B21510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC2435902D05C1BB00B21510 /* testfinalfinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,7 +280,6 @@
 		6E74DBFE2D14CB9100F0B84E /* Career Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6E74DBFF2D14CBA900F0B84E /* Assets.xcassets */,
 				6E74DC002D14CBA900F0B84E /* CareerResource.storyboard */,
 				6E74DC112D14D50F00F0B84E /* Article view cell */,
 				6E74DC202D15D80F00F0B84E /* Webinar view cell */,
@@ -360,7 +365,6 @@
 		6E74DC392D16158300F0B84E /* Muntadher Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E74DC362D16158300F0B84E /* Assets.xcassets */,
 				6E74DC382D16158300F0B84E /* notificationsView.swift */,
 				6E74DC272D16158300F0B84E /* Admin Resource page */,
 				6E74DC332D16158300F0B84E /* Job compatibility */,
@@ -419,9 +423,50 @@
 			path = "applicationHistory cell";
 			sourceTree = "<group>";
 		};
+		6ED0016E2D1B70DC00644B5A /* Job seeker homepage */ = {
+			isa = PBXGroup;
+			children = (
+				6E74DBD52D1027A800F0B84E /* Job listing view cell */,
+				6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */,
+				6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */,
+				6ED0016C2D1AE49B00644B5A /* JobDetailsViewController.swift */,
+			);
+			path = "Job seeker homepage";
+			sourceTree = "<group>";
+		};
+		6ED0016F2D1B70EC00644B5A /* tag collection cells */ = {
+			isa = PBXGroup;
+			children = (
+				6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */,
+				6EE7204A2D0F923A00E2801B /* TagCollectionViewCell.xib */,
+			);
+			path = "tag collection cells";
+			sourceTree = "<group>";
+		};
+		6ED001702D1B711100644B5A /* Admin homepage */ = {
+			isa = PBXGroup;
+			children = (
+				6ED001772D1B74E200644B5A /* admin Job listing view cell */,
+				6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */,
+				6ED001712D1B712000644B5A /* adminHomePage.storyboard */,
+				6ED001732D1B715800644B5A /* AdminHomePageViewController.swift */,
+			);
+			path = "Admin homepage";
+			sourceTree = "<group>";
+		};
+		6ED001772D1B74E200644B5A /* admin Job listing view cell */ = {
+			isa = PBXGroup;
+			children = (
+				6ED001752D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift */,
+				6ED001762D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib */,
+			);
+			path = "admin Job listing view cell";
+			sourceTree = "<group>";
+		};
 		AC2435712D05C1B700B21510 = {
 			isa = PBXGroup;
 			children = (
+				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
 				6E74DC522D17FDAB00F0B84E /* market trends */,
 				6E74DC392D16158300F0B84E /* Muntadher Files */,
 				6E74DBFE2D14CB9100F0B84E /* Career Resources */,
@@ -447,20 +492,16 @@
 		AC24357C2D05C1B700B21510 /* testfinalfinal */ = {
 			isa = PBXGroup;
 			children = (
-				6E74DBD52D1027A800F0B84E /* Job listing view cell */,
+				6ED001702D1B711100644B5A /* Admin homepage */,
 				6E74DBD02D10272F00F0B84E /* Employer Home page */,
 				6ED001312D18257B00644B5A /* Notification */,
+				6ED0016E2D1B70DC00644B5A /* Job seeker homepage */,
+				6ED0016F2D1B70EC00644B5A /* tag collection cells */,
 				AC24357D2D05C1B700B21510 /* AppDelegate.swift */,
 				AC24357F2D05C1B700B21510 /* SceneDelegate.swift */,
 				AC2435812D05C1B700B21510 /* ViewController.swift */,
 				AC2435832D05C1B700B21510 /* Main.storyboard */,
-				6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */,
-				6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */,
 				6E74DBE72D14423300F0B84E /* final models.swift */,
-				6E74DBCE2D0FA1BF00F0B84E /* Models.swift */,
-				6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */,
-				6EE7204A2D0F923A00E2801B /* TagCollectionViewCell.xib */,
-				AC2435862D05C1BA00B21510 /* Assets.xcassets */,
 				AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */,
 				AC24358B2D05C1BA00B21510 /* Info.plist */,
 			);
@@ -590,20 +631,20 @@
 			files = (
 				6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */,
 				6E74DBDF2D10BE2900F0B84E /* SalaryCell.xib in Resources */,
+				6ED001782D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib in Resources */,
 				6E74DBFD2D149E9A00F0B84E /* Salay estimator tool.storyboard in Resources */,
 				6ED001332D18259500644B5A /* Notification.storyboard in Resources */,
 				6E74DBE02D10BE2900F0B84E /* dropdownCell.xib in Resources */,
 				6E74DC1E2D15D80800F0B84E /* WebinarTableViewCell.xib in Resources */,
 				6E74DC012D14CBA900F0B84E /* CareerResource.storyboard in Resources */,
-				6E74DC022D14CBA900F0B84E /* Assets.xcassets in Resources */,
 				6E74DBE12D10BE2900F0B84E /* AdvancedFilters.storyboard in Resources */,
 				6EE7204C2D0F923A00E2801B /* TagCollectionViewCell.xib in Resources */,
+				6ED001722D1B712000644B5A /* adminHomePage.storyboard in Resources */,
 				6E74DBCC2D0F99F200F0B84E /* JobListingCardTableViewCell.xib in Resources */,
 				6E74DBFB2D149D0900F0B84E /* MyTableViewCell.xib in Resources */,
 				6E74DC3A2D16158300F0B84E /* JobListing.storyboard in Resources */,
 				6E74DC3B2D16158300F0B84E /* SliderCell.xib in Resources */,
 				6ED001302D18003500644B5A /* SuggestedPathsTableViewCell.xib in Resources */,
-				6E74DC3C2D16158300F0B84E /* Assets.xcassets in Resources */,
 				6E74DC532D17FDAB00F0B84E /* Resources.storyboard in Resources */,
 				6E74DC3D2D16158300F0B84E /* JobCompatibilityScore.storyboard in Resources */,
 				6E74DC3E2D16158300F0B84E /* AdminResource.storyboard in Resources */,
@@ -613,7 +654,7 @@
 				6ED001372D1827D500644B5A /* NotifcationTableViewCell.xib in Resources */,
 				AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */,
 				6E74DBD22D10274D00F0B84E /* test.storyboard in Resources */,
-				AC2435872D05C1BA00B21510 /* Assets.xcassets in Resources */,
+				6ED0016B2D1ACF0200644B5A /* Assets.xcassets in Resources */,
 				AC2435852D05C1B700B21510 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +684,7 @@
 				6E74DC1B2D15D7CE00F0B84E /* WebinarViewController.swift in Sources */,
 				6ED001362D1827D500644B5A /* NotifcationTableViewCell.swift in Sources */,
 				6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */,
+				6ED0017B2D1B7DB100644B5A /* AdminJobDetailsViewController.swift in Sources */,
 				AC2435822D05C1B700B21510 /* ViewController.swift in Sources */,
 				6ED0012F2D18003500644B5A /* SuggestedPathsTableViewCell.swift in Sources */,
 				6E74DC042D14CC0700F0B84E /* ArticlesViewController.swift in Sources */,
@@ -663,7 +705,9 @@
 				6E74DBF82D149D0900F0B84E /* MyTableViewCell.swift in Sources */,
 				6E74DBF92D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift in Sources */,
 				6E74DC082D14CF1500F0B84E /* VideosViewController.swift in Sources */,
+				6ED0016D2D1AE49B00644B5A /* JobDetailsViewController.swift in Sources */,
 				6E74DBFA2D149D0900F0B84E /* LocationViewController.swift in Sources */,
+				6ED001792D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift in Sources */,
 				6E74DC542D17FDAB00F0B84E /* resourceMainViewController.swift in Sources */,
 				6E74DC552D17FDAB00F0B84E /* page4ViewController 2.swift in Sources */,
 				6ED001412D197C1500644B5A /* Tracker&HistoryViewController.swift in Sources */,
@@ -677,7 +721,7 @@
 				6E74DBCD2D0F99F200F0B84E /* JobListingCardTableViewCell.swift in Sources */,
 				6ED0013D2D18391A00644B5A /* applicationHistoryTableViewCell.swift in Sources */,
 				AC2435802D05C1B700B21510 /* SceneDelegate.swift in Sources */,
-				6E74DBCF2D0FA1BF00F0B84E /* Models.swift in Sources */,
+				6ED001742D1B715800644B5A /* AdminHomePageViewController.swift in Sources */,
 				6E74DC062D14CEE400F0B84E /* PerfectResumeViewController.swift in Sources */,
 				6E74DC0C2D14CF5800F0B84E /* GuideDetailsViewController.swift in Sources */,
 				6E74DBD42D10276300F0B84E /* test.swift in Sources */,

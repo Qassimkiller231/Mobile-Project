@@ -9,6 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--adminHomePage-->
+        <scene sceneID="Vxy-Tx-nZt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="adminHomePage" id="mrY-Gy-xRu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1CW-HY-SWj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ag0-eY-bNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2490" y="135"/>
+        </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -42,6 +52,15 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Application History"/>
                                 <connections>
                                     <segue destination="J8D-l1-t0m" kind="show" id="ctB-J1-afr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zl-MY-SiS">
+                                <rect key="frame" x="108" y="395" width="162" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Admin home page"/>
+                                <connections>
+                                    <segue destination="mrY-Gy-xRu" kind="show" id="rVL-31-wct"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,6 +112,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UH3-B5-Nvr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ld-1a-qwb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

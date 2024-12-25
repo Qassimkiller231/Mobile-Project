@@ -22,7 +22,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bellnotification" translatesAutoresizingMaskIntoConstraints="NO" id="jq1-Dv-mkC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell icon" translatesAutoresizingMaskIntoConstraints="NO" id="jq1-Dv-mkC">
                                 <rect key="frame" x="323" y="98.666666666666671" width="37" height="51.000000000000014"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 30 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB7-aY-qC4">
@@ -81,6 +81,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bellnotification" width="37" height="51"/>
+        <image name="bell icon" width="37" height="51"/>
     </resources>
 </document>

@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-OY-f8Y" userLabel="select an option view">
                         <rect key="frame" x="16" y="45" width="380" height="80"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Drop Down2" translatesAutoresizingMaskIntoConstraints="NO" id="JPX-Vv-0jl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Drop Down" translatesAutoresizingMaskIntoConstraints="NO" id="JPX-Vv-0jl">
                                 <rect key="frame" x="0.0" y="10.666666666666664" width="360" height="61.999999999999993"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -74,7 +74,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Drop Down2" width="360" height="62"/>
+        <image name="Drop Down" width="360" height="62"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

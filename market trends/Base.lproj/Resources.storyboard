@@ -102,7 +102,7 @@ It is 50% chance to be applied.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: UX Designer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft6-z5-kHn">
-                                                <rect key="frame" x="8" y="8.6666666666666288" width="133.33333333333334" height="20.333333333333329"/>
+                                                <rect key="frame" x="8" y="8.666666666666627" width="133.33333333333334" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -173,7 +173,7 @@ It is 50% chance to be applied.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-iw-tNW" userLabel="suggested career paths">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card-4" translatesAutoresizingMaskIntoConstraints="NO" id="nqc-y6-pKL">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty card" translatesAutoresizingMaskIntoConstraints="NO" id="nqc-y6-pKL">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Career Paths" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fV-qA-IiM">
@@ -182,7 +182,7 @@ It is 50% chance to be applied.</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button" translatesAutoresizingMaskIntoConstraints="NO" id="qrw-cJ-cfb">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curved button" translatesAutoresizingMaskIntoConstraints="NO" id="qrw-cJ-cfb">
                                                 <rect key="frame" x="120.66666666666666" y="104.33333333333331" width="132" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="132" id="3Lm-7c-vhH"/>
@@ -235,7 +235,7 @@ It is 50% chance to be applied.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KR4-xC-oqr" userLabel="suggested career paths">
                                         <rect key="frame" x="0.0" y="180" width="373" height="180"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card-4" translatesAutoresizingMaskIntoConstraints="NO" id="XuJ-e4-Bz8">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty card" translatesAutoresizingMaskIntoConstraints="NO" id="XuJ-e4-Bz8">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8el-QU-Na1">
@@ -244,7 +244,7 @@ It is 50% chance to be applied.</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-Dm-qp6">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curved button" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-Dm-qp6">
                                                 <rect key="frame" x="120.66666666666666" y="104.33333333333331" width="132" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="Ee2-al-AMu"/>
@@ -297,7 +297,7 @@ It is 50% chance to be applied.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7O-ua-2O4" userLabel="suggested career paths">
                                         <rect key="frame" x="0.0" y="360" width="373" height="180"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card-4" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-zK-WfT">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty card" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-zK-WfT">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employer Insights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azI-k2-VZd">
@@ -306,7 +306,7 @@ It is 50% chance to be applied.</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button" translatesAutoresizingMaskIntoConstraints="NO" id="cRU-RQ-qfW">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curved button" translatesAutoresizingMaskIntoConstraints="NO" id="cRU-RQ-qfW">
                                                 <rect key="frame" x="120.66666666666666" y="104.33333333333337" width="132" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="9w4-kd-8Yi"/>
@@ -545,8 +545,9 @@ It is 50% chance to be applied.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Button" width="178" height="58"/>
         <image name="Card-4" width="398" height="174"/>
+        <image name="curved button" width="178" height="58"/>
+        <image name="empty card" width="398" height="174"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
