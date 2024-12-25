@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05F734552D1C2F510009939A /* adminJobDetailsOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */; };
 		6E74DBCC2D0F99F200F0B84E /* JobListingCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBCB2D0F99F200F0B84E /* JobListingCardTableViewCell.xib */; };
 		6E74DBCD2D0F99F200F0B84E /* JobListingCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DBCA2D0F99F200F0B84E /* JobListingCardTableViewCell.swift */; };
 		6E74DBD22D10274D00F0B84E /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DBD12D10274D00F0B84E /* test.storyboard */; };
@@ -102,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adminJobDetailsOverlayViewController.swift; sourceTree = "<group>"; };
 		6E74DBCA2D0F99F200F0B84E /* JobListingCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListingCardTableViewCell.swift; sourceTree = "<group>"; };
 		6E74DBCB2D0F99F200F0B84E /* JobListingCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobListingCardTableViewCell.xib; sourceTree = "<group>"; };
 		6E74DBD12D10274D00F0B84E /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				6ED001772D1B74E200644B5A /* admin Job listing view cell */,
 				6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */,
 				6ED001712D1B712000644B5A /* adminHomePage.storyboard */,
+				05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */,
 				6ED001732D1B715800644B5A /* AdminHomePageViewController.swift */,
 			);
 			path = "Admin homepage";
@@ -724,6 +727,7 @@
 				6ED001742D1B715800644B5A /* AdminHomePageViewController.swift in Sources */,
 				6E74DC062D14CEE400F0B84E /* PerfectResumeViewController.swift in Sources */,
 				6E74DC0C2D14CF5800F0B84E /* GuideDetailsViewController.swift in Sources */,
+				05F734552D1C2F510009939A /* adminJobDetailsOverlayViewController.swift in Sources */,
 				6E74DBD42D10276300F0B84E /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
