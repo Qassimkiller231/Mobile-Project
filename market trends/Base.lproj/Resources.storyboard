@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pt7-Ga-9If">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pt7-Ga-9If">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Page4 View Controller-->
+        <!--Employer Insights-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="page4ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,20 +20,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="QZD-SY-chs">
                                 <rect key="frame" x="16" y="103" width="361" height="646"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employer Insights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyL-Cr-yXv">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="42"/>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                        <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrI-WM-EQf">
-                                        <rect key="frame" x="0.0" y="102.00000000000001" width="361" height="145.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="247.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: System Designer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CiZ-yN-9zx">
-                                                <rect key="frame" x="8" y="7.9999999999999982" width="166.66666666666666" height="20.333333333333329"/>
+                                                <rect key="frame" x="8" y="8" width="200" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -59,8 +52,8 @@ to other applicants.</string>
                                         <rect key="frame" x="0.0" y="307.33333333333331" width="361" height="145"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: Software Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEH-QP-yW8">
-                                                <rect key="frame" x="8" y="8.6666666666666838" width="187.33333333333334" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="8" y="8.6666666666666838" width="200.66666666666666" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -102,8 +95,8 @@ It is 50% chance to be applied.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: UX Designer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft6-z5-kHn">
-                                                <rect key="frame" x="8" y="8.666666666666627" width="133.33333333333334" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="8" y="8.666666666666627" width="141.66666666666666" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -124,10 +117,8 @@ It is 50% chance to be applied.</string>
                                     <constraint firstItem="UrI-WM-EQf" firstAttribute="trailing" secondItem="VKU-Xj-ef0" secondAttribute="trailing" id="0EJ-Hg-jXL"/>
                                     <constraint firstItem="9vA-5a-ljH" firstAttribute="centerX" secondItem="VKU-Xj-ef0" secondAttribute="centerX" id="aO1-1b-UnB"/>
                                     <constraint firstItem="9vA-5a-ljH" firstAttribute="top" secondItem="UrI-WM-EQf" secondAttribute="bottom" constant="60" id="hft-vF-FM4"/>
-                                    <constraint firstItem="UrI-WM-EQf" firstAttribute="top" secondItem="FyL-Cr-yXv" secondAttribute="bottom" constant="60" id="k7G-PV-xkW"/>
                                     <constraint firstItem="VKU-Xj-ef0" firstAttribute="top" secondItem="QZD-SY-chs" secondAttribute="top" constant="512.33333333333348" id="lpJ-nH-paS"/>
                                     <constraint firstItem="9vA-5a-ljH" firstAttribute="trailing" secondItem="QZD-SY-chs" secondAttribute="trailingMargin" id="nNa-S8-vKX"/>
-                                    <constraint firstItem="FyL-Cr-yXv" firstAttribute="centerX" secondItem="QZD-SY-chs" secondAttribute="centerX" id="sTT-q3-PTa"/>
                                     <constraint firstItem="9vA-5a-ljH" firstAttribute="top" secondItem="QZD-SY-chs" secondAttribute="top" constant="307.33333333333331" id="us3-MD-OJx"/>
                                     <constraint firstItem="VKU-Xj-ef0" firstAttribute="top" secondItem="9vA-5a-ljH" secondAttribute="bottom" constant="60" id="xsw-uH-kVr"/>
                                 </constraints>
@@ -142,7 +133,7 @@ It is 50% chance to be applied.</string>
                             <constraint firstItem="QZD-SY-chs" firstAttribute="top" secondItem="BC9-BY-yW0" secondAttribute="top" id="mr1-ZB-i83"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="y2E-Ls-Rde"/>
+                    <navigationItem key="navigationItem" title="Employer Insights" id="y2E-Ls-Rde"/>
                     <connections>
                         <outlet property="View1" destination="UrI-WM-EQf" id="c9P-RX-2Bj"/>
                         <outlet property="View2" destination="9vA-5a-ljH" id="DT9-cM-iqK"/>
@@ -161,14 +152,8 @@ It is 50% chance to be applied.</string>
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Career Path Guidance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rog-rH-9S3">
-                                <rect key="frame" x="19.333333333333343" y="153" width="354.33333333333326" height="42"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" red="0.56470588239999997" green="0.10980392160000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="taM-VT-6tl">
-                                <rect key="frame" x="10" y="203" width="373" height="540"/>
+                                <rect key="frame" x="10" y="247" width="373" height="540"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-iw-tNW" userLabel="suggested career paths">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
@@ -177,8 +162,8 @@ It is 50% chance to be applied.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Career Paths" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fV-qA-IiM">
-                                                <rect key="frame" x="20" y="20" width="185" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="20" width="197.66666666666666" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -190,7 +175,7 @@ It is 50% chance to be applied.</string>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-oE-ap9">
-                                                <rect key="frame" x="20" y="48.333333333333343" width="319" height="36"/>
+                                                <rect key="frame" x="20" y="48.333333333333314" width="319" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="319" id="3HR-tH-Ds5"/>
                                                     <constraint firstAttribute="height" constant="36" id="Bq7-zh-kZ8"/>
@@ -202,12 +187,15 @@ It is 50% chance to be applied.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGZ-yo-wyz">
-                                                <rect key="frame" x="145.33333333333334" y="109" width="81" height="39"/>
+                                                <rect key="frame" x="140.66666666666666" y="109" width="90.333333333333343" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="89P-pt-SRf"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Explore"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Explore">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="DzN-lp-VAi" kind="show" identifier="CareerPathGuidanceToSuggestedPath" id="jXe-PS-WFc"/>
                                                 </connections>
@@ -218,7 +206,7 @@ It is 50% chance to be applied.</string>
                                             <constraint firstAttribute="trailing" secondItem="nqc-y6-pKL" secondAttribute="trailing" id="38a-cz-U1J"/>
                                             <constraint firstAttribute="height" constant="180" id="7tm-rI-Myg"/>
                                             <constraint firstItem="0fV-qA-IiM" firstAttribute="leading" secondItem="4Wq-iw-tNW" secondAttribute="leading" constant="20" symbolic="YES" id="8uN-Fl-nzT"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0fV-qA-IiM" secondAttribute="trailing" symbolic="YES" id="CSg-yP-Y00"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0fV-qA-IiM" secondAttribute="trailing" constant="20" symbolic="YES" id="CSg-yP-Y00"/>
                                             <constraint firstAttribute="bottom" secondItem="nqc-y6-pKL" secondAttribute="bottom" id="F4G-cm-Vxn"/>
                                             <constraint firstItem="qrw-cJ-cfb" firstAttribute="top" secondItem="sE3-oE-ap9" secondAttribute="bottom" constant="20" id="J8l-zG-I7x"/>
                                             <constraint firstItem="sE3-oE-ap9" firstAttribute="top" secondItem="0fV-qA-IiM" secondAttribute="bottom" constant="8" symbolic="YES" id="M3X-t1-lIE"/>
@@ -239,13 +227,13 @@ It is 50% chance to be applied.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8el-QU-Na1">
-                                                <rect key="frame" x="20" y="20" width="174.66666666666666" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="20" width="186.66666666666666" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curved button" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-Dm-qp6">
-                                                <rect key="frame" x="120.66666666666666" y="104.33333333333331" width="132" height="56"/>
+                                                <rect key="frame" x="120.66666666666666" y="104.33333333333337" width="132" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="Ee2-al-AMu"/>
                                                     <constraint firstAttribute="width" constant="132" id="ZA3-Wd-QvO"/>
@@ -264,12 +252,15 @@ It is 50% chance to be applied.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDZ-hL-wgv">
-                                                <rect key="frame" x="145.33333333333334" y="109" width="81" height="39"/>
+                                                <rect key="frame" x="152.33333333333334" y="109" width="67.333333333333343" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="azn-ad-wZC"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Explore"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="View">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="q3I-sw-TeW" kind="show" id="zpR-CC-jqY"/>
                                                 </connections>
@@ -301,8 +292,8 @@ It is 50% chance to be applied.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employer Insights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azI-k2-VZd">
-                                                <rect key="frame" x="20" y="20" width="135" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="20" width="146" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -326,12 +317,15 @@ It is 50% chance to be applied.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7V-hu-hcG">
-                                                <rect key="frame" x="145.33333333333334" y="109" width="81" height="39"/>
+                                                <rect key="frame" x="152.33333333333334" y="109" width="67.333333333333343" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="IIk-Ju-0pu"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Explore"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="View">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="show" id="8aK-kb-mPE"/>
                                                 </connections>
@@ -358,15 +352,21 @@ It is 50% chance to be applied.</string>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Career Path  Guidance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rog-rH-9S3">
+                                <rect key="frame" x="94.666666666666686" y="87" width="204" height="86"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.30196078431372547" green="0.0039215686274509803" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Obr-Qh-Tbd"/>
-                        <color key="backgroundColor" red="0.94509804249999996" green="0.90196079019999997" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="taM-VT-6tl" firstAttribute="top" secondItem="rog-rH-9S3" secondAttribute="bottom" constant="8" symbolic="YES" id="CJ5-wQ-HUn"/>
+                            <constraint firstItem="taM-VT-6tl" firstAttribute="top" secondItem="rog-rH-9S3" secondAttribute="bottom" constant="73.999999999999943" id="CJ5-wQ-HUn"/>
                             <constraint firstAttribute="trailing" secondItem="taM-VT-6tl" secondAttribute="trailing" constant="10" id="XAL-f9-sN5"/>
                             <constraint firstItem="rog-rH-9S3" firstAttribute="centerX" secondItem="VMb-lE-2Ut" secondAttribute="centerX" id="Y2a-5h-sM1"/>
                             <constraint firstItem="taM-VT-6tl" firstAttribute="leading" secondItem="VMb-lE-2Ut" secondAttribute="leading" constant="10" id="ns7-hy-8zx"/>
-                            <constraint firstItem="rog-rH-9S3" firstAttribute="top" secondItem="Obr-Qh-Tbd" secondAttribute="top" constant="50" id="z5P-Ub-J3V"/>
+                            <constraint firstItem="rog-rH-9S3" firstAttribute="top" secondItem="Obr-Qh-Tbd" secondAttribute="top" constant="-16" id="z5P-Ub-J3V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GtW-jF-Maz"/>
@@ -388,8 +388,8 @@ It is 50% chance to be applied.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="8lJ-Xl-beZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="trs-qi-m13">
@@ -397,10 +397,10 @@ It is 50% chance to be applied.</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionsCell" id="K68-Kb-GBj">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K68-Kb-GBj" id="Ija-WK-Eg9">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -411,7 +411,6 @@ It is 50% chance to be applied.</string>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4bT-z7-gfS" firstAttribute="leading" secondItem="O0R-Uh-26W" secondAttribute="leading" constant="10" id="1rt-C0-LJy"/>
-                            <constraint firstItem="4bT-z7-gfS" firstAttribute="centerX" secondItem="O0R-Uh-26W" secondAttribute="centerX" id="2s9-bo-FK6"/>
                             <constraint firstItem="trs-qi-m13" firstAttribute="top" secondItem="4bT-z7-gfS" secondAttribute="bottom" id="8EV-6V-yy4"/>
                             <constraint firstItem="4bT-z7-gfS" firstAttribute="top" secondItem="Ao2-UM-xYE" secondAttribute="top" constant="38" id="OkF-5l-ewA"/>
                             <constraint firstItem="Ao2-UM-xYE" firstAttribute="bottom" secondItem="trs-qi-m13" secondAttribute="bottom" id="Oza-ae-8bM"/>
@@ -423,7 +422,7 @@ It is 50% chance to be applied.</string>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" title="Suggested Paths" id="q4B-gU-3m9"/>
+                    <navigationItem key="navigationItem" title="Suggested Paths" largeTitleDisplayMode="always" id="q4B-gU-3m9"/>
                     <connections>
                         <outlet property="tableview" destination="trs-qi-m13" id="4n3-81-eUs"/>
                     </connections>
@@ -432,7 +431,7 @@ It is 50% chance to be applied.</string>
             </objects>
             <point key="canvasLocation" x="2614.5038167938928" y="14.788732394366198"/>
         </scene>
-        <!--Page3 View Controller-->
+        <!--Job Recommendations-->
         <scene sceneID="9gs-cn-uat">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="q3I-sw-TeW" customClass="page3ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
@@ -440,19 +439,10 @@ It is 50% chance to be applied.</string>
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Card-4" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-CQ-wsm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="empty card" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-CQ-wsm">
                                 <rect key="frame" x="-3" y="243" width="398.33333333333331" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zwo-9F-UnE">
-                                <rect key="frame" x="112" y="354" width="167" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Apply" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
-                                    <color key="baseBackgroundColor" red="0.56470588239999997" green="0.10980392160000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join a team working on designing and " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="73e-hI-DxU">
                                 <rect key="frame" x="15" y="304" width="263" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -474,7 +464,7 @@ It is 50% chance to be applied.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Card-4" translatesAutoresizingMaskIntoConstraints="NO" id="zvQ-LM-Gzt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="empty card" translatesAutoresizingMaskIntoConstraints="NO" id="zvQ-LM-Gzt">
                                 <rect key="frame" x="-6" y="466" width="398.33333333333331" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -499,27 +489,37 @@ It is 50% chance to be applied.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="2pk-H5-riK">
-                                <rect key="frame" x="113" y="574" width="167" height="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="curved button" translatesAutoresizingMaskIntoConstraints="NO" id="XST-UD-5jr">
+                                <rect key="frame" x="130" y="567" width="132" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="curved button" translatesAutoresizingMaskIntoConstraints="NO" id="IIc-OZ-uqO">
+                                <rect key="frame" x="130" y="346" width="132" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-nx-71b">
+                                <rect key="frame" x="155" y="351" width="81" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Apply" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
-                                    <color key="baseBackgroundColor" red="0.56470588239999997" green="0.10980392160000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Apply">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysa-ui-RPU">
-                                <rect key="frame" x="15" y="119" width="398" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-bE-3tl">
+                                <rect key="frame" x="154" y="573" width="81" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Apply">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Vt-zu-G91"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="r35-3S-ye1"/>
+                    <navigationItem key="navigationItem" title="Job Recommendations" id="r35-3S-ye1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="se6-8s-tzv" sceneMemberID="firstResponder"/>
             </objects>
@@ -533,6 +533,10 @@ It is 50% chance to be applied.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdG-7o-5de">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                            <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -545,7 +549,6 @@ It is 50% chance to be applied.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Card-4" width="398" height="174"/>
         <image name="curved button" width="178" height="58"/>
         <image name="empty card" width="398" height="174"/>
         <systemColor name="systemBackgroundColor">
