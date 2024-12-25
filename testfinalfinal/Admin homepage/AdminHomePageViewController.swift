@@ -53,6 +53,7 @@ class AdminHomePageViewController: UIViewController, UITableViewDelegate,UITable
             let vc = segue.destination as! AdminJobDetailsViewController
             vc.job = currentJob
         }
+        
     }
     
 
