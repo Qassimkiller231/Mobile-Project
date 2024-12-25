@@ -76,10 +76,27 @@ class AdminJobDetailsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "detailsToEditAboutUs" {
+            let vc = segue.destination as! adminJobDetailsOverlayViewController
+            vc.editTitle = "Edit About Us"
+            vc.editDescription = job!.company.aboutUs
+        }
+        if segue.identifier == "detailsToEditOffer" {
+            let vc = segue.destination as! adminJobDetailsOverlayViewController
+            vc.editTitle = "Edit Offer"
+            vc.editDescription = job!.offer
+        }
+        if segue.identifier == "detailsToEditDescription" {
+            let vc = segue.destination as! adminJobDetailsOverlayViewController
+            vc.editTitle = "Edit Description"
+            vc.editDescription = job!.jobDescription
+        }
         if segue.identifier == "detailsToHomepage" {
             let vc = segue.destination as! JobSeekerHomepageViewController
             vc.currentJob = job
         }
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
