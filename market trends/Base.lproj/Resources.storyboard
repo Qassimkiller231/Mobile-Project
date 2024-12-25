@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pt7-Ga-9If">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pt7-Ga-9If">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="16" y="103" width="361" height="646"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrI-WM-EQf">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="247.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="247.33333333333334"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: System Designer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CiZ-yN-9zx">
                                                 <rect key="frame" x="8" y="8" width="200" height="20"/>
@@ -142,7 +142,7 @@ It is 50% chance to be applied.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4321.3740458015263" y="14.788732394366198"/>
+            <point key="canvasLocation" x="5248.0916030534345" y="14.788732394366198"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="D32-v7-5IZ">
@@ -153,7 +153,7 @@ It is 50% chance to be applied.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="taM-VT-6tl">
-                                <rect key="frame" x="10" y="247" width="373" height="540"/>
+                                <rect key="frame" x="10" y="223" width="373" height="540"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-iw-tNW" userLabel="suggested career paths">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="180"/>
@@ -233,7 +233,7 @@ It is 50% chance to be applied.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curved button" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-Dm-qp6">
-                                                <rect key="frame" x="120.66666666666666" y="104.33333333333337" width="132" height="56"/>
+                                                <rect key="frame" x="120.66666666666666" y="104.33333333333331" width="132" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="Ee2-al-AMu"/>
                                                     <constraint firstAttribute="width" constant="132" id="ZA3-Wd-QvO"/>
@@ -362,7 +362,7 @@ It is 50% chance to be applied.</string>
                         <viewLayoutGuide key="safeArea" id="Obr-Qh-Tbd"/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="taM-VT-6tl" firstAttribute="top" secondItem="rog-rH-9S3" secondAttribute="bottom" constant="73.999999999999943" id="CJ5-wQ-HUn"/>
+                            <constraint firstItem="taM-VT-6tl" firstAttribute="top" secondItem="rog-rH-9S3" secondAttribute="bottom" constant="50" id="CJ5-wQ-HUn"/>
                             <constraint firstAttribute="trailing" secondItem="taM-VT-6tl" secondAttribute="trailing" constant="10" id="XAL-f9-sN5"/>
                             <constraint firstItem="rog-rH-9S3" firstAttribute="centerX" secondItem="VMb-lE-2Ut" secondAttribute="centerX" id="Y2a-5h-sM1"/>
                             <constraint firstItem="taM-VT-6tl" firstAttribute="leading" secondItem="VMb-lE-2Ut" secondAttribute="leading" constant="10" id="ns7-hy-8zx"/>
@@ -373,7 +373,7 @@ It is 50% chance to be applied.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2q-Ef-mws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1872.5190839694656" y="29.577464788732396"/>
+            <point key="canvasLocation" x="2799.2366412213742" y="29.577464788732396"/>
         </scene>
         <!--Suggested Paths-->
         <scene sceneID="kzW-7G-8U9">
@@ -393,14 +393,14 @@ It is 50% chance to be applied.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="trs-qi-m13">
-                                <rect key="frame" x="0.0" y="261" width="393" height="557"/>
+                                <rect key="frame" x="0.0" y="261" width="393" height="508"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionsCell" id="K68-Kb-GBj">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K68-Kb-GBj" id="Ija-WK-Eg9">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -429,7 +429,7 @@ It is 50% chance to be applied.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xX2-Ns-aPm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2614.5038167938928" y="14.788732394366198"/>
+            <point key="canvasLocation" x="3539.6946564885493" y="14.788732394366198"/>
         </scene>
         <!--Job Recommendations-->
         <scene sceneID="9gs-cn-uat">
@@ -523,12 +523,13 @@ It is 50% chance to be applied.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="se6-8s-tzv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367.1755725190837" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="4293.8931297709923" y="4.9295774647887329"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="TPV-ry-uik">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pt7-Ga-9If" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Nu8-No-mVQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdG-7o-5de">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -544,6 +545,23 @@ It is 50% chance to be applied.</string>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Eq-bR-LTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.5190839694656" y="29.577464788732396"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="N8s-bt-aqi">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8Yd-9m-ja1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hHN-q6-TqO">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pt7-Ga-9If" kind="relationship" relationship="viewControllers" id="pri-C9-foR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncQ-ZQ-oYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="945.80152671755718" y="29.577464788732396"/>
         </scene>

@@ -184,6 +184,12 @@ struct Section {
     var minSalary: Int? = nil // Minimum Salary (as an integer value)
     var maxSalary: Int? = nil // Maximum Salary (as an integer value)
 }
+struct Notifcation {
+    var notificationName: String
+    var notificationDescription: String
+    var notificationDate: String
+    var category: String
+}
 
 
 // MARK: Classes
@@ -207,11 +213,12 @@ class User {
         self.type = type
     }
 }
+
 class Profile: User {
     var profileImage: String
     var phoneNumber: String
     var location: String
-    
+    var notifications: [Notification] = []
     init(profileImage: String, phoneNumber: String, location: String, firstName: String, lastName: String, email: String, password: String, type: UserType) {
         self.profileImage = profileImage
         self.phoneNumber = phoneNumber
