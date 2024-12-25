@@ -19,6 +19,16 @@
             </objects>
             <point key="canvasLocation" x="2123" y="-429"/>
         </scene>
+        <!--adminAdvancedFilters-->
+        <scene sceneID="W4E-1Z-RtA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="adminAdvancedFilters" id="ZmO-Ab-DQq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2pf-gC-fjf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zag-yE-NKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2505" y="-379"/>
+        </scene>
         <!--Admin Home Page View Controller-->
         <scene sceneID="sSi-p2-mXv">
             <objects>
@@ -43,7 +53,7 @@
                                             <outlet property="delegate" destination="v5Z-Cv-6Bk" id="VUg-15-aFd"/>
                                         </connections>
                                     </searchBar>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.3.horizontal.decrease.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-mF-YVO">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.3.horizontal.decrease.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-mF-YVO">
                                         <rect key="frame" x="306" y="0.66666666666666785" width="55" height="53.666666666666657"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -51,7 +61,7 @@
                                             <constraint firstAttribute="width" constant="55" id="7sY-lK-opL"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="wBi-dP-Erx" appends="YES" id="2eg-eg-zIu"/>
+                                            <outletCollection property="gestureRecognizers" destination="VPH-bB-tKv" appends="YES" id="ONf-bb-iEr"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -107,7 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wel-3K-1Lo"/>
                     <connections>
-                        <outlet property="filterImage" destination="pKq-mF-YVO" id="HwG-1F-dGe"/>
+                        <outlet property="filterImage" destination="pKq-mF-YVO" id="LRh-YM-s63"/>
                         <outlet property="notificationImageView" destination="rwM-BD-uPt" id="JN5-rV-L3V"/>
                         <outlet property="searchBar" destination="Qob-z8-vys" id="xTr-BC-bVd"/>
                         <outlet property="tableView" destination="Trg-hl-GjD" id="VJZ-3Y-35W"/>
@@ -120,7 +130,11 @@
                         <segue destination="beo-p2-Zkx" kind="show" id="DQi-F5-nSo"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="wBi-dP-Erx" userLabel="profile tap"/>
+                <tapGestureRecognizer id="VPH-bB-tKv" userLabel="filter tap">
+                    <connections>
+                        <segue destination="ZmO-Ab-DQq" kind="show" id="GUR-vS-MRX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1761.0687022900763" y="3.5211267605633805"/>
         </scene>

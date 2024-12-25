@@ -10,10 +10,10 @@ import UIKit
 class AdminHomePageViewController: UIViewController, UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var filterImage: UIImageView!
     
     @IBOutlet weak var notificationImageView: UIImageView!
     
+    @IBOutlet weak var filterImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var currentJob:job?
     var displayedJobs:[job] = []

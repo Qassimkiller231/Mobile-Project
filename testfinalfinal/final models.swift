@@ -495,6 +495,14 @@ var jobs: [job] = [
         offer: "Opportunity to work on high-impact campaigns."
     )
 ]
+var adminSections : [Section] = [
+    Section(title: "Job Type", options: [jobTypes.fullTime.rawValue,jobTypes.partTime.rawValue]),
+    Section(title: "Industry",options: ["Software","Hardware","Finance","Healthcare","Education","Other"]),
+    Section(title: "Location",options: locations),
+    Section(title: "Experience level",options: ["Entry Level","Mid Level","Senior Level"]),
+    Section(title: "Work preference",options: ["Remote","On-site"])
+    
+]
 
 
 

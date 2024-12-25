@@ -45,12 +45,92 @@
                     <connections>
                         <outlet property="tableView" destination="1Ho-J2-tR3" id="ocR-zT-SqV"/>
                         <segue destination="DxX-KM-cLS" kind="unwind" identifier="unwindToHomepage" unwindAction="unwindToHomepage:" id="JLh-1w-J5g"/>
+                        <segue destination="J3X-UN-qpm" kind="show" identifier="AdminFilterToManageFilter" id="8v0-1G-MQT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfe-ou-jqR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="DxX-KM-cLS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="869" y="233"/>
+        </scene>
+        <!--Manage Filter View Controller-->
+        <scene sceneID="hKA-rf-ptn">
+            <objects>
+                <viewController id="J3X-UN-qpm" customClass="ManageFilterViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iaA-Ku-9Ju">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yBL-Vm-Uuz">
+                                <rect key="frame" x="0.0" y="89" width="393" height="395"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="395" id="yVr-ho-ioa"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionCell" id="Wh6-GK-4yX">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wh6-GK-4yX" id="yVw-R9-vlS">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfm-bU-7oM">
+                                <rect key="frame" x="38" y="631" width="97" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Type"/>
+                                <connections>
+                                    <action selector="addTypeButtonTapped:" destination="J3X-UN-qpm" eventType="touchUpInside" id="0RB-RC-qCK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ol-Yq-ceS">
+                                <rect key="frame" x="243" y="631" width="115" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete Type"/>
+                                <connections>
+                                    <action selector="deleteTypeButtonTapped:" destination="J3X-UN-qpm" eventType="touchUpInside" id="hxz-za-2YW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bzl-h7-fqv">
+                                <rect key="frame" x="182" y="732" width="133" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save Changes"/>
+                                <connections>
+                                    <action selector="saveChangesButtonTapped:" destination="J3X-UN-qpm" eventType="touchUpInside" id="1US-J5-RlZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edi-9x-djl">
+                                <rect key="frame" x="23" y="732" width="146" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete Changes"/>
+                                <connections>
+                                    <action selector="deleteChangesButtonTapped:" destination="J3X-UN-qpm" eventType="touchUpInside" id="QHg-SN-uH0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kDP-DF-9J9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yBL-Vm-Uuz" firstAttribute="top" secondItem="kDP-DF-9J9" secondAttribute="top" constant="89" id="bKz-WD-MgB"/>
+                            <constraint firstItem="yBL-Vm-Uuz" firstAttribute="leading" secondItem="kDP-DF-9J9" secondAttribute="leading" id="dII-6e-DhQ"/>
+                            <constraint firstItem="kDP-DF-9J9" firstAttribute="trailing" secondItem="yBL-Vm-Uuz" secondAttribute="trailing" id="zV7-DD-esA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JtW-EG-1i6"/>
+                    <connections>
+                        <outlet property="tableView" destination="yBL-Vm-Uuz" id="tDt-kw-Qdc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85r-Fu-MJL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="232"/>
         </scene>
     </scenes>
     <resources>
