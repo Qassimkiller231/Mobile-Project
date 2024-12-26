@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,7 +104,7 @@
                         <rect key="frame" x="33" y="15" width="306.33333333333331" height="30"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YN4-EF-XTl">
-                                <rect key="frame" x="0.0" y="-1.6666666666666679" width="19" height="31.666666666666668"/>
+                                <rect key="frame" x="0.0" y="-2.3333333333333321" width="19" height="32"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="85f-l6-Zeo">
                                 <rect key="frame" x="289" y="0.33333333333333215" width="17.333333333333314" height="29.666666666666668"/>
@@ -118,6 +118,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="a0f-Y7-4Ec" secondAttribute="trailing" id="1OX-fT-4xo"/>
                     <constraint firstItem="uCo-Xd-y0f" firstAttribute="top" secondItem="SJI-8f-3ha" secondAttribute="bottom" id="7yX-kh-aes"/>
@@ -162,6 +163,6 @@
     <resources>
         <image name="Large Card" width="398" height="227"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
-        <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
     </resources>
 </document>
