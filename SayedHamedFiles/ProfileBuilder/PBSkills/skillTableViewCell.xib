@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="skillTableViewCell" customModule="testfinalfinal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9j-Yf-ids">
+                        <rect key="frame" x="5" y="5" width="323.33333333333331" height="75"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textField" translatesAutoresizingMaskIntoConstraints="NO" id="D93-np-xgj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="aGc-OA-m29"/>
+                                    <constraint firstAttribute="width" constant="320" id="iuO-ht-gs4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Java Programming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-CB-dmb">
+                                <rect key="frame" x="13" y="8.6666666666666661" width="152.66666666666666" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: Expert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8g-eb-LfX">
+                                <rect key="frame" x="13" y="37" width="83.333333333333329" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="eBK-jH-Ndj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4o-yT-xSW">
+                                <rect key="frame" x="279" y="-5" width="44" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="e8K-uw-vSS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
+                                    <imageReference key="image" image="pencil" catalog="system" symbolScale="default"/>
+                                    <backgroundConfiguration key="background"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editSkillTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wSX-q7-sqa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lbI-CB-dmb" firstAttribute="top" secondItem="p9j-Yf-ids" secondAttribute="top" constant="8.6666666666666572" id="12U-xU-HDs"/>
+                            <constraint firstAttribute="bottom" secondItem="e4o-yT-xSW" secondAttribute="bottom" constant="40" id="Eai-3L-PA6"/>
+                            <constraint firstItem="e4o-yT-xSW" firstAttribute="top" secondItem="p9j-Yf-ids" secondAttribute="top" constant="-5" id="Ilb-DC-RbN"/>
+                            <constraint firstItem="D93-np-xgj" firstAttribute="top" secondItem="p9j-Yf-ids" secondAttribute="top" id="J10-Lx-4Rl"/>
+                            <constraint firstItem="lbI-CB-dmb" firstAttribute="centerX" secondItem="r8g-eb-LfX" secondAttribute="centerX" constant="34.666666666666671" id="JlN-6i-aKt"/>
+                            <constraint firstAttribute="height" constant="75" id="Nt4-mN-une"/>
+                            <constraint firstAttribute="bottom" secondItem="r8g-eb-LfX" secondAttribute="bottom" constant="21" id="PVw-WY-oEi"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r8g-eb-LfX" secondAttribute="trailing" constant="20" symbolic="YES" id="RR6-Zl-EDp"/>
+                            <constraint firstItem="e4o-yT-xSW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p9j-Yf-ids" secondAttribute="leading" constant="279" id="TyT-6t-iIk"/>
+                            <constraint firstItem="r8g-eb-LfX" firstAttribute="leading" secondItem="p9j-Yf-ids" secondAttribute="leading" constant="13" id="VSp-XG-Ybg"/>
+                            <constraint firstItem="lbI-CB-dmb" firstAttribute="leading" secondItem="p9j-Yf-ids" secondAttribute="leading" constant="13" id="czP-xW-4iB"/>
+                            <constraint firstItem="D93-np-xgj" firstAttribute="leading" secondItem="p9j-Yf-ids" secondAttribute="leading" id="e9P-rx-8Sc"/>
+                            <constraint firstAttribute="trailing" secondItem="e4o-yT-xSW" secondAttribute="trailing" constant="0.33333333333331439" id="hS4-ef-n02"/>
+                            <constraint firstItem="r8g-eb-LfX" firstAttribute="top" secondItem="lbI-CB-dmb" secondAttribute="bottom" constant="8" symbolic="YES" id="jJ5-jy-CaE"/>
+                            <constraint firstAttribute="trailing" secondItem="D93-np-xgj" secondAttribute="trailing" constant="3.3333333333333144" id="zFi-rU-3Jg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="p9j-Yf-ids" secondAttribute="bottom" constant="5" id="FBm-sh-bhx"/>
+                    <constraint firstItem="p9j-Yf-ids" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="JUS-Or-ByP"/>
+                    <constraint firstAttribute="trailing" secondItem="p9j-Yf-ids" secondAttribute="trailing" constant="5" id="SY1-V3-pLB"/>
+                    <constraint firstItem="p9j-Yf-ids" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="T9Y-Yx-qPg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="SkillLevelLabel" destination="r8g-eb-LfX" id="WLb-Kq-yz8"/>
+                <outlet property="SkillNameLabel" destination="lbI-CB-dmb" id="y7Z-bY-z5f"/>
+            </connections>
+            <point key="canvasLocation" x="59.541984732824424" y="33.098591549295776"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="textField" width="616" height="186"/>
+    </resources>
+</document>

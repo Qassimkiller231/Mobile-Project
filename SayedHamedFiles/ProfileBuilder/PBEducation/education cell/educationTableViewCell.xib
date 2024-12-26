@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="140" id="Xx2-qu-fgj" customClass="educationTableViewCell" customModule="testfinalfinal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xx2-qu-fgj" id="VGa-Ee-MAv">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pinkCard" translatesAutoresizingMaskIntoConstraints="NO" id="M81-yC-DzT">
+                        <rect key="frame" x="38" y="10" width="316" height="120"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High School Diploma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgE-Dt-5db">
+                        <rect key="frame" x="62" y="25" width="169" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="St John's High School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRq-lk-v61">
+                        <rect key="frame" x="70" y="55" width="259" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4b-Jw-QbX">
+                        <rect key="frame" x="301" y="10" width="44" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="o3m-4j-iif"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="wAC-RN-8Qh"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
+                            <imageReference key="image" image="pencil" catalog="system" symbolScale="default"/>
+                            <backgroundConfiguration key="background"/>
+                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="100"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="editButtonTapped:" destination="Xx2-qu-fgj" eventType="touchUpInside" id="fe2-od-Pns"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sep 2016 - Aug 2018 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-UE-fMD">
+                        <rect key="frame" x="70" y="79" width="259" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cRq-lk-v61" firstAttribute="top" secondItem="u4b-Jw-QbX" secondAttribute="bottom" constant="5" id="H6u-PH-zLn"/>
+                    <constraint firstItem="jgE-Dt-5db" firstAttribute="leading" secondItem="VGa-Ee-MAv" secondAttribute="leading" constant="62" id="KhU-Ip-wH9"/>
+                    <constraint firstAttribute="trailing" secondItem="cRq-lk-v61" secondAttribute="trailing" constant="64" id="N6W-Gp-Zuc"/>
+                    <constraint firstItem="u4b-Jw-QbX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jgE-Dt-5db" secondAttribute="trailing" constant="70" id="NK6-qT-WtX"/>
+                    <constraint firstAttribute="bottom" secondItem="dAq-UE-fMD" secondAttribute="bottom" constant="44" id="NNd-AZ-oag"/>
+                    <constraint firstItem="dAq-UE-fMD" firstAttribute="leading" secondItem="VGa-Ee-MAv" secondAttribute="leading" constant="70" id="S01-bk-Hcg"/>
+                    <constraint firstItem="jgE-Dt-5db" firstAttribute="top" secondItem="VGa-Ee-MAv" secondAttribute="top" constant="25" id="eWA-tO-zt8"/>
+                    <constraint firstItem="dAq-UE-fMD" firstAttribute="top" secondItem="cRq-lk-v61" secondAttribute="bottom" constant="7" id="iFy-2s-8W5"/>
+                    <constraint firstAttribute="trailing" secondItem="u4b-Jw-QbX" secondAttribute="trailing" constant="48" id="l71-fq-N98"/>
+                    <constraint firstAttribute="trailing" secondItem="dAq-UE-fMD" secondAttribute="trailing" constant="64" id="onb-FY-3W9"/>
+                    <constraint firstItem="cRq-lk-v61" firstAttribute="top" secondItem="u4b-Jw-QbX" secondAttribute="bottom" constant="5" id="r9O-vN-7sk"/>
+                    <constraint firstItem="u4b-Jw-QbX" firstAttribute="top" secondItem="VGa-Ee-MAv" secondAttribute="top" constant="10" id="sRy-ps-0lZ"/>
+                    <constraint firstItem="cRq-lk-v61" firstAttribute="leading" secondItem="VGa-Ee-MAv" secondAttribute="leading" constant="70" id="w4g-2V-0zB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="editButton" destination="u4b-Jw-QbX" id="KYq-H6-2oC"/>
+                <outlet property="educationDatesLabel" destination="dAq-UE-fMD" id="XAY-Yr-bRf"/>
+                <outlet property="educationFacilityCityLabel" destination="cRq-lk-v61" id="OlQ-Yd-QaX"/>
+                <outlet property="educationLevelLabel" destination="jgE-Dt-5db" id="lHg-2e-Nu5"/>
+            </connections>
+            <point key="canvasLocation" x="61.832061068702288" y="-15.492957746478874"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="pinkCard" width="316" height="101"/>
+    </resources>
+</document>
