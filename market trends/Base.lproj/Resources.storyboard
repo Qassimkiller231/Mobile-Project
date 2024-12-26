@@ -12,133 +12,26 @@
         <!--Employer Insights-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="page4ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EmployerInsightsViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e5B-y0-ojX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="QZD-SY-chs">
-                                <rect key="frame" x="16" y="103" width="361" height="646"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrI-WM-EQf">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="247.33333333333334"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: System Designer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CiZ-yN-9zx">
-                                                <rect key="frame" x="8" y="8" width="200" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eFQ-of-6KK">
-                                                <rect key="frame" x="8" y="37.000000000000014" width="338" height="61"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">Insights: 50 other applicants also applied.
-Your application is in the top 10% compared 
-to other applicants.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="CiZ-yN-9zx" firstAttribute="leading" secondItem="UrI-WM-EQf" secondAttribute="leading" constant="8" id="pgv-hK-Mj5"/>
-                                            <constraint firstItem="CiZ-yN-9zx" firstAttribute="top" secondItem="UrI-WM-EQf" secondAttribute="top" constant="8" id="rba-PE-HS8"/>
-                                        </constraints>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vA-5a-ljH">
-                                        <rect key="frame" x="0.0" y="307.33333333333331" width="361" height="145"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: Software Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEH-QP-yW8">
-                                                <rect key="frame" x="8" y="8.6666666666666838" width="200.66666666666666" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJi-ha-FXB">
-                                                <rect key="frame" x="8" y="37" width="334" height="41"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="41" id="Sl6-1m-rOm"/>
-                                                </constraints>
-                                                <string key="text">Insights: 30 other applicants have applied.
-Consider applying to improve your chances.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zEH-QP-yW8" secondAttribute="trailing" constant="20" symbolic="YES" id="6Ia-tq-j2q"/>
-                                            <constraint firstItem="FJi-ha-FXB" firstAttribute="leading" secondItem="zEH-QP-yW8" secondAttribute="leading" id="gvE-Vk-Pov"/>
-                                            <constraint firstItem="FJi-ha-FXB" firstAttribute="top" secondItem="zEH-QP-yW8" secondAttribute="bottom" constant="8" id="m6p-c4-68e"/>
-                                            <constraint firstAttribute="trailing" secondItem="FJi-ha-FXB" secondAttribute="trailing" constant="19" id="u39-xw-Q1w"/>
-                                            <constraint firstAttribute="bottom" secondItem="FJi-ha-FXB" secondAttribute="bottom" constant="67" id="uhx-Mw-vS2"/>
-                                            <constraint firstItem="FJi-ha-FXB" firstAttribute="leading" secondItem="9vA-5a-ljH" secondAttribute="leadingMargin" id="vRq-Ak-9Dx"/>
-                                        </constraints>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKU-Xj-ef0">
-                                        <rect key="frame" x="0.0" y="512.33333333333337" width="361" height="133.66666666666663"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-hZ-lcd">
-                                                <rect key="frame" x="8" y="29" width="315.66666666666669" height="41"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="41" id="uJX-4o-e54"/>
-                                                </constraints>
-                                                <string key="text">Insights: 20 other applicants also applied.
-It is 50% chance to be applied.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job: UX Designer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft6-z5-kHn">
-                                                <rect key="frame" x="8" y="8.666666666666627" width="141.66666666666666" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ft6-z5-kHn" secondAttribute="trailing" constant="20" symbolic="YES" id="Dh2-dW-622"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EGO-hZ-lcd" secondAttribute="trailing" symbolic="YES" id="Gdf-EX-Z4e"/>
-                                            <constraint firstItem="EGO-hZ-lcd" firstAttribute="top" secondItem="ft6-z5-kHn" secondAttribute="bottom" id="ITt-CY-NuF"/>
-                                            <constraint firstItem="EGO-hZ-lcd" firstAttribute="leading" secondItem="ft6-z5-kHn" secondAttribute="leading" id="KAW-k0-0EP"/>
-                                            <constraint firstItem="EGO-hZ-lcd" firstAttribute="leading" secondItem="VKU-Xj-ef0" secondAttribute="leadingMargin" id="drQ-zu-XB4"/>
-                                            <constraint firstAttribute="bottom" secondItem="EGO-hZ-lcd" secondAttribute="bottom" constant="63.666666666666629" id="p2u-U9-4HZ"/>
-                                        </constraints>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="UrI-WM-EQf" firstAttribute="trailing" secondItem="VKU-Xj-ef0" secondAttribute="trailing" id="0EJ-Hg-jXL"/>
-                                    <constraint firstItem="9vA-5a-ljH" firstAttribute="centerX" secondItem="VKU-Xj-ef0" secondAttribute="centerX" id="aO1-1b-UnB"/>
-                                    <constraint firstItem="9vA-5a-ljH" firstAttribute="top" secondItem="UrI-WM-EQf" secondAttribute="bottom" constant="60" id="hft-vF-FM4"/>
-                                    <constraint firstItem="VKU-Xj-ef0" firstAttribute="top" secondItem="QZD-SY-chs" secondAttribute="top" constant="512.33333333333348" id="lpJ-nH-paS"/>
-                                    <constraint firstItem="9vA-5a-ljH" firstAttribute="trailing" secondItem="QZD-SY-chs" secondAttribute="trailingMargin" id="nNa-S8-vKX"/>
-                                    <constraint firstItem="9vA-5a-ljH" firstAttribute="top" secondItem="QZD-SY-chs" secondAttribute="top" constant="307.33333333333331" id="us3-MD-OJx"/>
-                                    <constraint firstItem="VKU-Xj-ef0" firstAttribute="top" secondItem="9vA-5a-ljH" secondAttribute="bottom" constant="60" id="xsw-uH-kVr"/>
-                                </constraints>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="77f-8i-WIK">
+                                <rect key="frame" x="0.0" y="153" width="393" height="665"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BC9-BY-yW0"/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QZD-SY-chs" firstAttribute="centerX" secondItem="e5B-y0-ojX" secondAttribute="centerX" id="159-nH-Nxm"/>
-                            <constraint firstItem="QZD-SY-chs" firstAttribute="centerY" secondItem="e5B-y0-ojX" secondAttribute="centerY" id="3Np-i5-R2m"/>
-                            <constraint firstItem="QZD-SY-chs" firstAttribute="leading" secondItem="e5B-y0-ojX" secondAttribute="leadingMargin" id="hpp-qm-A3L"/>
-                            <constraint firstItem="QZD-SY-chs" firstAttribute="top" secondItem="BC9-BY-yW0" secondAttribute="top" id="mr1-ZB-i83"/>
+                            <constraint firstItem="77f-8i-WIK" firstAttribute="top" secondItem="BC9-BY-yW0" secondAttribute="top" constant="50" id="5kD-OY-Lq9"/>
+                            <constraint firstItem="BC9-BY-yW0" firstAttribute="trailing" secondItem="77f-8i-WIK" secondAttribute="trailing" id="jGS-pj-gUu"/>
+                            <constraint firstItem="BC9-BY-yW0" firstAttribute="bottom" secondItem="77f-8i-WIK" secondAttribute="bottom" id="uaT-uh-c3D"/>
+                            <constraint firstItem="77f-8i-WIK" firstAttribute="leading" secondItem="BC9-BY-yW0" secondAttribute="leading" id="vGY-i7-9s1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Employer Insights" id="y2E-Ls-Rde"/>
-                    <connections>
-                        <outlet property="View1" destination="UrI-WM-EQf" id="c9P-RX-2Bj"/>
-                        <outlet property="View2" destination="9vA-5a-ljH" id="DT9-cM-iqK"/>
-                        <outlet property="View3" destination="VKU-Xj-ef0" id="cFN-sC-xg9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

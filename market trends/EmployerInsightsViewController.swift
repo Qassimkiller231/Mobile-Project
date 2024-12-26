@@ -7,7 +7,7 @@
 
 import UIKit
 
-class page4ViewController: UIViewController {
+class EmployerInsightsViewController: UIViewController {
 
     @IBOutlet weak var View2: UIView!
     @IBOutlet weak var View1: UIView!
