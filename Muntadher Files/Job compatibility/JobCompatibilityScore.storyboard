@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0la-PJ-mEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4367" y="-406"/>
+            <point key="canvasLocation" x="5292.3664122137407" y="-406.33802816901408"/>
         </scene>
         <!--Tracker History View Controller-->
         <scene sceneID="Jok-mr-2AA">
@@ -180,7 +180,7 @@ History</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ch0-Df-Vu0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809.9236641221373" y="-703.52112676056345"/>
+            <point key="canvasLocation" x="3736.6412213740455" y="-703.52112676056345"/>
         </scene>
         <!--Check Compatibility View Controller-->
         <scene sceneID="zcb-cr-ty4">
@@ -271,7 +271,7 @@ Compatability</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OlK-cJ-0MD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3457.2519083969464" y="-50"/>
+            <point key="canvasLocation" x="4383.9694656488546" y="-50"/>
         </scene>
         <!--Job Comp View-->
         <scene sceneID="c4W-Tf-xcK">
@@ -354,7 +354,9 @@ Compatability</string>
         <scene sceneID="r20-by-Kbj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="2Qr-dN-C5s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="web logo 2" id="9Td-Np-2QW"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="newspaper" catalog="system" id="9Td-Np-2QW">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NJ3-fH-EKw">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -367,7 +369,7 @@ Compatability</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOX-jC-NSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797.709923664122" y="-633.09859154929586"/>
+            <point key="canvasLocation" x="2724.4274809160306" y="-633.09859154929586"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -376,7 +378,7 @@ Compatability</string>
     <resources>
         <image name="Compatability boxes" width="372" height="636"/>
         <image name="Square button" width="369" height="174"/>
-        <image name="web logo 2" width="89" height="41"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

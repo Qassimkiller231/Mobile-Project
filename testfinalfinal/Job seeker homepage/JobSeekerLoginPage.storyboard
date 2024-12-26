@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuf-eQ-6ix">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuf-eQ-6ix">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,7 +36,8 @@
                                 <rect key="frame" x="16" y="103" width="361" height="55"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oup-hh-NGF">
-                                        <rect key="frame" x="0.0" y="0.66666666666666785" width="55" height="53.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="1" width="55" height="53.666666666666671"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="svf-or-3fe"/>
                                         </constraints>
@@ -49,7 +50,8 @@
                                         </connections>
                                     </searchBar>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.3.horizontal.decrease.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pHq-co-jdm">
-                                        <rect key="frame" x="306" y="0.66666666666666785" width="55" height="53.666666666666657"/>
+                                        <rect key="frame" x="306" y="1" width="55" height="53.666666666666671"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="BWu-iU-zXW"/>
@@ -70,7 +72,8 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wbb-20-CyN">
                                         <rect key="frame" x="0.0" y="0.66666666666666607" width="30" height="29"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
                                         </accessibility>
@@ -100,6 +103,8 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-rI-rZd">
                                         <rect key="frame" x="0.0" y="0.33333333333333215" width="25" height="24.666666666666668"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
                                         </accessibility>
@@ -131,7 +136,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0Nu-TJ-Y1H" firstAttribute="top" secondItem="S1T-ub-Bv4" secondAttribute="bottom" id="0DG-FL-Y0O"/>
                             <constraint firstItem="DYZ-uJ-wMc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="92p-94-naX"/>
@@ -226,12 +231,12 @@
             </objects>
             <point key="canvasLocation" x="3436" y="58"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="E6a-GZ-4Rn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="2SG-kU-Slw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="bell icon" id="CBD-8a-LcC">
-                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="CBD-8a-LcC">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3xo-6U-d48">
@@ -252,13 +257,13 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="xuf-eQ-6ix" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k8F-Pn-B1Z">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="bell icon" id="k8F-Pn-B1Z">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.56470588235294117" green="0.10980392156862745" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="2SG-kU-Slw" kind="relationship" relationship="viewControllers" id="ieL-SP-tRQ"/>
@@ -275,7 +280,7 @@
         <scene sceneID="bml-Dl-sEa">
             <objects>
                 <viewControllerPlaceholder storyboardName="CareerResource" id="Lgu-VV-vw4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="69R-iK-vIg"/>
+                    <tabBarItem key="tabBarItem" title="Career Resourse" image="Icon" id="69R-iK-vIg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q94-yp-sYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,8 +300,9 @@
         <scene sceneID="KTe-Zb-kpA">
             <objects>
                 <viewControllerPlaceholder storyboardName="JobCompatibilityScore" id="Sgw-jE-wKH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="web logo 2" id="Y2l-XD-5ed">
-                        <imageReference key="selectedImage" image="trash" catalog="system" symbolScale="small"/>
+                    <tabBarItem key="tabBarItem" image="newspaper" catalog="system" id="Y2l-XD-5ed">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <imageReference key="selectedImage" image="newspaper" catalog="system" symbolScale="small"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPD-4Q-aK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -504,25 +510,26 @@
     </scenes>
     <resources>
         <image name="Double Button" width="268" height="58"/>
+        <image name="Icon" width="48" height="28"/>
         <image name="Poly Logo" width="89" height="41"/>
         <image name="Purple Bar" width="402" height="80"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="bell icon" width="37" height="51"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="card collection" width="277" height="377"/>
+        <image name="house" catalog="system" width="128" height="104"/>
         <image name="icon (1)" width="33" height="35"/>
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <image name="trash" catalog="system" width="117" height="128"/>
-        <image name="web logo 2" width="89" height="41"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
