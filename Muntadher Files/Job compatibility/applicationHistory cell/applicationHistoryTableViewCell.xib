@@ -49,6 +49,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="tintColor" systemColor="labelColor"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -60,7 +61,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="tintColor" systemColor="labelColor"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="pYC-Ye-RSr" secondAttribute="trailing" id="dno-iw-nbf"/>
                     <constraint firstItem="pYC-Ye-RSr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eel-Pa-geH"/>
@@ -69,6 +70,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" systemColor="labelColor"/>
             <connections>
                 <outlet property="applicationNameLabel" destination="XL3-FL-v8Z" id="eAC-0F-q0x"/>
                 <outlet property="applicationStatusLabel" destination="EdA-h1-G5M" id="3Cc-u5-wMI"/>

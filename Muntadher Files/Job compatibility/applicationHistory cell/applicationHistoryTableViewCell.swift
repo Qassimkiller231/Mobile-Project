@@ -36,7 +36,7 @@ class applicationHistoryTableViewCell: UITableViewCell {
             containerView.layer.masksToBounds = false // Allow shadow to extend beyond bounds
             
             // Set a background color for the container
-        containerView.backgroundColor = UIColor.blue // or your desired color
+        containerView.backgroundColor = UIColor.purple // or your desired color
             
             // Add shadow properties
             containerView.layer.shadowColor = UIColor.black.cgColor // Shadow color
