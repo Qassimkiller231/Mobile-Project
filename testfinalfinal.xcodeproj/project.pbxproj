@@ -53,7 +53,7 @@
 		6E74DC532D17FDAB00F0B84E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74DC502D17FDAB00F0B84E /* Resources.storyboard */; };
 		6E74DC542D17FDAB00F0B84E /* resourceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */; };
 		6E74DC552D17FDAB00F0B84E /* page4ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */; };
-		6E74DC562D17FDAB00F0B84E /* page3ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */; };
+		6E74DC562D17FDAB00F0B84E /* JobRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */; };
 		6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */; };
 		6EC4411A2D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */; };
 		6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */; };
@@ -74,6 +74,8 @@
 		6ED001782D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED001762D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib */; };
 		6ED001792D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED001752D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift */; };
 		6ED0017B2D1B7DB100644B5A /* AdminJobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */; };
+		6ED1CDF52D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1CDF32D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift */; };
+		6ED1CDF62D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED1CDF42D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib */; };
 		6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */; };
 		6EE720482D0F906000E2801B /* JobSeekerHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */; };
 		6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */; };
@@ -150,7 +152,7 @@
 		6E74DC342D16158300F0B84E /* JobListing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobListing.storyboard; sourceTree = "<group>"; };
 		6E74DC382D16158300F0B84E /* notificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsView.swift; sourceTree = "<group>"; };
 		6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page2ViewController 2.swift"; sourceTree = "<group>"; };
-		6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page3ViewController 2.swift"; sourceTree = "<group>"; };
+		6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRecommendationViewController.swift; sourceTree = "<group>"; };
 		6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page4ViewController 2.swift"; sourceTree = "<group>"; };
 		6E74DC4F2D17FDAB00F0B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
 		6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceMainViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,8 @@
 		6ED001752D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminJobListingCardTableViewCell.swift; sourceTree = "<group>"; };
 		6ED001762D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminJobListingCardTableViewCell.xib; sourceTree = "<group>"; };
 		6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminJobDetailsViewController.swift; sourceTree = "<group>"; };
+		6ED1CDF32D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRecommendationsTableViewCell.swift; sourceTree = "<group>"; };
+		6ED1CDF42D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobRecommendationsTableViewCell.xib; sourceTree = "<group>"; };
 		6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobSeekerLoginPage.storyboard; sourceTree = "<group>"; };
 		6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeekerHomepageViewController.swift; sourceTree = "<group>"; };
 		6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -385,8 +389,9 @@
 			isa = PBXGroup;
 			children = (
 				6ED0012E2D18003500644B5A /* suggestedPathTableViewCell */,
+				6ED1CDF72D1CCB7500912AC0 /* Job Recommendations cell */,
 				6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */,
-				6E74DC4D2D17FDAB00F0B84E /* page3ViewController 2.swift */,
+				6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */,
 				6E74DC4E2D17FDAB00F0B84E /* page4ViewController 2.swift */,
 				6E74DC502D17FDAB00F0B84E /* Resources.storyboard */,
 				6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */,
@@ -490,6 +495,15 @@
 				6ED001762D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib */,
 			);
 			path = "admin Job listing view cell";
+			sourceTree = "<group>";
+		};
+		6ED1CDF72D1CCB7500912AC0 /* Job Recommendations cell */ = {
+			isa = PBXGroup;
+			children = (
+				6ED1CDF32D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift */,
+				6ED1CDF42D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib */,
+			);
+			path = "Job Recommendations cell";
 			sourceTree = "<group>";
 		};
 		AC2435712D05C1B700B21510 = {
@@ -678,6 +692,7 @@
 				6E74DC3D2D16158300F0B84E /* JobCompatibilityScore.storyboard in Resources */,
 				6E74DC3E2D16158300F0B84E /* AdminResource.storyboard in Resources */,
 				6E74DC402D16158300F0B84E /* DropDownTableViewCell.xib in Resources */,
+				6ED1CDF62D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib in Resources */,
 				6ED0013E2D18391A00644B5A /* applicationHistoryTableViewCell.xib in Resources */,
 				6E74DC0F2D14D50000F0B84E /* ArticleTableViewCell.xib in Resources */,
 				6ED001372D1827D500644B5A /* NotifcationTableViewCell.xib in Resources */,
@@ -742,7 +757,8 @@
 				6E74DC542D17FDAB00F0B84E /* resourceMainViewController.swift in Sources */,
 				6E74DC552D17FDAB00F0B84E /* page4ViewController 2.swift in Sources */,
 				6ED001412D197C1500644B5A /* Tracker&HistoryViewController.swift in Sources */,
-				6E74DC562D17FDAB00F0B84E /* page3ViewController 2.swift in Sources */,
+				6E74DC562D17FDAB00F0B84E /* JobRecommendationViewController.swift in Sources */,
+				6ED1CDF52D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift in Sources */,
 				6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */,
 				6E74DC1F2D15D80800F0B84E /* WebinarTableViewCell.swift in Sources */,
 				6E74DBE32D10BE2900F0B84E /* SalaryInputCell.swift in Sources */,

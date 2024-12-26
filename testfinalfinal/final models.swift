@@ -503,6 +503,7 @@ var adminSections : [Section] = [
     Section(title: "Work preference",options: ["Remote","On-site"])
     
 ]
+var jobRecommendations : [job] = jobs
 
 
 

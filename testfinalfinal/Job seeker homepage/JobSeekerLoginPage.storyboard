@@ -264,7 +264,7 @@
                         <segue destination="2SG-kU-Slw" kind="relationship" relationship="viewControllers" id="ieL-SP-tRQ"/>
                         <segue destination="Lgu-VV-vw4" kind="relationship" relationship="viewControllers" id="f7z-xU-NEk"/>
                         <segue destination="Sgw-jE-wKH" kind="relationship" relationship="viewControllers" id="1T1-nT-c5W"/>
-                        <segue destination="cZ2-4m-hP7" kind="relationship" relationship="viewControllers" id="mOW-SK-nb2"/>
+                        <segue destination="cZ2-4m-hP7" kind="relationship" relationship="viewControllers" id="hiE-3c-TQf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSh-9D-B4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -285,7 +285,7 @@
         <scene sceneID="k29-Gp-DIT">
             <objects>
                 <viewControllerPlaceholder storyboardName="Resources" id="cZ2-4m-hP7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="LOGO 3" id="zaM-GF-PYr"/>
+                    <tabBarItem key="tabBarItem" title="resources" image="icon (1)" id="zaM-GF-PYr"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZc-uJ-PtU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -504,13 +504,13 @@
     </scenes>
     <resources>
         <image name="Double Button" width="268" height="58"/>
-        <image name="LOGO 3" width="186" height="186"/>
         <image name="Poly Logo" width="89" height="41"/>
         <image name="Purple Bar" width="402" height="80"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="bell icon" width="37" height="51"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="card collection" width="277" height="377"/>
+        <image name="icon (1)" width="33" height="35"/>
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="trash" catalog="system" width="117" height="128"/>
