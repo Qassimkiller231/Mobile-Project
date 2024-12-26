@@ -41,7 +41,7 @@ class experienceTableViewCell: UITableViewCell {
     
     func configure(with experience: Experience){
         JobTitleLabel.text = experience.jobTitle
-        CompanyLabel.text = experience.companyName
+        CompanyLabel.text = experience.companyname
         DateLabel.text = "\(experience.startDate) - \(experience.endDate)"
         cityLabel.text = experience.city
         selectedExperience = experience

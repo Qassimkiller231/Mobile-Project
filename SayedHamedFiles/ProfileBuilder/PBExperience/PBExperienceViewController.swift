@@ -24,9 +24,9 @@ class PBExperienceViewController: UIViewController, UITableViewDelegate, UITable
         experienceTableView.dataSource = self
         experienceTableView.register(experienceTableViewCell.nib(), forCellReuseIdentifier: experienceTableViewCell.identifier)  // Register Experience cell
         
-        if jobSeeker?.experiences.isEmpty == true {
+        if jobSeeker?.experiences?.isEmpty == true {
             //add sample experience
-            jobSeeker?.experiences.append(Experience(jobTitle: "Master", companyName: "Life", startDate: "13/07/2004", endDate: "23/12/2024", city: "EveryWhere"))
+            jobSeeker?.experiences?.append(Experience(jobTitle: "Master", companyname: "Life", startDate: "13/07/2004", endDate: "23/12/2024", city: "EveryWhere"))
         }
         
         experienceTableView.reloadData()
@@ -35,12 +35,12 @@ class PBExperienceViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobSeeker?.experiences.count ?? 0
+        return jobSeeker?.experiences?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceTableViewCell", for: indexPath) as! experienceTableViewCell
-        let experience = jobSeeker?.experiences[indexPath.row]  // Get the experience object from the jobSeeker
+        let experience = jobSeeker?.experiences?[indexPath.row]  // Get the experience object from the jobSeeker
         cell.configure(with: experience!)
         cell.delegate = self  // Set the delegate for the cell to the current controller
         return cell

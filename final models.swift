@@ -56,27 +56,27 @@ var locations : [String] = [
 
 
 // MARK: Structs
-struct Education {
-    var educationFaculty: String
+struct Education: Equatable {
+    var educationFacility: String
     var educationLevel: String
     var degree: String
-    var startYear: Int
-    var endYear: Int
+    var startDate: String
+    var endDate: String
     var city: String
     
 }
-struct Experience {
+struct Experience: Equatable {
     var jobTitle: String
     var companyname: String
-    var startYear: Int
-    var endYear: Int
+    var startDate: String
+    var endDate: String
     var city: String
     
 }
 
 struct Skill {
-    var skillName: SkillNames
-    var skillLevel: Int
+    var skillName: String
+    var skillLevel: String
 }
 struct CareerPath{
     var interests: [String]
@@ -117,13 +117,13 @@ struct Test {
 }
 struct application {
     var dateOfApplication: Date
-    var profile: Profile
+    var jobSeeker: JobSeeker
     var isShortlisted: Bool = false
     var interview: Interview?
     var status: applicationStatus = .pending
 }
 struct Interview {
-    var interviewDate: Date
+    var interviewDate: String
     var interviewTime: String
     var nameOfIntervieweed: String
 }
@@ -195,7 +195,7 @@ struct Notifcation {
 // MARK: Classes
 
 
-class User {
+class AppUser {
     static var IDS = 1
     var userID: Int
     var firstName: String
@@ -204,8 +204,8 @@ class User {
     var password: String
     var type: UserType
     init(firstName: String, lastName: String, email: String, password: String, type: UserType) {
-        self.userID = User.IDS
-        User.IDS += 1
+        self.userID = AppUser.IDS
+        AppUser.IDS += 1
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -214,7 +214,7 @@ class User {
     }
 }
 
-class Profile: User {
+class Profile: AppUser {
     var profileImage: String
     var phoneNumber: String
     var location: String
@@ -373,7 +373,7 @@ var tableData: [table] = [
 ]
 
 var companySample = Company(companyName: "Bahrain Polytechnic",industry: "IT", website: "no website", aboutUs: "this is Bahrain Polytechnic", firstName: "Ghassan", lastName: "Alshajjar", email: "Qassimahmed231@gmail.com", password: "1319", type: .employer, profileImage: "no", phoneNumber: "35140480", location: "Aali")
-var JobSeekerSample = JobSeeker(personalSummary: "this is my summary, i am a slave to my master", educations: [Education(educationFaculty: "ABG", educationLevel: "highSchool", degree: "highschool", startYear: 2010, endYear: 2022, city: "JidHafs")], experiences: nil, skills: nil, preferences: nil, cv: "idk", suggestedCareerPaths: nil, firstName: "Sayed Hamed", lastName: "idk", email: "SayedHamed2004@gmail.com", password: "slave", type: .jobSeeker, profileImage: "noimage", phoneNumber: "idk his phone num", location: "i forgot the location")
+var JobSeekerSample = JobSeeker(personalSummary: "this is my summary, i am a slave to my master", educations: [Education(educationFacility: "ABG", educationLevel: "highSchool", degree: "highschool", startDate:"11/06/2004", endDate:"25/12/2024", city: "JidHafs")], experiences: nil, skills: nil, preferences: nil, cv: "idk", suggestedCareerPaths: nil, firstName: "Sayed Hamed", lastName: "idk", email: "SayedHamed2004@gmail.com", password: "slave", type: .jobSeeker, profileImage: "noimage", phoneNumber: "idk his phone num", location: "i forgot the location")
 
 
 var sections: [Section] = [

@@ -29,7 +29,7 @@ class ManageEducationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Job Seeker in TVC: \(jobSeeker?.educations.count ?? 0)")
+        print("Job Seeker in TVC: \(jobSeeker?.educations?.count ?? 0)")
         print("Is editing education in TVC: \(isEditingEducation)")
         print("Education to edit in TVC: \(educationToEdit?.educationFacility ?? "None")")
     }

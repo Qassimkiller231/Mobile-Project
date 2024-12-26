@@ -46,9 +46,9 @@ class applicationTableViewCell: UITableViewCell {
         applicantName.text = "\(application.jobSeeker.firstName) \(application.jobSeeker.lastName)"
 
         // Determining current title (ongoing job or last job)
-        if let ongoingExperience = application.jobSeeker.experiences.first(where: { $0.endDate.lowercased() == "ongoing" }) {
+        if let ongoingExperience = application.jobSeeker.experiences?.first(where: { $0.endDate.lowercased() == "ongoing" }) {
             currentTitle.text = ongoingExperience.jobTitle
-        } else if let lastJob = application.jobSeeker.experiences.sorted(by: { (exp1, exp2) -> Bool in
+        } else if let lastJob = application.jobSeeker.experiences?.sorted(by: { (exp1, exp2) -> Bool in
             guard let date1 = df.date(from: exp1.endDate),
                   let date2 = df.date(from: exp2.endDate) else { return false }
             return date1 > date2
@@ -61,8 +61,8 @@ class applicationTableViewCell: UITableViewCell {
         // Calculating total years of experience
             var totalExperience: Double = 0
 
-            if !application.jobSeeker.experiences.isEmpty {
-                for experience in application.jobSeeker.experiences {
+        if application.jobSeeker.experiences != nil  {
+                for experience in application.jobSeeker.experiences! {
                     if let startDate = df.date(from: experience.startDate),
                        let endDate = experience.endDate.lowercased() == "ongoing"
                         ? Date()
