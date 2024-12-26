@@ -32,6 +32,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Employer Insights" id="y2E-Ls-Rde"/>
+                    <connections>
+                        <outlet property="tableView" destination="77f-8i-WIK" id="YPd-dD-1SE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

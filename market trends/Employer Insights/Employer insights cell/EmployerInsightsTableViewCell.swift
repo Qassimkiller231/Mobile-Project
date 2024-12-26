@@ -8,7 +8,14 @@
 import UIKit
 
 class EmployerInsightsTableViewCell: UITableViewCell {
-
+    static var identifier = "EmployerInsightsTableViewCell"
+    static func nib() -> UINib {
+        UINib(nibName: "EmployerInsightsTableViewCell", bundle: nil)
+    }
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    @IBOutlet weak var jobDescriptionLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +25,11 @@ class EmployerInsightsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func configure(with model: job) {
+        jobTitleLabel.text = model.jobTitle
+        jobDescriptionLabel.text = model.jobDescription
+        
     }
     
 }

@@ -504,7 +504,7 @@ var adminSections : [Section] = [
     
 ]
 var jobRecommendations : [job] = jobs
-
+var employerInsights : [job] = jobs
 
 
 //

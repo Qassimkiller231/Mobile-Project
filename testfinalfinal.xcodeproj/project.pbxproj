@@ -231,13 +231,22 @@
 			path = cell12;
 			sourceTree = "<group>";
 		};
-		6E4BE2812D1D4D760054B3AC /* Employer insights data */ = {
+		6E4BE2812D1D4D760054B3AC /* Employer insights cell */ = {
 			isa = PBXGroup;
 			children = (
 				6E4BE27D2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift */,
 				6E4BE27E2D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib */,
 			);
-			path = "Employer insights data";
+			path = "Employer insights cell";
+			sourceTree = "<group>";
+		};
+		6E4BE2822D1D5FFC0054B3AC /* Employer Insights */ = {
+			isa = PBXGroup;
+			children = (
+				6E4BE2812D1D4D760054B3AC /* Employer insights cell */,
+				6E74DC4E2D17FDAB00F0B84E /* EmployerInsightsViewController.swift */,
+			);
+			path = "Employer Insights";
 			sourceTree = "<group>";
 		};
 		6E74DBD02D10272F00F0B84E /* Employer Home page */ = {
@@ -403,10 +412,9 @@
 			children = (
 				6ED0012E2D18003500644B5A /* suggestedPathTableViewCell */,
 				6ED1CDF72D1CCB7500912AC0 /* Job Recommendations cell */,
-				6E4BE2812D1D4D760054B3AC /* Employer insights data */,
+				6E4BE2822D1D5FFC0054B3AC /* Employer Insights */,
 				6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */,
 				6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */,
-				6E74DC4E2D17FDAB00F0B84E /* EmployerInsightsViewController.swift */,
 				6E74DC502D17FDAB00F0B84E /* Resources.storyboard */,
 				6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */,
 			);
@@ -524,11 +532,12 @@
 			isa = PBXGroup;
 			children = (
 				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
+				6E74DBE72D14423300F0B84E /* final models.swift */,
 				6E74DC522D17FDAB00F0B84E /* market trends */,
+				AC24357C2D05C1B700B21510 /* testfinalfinal */,
 				6E74DC392D16158300F0B84E /* Muntadher Files */,
 				6E74DBFE2D14CB9100F0B84E /* Career Resources */,
 				6E74DBF52D149D0900F0B84E /* Salary Estimator  */,
-				AC24357C2D05C1B700B21510 /* testfinalfinal */,
 				AC2435932D05C1BB00B21510 /* testfinalfinalTests */,
 				AC24359D2D05C1BB00B21510 /* testfinalfinalUITests */,
 				AC24357B2D05C1B700B21510 /* Products */,
@@ -557,7 +566,6 @@
 				AC24357F2D05C1B700B21510 /* SceneDelegate.swift */,
 				AC2435812D05C1B700B21510 /* ViewController.swift */,
 				AC2435832D05C1B700B21510 /* Main.storyboard */,
-				6E74DBE72D14423300F0B84E /* final models.swift */,
 				AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */,
 				AC24358B2D05C1BA00B21510 /* Info.plist */,
 			);
