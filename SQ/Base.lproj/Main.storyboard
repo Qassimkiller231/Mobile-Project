@@ -17,7 +17,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ag0-eY-bNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2490" y="135"/>
+            <point key="canvasLocation" x="2308" y="218"/>
         </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
@@ -56,7 +56,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Admin home page"/>
                                 <connections>
-                                    <segue destination="mrY-Gy-xRu" kind="show" id="rVL-31-wct"/>
+                                    <segue destination="mrY-Gy-xRu" kind="show" identifier="goToAdminHomepage" id="rVL-31-wct"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StY-dE-LUD">

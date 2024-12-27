@@ -66,8 +66,7 @@ class ViewController: UIViewController {
             // Decide navigation based on userType
             switch userType {
             case "admin":
-                return
-//                goToAdminDashboard()
+                goToAdminDashboard()
             case "jobSeeker":
                 return
 //                goToJobSeekerDashboard()
