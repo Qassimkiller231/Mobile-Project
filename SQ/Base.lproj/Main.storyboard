@@ -19,6 +19,16 @@
             </objects>
             <point key="canvasLocation" x="2308" y="218"/>
         </scene>
+        <!--employerHomePage-->
+        <scene sceneID="bub-7S-ge1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="employerHomePage" id="eBB-gU-6Gm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7mT-CT-f3T"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oW-0s-hSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289" y="-158"/>
+        </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -84,6 +94,15 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Shiw Profile Overlay"/>
                                 <connections>
                                     <action selector="showOverlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nYY-V0-PrJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0i-VE-Avx">
+                                <rect key="frame" x="21" y="186" width="181" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Employer homepage"/>
+                                <connections>
+                                    <segue destination="eBB-gU-6Gm" kind="show" identifier="toEmployer" id="20b-86-vWi"/>
                                 </connections>
                             </button>
                         </subviews>

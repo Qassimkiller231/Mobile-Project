@@ -69,6 +69,8 @@ class ViewController: UIViewController {
                 goToAdminDashboard()
             case "jobSeeker":
                 goToJobSeekerDashboard()
+            case "employer":
+                goToEmployerDashboard()
             default:
                 print("Unknown userType. Navigating to Login.")
                 goToLogin()
@@ -84,6 +86,9 @@ class ViewController: UIViewController {
     }
     func goToLogin() {
         performSegue(withIdentifier: "goToLogin", sender: self)
+    }
+    func goToEmployerDashboard() {
+        performSegue(withIdentifier: "toEmployer", sender: self)
     }
 
     @IBAction func LogOutButtonPressed(_ sender: Any) {

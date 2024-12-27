@@ -11,18 +11,22 @@ class JobApplicationsViewController: UIViewController, UITableViewDataSource,UIT
 
     @IBOutlet weak var applicationsTableView: UITableView!
     var currentApplication: application?
-
+    
+    var currentJob: job?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         applicationsTableView.delegate = self
         applicationsTableView.dataSource = self
         applicationsTableView.register(applicationTableViewCell.nib(), forCellReuseIdentifier: applicationTableViewCell.identifier)
         // Do any additional setup after loading the view.
+        applications = currentJob?.applications ?? applications
         applications.sort { $0.isShortlisted && !$1.isShortlisted }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return applications.count
+        return currentJob?.applications?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
