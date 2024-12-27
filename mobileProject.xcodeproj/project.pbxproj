@@ -131,6 +131,10 @@
 		6E74DC562D17FDAB00F0B84E /* JobRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */; };
 		6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */; };
 		6EBC6FBD2D1DC82800FC280A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FBB2D1DC82800FC280A /* Utilities.swift */; };
+		6EBC6FC92D1E4A8E00FC280A /* SkillAssessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC52D1E4A8E00FC280A /* SkillAssessment.storyboard */; };
+		6EBC6FCA2D1E4A8E00FC280A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC42D1E4A8E00FC280A /* DashboardViewController.swift */; };
+		6EBC6FCB2D1E4A8E00FC280A /* SkillAssessmentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC62D1E4A8E00FC280A /* SkillAssessmentMainViewController.swift */; };
+		6EBC6FCC2D1E4A8E00FC280A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC72D1E4A8E00FC280A /* TestViewController.swift */; };
 		6EC4411A2D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */; };
 		6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */; };
 		6EC4411F2D1CBCEF00D51114 /* ManageFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4411E2D1CBCEF00D51114 /* ManageFilterViewController.swift */; };
@@ -296,6 +300,10 @@
 		6E74DC4F2D17FDAB00F0B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
 		6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceMainViewController.swift; sourceTree = "<group>"; };
 		6EBC6FBB2D1DC82800FC280A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		6EBC6FC42D1E4A8E00FC280A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		6EBC6FC52D1E4A8E00FC280A /* SkillAssessment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkillAssessment.storyboard; sourceTree = "<group>"; };
+		6EBC6FC62D1E4A8E00FC280A /* SkillAssessmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillAssessmentMainViewController.swift; sourceTree = "<group>"; };
+		6EBC6FC72D1E4A8E00FC280A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminAdvancedFiltersViewController.swift; path = ../../AdminAdvancedFiltersViewController.swift; sourceTree = "<group>"; };
 		6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = adminAdvancedFilters.storyboard; path = ../adminAdvancedFilters.storyboard; sourceTree = "<group>"; };
 		6EC4411E2D1CBCEF00D51114 /* ManageFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFilterViewController.swift; sourceTree = "<group>"; };
@@ -769,6 +777,17 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		6EBC6FC82D1E4A8E00FC280A /* Skill assessment */ = {
+			isa = PBXGroup;
+			children = (
+				6EBC6FC42D1E4A8E00FC280A /* DashboardViewController.swift */,
+				6EBC6FC52D1E4A8E00FC280A /* SkillAssessment.storyboard */,
+				6EBC6FC62D1E4A8E00FC280A /* SkillAssessmentMainViewController.swift */,
+				6EBC6FC72D1E4A8E00FC280A /* TestViewController.swift */,
+			);
+			path = "Skill assessment";
+			sourceTree = "<group>";
+		};
 		6EC441162D1CADF200D51114 /* admin homepage controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,11 +898,12 @@
 		AC2435712D05C1B700B21510 = {
 			isa = PBXGroup;
 			children = (
+				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
+				6E74DBE72D14423300F0B84E /* final models.swift */,
+				6EBC6FC82D1E4A8E00FC280A /* Skill assessment */,
 				6EBC6FBC2D1DC82800FC280A /* Helpers */,
 				6E4BE3182D1DBA6F0054B3AC /* Login */,
 				6E4BE2D22D1DB94F0054B3AC /* SayedHamedFiles */,
-				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
-				6E74DBE72D14423300F0B84E /* final models.swift */,
 				6E74DC522D17FDAB00F0B84E /* market trends */,
 				AC24357C2D05C1B700B21510 /* SQ */,
 				6E74DC392D16158300F0B84E /* Muntadher Files */,
@@ -1000,7 +1020,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC2435752D05C1B700B21510 /* Build configuration list for PBXProject "testfinalfinal" */;
+			buildConfigurationList = AC2435752D05C1B700B21510 /* Build configuration list for PBXProject "mobileProject" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1060,6 +1080,7 @@
 				6E4BE3062D1DB94F0054B3AC /* Admin.storyboard in Resources */,
 				6E4BE3072D1DB94F0054B3AC /* temp1~.storyboard in Resources */,
 				6E4BE3082D1DB94F0054B3AC /* experienceTableViewCell.xib in Resources */,
+				6EBC6FC92D1E4A8E00FC280A /* SkillAssessment.storyboard in Resources */,
 				6E4BE3092D1DB94F0054B3AC /* temp1.xib in Resources */,
 				6E4BE30A2D1DB94F0054B3AC /* employerHomePage.storyboard in Resources */,
 				6E4BE30B2D1DB94F0054B3AC /* applicationTableVIewCell.xib in Resources */,
@@ -1131,6 +1152,9 @@
 				6E4BE2D32D1DB94F0054B3AC /* educationTableViewCell.swift in Sources */,
 				6E4BE2D42D1DB94F0054B3AC /* temp1.swift in Sources */,
 				6E4BE2D52D1DB94F0054B3AC /* CompanyProfileViewController.swift in Sources */,
+				6EBC6FCA2D1E4A8E00FC280A /* DashboardViewController.swift in Sources */,
+				6EBC6FCB2D1E4A8E00FC280A /* SkillAssessmentMainViewController.swift in Sources */,
+				6EBC6FCC2D1E4A8E00FC280A /* TestViewController.swift in Sources */,
 				6E4BE2D62D1DB94F0054B3AC /* temp2ViewController.swift in Sources */,
 				6E4BE2D72D1DB94F0054B3AC /* employerHomePageViewController.swift in Sources */,
 				6E4BE2D82D1DB94F0054B3AC /* ManageExperienceViewController.swift in Sources */,
@@ -1530,7 +1554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC2435752D05C1B700B21510 /* Build configuration list for PBXProject "testfinalfinal" */ = {
+		AC2435752D05C1B700B21510 /* Build configuration list for PBXProject "mobileProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC2435A22D05C1BB00B21510 /* Debug */,
