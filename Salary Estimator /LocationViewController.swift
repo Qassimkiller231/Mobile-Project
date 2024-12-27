@@ -16,7 +16,14 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var experience:[String]=[
         "no experience","some experience","very experience"
     ]
+    
     var filteredExperiences:[String]=[]
+    
+    @IBOutlet weak var selectedLocation: UILabel!
+    
+    @IBOutlet weak var selectedExperience: UILabel!
+    
+    var selectedFilters:[String:String]=[:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +61,18 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
             let job = filteredExperiences[indexPath.row]
             cell.textLabel?.text=job
         }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.tag==1{
+            selectedLocation.text = filteredLocations[indexPath.row]
+            selectedFilters["Location"]=filteredLocations[indexPath.row]
+        } else {
+            selectedExperience.text = filteredExperiences[indexPath.row]
+            selectedFilters["Experience"]=filteredExperiences[indexPath.row]
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -77,14 +95,18 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toIndustry"{
+            let vc = segue.destination as! IndustryTypeViewController
+            vc.selectedFilters = self.selectedFilters
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

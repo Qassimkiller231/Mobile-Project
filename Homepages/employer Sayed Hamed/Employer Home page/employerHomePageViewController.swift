@@ -11,6 +11,7 @@ class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSour
     
     
 
+    @IBOutlet weak var profilePicImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     var CompanyJobs : [job]?
@@ -18,7 +19,8 @@ class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSour
     
         override func viewDidLoad() {
             super.viewDidLoad()
-           
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showOverlayButton(_:)))
+            profilePicImage.addGestureRecognizer(tapGesture)
             
             // Set up layout
 //            table view commands
@@ -40,15 +42,21 @@ class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSour
     
     
     @IBAction func showOverlayButton(_ sender: Any) {
-        // Instantiate ProfileOverlayViewController
-        let overlayVC = ProfileOverlayViewController(nibName: "ProfileOverlayViewController", bundle: nil)
-        
-        // Set the presentation style for an overlay effect
-        overlayVC.modalPresentationStyle = .overCurrentContext
-        overlayVC.modalTransitionStyle = .crossDissolve // Smooth fade-in effect
-        
-        // Present the overlay
-        self.present(overlayVC, animated: true, completion: nil)
+        self.tabBarController?.tabBar.isHidden = true
+            
+            // Instantiate ProfileOverlayViewController
+            let overlayVC = ProfileOverlayViewController(nibName: "ProfileOverlayViewController", bundle: nil)
+            
+            // Set the presentation style for an overlay effect
+            overlayVC.modalPresentationStyle = .overCurrentContext
+            overlayVC.modalTransitionStyle = .crossDissolve // Smooth fade-in effect
+            
+            // Present the overlay and show the tab bar again after dismissing
+            overlayVC.dismissCompletion = { [weak self] in
+                self?.tabBarController?.tabBar.isHidden = false
+            }
+            
+            self.present(overlayVC, animated: true, completion: nil)
     }
     
     }

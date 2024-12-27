@@ -134,6 +134,15 @@
                                     <segue destination="NCM-re-e9c" kind="show" id="2kP-Bj-79n"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYk-5s-vWf">
+                                <rect key="frame" x="0.0" y="224" width="146" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="salary estimator"/>
+                                <connections>
+                                    <segue destination="Pni-Rv-KIM" kind="show" id="bZ8-cu-11M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -223,6 +232,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgZ-sQ-Bji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="834.35114503816794" y="3.5211267605633805"/>
+        </scene>
+        <!--Salay estimator tool-->
+        <scene sceneID="OG8-Lx-Gaa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Salay estimator tool" id="Pni-Rv-KIM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uua-fQ-Ss0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hm-vp-8vO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1283" y="-203"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xvI-g3-58G">
@@ -511,10 +530,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

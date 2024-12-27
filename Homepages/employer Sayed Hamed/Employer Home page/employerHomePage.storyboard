@@ -262,7 +262,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="t9X-EO-LKj">
                                 <rect key="frame" x="16" y="110" width="361" height="55"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oup-hh-NGF">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oup-hh-NGF">
                                         <rect key="frame" x="0.0" y="0.66666666666666785" width="55" height="53.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="svf-or-3fe"/>
@@ -317,6 +317,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4rS-Vo-ba2"/>
                     <connections>
+                        <outlet property="profilePicImage" destination="oup-hh-NGF" id="sV0-5T-csU"/>
                         <outlet property="tableView" destination="S1T-ub-Bv4" id="4Gj-id-nAo"/>
                         <segue destination="MnA-0M-vUB" kind="show" id="Aqb-I2-u2s"/>
                     </connections>

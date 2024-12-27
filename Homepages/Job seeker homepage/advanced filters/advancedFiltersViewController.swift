@@ -119,22 +119,42 @@ class advancedFiltersViewController: UIViewController,UITableViewDelegate,UITabl
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == sections.count - 1 { // Last section
             let footerView = UIView()
-            let button = UIButton(type: .system)
-            button.setTitle("APPLY NOW", for: .normal)
-            button.backgroundColor = .purple
-            button.setTitleColor(.white, for: .normal)
-            button.layer.cornerRadius = 8
-            button.addTarget(self, action: #selector(applyNowTapped), for: .touchUpInside)
-            footerView.addSubview(button)
-
-            // Add button constraints
-            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            // Create Apply Now button
+            let applyButton = UIButton(type: .system)
+            applyButton.setTitle("APPLY NOW", for: .normal)
+            applyButton.backgroundColor = .purple
+            applyButton.setTitleColor(.white, for: .normal)
+            applyButton.layer.cornerRadius = 8
+            applyButton.addTarget(self, action: #selector(applyNowTapped), for: .touchUpInside)
+            
+            // Create Reset Filters button
+            let resetButton = UIButton(type: .system)
+            resetButton.setTitle("RESET FILTERS", for: .normal)
+            resetButton.backgroundColor = .red
+            resetButton.setTitleColor(.white, for: .normal)
+            resetButton.layer.cornerRadius = 8
+            resetButton.addTarget(self, action: #selector(resetFiltersTapped), for: .touchUpInside)
+            
+            // Create a horizontal stack view to hold both buttons
+            let stackView = UIStackView(arrangedSubviews: [applyButton, resetButton])
+            stackView.axis = .horizontal
+            stackView.alignment = .fill
+            stackView.distribution = .fillEqually
+            stackView.spacing = 16
+            
+            // Add stack view to footerView
+            footerView.addSubview(stackView)
+            
+            // Add constraints for stack view
+            stackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                button.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
-                button.centerYAnchor.constraint(equalTo: footerView.centerYAnchor),
-                button.widthAnchor.constraint(equalTo: footerView.widthAnchor, multiplier: 0.9),
-                button.heightAnchor.constraint(equalToConstant: 50)
+                stackView.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
+                stackView.centerYAnchor.constraint(equalTo: footerView.centerYAnchor),
+                stackView.widthAnchor.constraint(equalTo: footerView.widthAnchor, multiplier: 0.9),
+                stackView.heightAnchor.constraint(equalToConstant: 50)
             ])
+            
             return footerView
         }
         return nil
@@ -145,7 +165,32 @@ class advancedFiltersViewController: UIViewController,UITableViewDelegate,UITabl
     }
     
     // MARK: - Apply Now Button Action
-    
+    @objc func resetFiltersTapped() {
+        print("Reset Filters button tapped")
+        
+        // Iterate through all sections and reset their filters
+        for i in 0..<sections.count {
+            var section = sections[i]
+            section.selectedOption = nil // Clear the selected dropdown option
+            section.isExpanded = false // Collapse the dropdown if expanded
+            if section.title == "Salary" {
+                section.minSalary = nil // Reset minimum salary
+                section.maxSalary = nil // Reset maximum salary
+            }
+            sections[i] = section // Update the section in the array
+        }
+        
+        // Reload the table view to reflect changes
+        table.reloadData()
+        
+        // Clear selectedFilters dictionary
+        selectedFilters.removeAll()
+        
+        // Optionally show an alert or confirmation
+        let alert = UIAlertController(title: "Filters Reset", message: "All filters have been cleared.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
     @objc func applyNowTapped() {
         var selectedFilters: [String: String] = [:]
 

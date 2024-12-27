@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQ9-a1-Of7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQ9-a1-Of7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Salary Estimator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EstimatedSalaryViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EstimatedSalaryViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
         <!--Final Estimated Salary View Controller-->
         <scene sceneID="XCf-Z3-1UI">
             <objects>
-                <viewController id="M7g-7W-dHk" customClass="FinalEstimatedSalaryViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M7g-7W-dHk" customClass="FinalEstimatedSalaryViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jxK-BA-CQ9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +153,7 @@
         <!--Location View Controller-->
         <scene sceneID="cyh-gK-pdu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="1ca-9q-0MP" customClass="LocationViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="1ca-9q-0MP" customClass="LocationViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YoL-L8-20d">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,10 +175,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="JobCell" id="eLg-G6-wEl">
-                                        <rect key="frame" x="0.0" y="50" width="196.66666666666666" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="196.66666666666666" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eLg-G6-wEl" id="Kvw-pR-Odi">
-                                            <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -199,10 +199,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="JobCell" id="quG-ES-D6h">
-                                        <rect key="frame" x="0.0" y="50" width="196" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="196" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="quG-ES-D6h" id="gtc-NA-WhZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="196" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="196" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -230,7 +230,7 @@
                                     <color key="baseBackgroundColor" red="0.56470588239999997" green="0.10980392160000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="44s-Zc-JkW" kind="show" id="xlp-S9-S6Q"/>
+                                    <segue destination="44s-Zc-JkW" kind="show" identifier="toIndustry" id="xlp-S9-S6Q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-Bd-ILi">
@@ -269,22 +269,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="awB-OD-Pc1"/>
                     <connections>
+                        <outlet property="selectedExperience" destination="kOu-Se-7Id" id="Tgk-S8-TTg"/>
+                        <outlet property="selectedLocation" destination="ZTI-Bd-ILi" id="KYR-Sp-yqb"/>
                         <segue destination="44s-Zc-JkW" kind="show" id="VVg-7c-cRT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiB-QZ-xO3" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Z2x-mY-MQA">
-                    <connections>
-                        <segue destination="44s-Zc-JkW" kind="show" id="bg4-DW-omf"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Z2x-mY-MQA"/>
             </objects>
             <point key="canvasLocation" x="1646.5648854961833" y="12.67605633802817"/>
         </scene>
         <!--Industry Type View Controller-->
         <scene sceneID="noC-4M-uwm">
             <objects>
-                <viewController id="44s-Zc-JkW" customClass="IndustryTypeViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="44s-Zc-JkW" customClass="IndustryTypeViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L3u-6N-ni2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,10 +311,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="odX-Sj-O61">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="odX-Sj-O61" id="Eiq-zt-Wev">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -334,7 +332,7 @@
                                     <color key="baseBackgroundColor" red="0.56470588239999997" green="0.10980392160000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="M7g-7W-dHk" kind="show" id="825-hz-4ls"/>
+                                    <segue destination="M7g-7W-dHk" kind="show" identifier="toFinalFilters" id="825-hz-4ls"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -386,7 +384,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VVg-7c-cRT"/>
+        <segue reference="xlp-S9-S6Q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

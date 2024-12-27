@@ -183,7 +183,20 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         // Example filtering logic
         displayedJobs = filterAppliedJobs(with: jobs).filter { job in
             var matches = true
-            
+            if let jobCategoryFilter = filters["Job Category"] {
+                matches = matches && job.jobCategory.rawValue == jobCategoryFilter
+            }
+            if let locationFilter = filters["Location"] {
+                matches = matches && job.company.location == locationFilter
+            }
+            if let minimumSalaryFilter = filters["Minimum Salary"] {
+                print("there is min")
+                print(Int(job.jobSalary))
+                matches = matches && Int(job.jobSalary)! >= Int(minimumSalaryFilter)!
+            }
+            if let maximumSalaryFilter = filters["Maximum Salary"] {
+                matches = matches && Int(job.jobSalary)! <= Int(maximumSalaryFilter)!
+            }
             if let jobTypeFilter = filters["Job Type"] {
                 matches = matches && job.jobType.rawValue == jobTypeFilter
             }
@@ -191,6 +204,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             if let positionFilter = filters["Position"] {
                 matches = matches && job.jobTitle.lowercased() == positionFilter.lowercased()
             }
+            
             // Add more filters as needed
             return matches
         }

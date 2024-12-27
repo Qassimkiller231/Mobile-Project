@@ -11,7 +11,7 @@ class FinalEstimatedSalaryViewController: UIViewController,UITableViewDelegate,U
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    var selectedFilters: [String:String] = [:]
     var model: [estimatedJob] = FinalEstimatedSalaries
     var filteredModel: [estimatedJob] = []
     override func viewDidLoad() {

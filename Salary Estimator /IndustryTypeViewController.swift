@@ -12,6 +12,7 @@ class IndustryTypeViewController: UIViewController, UITableViewDelegate,UITableV
     var filteredIndustries: [String] = []
     @IBOutlet var tableview: UITableView!
     @IBOutlet var searchbar: UISearchBar!
+    var selectedFilters: [String:String] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
@@ -29,6 +30,9 @@ class IndustryTypeViewController: UIViewController, UITableViewDelegate,UITableV
         cell.textLabel?.text = filteredIndustries[indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedFilters["Industry"] = filteredIndustries[indexPath.row]
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
                     if searchText.isEmpty{
                         filteredIndustries = industries
@@ -40,14 +44,18 @@ class IndustryTypeViewController: UIViewController, UITableViewDelegate,UITableV
         
     }
     
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFinalFilters" {
+            let vc = segue.destination as! FinalEstimatedSalaryViewController
+            vc.selectedFilters = self.selectedFilters
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
