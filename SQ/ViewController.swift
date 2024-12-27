@@ -68,8 +68,7 @@ class ViewController: UIViewController {
             case "admin":
                 goToAdminDashboard()
             case "jobSeeker":
-                return
-//                goToJobSeekerDashboard()
+                goToJobSeekerDashboard()
             default:
                 print("Unknown userType. Navigating to Login.")
                 goToLogin()

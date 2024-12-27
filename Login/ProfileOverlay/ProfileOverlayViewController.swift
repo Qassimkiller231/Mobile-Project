@@ -17,9 +17,21 @@ class ProfileOverlayViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    var dismissCompletion: (() -> Void)?
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dismissCompletion?()
+    }
+//        override func viewDidDisappear(_ animated: Bool) {
+//            super.viewDidDisappear(animated)
+//            // Call the completion handler when the overlay is dismissed
+//            
+//        }
+//        
     @IBAction func tappedOutOfView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     
     @IBAction func editProfileButtonTapped(_ sender: Any) {
         print("Edit Profile button tapped")

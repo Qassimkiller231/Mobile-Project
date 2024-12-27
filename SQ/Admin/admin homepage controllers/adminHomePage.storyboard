@@ -32,7 +32,7 @@
         <!--Admin Home Page View Controller-->
         <scene sceneID="sSi-p2-mXv">
             <objects>
-                <viewController id="v5Z-Cv-6Bk" customClass="AdminHomePageViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v5Z-Cv-6Bk" customClass="AdminHomePageViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6kw-QI-5v1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,8 +40,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yfi-Dn-5QD">
                                 <rect key="frame" x="16" y="103" width="361" height="55"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gWs-cp-1Qz">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gWs-cp-1Qz">
                                         <rect key="frame" x="0.0" y="0.66666666666666785" width="55" height="53.666666666666657"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="7gZ-nZ-i3Z"/>
                                         </constraints>
@@ -119,6 +120,7 @@
                     <connections>
                         <outlet property="filterImage" destination="pKq-mF-YVO" id="LRh-YM-s63"/>
                         <outlet property="notificationImageView" destination="rwM-BD-uPt" id="JN5-rV-L3V"/>
+                        <outlet property="profilePicImage" destination="gWs-cp-1Qz" id="Yd1-OT-xkV"/>
                         <outlet property="searchBar" destination="Qob-z8-vys" id="xTr-BC-bVd"/>
                         <outlet property="tableView" destination="Trg-hl-GjD" id="VJZ-3Y-35W"/>
                         <segue destination="fz8-dv-lE5" kind="show" identifier="AdminToJobDetails" id="bu3-79-fUr"/>
@@ -183,7 +185,7 @@
         <!--Admin Job Details View Controller-->
         <scene sceneID="g95-6b-1Tr">
             <objects>
-                <viewController id="fz8-dv-lE5" customClass="AdminJobDetailsViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fz8-dv-lE5" customClass="AdminJobDetailsViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tRY-tn-3s7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -432,7 +434,7 @@
         <!--Admin Job Details Overlay View Controller-->
         <scene sceneID="fxG-jg-PwA">
             <objects>
-                <viewController id="cVd-i7-F6c" customClass="adminJobDetailsOverlayViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cVd-i7-F6c" customClass="adminJobDetailsOverlayViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXo-lo-gkg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,13 +568,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

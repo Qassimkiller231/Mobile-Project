@@ -15,6 +15,8 @@ class AdminHomePageViewController: UIViewController, UITableViewDelegate,UITable
     
     @IBOutlet weak var filterImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var profilePicImage: UIImageView!
     var currentJob:job?
     var displayedJobs:[job] = []
     override func viewDidLoad() {
@@ -26,6 +28,11 @@ class AdminHomePageViewController: UIViewController, UITableViewDelegate,UITable
         searchBar.delegate = self
         tableView.register(AdminJobListingCardTableViewCell.nib(), forCellReuseIdentifier: AdminJobListingCardTableViewCell.identifier)
         displayedJobs = jobs
+        profilePicImage.isUserInteractionEnabled = true
+
+            // Create and add the tap gesture recognizer
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showOverlayButton(_:)))
+            profilePicImage.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
     }
@@ -55,6 +62,24 @@ class AdminHomePageViewController: UIViewController, UITableViewDelegate,UITable
             displayedJobs = jobs.filter { $0.jobTitle.lowercased().starts(with:searchText.lowercased()) }
         }
         tableView.reloadData()
+    }
+    
+    @IBAction func showOverlayButton(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
+            
+            // Instantiate ProfileOverlayViewController
+            let overlayVC = ProfileOverlayViewController(nibName: "ProfileOverlayViewController", bundle: nil)
+            
+            // Set the presentation style for an overlay effect
+            overlayVC.modalPresentationStyle = .overCurrentContext
+            overlayVC.modalTransitionStyle = .crossDissolve // Smooth fade-in effect
+            
+            // Present the overlay and show the tab bar again after dismissing
+            overlayVC.dismissCompletion = { [weak self] in
+                self?.tabBarController?.tabBar.isHidden = false
+            }
+            
+            self.present(overlayVC, animated: true, completion: nil)
     }
     
 

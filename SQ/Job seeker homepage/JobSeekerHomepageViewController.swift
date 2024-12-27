@@ -72,7 +72,8 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         profilePic.isUserInteractionEnabled = true
         FilterPic.isUserInteractionEnabled = true
         bookmark.isUserInteractionEnabled = true
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showOverlayButton(_:)))
+        profilePic.addGestureRecognizer(tapGesture)
         let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(bookmarkTapped))
         bookmark.addGestureRecognizer(bookmarkTap)
         
@@ -195,6 +196,24 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         }
 
         tableView.reloadData()
+    }
+    
+    @IBAction func showOverlayButton(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
+            
+            // Instantiate ProfileOverlayViewController
+            let overlayVC = ProfileOverlayViewController(nibName: "ProfileOverlayViewController", bundle: nil)
+            
+            // Set the presentation style for an overlay effect
+            overlayVC.modalPresentationStyle = .overCurrentContext
+            overlayVC.modalTransitionStyle = .crossDissolve // Smooth fade-in effect
+            
+            // Present the overlay and show the tab bar again after dismissing
+            overlayVC.dismissCompletion = { [weak self] in
+                self?.tabBarController?.tabBar.isHidden = false
+            }
+            
+            self.present(overlayVC, animated: true, completion: nil)
     }
     
     
