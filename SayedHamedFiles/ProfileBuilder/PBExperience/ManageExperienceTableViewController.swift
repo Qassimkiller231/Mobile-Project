@@ -23,7 +23,7 @@ class ManageExperienceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Job Seeker in TVC: \(jobSeeker?.experiences.count ?? 0)")
+        print("Job Seeker in TVC: \(jobSeeker?.experiences?.count ?? 0)")
         print("Is editing experience in TVC: \(isEditingExperience)")
         print("Experience to edit in TVC: \(experienceToEdit?.jobTitle ?? "None")")
     }

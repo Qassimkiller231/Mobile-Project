@@ -26,7 +26,7 @@ class PBExperienceViewController: UIViewController, UITableViewDelegate, UITable
         
         if jobSeeker?.experiences?.isEmpty == true {
             //add sample experience
-            jobSeeker?.experiences?.append(Experience(jobTitle: "Master", companyname: "Life", startDate: "13/07/2004", endDate: "23/12/2024", city: "EveryWhere"))
+            jobSeeker?.experiences?.append(Experience(jobTitle: "Master", companyName: "Life", startDate: "13/07/2004", endDate: "23/12/2024", city: "EveryWhere"))
         }
         
         experienceTableView.reloadData()

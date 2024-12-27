@@ -20,8 +20,8 @@ class PBEducationViewController: UIViewController, UITableViewDelegate, UITableV
         educationsTableView.delegate = self
         educationsTableView.dataSource = self
         educationsTableView.register(educationTableViewCell.nib(), forCellReuseIdentifier: educationTableViewCell.identifier)
-        if jobSeeker?.educations.isEmpty == true {
-                jobSeeker?.educations.append(Education(educationFacility: "eduFac1", educationLevel: "eduLevel1", degree: "eduDegree1", startDate: "12/12/21", endDate: "20/12/23", city: "Muharraq"))
+        if jobSeeker?.educations?.isEmpty == true {
+            jobSeeker?.educations?.append(Education(educationFacility: "eduFac1", educationLevel: "eduLevel1", degree: "eduDegree1", startDate: "12/12/21", endDate: "20/12/23", city: "Muharraq"))
             
             print("this should be added")
             }
@@ -37,13 +37,13 @@ class PBEducationViewController: UIViewController, UITableViewDelegate, UITableV
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Row count: \(jobSeeker?.educations.count ?? 99)")
-        return jobSeeker?.educations.count ?? 0
+        print("Row count: \(jobSeeker?.educations?.count ?? 99)")
+        return jobSeeker?.educations?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "educationTableViewCell", for: indexPath) as! educationTableViewCell
-        let education = jobSeeker?.educations[indexPath.row]  // Get the education object from the jobSeeker
+        let education = jobSeeker?.educations?[indexPath.row]  // Get the education object from the jobSeeker
         
         cell.configure(with: education!)
         cell.delegate = self  // Set the delegate for the cell to the current controller

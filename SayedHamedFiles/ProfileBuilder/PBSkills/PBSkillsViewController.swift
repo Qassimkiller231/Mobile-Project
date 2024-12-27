@@ -53,19 +53,19 @@ class PBSkillsViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableView.register(UINib(nibName: "skillButtonsTableViewCell", bundle: nil), forCellReuseIdentifier: "skillButtonsTableViewCell")
         
         // sample data
-        if jobSeeker?.skills.isEmpty ?? true {
-            jobSeeker?.skills.append(Skill(skillName: "HTML", skillLevel: "1"))
-            jobSeeker?.skills.append(Skill(skillName: "CSS", skillLevel: "Expert"))
+        if jobSeeker?.skills?.isEmpty ?? true {
+            jobSeeker?.skills?.append(Skill(skillName: "HTML", skillLevel: "1"))
+            jobSeeker?.skills?.append(Skill(skillName: "CSS", skillLevel: "Expert"))
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobSeeker?.skills.count ?? 0
+        return jobSeeker?.skills?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let currentSkill = jobSeeker?.skills[indexPath.row]
+        let currentSkill = jobSeeker?.skills?[indexPath.row]
         
         if let intLevel: Int = Int(currentSkill!.skillLevel){
             print("int level \(intLevel)")
@@ -112,7 +112,7 @@ class PBSkillsViewController: UIViewController,UITableViewDelegate,UITableViewDa
             } else {
                 // If adding a new skill, create a new skill and append it
                 let newSkill = Skill(skillName: skillName, skillLevel: skillLevel)
-                jobSeeker?.skills.append(newSkill)
+                jobSeeker?.skills?.append(newSkill)
             }
             
             // Reload the table view to reflect the changes

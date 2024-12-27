@@ -130,6 +130,9 @@
 		6E74DC552D17FDAB00F0B84E /* EmployerInsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4E2D17FDAB00F0B84E /* EmployerInsightsViewController.swift */; };
 		6E74DC562D17FDAB00F0B84E /* JobRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */; };
 		6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */; };
+		6EBC6FBD2D1DC82800FC280A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FBB2D1DC82800FC280A /* Utilities.swift */; };
+		6EBC6FC02D1E482700FC280A /* SkillAssessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EBC6FBF2D1E482700FC280A /* SkillAssessment.storyboard */; };
+		6EBC6FC22D1E484700FC280A /* SkillAssessmentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC12D1E484700FC280A /* SkillAssessmentMainViewController.swift */; };
 		6EC4411A2D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */; };
 		6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */; };
 		6EC4411F2D1CBCEF00D51114 /* ManageFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4411E2D1CBCEF00D51114 /* ManageFilterViewController.swift */; };
@@ -297,6 +300,9 @@
 		6E74DC4E2D17FDAB00F0B84E /* EmployerInsightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerInsightsViewController.swift; sourceTree = "<group>"; };
 		6E74DC4F2D17FDAB00F0B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
 		6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceMainViewController.swift; sourceTree = "<group>"; };
+		6EBC6FBB2D1DC82800FC280A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		6EBC6FBF2D1E482700FC280A /* SkillAssessment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkillAssessment.storyboard; sourceTree = "<group>"; };
+		6EBC6FC12D1E484700FC280A /* SkillAssessmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillAssessmentMainViewController.swift; sourceTree = "<group>"; };
 		6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminAdvancedFiltersViewController.swift; path = ../../AdminAdvancedFiltersViewController.swift; sourceTree = "<group>"; };
 		6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = adminAdvancedFilters.storyboard; path = ../adminAdvancedFilters.storyboard; sourceTree = "<group>"; };
 		6EC4411E2D1CBCEF00D51114 /* ManageFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFilterViewController.swift; sourceTree = "<group>"; };
@@ -765,6 +771,23 @@
 			path = "market trends";
 			sourceTree = "<group>";
 		};
+		6EBC6FBC2D1DC82800FC280A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6EBC6FBB2D1DC82800FC280A /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6EBC6FBE2D1E480E00FC280A /* Skill Assessment test */ = {
+			isa = PBXGroup;
+			children = (
+				6EBC6FBF2D1E482700FC280A /* SkillAssessment.storyboard */,
+				6EBC6FC12D1E484700FC280A /* SkillAssessmentMainViewController.swift */,
+			);
+			path = "Skill Assessment test";
+			sourceTree = "<group>";
+		};
 		6EC441162D1CADF200D51114 /* admin homepage controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -875,6 +898,7 @@
 		AC2435712D05C1B700B21510 = {
 			isa = PBXGroup;
 			children = (
+				6EBC6FBC2D1DC82800FC280A /* Helpers */,
 				6E4BE3182D1DBA6F0054B3AC /* Login */,
 				6E4BE2D22D1DB94F0054B3AC /* SayedHamedFiles */,
 				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
@@ -903,6 +927,7 @@
 		AC24357C2D05C1B700B21510 /* testfinalfinal */ = {
 			isa = PBXGroup;
 			children = (
+				6EBC6FBE2D1E480E00FC280A /* Skill Assessment test */,
 				6ED001702D1B711100644B5A /* Admin */,
 				6E74DBD02D10272F00F0B84E /* Employer Home page */,
 				6ED001312D18257B00644B5A /* Notification */,
@@ -1074,6 +1099,7 @@
 				6E4BE3062D1DB94F0054B3AC /* Admin.storyboard in Resources */,
 				6E4BE3072D1DB94F0054B3AC /* temp1~.storyboard in Resources */,
 				6E4BE3082D1DB94F0054B3AC /* experienceTableViewCell.xib in Resources */,
+				6EBC6FC02D1E482700FC280A /* SkillAssessment.storyboard in Resources */,
 				6E4BE3092D1DB94F0054B3AC /* temp1.xib in Resources */,
 				6E4BE30A2D1DB94F0054B3AC /* employerHomePage.storyboard in Resources */,
 				6E4BE30B2D1DB94F0054B3AC /* applicationTableVIewCell.xib in Resources */,
@@ -1130,6 +1156,7 @@
 				AC24357E2D05C1B700B21510 /* AppDelegate.swift in Sources */,
 				6E74DBE22D10BE2900F0B84E /* advancedFiltersViewController.swift in Sources */,
 				6E74DC172D15848300F0B84E /* VideoCollectionViewCell.swift in Sources */,
+				6EBC6FBD2D1DC82800FC280A /* Utilities.swift in Sources */,
 				6E74DBF62D149D0900F0B84E /* IndustryTypeViewController.swift in Sources */,
 				6E74DBF72D149D0900F0B84E /* EstimatedSalaryViewController.swift in Sources */,
 				6E74DC192D158B0900F0B84E /* DetailedVideoViewController.swift in Sources */,
@@ -1159,6 +1186,7 @@
 				6E4BE2E42D1DB94F0054B3AC /* ManageExperienceTableViewController.swift in Sources */,
 				6E4BE2E52D1DB94F0054B3AC /* PBPersonalViewController.swift in Sources */,
 				6E4BE2E62D1DB94F0054B3AC /* PBEducationViewController.swift in Sources */,
+				6EBC6FC22D1E484700FC280A /* SkillAssessmentMainViewController.swift in Sources */,
 				6E4BE2E72D1DB94F0054B3AC /* PBPreferencesViewController.swift in Sources */,
 				6E4BE2E82D1DB94F0054B3AC /* CVTemplateViewController.swift in Sources */,
 				6E4BE2E92D1DB94F0054B3AC /* ManageEducationViewController.swift in Sources */,
@@ -1426,6 +1454,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = testfinalfinal/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MobileProgrammingProject;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1437,7 +1466,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = shutup.testfinalfinal;
+				PRODUCT_BUNDLE_IDENTIFIER = project.MobileProgramming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1454,6 +1483,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = testfinalfinal/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MobileProgrammingProject;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1465,7 +1495,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = shutup.testfinalfinal;
+				PRODUCT_BUNDLE_IDENTIFIER = project.MobileProgramming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

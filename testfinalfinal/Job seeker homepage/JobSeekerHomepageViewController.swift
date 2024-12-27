@@ -100,7 +100,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
                 }
                 
                 // Check if the user has applied to the job
-            return !applications.contains(where: { $0.profile.userID == currentProfile?.userID })
+            return !applications.contains(where: { $0.jobSeeker.userID == currentProfile?.userID })
             }
     }
     
@@ -171,7 +171,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         }
         if  segue.identifier == "detailsToHomepage" {
             print ("Came from details")
-            print ("added application to  \(currentJob?.jobTitle) by user \(currentJob?.applications?[(currentJob!.applications!.count - 1)].profile.firstName), total applications = \(currentJob?.applications?.count ?? 0)")
+            print ("added application to  \(currentJob?.jobTitle) by user \(currentJob?.applications?[(currentJob!.applications!.count - 1)].jobSeeker.firstName), total applications = \(currentJob?.applications?.count ?? 0)")
             displayedJobs = filterAppliedJobs(with: jobs)
             tableView.reloadData()
         }

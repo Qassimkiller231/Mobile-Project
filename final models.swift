@@ -67,7 +67,7 @@ struct Education: Equatable {
 }
 struct Experience: Equatable {
     var jobTitle: String
-    var companyname: String
+    var companyName: String
     var startDate: String
     var endDate: String
     var city: String
@@ -120,6 +120,7 @@ struct application {
     var jobSeeker: JobSeeker
     var isShortlisted: Bool = false
     var interview: Interview?
+    var notes: String?
     var status: applicationStatus = .pending
 }
 struct Interview {

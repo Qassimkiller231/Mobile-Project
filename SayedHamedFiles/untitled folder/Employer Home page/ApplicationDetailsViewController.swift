@@ -47,9 +47,9 @@ class ApplicationDetailsViewController: UIViewController {
         dateOfApplicationLabel.text = "Date of Application: \(df.string(from: application.dateOfApplication))"
         
         // Determine the current or last job title
-        if let ongoingExperience = application.jobSeeker.experiences.first(where: { $0.endDate.lowercased() == "ongoing" }) {
+        if let ongoingExperience = application.jobSeeker.experiences?.first(where: { $0.endDate.lowercased() == "ongoing" }) {
             currentTitleLabel.text = ongoingExperience.jobTitle
-        } else if let lastJob = application.jobSeeker.experiences.sorted(by: {
+        } else if let lastJob = application.jobSeeker.experiences?.sorted(by: {
             guard let date1 = df.date(from: $0.endDate),
                   let date2 = df.date(from: $1.endDate) else { return false }
             return date1 > date2
@@ -61,15 +61,18 @@ class ApplicationDetailsViewController: UIViewController {
         
         // Calculate total years of experience
         var totalExperience: Double = 0
-        for experience in application.jobSeeker.experiences {
-            if let startDate = df.date(from: experience.startDate),
-               let endDate = experience.endDate.lowercased() == "ongoing"
-                ? Date()
-                : df.date(from: experience.endDate) {
-                let experienceDuration = Calendar.current.dateComponents([.month], from: startDate, to: endDate).month ?? 0
-                totalExperience += Double(experienceDuration) / 12.0
+        if let experiences = application.jobSeeker.experiences {
+            for experience in experiences{
+                if let startDate = df.date(from: experience.startDate),
+                   let endDate = experience.endDate.lowercased() == "ongoing"
+                    ? Date()
+                    : df.date(from: experience.endDate) {
+                    let experienceDuration = Calendar.current.dateComponents([.month], from: startDate, to: endDate).month ?? 0
+                    totalExperience += Double(experienceDuration) / 12.0
+                }
             }
         }
+
         totalExperience = floor(totalExperience)
         yearsOfExperienceLabel.text = "Years of Experience: \(Int(totalExperience))"
         

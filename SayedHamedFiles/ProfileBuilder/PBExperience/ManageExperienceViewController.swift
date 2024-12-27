@@ -34,7 +34,7 @@ class ManageExperienceViewController: UIViewController {
             manageExperienceTableVC.experienceToEdit = self.experienceToEdit
             
             // Log to ensure data is set
-            print("Passed data to TVC: Job Seeker experiences count = \(manageExperienceTableVC.jobSeeker?.experiences.count ?? 0)")
+            print("Passed data to TVC: Job Seeker experiences count = \(manageExperienceTableVC.jobSeeker?.experiences?.count ?? 0)")
         } else {
             print("Failed to access ManageExperienceTableViewController.")
         }
@@ -48,12 +48,12 @@ class ManageExperienceViewController: UIViewController {
             if let jobSeeker = self?.jobSeeker {
                 if self?.isEditingExperience == true {
                     // If editing, update the existing experience
-                    if let index = jobSeeker.experiences.firstIndex(where: { $0 == self?.experienceToEdit }) {
-                        jobSeeker.experiences[index] = newExperience
+                    if let index = jobSeeker.experiences?.firstIndex(where: { $0 == self?.experienceToEdit }) {
+                        jobSeeker.experiences?[index] = newExperience
                     }
                 } else {
                     // If adding a new experience, append it
-                    jobSeeker.experiences.append(newExperience)
+                    jobSeeker.experiences?.append(newExperience)
                 }
             }
 

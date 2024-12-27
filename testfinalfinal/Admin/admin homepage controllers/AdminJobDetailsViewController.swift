@@ -45,7 +45,7 @@ class AdminJobDetailsViewController: UIViewController {
             if self .job?.applications == nil {
                 self .job?.applications = []
             }
-            let application = application(dateOfApplication: Date(), profile: JobSeekerSample)
+            let application = application(dateOfApplication: Date(), jobSeeker: JobSeekerSample)
             self.job?.applications?.append(application)
             self.performSegue(withIdentifier: "detailsToHomepage", sender: nil)
             print("added application from alert, count is\(self.job?.applications?.count ?? 0)")

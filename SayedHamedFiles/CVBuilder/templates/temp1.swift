@@ -44,19 +44,19 @@ class temp1: UIView {
            personalSummaryTextView.text = jobSeeker.personalSummary
 
            // Skills
-           skill1Label.text = jobSeeker.skills.indices.contains(0) ? jobSeeker.skills[0].skillName : ""
-           skill2Label.text = jobSeeker.skills.indices.contains(1) ? jobSeeker.skills[1].skillName : ""
-           skill3Label.text = jobSeeker.skills.indices.contains(2) ? jobSeeker.skills[2].skillName : ""
+        skill1Label.text = ((jobSeeker.skills?.indices.contains(0)) != nil) ? jobSeeker.skills?[0].skillName : ""
+        skill2Label.text = ((jobSeeker.skills?.indices.contains(1)) != nil) ? jobSeeker.skills?[1].skillName : ""
+        skill3Label.text = ((jobSeeker.skills?.indices.contains(2)) != nil) ? jobSeeker.skills?[2].skillName : ""
 
            // Education
-           education1Label.text = jobSeeker.educations.indices.contains(0) ? "\(jobSeeker.educations[0].educationFacility) - \(jobSeeker.educations[0].degree)" : ""
-           education2Label.text = jobSeeker.educations.indices.contains(1) ? "\(jobSeeker.educations[1].educationFacility) - \(jobSeeker.educations[1].degree)" : ""
-           education3Label.text = jobSeeker.educations.indices.contains(2) ? "\(jobSeeker.educations[2].educationFacility) - \(jobSeeker.educations[2].degree)" : ""
+        education1Label.text = ((jobSeeker.educations?.indices.contains(0)) != nil) ? "\(String(describing: jobSeeker.educations?[0].educationFacility)) - \(String(describing: jobSeeker.educations?[0].degree))" : ""
+        education2Label.text = ((jobSeeker.educations?.indices.contains(1)) != nil) ? "\(String(describing: jobSeeker.educations?[1].educationFacility)) - \(String(describing: jobSeeker.educations?[1].degree))" : ""
+        education3Label.text = ((jobSeeker.educations?.indices.contains(2)) != nil) ? "\(String(describing: jobSeeker.educations?[2].educationFacility)) - \(String(describing: jobSeeker.educations?[2].degree))" : ""
 
            // Experience
-           experience1Label.text = jobSeeker.experiences.indices.contains(0) ? "\(jobSeeker.experiences[0].jobTitle) at \(jobSeeker.experiences[0].companyName)" : ""
-           experience2Label.text = jobSeeker.experiences.indices.contains(1) ? "\(jobSeeker.experiences[1].jobTitle) at \(jobSeeker.experiences[1].companyName)" : ""
-           experience3Label.text = jobSeeker.experiences.indices.contains(2) ? "\(jobSeeker.experiences[2].jobTitle) at \(jobSeeker.experiences[2].companyName)" : ""
+        experience1Label.text = ((jobSeeker.experiences?.indices.contains(0)) != nil) ? "\(String(describing: jobSeeker.experiences?[0].jobTitle)) at \(String(describing: jobSeeker.experiences?[0].companyName))" : ""
+        experience2Label.text = ((jobSeeker.experiences?.indices.contains(1)) != nil) ? "\(String(describing: jobSeeker.experiences?[1].jobTitle)) at \(String(describing: jobSeeker.experiences?[1].companyName))" : ""
+        experience3Label.text = ((jobSeeker.experiences?.indices.contains(2)) != nil) ? "\(String(describing: jobSeeker.experiences?[2].jobTitle)) at \(String(describing: jobSeeker.experiences?[2].companyName))" : ""
        }
 
 }
