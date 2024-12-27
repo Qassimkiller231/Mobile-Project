@@ -130,6 +130,8 @@
 		6E74DC552D17FDAB00F0B84E /* EmployerInsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4E2D17FDAB00F0B84E /* EmployerInsightsViewController.swift */; };
 		6E74DC562D17FDAB00F0B84E /* JobRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */; };
 		6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */; };
+		6E9D68EE2D1E4DE800767BEA /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E9D68EC2D1E4DE800767BEA /* TestTableViewCell.xib */; };
+		6E9D68EF2D1E4DE800767BEA /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9D68EB2D1E4DE800767BEA /* TestTableViewCell.swift */; };
 		6EBC6FBD2D1DC82800FC280A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FBB2D1DC82800FC280A /* Utilities.swift */; };
 		6EBC6FC92D1E4A8E00FC280A /* SkillAssessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC52D1E4A8E00FC280A /* SkillAssessment.storyboard */; };
 		6EBC6FCA2D1E4A8E00FC280A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC42D1E4A8E00FC280A /* DashboardViewController.swift */; };
@@ -299,6 +301,8 @@
 		6E74DC4E2D17FDAB00F0B84E /* EmployerInsightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerInsightsViewController.swift; sourceTree = "<group>"; };
 		6E74DC4F2D17FDAB00F0B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
 		6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceMainViewController.swift; sourceTree = "<group>"; };
+		6E9D68EB2D1E4DE800767BEA /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		6E9D68EC2D1E4DE800767BEA /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		6EBC6FBB2D1DC82800FC280A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6EBC6FC42D1E4A8E00FC280A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		6EBC6FC52D1E4A8E00FC280A /* SkillAssessment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkillAssessment.storyboard; sourceTree = "<group>"; };
@@ -329,7 +333,7 @@
 		6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeekerHomepageViewController.swift; sourceTree = "<group>"; };
 		6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EE7204A2D0F923A00E2801B /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
-		AC24357A2D05C1B700B21510 /* testfinalfinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testfinalfinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC24357A2D05C1B700B21510 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC24357D2D05C1B700B21510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC24357F2D05C1B700B21510 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AC2435812D05C1B700B21510 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -769,6 +773,15 @@
 			path = "market trends";
 			sourceTree = "<group>";
 		};
+		6E9D68ED2D1E4DE800767BEA /* test table cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E9D68EB2D1E4DE800767BEA /* TestTableViewCell.swift */,
+				6E9D68EC2D1E4DE800767BEA /* TestTableViewCell.xib */,
+			);
+			path = "test table cell";
+			sourceTree = "<group>";
+		};
 		6EBC6FBC2D1DC82800FC280A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +793,7 @@
 		6EBC6FC82D1E4A8E00FC280A /* Skill assessment */ = {
 			isa = PBXGroup;
 			children = (
+				6E9D68ED2D1E4DE800767BEA /* test table cell */,
 				6EBC6FC42D1E4A8E00FC280A /* DashboardViewController.swift */,
 				6EBC6FC52D1E4A8E00FC280A /* SkillAssessment.storyboard */,
 				6EBC6FC62D1E4A8E00FC280A /* SkillAssessmentMainViewController.swift */,
@@ -916,7 +930,7 @@
 		AC24357B2D05C1B700B21510 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC24357A2D05C1B700B21510 /* testfinalfinal.app */,
+				AC24357A2D05C1B700B21510 /* Project.app */,
 				AC2435902D05C1BB00B21510 /* testfinalfinalTests.xctest */,
 				AC24359A2D05C1BB00B21510 /* testfinalfinalUITests.xctest */,
 			);
@@ -944,9 +958,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC2435792D05C1B700B21510 /* testfinalfinal */ = {
+		AC2435792D05C1B700B21510 /* Project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC2435A42D05C1BB00B21510 /* Build configuration list for PBXNativeTarget "testfinalfinal" */;
+			buildConfigurationList = AC2435A42D05C1BB00B21510 /* Build configuration list for PBXNativeTarget "Project" */;
 			buildPhases = (
 				AC2435762D05C1B700B21510 /* Sources */,
 				AC2435772D05C1B700B21510 /* Frameworks */,
@@ -956,9 +970,9 @@
 			);
 			dependencies = (
 			);
-			name = testfinalfinal;
+			name = Project;
 			productName = testfinalfinal;
-			productReference = AC24357A2D05C1B700B21510 /* testfinalfinal.app */;
+			productReference = AC24357A2D05C1B700B21510 /* Project.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AC24358F2D05C1BB00B21510 /* testfinalfinalTests */ = {
@@ -1037,7 +1051,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC2435792D05C1B700B21510 /* testfinalfinal */,
+				AC2435792D05C1B700B21510 /* Project */,
 				AC24358F2D05C1BB00B21510 /* testfinalfinalTests */,
 				AC2435992D05C1BB00B21510 /* testfinalfinalUITests */,
 			);
@@ -1086,6 +1100,7 @@
 				6E4BE30B2D1DB94F0054B3AC /* applicationTableVIewCell.xib in Resources */,
 				6E4BE30C2D1DB94F0054B3AC /* skillButtonsTableViewCell.xib in Resources */,
 				6E4BE30D2D1DB94F0054B3AC /* Assets.xcassets in Resources */,
+				6E9D68EE2D1E4DE800767BEA /* TestTableViewCell.xib in Resources */,
 				6E74DC3B2D16158300F0B84E /* SliderCell.xib in Resources */,
 				6ED001302D18003500644B5A /* SuggestedPathsTableViewCell.xib in Resources */,
 				6E74DC532D17FDAB00F0B84E /* Resources.storyboard in Resources */,
@@ -1189,6 +1204,7 @@
 				6E4BE2F72D1DB94F0054B3AC /* interviewSchedulePopup.swift in Sources */,
 				6E4BE2F82D1DB94F0054B3AC /* skillTableViewCell.swift in Sources */,
 				6E4BE2F92D1DB94F0054B3AC /* ManageEducationTableViewController.swift in Sources */,
+				6E9D68EF2D1E4DE800767BEA /* TestTableViewCell.swift in Sources */,
 				6E4BE2FA2D1DB94F0054B3AC /* temp4ViewController.swift in Sources */,
 				6E74DBF82D149D0900F0B84E /* MyTableViewCell.swift in Sources */,
 				6E74DBF92D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift in Sources */,
@@ -1244,12 +1260,12 @@
 /* Begin PBXTargetDependency section */
 		AC2435922D05C1BB00B21510 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AC2435792D05C1B700B21510 /* testfinalfinal */;
+			target = AC2435792D05C1B700B21510 /* Project */;
 			targetProxy = AC2435912D05C1BB00B21510 /* PBXContainerItemProxy */;
 		};
 		AC24359C2D05C1BB00B21510 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AC2435792D05C1B700B21510 /* testfinalfinal */;
+			target = AC2435792D05C1B700B21510 /* Project */;
 			targetProxy = AC24359B2D05C1BB00B21510 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1433,7 +1449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = testfinalfinal/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MobileProgrammingProject;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1462,7 +1478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = testfinalfinal/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MobileProgrammingProject;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1563,7 +1579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC2435A42D05C1BB00B21510 /* Build configuration list for PBXNativeTarget "testfinalfinal" */ = {
+		AC2435A42D05C1BB00B21510 /* Build configuration list for PBXNativeTarget "Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC2435A52D05C1BB00B21510 /* Debug */,

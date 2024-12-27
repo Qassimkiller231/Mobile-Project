@@ -87,8 +87,8 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="QWU-AC-Qqn"/>
                                 <exclude reference="gNF-PU-JJN"/>
+                                <include reference="QWU-AC-Qqn"/>
                             </mask>
                         </variation>
                     </view>
@@ -140,24 +140,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68e-kx-kJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3666" y="225"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="AeB-1i-sVd">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UH3-B5-Nvr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ld-1a-qwb">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="K7W-oj-Oxa"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pPn-JX-rUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1993.1297709923663" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
