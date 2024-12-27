@@ -22,7 +22,6 @@
 		6E4BE2D92D1DB94F0054B3AC /* CVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2972D1DB94F0054B3AC /* CVManager.swift */; };
 		6E4BE2DB2D1DB94F0054B3AC /* CompanyProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2C32D1DB94F0054B3AC /* CompanyProfileTableViewController.swift */; };
 		6E4BE2DC2D1DB94F0054B3AC /* JobApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2C82D1DB94F0054B3AC /* JobApplicationsViewController.swift */; };
-		6E4BE2DE2D1DB94F0054B3AC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2CF2D1DB94F0054B3AC /* Models.swift */; };
 		6E4BE2DF2D1DB94F0054B3AC /* skillButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2B02D1DB94F0054B3AC /* skillButtonsTableViewCell.swift */; };
 		6E4BE2E02D1DB94F0054B3AC /* CVFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2962D1DB94F0054B3AC /* CVFinalViewController.swift */; };
 		6E4BE2E12D1DB94F0054B3AC /* PBSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2AF2D1DB94F0054B3AC /* PBSkillsViewController.swift */; };
@@ -68,7 +67,7 @@
 		6E4BE30A2D1DB94F0054B3AC /* employerHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2C52D1DB94F0054B3AC /* employerHomePage.storyboard */; };
 		6E4BE30B2D1DB94F0054B3AC /* applicationTableVIewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2BB2D1DB94F0054B3AC /* applicationTableVIewCell.xib */; };
 		6E4BE30C2D1DB94F0054B3AC /* skillButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2B12D1DB94F0054B3AC /* skillButtonsTableViewCell.xib */; };
-		6E4BE30D2D1DB94F0054B3AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2CE2D1DB94F0054B3AC /* Assets.xcassets */; };
+		6E4BE30D2D1DB94F0054B3AC /* Assets 2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2CE2D1DB94F0054B3AC /* Assets 2.xcassets */; };
 		6E4BE3192D1DBA6F0054B3AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE3142D1DBA6F0054B3AC /* Login.storyboard */; };
 		6E4BE31A2D1DBA6F0054B3AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE3112D1DBA6F0054B3AC /* GoogleService-Info.plist */; };
 		6E4BE31B2D1DBA6F0054B3AC /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE3122D1DBA6F0054B3AC /* LoggedInViewController.swift */; };
@@ -252,8 +251,7 @@
 		6E4BE2C62D1DB94F0054B3AC /* employerHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employerHomePageViewController.swift; sourceTree = "<group>"; };
 		6E4BE2C72D1DB94F0054B3AC /* employerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employerModels.swift; sourceTree = "<group>"; };
 		6E4BE2C82D1DB94F0054B3AC /* JobApplicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApplicationsViewController.swift; sourceTree = "<group>"; };
-		6E4BE2CE2D1DB94F0054B3AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6E4BE2CF2D1DB94F0054B3AC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6E4BE2CE2D1DB94F0054B3AC /* Assets 2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 2.xcassets"; sourceTree = "<group>"; };
 		6E4BE30F2D1DBA6F0054B3AC /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		6E4BE3112D1DBA6F0054B3AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E4BE3122D1DBA6F0054B3AC /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
@@ -318,7 +316,7 @@
 		6EBC6FC52D1E4A8E00FC280A /* SkillAssessment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkillAssessment.storyboard; sourceTree = "<group>"; };
 		6EBC6FC62D1E4A8E00FC280A /* SkillAssessmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillAssessmentMainViewController.swift; sourceTree = "<group>"; };
 		6EBC6FC72D1E4A8E00FC280A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminAdvancedFiltersViewController.swift; path = ../../AdminAdvancedFiltersViewController.swift; sourceTree = "<group>"; };
+		6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminAdvancedFiltersViewController.swift; path = ../../../SQ/AdminAdvancedFiltersViewController.swift; sourceTree = "<group>"; };
 		6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = adminAdvancedFilters.storyboard; path = ../adminAdvancedFilters.storyboard; sourceTree = "<group>"; };
 		6EC4411E2D1CBCEF00D51114 /* ManageFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFilterViewController.swift; sourceTree = "<group>"; };
 		6ED0012C2D18003500644B5A /* SuggestedPathsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedPathsTableViewCell.swift; sourceTree = "<group>"; };
@@ -422,7 +420,7 @@
 			path = "Employer Insights";
 			sourceTree = "<group>";
 		};
-		6E4BE2892D1DB94F0054B3AC /* Admin */ = {
+		6E4BE2892D1DB94F0054B3AC /* Admin Sayed Hamed */ = {
 			isa = PBXGroup;
 			children = (
 				6E4BE2842D1DB94F0054B3AC /* Admin.storyboard */,
@@ -431,7 +429,7 @@
 				6E4BE2872D1DB94F0054B3AC /* UserEditorTableViewCell.swift */,
 				6E4BE2882D1DB94F0054B3AC /* UserEditorTableViewCell.xib */,
 			);
-			path = Admin;
+			path = "Admin Sayed Hamed";
 			sourceTree = "<group>";
 		};
 		6E4BE2922D1DB94F0054B3AC /* templates */ = {
@@ -575,24 +573,18 @@
 			path = "Employer Home page";
 			sourceTree = "<group>";
 		};
-		6E4BE2CD2D1DB94F0054B3AC /* employer */ = {
+		6E4BE2CD2D1DB94F0054B3AC /* employer Sayed Hamed */ = {
 			isa = PBXGroup;
 			children = (
 				6E4BE2BC2D1DB94F0054B3AC /* applicationCell */,
 				6E4BE2C92D1DB94F0054B3AC /* Employer Home page */,
 			);
-			path = employer;
+			path = "employer Sayed Hamed";
 			sourceTree = "<group>";
 		};
 		6E4BE2D22D1DB94F0054B3AC /* SayedHamedFiles */ = {
 			isa = PBXGroup;
 			children = (
-				6E4BE2892D1DB94F0054B3AC /* Admin */,
-				6E4BE29C2D1DB94F0054B3AC /* CVBuilder */,
-				6E4BE2B92D1DB94F0054B3AC /* ProfileBuilder */,
-				6E4BE2CD2D1DB94F0054B3AC /* employer */,
-				6E4BE2CE2D1DB94F0054B3AC /* Assets.xcassets */,
-				6E4BE2CF2D1DB94F0054B3AC /* Models.swift */,
 			);
 			path = SayedHamedFiles;
 			sourceTree = "<group>";
@@ -769,17 +761,6 @@
 			path = "Job listing";
 			sourceTree = "<group>";
 		};
-		6E74DC392D16158300F0B84E /* Muntadher Files */ = {
-			isa = PBXGroup;
-			children = (
-				6E74DC382D16158300F0B84E /* notificationsView.swift */,
-				6E74DC272D16158300F0B84E /* Admin Resource page */,
-				6E74DC332D16158300F0B84E /* Job compatibility */,
-				6E74DC352D16158300F0B84E /* Job listing */,
-			);
-			path = "Muntadher Files";
-			sourceTree = "<group>";
-		};
 		6E74DC522D17FDAB00F0B84E /* market trends */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +800,20 @@
 				6E9D68EC2D1E4DE800767BEA /* TestTableViewCell.xib */,
 			);
 			path = "test table cells";
+			sourceTree = "<group>";
+		};
+		6E9D69582D1F28C600767BEA /* Homepages */ = {
+			isa = PBXGroup;
+			children = (
+				6E4BE2892D1DB94F0054B3AC /* Admin Sayed Hamed */,
+				6E4BE2CD2D1DB94F0054B3AC /* employer Sayed Hamed */,
+				6ED0016F2D1B70EC00644B5A /* tag collection cells */,
+				6E74DC352D16158300F0B84E /* Job listing */,
+				6ED001702D1B711100644B5A /* Admin */,
+				6E74DBD02D10272F00F0B84E /* Employer Home page */,
+				6ED0016E2D1B70DC00644B5A /* Job seeker homepage */,
+			);
+			path = Homepages;
 			sourceTree = "<group>";
 		};
 		6EBC6FBC2D1DC82800FC280A /* Helpers */ = {
@@ -926,6 +921,7 @@
 				6ED001772D1B74E200644B5A /* admin Job listing view cell */,
 				6EC441162D1CADF200D51114 /* admin homepage controllers */,
 				6EC4411D2D1CB81600D51114 /* admin advanced filters */,
+				6E74DC272D16158300F0B84E /* Admin Resource page */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -952,16 +948,22 @@
 			isa = PBXGroup;
 			children = (
 				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
+				6E4BE2CE2D1DB94F0054B3AC /* Assets 2.xcassets */,
 				6E74DBE72D14423300F0B84E /* final models.swift */,
-				6EBC6FC82D1E4A8E00FC280A /* Skill assessment */,
 				6EBC6FBC2D1DC82800FC280A /* Helpers */,
 				6E4BE3182D1DBA6F0054B3AC /* Login */,
+				6E9D69582D1F28C600767BEA /* Homepages */,
+				6E4BE29C2D1DB94F0054B3AC /* CVBuilder */,
+				6E4BE2B92D1DB94F0054B3AC /* ProfileBuilder */,
 				6E4BE2D22D1DB94F0054B3AC /* SayedHamedFiles */,
+				6E74DC332D16158300F0B84E /* Job compatibility */,
 				6E74DC522D17FDAB00F0B84E /* market trends */,
-				AC24357C2D05C1B700B21510 /* SQ */,
-				6E74DC392D16158300F0B84E /* Muntadher Files */,
 				6E74DBFE2D14CB9100F0B84E /* Career Resources */,
 				6E74DBF52D149D0900F0B84E /* Salary Estimator  */,
+				6EBC6FC82D1E4A8E00FC280A /* Skill assessment */,
+				6ED001312D18257B00644B5A /* Notification */,
+				AC24357C2D05C1B700B21510 /* SQ */,
+				6E74DC382D16158300F0B84E /* notificationsView.swift */,
 				AC24357B2D05C1B700B21510 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -979,11 +981,6 @@
 		AC24357C2D05C1B700B21510 /* SQ */ = {
 			isa = PBXGroup;
 			children = (
-				6ED001702D1B711100644B5A /* Admin */,
-				6E74DBD02D10272F00F0B84E /* Employer Home page */,
-				6ED001312D18257B00644B5A /* Notification */,
-				6ED0016E2D1B70DC00644B5A /* Job seeker homepage */,
-				6ED0016F2D1B70EC00644B5A /* tag collection cells */,
 				AC24357D2D05C1B700B21510 /* AppDelegate.swift */,
 				AC24357F2D05C1B700B21510 /* SceneDelegate.swift */,
 				AC2435812D05C1B700B21510 /* ViewController.swift */,
@@ -1140,7 +1137,7 @@
 				6E4BE30A2D1DB94F0054B3AC /* employerHomePage.storyboard in Resources */,
 				6E4BE30B2D1DB94F0054B3AC /* applicationTableVIewCell.xib in Resources */,
 				6E4BE30C2D1DB94F0054B3AC /* skillButtonsTableViewCell.xib in Resources */,
-				6E4BE30D2D1DB94F0054B3AC /* Assets.xcassets in Resources */,
+				6E4BE30D2D1DB94F0054B3AC /* Assets 2.xcassets in Resources */,
 				6E9D68EE2D1E4DE800767BEA /* TestTableViewCell.xib in Resources */,
 				6E74DC3B2D16158300F0B84E /* SliderCell.xib in Resources */,
 				6ED001302D18003500644B5A /* SuggestedPathsTableViewCell.xib in Resources */,
@@ -1217,7 +1214,6 @@
 				6E4BE2D92D1DB94F0054B3AC /* CVManager.swift in Sources */,
 				6E4BE2DB2D1DB94F0054B3AC /* CompanyProfileTableViewController.swift in Sources */,
 				6E4BE2DC2D1DB94F0054B3AC /* JobApplicationsViewController.swift in Sources */,
-				6E4BE2DE2D1DB94F0054B3AC /* Models.swift in Sources */,
 				6E4BE2DF2D1DB94F0054B3AC /* skillButtonsTableViewCell.swift in Sources */,
 				6E4BE2E02D1DB94F0054B3AC /* CVFinalViewController.swift in Sources */,
 				6E4BE2E12D1DB94F0054B3AC /* PBSkillsViewController.swift in Sources */,

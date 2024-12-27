@@ -12,7 +12,7 @@
         <!--advancedFilters-->
         <scene sceneID="KUN-V3-BVi">
             <objects>
-                <viewController storyboardIdentifier="advancedFilters" title="advancedFilters" modalPresentationStyle="fullScreen" id="Ian-sj-yyJ" customClass="AdminAdvancedFiltersViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="advancedFilters" title="advancedFilters" modalPresentationStyle="fullScreen" id="Ian-sj-yyJ" customClass="AdminAdvancedFiltersViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tdU-yY-Qof">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,7 @@
                             <constraint firstItem="1Ho-J2-tR3" firstAttribute="top" secondItem="XZD-BX-Dug" secondAttribute="top" id="z9b-dO-EOg"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="AdvancedFilters" image="Filter icon" id="DZY-IX-awx"/>
                     <navigationItem key="navigationItem" title="Filter" id="f8P-7Z-Yk5"/>
                     <connections>
                         <outlet property="tableView" destination="1Ho-J2-tR3" id="ocR-zT-SqV"/>
@@ -51,12 +52,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfe-ou-jqR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="DxX-KM-cLS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="869" y="233"/>
+            <point key="canvasLocation" x="1794.6564885496182" y="232.3943661971831"/>
         </scene>
         <!--Manage Filter View Controller-->
         <scene sceneID="hKA-rf-ptn">
             <objects>
-                <viewController id="J3X-UN-qpm" customClass="ManageFilterViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J3X-UN-qpm" customClass="ManageFilterViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iaA-Ku-9Ju">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,10 +131,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85r-Fu-MJL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="232"/>
+            <point key="canvasLocation" x="2660.3053435114502" y="231.69014084507043"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Filter icon" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -18,18 +18,18 @@ class AdminAdvancedFiltersViewController: UIViewController,UITableViewDelegate,U
         tableView.register(dropdownCell.nib(), forCellReuseIdentifier: dropdownCell.identifier)
         // Do any additional setup after loading the view.
     }
-    //    update the viewWillAppear so that the tabBar is hidden in this page
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            self.tabBarController?.tabBar.isHidden = true // Hide the tab bar
-        }
-        
-        
-    // add the tabbar back before going to another page
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            self.tabBarController?.tabBar.isHidden = false // Show the tab bar again
-        }
+//    //    update the viewWillAppear so that the tabBar is hidden in this page
+//        override func viewWillAppear(_ animated: Bool) {
+//            super.viewWillAppear(animated)
+//            self.tabBarController?.tabBar.isHidden = true // Hide the tab bar
+//        }
+//        
+//        
+//    // add the tabbar back before going to another page
+//        override func viewWillDisappear(_ animated: Bool) {
+//            super.viewWillDisappear(animated)
+//            self.tabBarController?.tabBar.isHidden = false // Show the tab bar again
+//        }
     func numberOfSections(in tableView: UITableView) -> Int {
         return adminSections.count
     }
