@@ -19,7 +19,7 @@ class SkillAssessmentMainViewController: UIViewController {
     
     @IBOutlet weak var AIView: UIView!
     
-    
+    var viewDashboardMap: [UIView: SkillAssessmentDashboard] = [:]
     
     
     override func viewDidLoad() {
@@ -29,8 +29,56 @@ class SkillAssessmentMainViewController: UIViewController {
         NetworkingView.layer.cornerRadius = 10
         CyberView.layer.cornerRadius = 10
         AIView.layer.cornerRadius = 10
+        
+        mapViewToDashboard(AnalyticsView, dashboardName: "Analytics")
+                mapViewToDashboard(ProgrammingView, dashboardName: "Programming")
+                mapViewToDashboard(NetworkingView, dashboardName: "Networking")
+        mapViewToDashboard(CyberView, dashboardName: "Cyber Security")
+         
+    
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true // Hide the tab bar
+    }
+    
+    
+// add the tabbar back before going to another page
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false // Show the tab bar again
+    }
+    
+    private func mapViewToDashboard(_ view: UIView, dashboardName: String) {
+          guard let dashboard = skillAssessmentDashboards.first(where: { $0.name == dashboardName }) else { return }
+          viewDashboardMap[view] = dashboard
+          addTapGesture(to: view)
+      }
+    private func addTapGesture(to view: UIView) {
+           let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(_:)))
+           view.isUserInteractionEnabled = true
+           view.addGestureRecognizer(tapGesture)
+       }
+    @objc private func handleCardTap(_ sender: UITapGestureRecognizer) {
+            guard let tappedView = sender.view else { return }
+            
+            // Get the corresponding SkillAssessmentDashboard object
+            guard let selectedDashboard = viewDashboardMap[tappedView] else { return }
+            
+            // Navigate to the next view controller
+            let storyboard = UIStoryboard(name: "SkillAssessment", bundle: nil)
+            let dashboardVC = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+            
+            // Pass the selected dashboard to the next view controller
+            dashboardVC.dashboard = selectedDashboard
+            
+            navigationController?.pushViewController(dashboardVC, animated: true)
+        }
+    
+    
+    
     
 
     /*

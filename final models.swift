@@ -266,15 +266,17 @@ class JobSeeker: Profile {
 }
 
 class SkillAssessmentDashboard {
+    var name: String
     var filter1: String
     var filter1Options: [String]
-    var difficulty1: String = "Difficulty"
-    var tests1: [Test]
-    init(filter1: String, filter1Options: [String], difficulty1: String, tests1: [Test]) {
+    var difficulty: String = "Difficulty"
+    var difficultyOptions : [String] = ["Easy","Medium","Hard"]
+    var tests: [Test]
+    init(name: String,filter1: String, filter1Options: [String],  tests: [Test]) {
         self.filter1 = filter1
         self.filter1Options = filter1Options
-        self.difficulty1 = difficulty1
-        self.tests1 = tests1
+        self.tests = tests
+        self.name = name
     }
     
 
@@ -506,6 +508,16 @@ var adminSections : [Section] = [
 ]
 var jobRecommendations : [job] = jobs
 var employerInsights : [job] = jobs
+var skillAssessmentDashboards : [SkillAssessmentDashboard] = [
+    SkillAssessmentDashboard(name: "Programming", filter1: "Language", filter1Options: ["C#","Java","Python"], tests: []),
+    SkillAssessmentDashboard(name: "Analytics", filter1: "Type", filter1Options: ["type1","type2","type3"], tests: []),
+    SkillAssessmentDashboard(name: "Networking", filter1: "Type", filter1Options: ["IPV4","IPV6","DNS"], tests: []),
+    SkillAssessmentDashboard(name: "Cyber Security", filter1: "Type", filter1Options: ["Ethical Hacking","Pen Testing","Malware Analysis"], tests: []),
+    SkillAssessmentDashboard(name: "Artificial Intelligence", filter1: "Type", filter1Options: ["machine learning","deep learning","natural language processing"], tests: [])
+]
+
+
+
 
 
 //

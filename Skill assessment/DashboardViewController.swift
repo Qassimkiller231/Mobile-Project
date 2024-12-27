@@ -8,9 +8,7 @@
 import UIKit
 
 class DashboardViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    @IBOutlet weak var difficultyButton: UIButton!
-    
-    @IBOutlet weak var languageButton: UIButton!
+ 
     
     @IBOutlet weak var languageTableView: UITableView!
     
@@ -18,10 +16,15 @@ class DashboardViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var testTableView: UITableView!
     
-    var languages:[String] = ["English","Arabic","French","German","Spanish"]
-    var difficulties:[String] = ["Easy","Medium","Hard"]
-    var tests:[String] = ["Test1","Test2","Test3","Test4","Test5"]
+    @IBOutlet weak var TitleLabel: UILabel!
     
+    @IBOutlet weak var selectedTypeLabel: UILabel!
+    
+    @IBOutlet weak var selectedDiffLabel: UILabel!
+    
+    var dashboard : SkillAssessmentDashboard?
+    var difficultyTableIsExpanded : Bool = false
+    var languageTableIsExpanded : Bool = false
     
     
     
@@ -34,38 +37,78 @@ class DashboardViewController: UIViewController,UITableViewDelegate,UITableViewD
         difficultyTableView.delegate = self
         testTableView.dataSource = self
         testTableView.delegate = self
+        TitleLabel.text = dashboard?.name ?? "No name"
+        languageTableView.register(HeaderDashboardTableViewCell.nib(), forCellReuseIdentifier: HeaderDashboardTableViewCell.identifier)
+        difficultyTableView.register(HeaderDashboardTableViewCell.nib(), forCellReuseIdentifier: HeaderDashboardTableViewCell.identifier)
         // Do any additional setup after loading the view.
     }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == languageTableView{
-            return languages.count
+            
+            return languageTableIsExpanded ? 1 + (dashboard?.filter1Options.count ?? 0) : 1
         } else if tableView == difficultyTableView{
-            return difficulties.count
+            return difficultyTableIsExpanded ? 1 +  (dashboard?.difficultyOptions.count ?? 0) : 1
         } else {
-            return tests.count
+            return dashboard?.tests.count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: HeaderDashboardTableViewCell.identifier, for: indexPath) as! HeaderDashboardTableViewCell
+            if tableView == languageTableView{
+                cell.titleLabel.text = dashboard?.filter1 ?? ""
+            } else {
+                cell.titleLabel.text = dashboard?.difficulty ?? ""
+            }
+           
+            return cell
+        }
         if tableView == testTableView {
-            var cell = tableView.dequeueReusableCell(withIdentifier: TestTableViewCell.identifier, for: indexPath) as! TestTableViewCell
-            cell.configure(with: tests[indexPath.row])
+            let cell = tableView.dequeueReusableCell(withIdentifier: TestTableViewCell.identifier, for: indexPath) as! TestTableViewCell
+            cell.configure(with: dashboard?.tests[indexPath.row].testTitle ?? "")
             return cell
         } else {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             if tableView == languageTableView{
-                cell.textLabel?.text = languages[indexPath.row]
+                cell.textLabel?.text = dashboard?.filter1Options[indexPath.row - 1] ?? ""
             } else if tableView == difficultyTableView{
-                cell.textLabel?.text = difficulties[indexPath.row]
+                cell.textLabel?.text = dashboard?.difficultyOptions[indexPath.row - 1] ?? ""
             }
             return cell
         }
          
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == languageTableView{
+            languageTableIsExpanded.toggle()
+            if indexPath.row != 0 {
+                selectedTypeLabel.text = dashboard?.filter1Options[indexPath.row - 1]
+            }
+        } else if tableView == difficultyTableView{
+            difficultyTableIsExpanded.toggle()
+            if indexPath.row != 0 {
+                selectedDiffLabel.text = dashboard?.difficultyOptions[indexPath.row - 1]
+            }
+        }
+        
+        tableView.reloadData()
+    }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
+    @IBAction func languageButtonTapped(_ sender: Any) {
+        languageTableView.isHidden.toggle()
+    }
+    
+    @IBAction func DifficultyButtonTapped(_ sender: Any) {
+        difficultyTableView.isHidden.toggle()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
     
     
 
