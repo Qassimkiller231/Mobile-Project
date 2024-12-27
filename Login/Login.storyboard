@@ -13,16 +13,19 @@
         <!--Welcome View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="WelcomeViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController storyboardIdentifier="WelcomeViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="WelcomeViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="In-App Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-bA-zmT">
-                                <rect key="frame" x="103.66666666666667" y="38" width="185.66666666666663" height="186"/>
+                                <rect key="frame" x="103" y="93" width="186" height="186"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac6-qA-UA3">
-                                <rect key="frame" x="62.666666666666657" y="252.99999999999997" width="268" height="76.666666666666657"/>
+                                <rect key="frame" x="62" y="293" width="268" height="76.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76.666666666666629" id="iXy-mi-Cs4"/>
+                                </constraints>
                                 <string key="text">Welcome to 
 Next Step Bahrain</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
@@ -70,11 +73,11 @@ Next Step Bahrain</string>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Yjg-bA-zmT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="103.66666666666669" id="4fU-NY-czM"/>
-                            <constraint firstItem="Yjg-bA-zmT" firstAttribute="centerX" secondItem="ac6-qA-UA3" secondAttribute="centerX" id="CxJ-zH-gUZ"/>
+                            <constraint firstItem="ac6-qA-UA3" firstAttribute="centerX" secondItem="bWP-Es-Lca" secondAttribute="centerX" id="Ah0-Wm-E05"/>
                             <constraint firstItem="Yjg-bA-zmT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FEZ-PB-ovn"/>
-                            <constraint firstItem="Yjg-bA-zmT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="38" id="nOU-27-cIi"/>
-                            <constraint firstItem="ac6-qA-UA3" firstAttribute="top" secondItem="Yjg-bA-zmT" secondAttribute="bottom" constant="29" id="pkm-1M-Jzl"/>
+                            <constraint firstItem="ac6-qA-UA3" firstAttribute="top" secondItem="Yjg-bA-zmT" secondAttribute="bottom" constant="14" id="WvB-mn-0xx"/>
+                            <constraint firstItem="ac6-qA-UA3" firstAttribute="centerX" secondItem="Yjg-bA-zmT" secondAttribute="centerX" id="cLL-TQ-mpa"/>
+                            <constraint firstItem="Yjg-bA-zmT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="93" id="nOU-27-cIi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i6B-yZ-Jex"/>
@@ -91,12 +94,12 @@ Next Step Bahrain</string>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVv-ge-hI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="-413"/>
+            <point key="canvasLocation" x="792" y="635"/>
         </scene>
-        <!--Login1 View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="gzX-rA-loy">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Qhy-tL-DxJ" customClass="Login1ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Qhy-tL-DxJ" customClass="LoginViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xen-41-KzV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <subviews>
@@ -236,16 +239,27 @@ Next Step Bahrain</string>
                         <outlet property="password" destination="WsB-AO-rlR" id="BIY-qo-Ga1"/>
                         <segue destination="9zw-So-mua" kind="show" identifier="goToMain" id="lI8-1L-Hch"/>
                         <segue destination="UR8-iO-WJl" kind="show" identifier="LoggedIn" id="nm5-M1-g7p"/>
+                        <segue destination="WZJ-vy-Pdr" kind="show" identifier="goToMain" id="Sbl-TF-8NZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX2-Z7-Z4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="791.60305343511448" y="4.9295774647887329"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="FK5-vX-3IT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="WZJ-vy-Pdr" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jhu-GH-VBn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doD-Ft-xv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="-478"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="NCR-0R-tCO">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="YKq-1j-a2o" customClass="SignUpViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="YKq-1j-a2o" customClass="SignUpViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hA4-4h-SAP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <subviews>
@@ -465,7 +479,7 @@ Next Step Bahrain</string>
         <!--Logged In View Controller-->
         <scene sceneID="EMY-Ca-8Wh">
             <objects>
-                <viewController id="UR8-iO-WJl" customClass="LoggedInViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UR8-iO-WJl" customClass="LoggedInViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZ6-NX-D6t">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -518,7 +532,7 @@ Next Step Bahrain</string>
         <!--Logged Out View Controller-->
         <scene sceneID="HWc-Fd-33f">
             <objects>
-                <viewController id="0yl-nl-3YL" customClass="LoggedOutViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0yl-nl-3YL" customClass="LoggedOutViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ikP-fL-0LR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,9 +583,9 @@ Next Step Bahrain</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R37-a8-0cT"/>
-        <segue reference="VEc-Nw-QnX"/>
-        <segue reference="2mL-g9-4DK"/>
+        <segue reference="nm5-M1-g7p"/>
+        <segue reference="D6j-Nd-2MB"/>
+        <segue reference="jlw-FS-Owc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="In-App Logo" width="186" height="186"/>

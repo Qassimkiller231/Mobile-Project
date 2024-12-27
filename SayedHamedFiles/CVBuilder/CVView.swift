@@ -27,7 +27,7 @@ class CVView: UIView {
             .font: UIFont.boldSystemFont(ofSize: 24),
             .foregroundColor: UIColor.black
         ]
-        let nameSize = name.size(withAttributes: nameAttributes)
+
         name.draw(at: CGPoint(x: 150, y: 70), withAttributes: nameAttributes)
         
         // Draw the title

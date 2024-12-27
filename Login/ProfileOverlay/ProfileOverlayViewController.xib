@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileOverlayViewController" customModule="Project" customModuleProvider="target">
+            <connections>
+                <outlet property="userTitle" destination="6is-hd-0TY" id="glT-MY-S6P"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GT-Yv-V2q">
+                    <rect key="frame" x="0.0" y="0.0" width="235.66666666666666" height="852"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6is-hd-0TY">
+                            <rect key="frame" x="62" y="77" width="110" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xd-iJ-Ezi">
+                            <rect key="frame" x="49.999999999999986" y="131" width="170.66666666666663" height="44"/>
+                            <color key="tintColor" red="0.42352941179999998" green="0.01176470588" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Edit Profile" imagePadding="20">
+                                <imageReference key="image" image="arrow.right" catalog="system" symbolScale="default"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
+                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="20"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="editProfileButtonTapped:" destination="-1" eventType="touchUpInside" id="axD-oJ-IuT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibj-O7-OWI">
+                            <rect key="frame" x="80" y="777" width="76" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="76" id="QOC-cl-PAT"/>
+                            </constraints>
+                            <color key="tintColor" red="0.42352941179999998" green="0.01176470588" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="LogOut">
+                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="logOutButtonTapped:" destination="-1" eventType="touchUpInside" id="ER0-D5-jyN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-S2-JhH">
+                            <rect key="frame" x="49.999999999999986" y="195" width="170.66666666666663" height="44"/>
+                            <color key="tintColor" red="0.42352941179999998" green="0.01176470588" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="CV Builder" imagePadding="20">
+                                <imageReference key="image" image="arrow.right" catalog="system" symbolScale="default"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
+                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="20"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="CVBuilderButtonTapped:" destination="-1" eventType="touchUpInside" id="Ypw-hq-8CK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="dJy-S2-JhH" firstAttribute="leading" secondItem="3GT-Yv-V2q" secondAttribute="leading" constant="50" id="2Q9-Ku-bfW"/>
+                        <constraint firstItem="ibj-O7-OWI" firstAttribute="centerX" secondItem="3GT-Yv-V2q" secondAttribute="centerX" id="5NW-Gs-uYj"/>
+                        <constraint firstItem="6is-hd-0TY" firstAttribute="leading" secondItem="3GT-Yv-V2q" secondAttribute="leading" constant="62" id="Na2-0p-27c"/>
+                        <constraint firstItem="6is-hd-0TY" firstAttribute="top" secondItem="3GT-Yv-V2q" secondAttribute="top" constant="77" id="QMW-iS-2Nk"/>
+                        <constraint firstItem="dJy-S2-JhH" firstAttribute="top" secondItem="2xd-iJ-Ezi" secondAttribute="bottom" constant="20" id="U8g-9D-vvB"/>
+                        <constraint firstAttribute="trailing" secondItem="6is-hd-0TY" secondAttribute="trailing" constant="63.670000000000002" id="Ux7-RW-jYY"/>
+                        <constraint firstAttribute="bottom" secondItem="ibj-O7-OWI" secondAttribute="bottom" constant="43" id="bri-2x-jbt"/>
+                        <constraint firstAttribute="trailing" secondItem="2xd-iJ-Ezi" secondAttribute="trailing" constant="15" id="cVd-OC-8y3"/>
+                        <constraint firstAttribute="trailing" secondItem="dJy-S2-JhH" secondAttribute="trailing" constant="15" id="dIx-Vv-YkW"/>
+                        <constraint firstItem="2xd-iJ-Ezi" firstAttribute="leading" secondItem="3GT-Yv-V2q" secondAttribute="leading" constant="50" id="oQe-Hc-tUH"/>
+                        <constraint firstItem="2xd-iJ-Ezi" firstAttribute="top" secondItem="6is-hd-0TY" secondAttribute="bottom" constant="30" id="wKs-jq-3Bh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="3GT-Yv-V2q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0IN-nw-jEq"/>
+                <constraint firstItem="3GT-Yv-V2q" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="7k2-hr-UP4"/>
+                <constraint firstAttribute="bottom" secondItem="3GT-Yv-V2q" secondAttribute="bottom" id="9mk-Ve-TCd"/>
+                <constraint firstItem="3GT-Yv-V2q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qg0-bz-5S6"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="xCz-jY-bV2" appends="YES" id="Zbf-HX-foB"/>
+            </connections>
+            <point key="canvasLocation" x="14.503816793893129" y="19.718309859154932"/>
+        </view>
+        <tapGestureRecognizer id="xCz-jY-bV2">
+            <connections>
+                <action selector="tappedOutOfView:" destination="-1" id="5dn-jE-qeb"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+    </resources>
+</document>

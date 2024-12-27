@@ -1,5 +1,5 @@
 //
-//  Login1ViewController.swift
+//  LoginViewController.swift
 //  testfinalfinal
 //
 //  Created by Ebrahim Aqeel Matrook Alderazi on 11/12/2024.
@@ -11,7 +11,7 @@ import FirebaseAuth
 import GoogleSignIn
 import GoogleSignInSwift
 
-class Login1ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     
@@ -49,7 +49,7 @@ class Login1ViewController: UIViewController {
                 self.errorLabel.alpha = 1
             }
             else {
-                self.performSegue(withIdentifier: "LoggedIn", sender: self)
+                self.performSegue(withIdentifier: "goToMain", sender: self)
             }
         }
     }
@@ -93,7 +93,7 @@ class Login1ViewController: UIViewController {
                     if let document = document, document.exists {
                         // Document exists; user already in Firestore
                         print("User already exists in Firestore")
-                        self.performSegue(withIdentifier: "LoggedIn", sender: self)
+                        self.performSegue(withIdentifier: "goToMain", sender: self)
                     } else {
                         // User doesn't exist; prompt for user details
                         self.promptForUserDetails { firstName, lastName, userType in
@@ -123,7 +123,7 @@ class Login1ViewController: UIViewController {
                 self.showError("Error adding Firestore document: \(error.localizedDescription)")
             } else {
                 print("Firestore document added successfully.")
-                self.performSegue(withIdentifier: "LoggedIn", sender: self)
+                self.performSegue(withIdentifier: "goToMain", sender: self)
             }
         }
     }
@@ -152,7 +152,7 @@ class Login1ViewController: UIViewController {
     
 }
 
-extension Login1ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

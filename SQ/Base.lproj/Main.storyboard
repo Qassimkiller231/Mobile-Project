@@ -22,7 +22,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,9 +31,6 @@
                                 <rect key="frame" x="20" y="62" width="400" height="39"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Job seeker home page"/>
-                                <connections>
-                                    <segue destination="KxD-uP-k7u" kind="show" id="BMO-Qm-gIR"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-Z6-QEM">
                                 <rect key="frame" x="107" y="476" width="181" height="39"/>
@@ -71,6 +68,24 @@
                                     <segue destination="tMt-fq-0CH" kind="show" id="byh-i5-2dS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awY-th-BuZ">
+                                <rect key="frame" x="155" y="823" width="85" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="LogOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqb-ZI-VNS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0Z-Sq-WIy">
+                                <rect key="frame" x="132" y="743" width="176" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Shiw Profile Overlay"/>
+                                <connections>
+                                    <action selector="showOverlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nYY-V0-PrJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -94,12 +109,26 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="icon (1)" id="qzM-7L-hEr"/>
                     <navigationItem key="navigationItem" id="ab8-vD-viT"/>
+                    <connections>
+                        <segue destination="RTc-0G-S5Z" kind="showDetail" identifier="goToLogin" id="tEq-ek-6WU"/>
+                        <segue destination="KxD-uP-k7u" kind="show" identifier="goToJobSeekerHomepage" id="M4V-Iw-FxF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="SnT-l3-YEb"/>
                 <tapGestureRecognizer id="EVP-k5-cgG"/>
             </objects>
-            <point key="canvasLocation" x="2919.8473282442746" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2827" y="23"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="b8H-lf-HkD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="RTc-0G-S5Z" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qta-mp-yev"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XW-k7-wiG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3440" y="-201"/>
         </scene>
         <!--JobSeekerLoginPage-->
         <scene sceneID="sLO-Ke-Uqc">
