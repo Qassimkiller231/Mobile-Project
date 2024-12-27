@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuf-eQ-6ix">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuf-eQ-6ix">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +13,7 @@
         <!--Job Seeker Homepage View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="JobSeekerHomepageViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="JobSeekerHomepageViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,13 +36,13 @@
                                 <rect key="frame" x="16" y="103" width="361" height="55"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oup-hh-NGF">
-                                        <rect key="frame" x="0.0" y="1" width="55" height="53.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.66666666666666785" width="55" height="53.666666666666657"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="svf-or-3fe"/>
                                         </constraints>
                                     </imageView>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="i43-60-BPz">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="i43-60-BPz">
                                         <rect key="frame" x="60" y="0.0" width="241" height="55"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </searchBar>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.3.horizontal.decrease.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pHq-co-jdm">
-                                        <rect key="frame" x="306" y="1" width="55" height="53.666666666666671"/>
+                                        <rect key="frame" x="306" y="0.66666666666666785" width="55" height="53.666666666666657"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -131,7 +131,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Skill Assessment test"/>
                                 <connections>
-                                    <segue destination="ky5-Et-MUj" kind="show" id="1na-K5-GOe"/>
+                                    <segue destination="NCM-re-e9c" kind="show" id="2kP-Bj-79n"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -202,34 +202,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eej-6O-MYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3225" y="-115"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="21b-xm-JEF">
-            <objects>
-                <viewController id="ky5-Et-MUj" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ha1-Yz-fgz">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill assessment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdl-w5-qhK">
-                                <rect key="frame" x="133.66666666666666" y="415.66666666666669" width="125.99999999999997" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Pt3-j6-9XG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="gdl-w5-qhK" firstAttribute="centerY" secondItem="Ha1-Yz-fgz" secondAttribute="centerY" id="ACX-In-Dck"/>
-                            <constraint firstItem="gdl-w5-qhK" firstAttribute="centerX" secondItem="Ha1-Yz-fgz" secondAttribute="centerX" id="dD9-8k-PR1"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="rSY-yx-fiP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CQW-aS-NyU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3250" y="-85"/>
         </scene>
         <!--Home-->
         <scene sceneID="E6a-GZ-4Rn">
@@ -309,10 +281,20 @@
             </objects>
             <point key="canvasLocation" x="54" y="623"/>
         </scene>
+        <!--SkillAssessment-->
+        <scene sceneID="hhh-za-SSS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SkillAssessment" id="NCM-re-e9c" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="U1J-HZ-iSs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8t-nt-DMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1810" y="404"/>
+        </scene>
         <!--Job Details View Controller-->
         <scene sceneID="ayt-5S-a1v">
             <objects>
-                <viewController id="JwT-0h-hlE" customClass="JobDetailsViewController" customModule="testfinalfinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JwT-0h-hlE" customClass="JobDetailsViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pxa-sp-Hms">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -529,10 +511,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

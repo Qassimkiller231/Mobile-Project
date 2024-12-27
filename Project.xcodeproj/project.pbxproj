@@ -556,13 +556,13 @@
 			path = "Employer Home page";
 			sourceTree = "<group>";
 		};
-		6E4BE2CD2D1DB94F0054B3AC /* untitled folder */ = {
+		6E4BE2CD2D1DB94F0054B3AC /* employer */ = {
 			isa = PBXGroup;
 			children = (
 				6E4BE2BC2D1DB94F0054B3AC /* applicationCell */,
 				6E4BE2C92D1DB94F0054B3AC /* Employer Home page */,
 			);
-			path = "untitled folder";
+			path = employer;
 			sourceTree = "<group>";
 		};
 		6E4BE2D22D1DB94F0054B3AC /* SayedHamedFiles */ = {
@@ -571,7 +571,7 @@
 				6E4BE2892D1DB94F0054B3AC /* Admin */,
 				6E4BE29C2D1DB94F0054B3AC /* CVBuilder */,
 				6E4BE2B92D1DB94F0054B3AC /* ProfileBuilder */,
-				6E4BE2CD2D1DB94F0054B3AC /* untitled folder */,
+				6E4BE2CD2D1DB94F0054B3AC /* employer */,
 				6E4BE2CE2D1DB94F0054B3AC /* Assets.xcassets */,
 				6E4BE2CF2D1DB94F0054B3AC /* Models.swift */,
 			);
@@ -1449,7 +1449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = SQ/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MobileProgrammingProject;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1478,7 +1478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = SQ/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MobileProgrammingProject;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
