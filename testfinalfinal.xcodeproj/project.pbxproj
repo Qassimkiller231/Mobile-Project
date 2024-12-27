@@ -131,8 +131,6 @@
 		6E74DC562D17FDAB00F0B84E /* JobRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */; };
 		6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */; };
 		6EBC6FBD2D1DC82800FC280A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FBB2D1DC82800FC280A /* Utilities.swift */; };
-		6EBC6FC02D1E482700FC280A /* SkillAssessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EBC6FBF2D1E482700FC280A /* SkillAssessment.storyboard */; };
-		6EBC6FC22D1E484700FC280A /* SkillAssessmentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6FC12D1E484700FC280A /* SkillAssessmentMainViewController.swift */; };
 		6EC4411A2D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */; };
 		6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */; };
 		6EC4411F2D1CBCEF00D51114 /* ManageFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4411E2D1CBCEF00D51114 /* ManageFilterViewController.swift */; };
@@ -163,9 +161,6 @@
 		AC2435822D05C1B700B21510 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2435812D05C1B700B21510 /* ViewController.swift */; };
 		AC2435852D05C1B700B21510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435832D05C1B700B21510 /* Main.storyboard */; };
 		AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */; };
-		AC2435952D05C1BB00B21510 /* testfinalfinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2435942D05C1BB00B21510 /* testfinalfinalTests.swift */; };
-		AC24359F2D05C1BB00B21510 /* testfinalfinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24359E2D05C1BB00B21510 /* testfinalfinalUITests.swift */; };
-		AC2435A12D05C1BB00B21510 /* testfinalfinalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2435A02D05C1BB00B21510 /* testfinalfinalUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,8 +296,6 @@
 		6E74DC4F2D17FDAB00F0B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
 		6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceMainViewController.swift; sourceTree = "<group>"; };
 		6EBC6FBB2D1DC82800FC280A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		6EBC6FBF2D1E482700FC280A /* SkillAssessment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkillAssessment.storyboard; sourceTree = "<group>"; };
-		6EBC6FC12D1E484700FC280A /* SkillAssessmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillAssessmentMainViewController.swift; sourceTree = "<group>"; };
 		6EC441192D1CB0D700D51114 /* AdminAdvancedFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminAdvancedFiltersViewController.swift; path = ../../AdminAdvancedFiltersViewController.swift; sourceTree = "<group>"; };
 		6EC4411B2D1CB10700D51114 /* adminAdvancedFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = adminAdvancedFilters.storyboard; path = ../adminAdvancedFilters.storyboard; sourceTree = "<group>"; };
 		6EC4411E2D1CBCEF00D51114 /* ManageFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFilterViewController.swift; sourceTree = "<group>"; };
@@ -336,10 +329,7 @@
 		AC2435892D05C1BA00B21510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC24358B2D05C1BA00B21510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC2435902D05C1BB00B21510 /* testfinalfinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC2435942D05C1BB00B21510 /* testfinalfinalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testfinalfinalTests.swift; sourceTree = "<group>"; };
 		AC24359A2D05C1BB00B21510 /* testfinalfinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC24359E2D05C1BB00B21510 /* testfinalfinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testfinalfinalUITests.swift; sourceTree = "<group>"; };
-		AC2435A02D05C1BB00B21510 /* testfinalfinalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testfinalfinalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -779,15 +769,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		6EBC6FBE2D1E480E00FC280A /* Skill Assessment test */ = {
-			isa = PBXGroup;
-			children = (
-				6EBC6FBF2D1E482700FC280A /* SkillAssessment.storyboard */,
-				6EBC6FC12D1E484700FC280A /* SkillAssessmentMainViewController.swift */,
-			);
-			path = "Skill Assessment test";
-			sourceTree = "<group>";
-		};
 		6EC441162D1CADF200D51114 /* admin homepage controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,12 +885,10 @@
 				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
 				6E74DBE72D14423300F0B84E /* final models.swift */,
 				6E74DC522D17FDAB00F0B84E /* market trends */,
-				AC24357C2D05C1B700B21510 /* testfinalfinal */,
+				AC24357C2D05C1B700B21510 /* SQ */,
 				6E74DC392D16158300F0B84E /* Muntadher Files */,
 				6E74DBFE2D14CB9100F0B84E /* Career Resources */,
 				6E74DBF52D149D0900F0B84E /* Salary Estimator  */,
-				AC2435932D05C1BB00B21510 /* testfinalfinalTests */,
-				AC24359D2D05C1BB00B21510 /* testfinalfinalUITests */,
 				AC24357B2D05C1B700B21510 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -924,10 +903,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC24357C2D05C1B700B21510 /* testfinalfinal */ = {
+		AC24357C2D05C1B700B21510 /* SQ */ = {
 			isa = PBXGroup;
 			children = (
-				6EBC6FBE2D1E480E00FC280A /* Skill Assessment test */,
 				6ED001702D1B711100644B5A /* Admin */,
 				6E74DBD02D10272F00F0B84E /* Employer Home page */,
 				6ED001312D18257B00644B5A /* Notification */,
@@ -940,24 +918,7 @@
 				AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */,
 				AC24358B2D05C1BA00B21510 /* Info.plist */,
 			);
-			path = testfinalfinal;
-			sourceTree = "<group>";
-		};
-		AC2435932D05C1BB00B21510 /* testfinalfinalTests */ = {
-			isa = PBXGroup;
-			children = (
-				AC2435942D05C1BB00B21510 /* testfinalfinalTests.swift */,
-			);
-			path = testfinalfinalTests;
-			sourceTree = "<group>";
-		};
-		AC24359D2D05C1BB00B21510 /* testfinalfinalUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AC24359E2D05C1BB00B21510 /* testfinalfinalUITests.swift */,
-				AC2435A02D05C1BB00B21510 /* testfinalfinalUITestsLaunchTests.swift */,
-			);
-			path = testfinalfinalUITests;
+			path = SQ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1099,7 +1060,6 @@
 				6E4BE3062D1DB94F0054B3AC /* Admin.storyboard in Resources */,
 				6E4BE3072D1DB94F0054B3AC /* temp1~.storyboard in Resources */,
 				6E4BE3082D1DB94F0054B3AC /* experienceTableViewCell.xib in Resources */,
-				6EBC6FC02D1E482700FC280A /* SkillAssessment.storyboard in Resources */,
 				6E4BE3092D1DB94F0054B3AC /* temp1.xib in Resources */,
 				6E4BE30A2D1DB94F0054B3AC /* employerHomePage.storyboard in Resources */,
 				6E4BE30B2D1DB94F0054B3AC /* applicationTableVIewCell.xib in Resources */,
@@ -1186,7 +1146,6 @@
 				6E4BE2E42D1DB94F0054B3AC /* ManageExperienceTableViewController.swift in Sources */,
 				6E4BE2E52D1DB94F0054B3AC /* PBPersonalViewController.swift in Sources */,
 				6E4BE2E62D1DB94F0054B3AC /* PBEducationViewController.swift in Sources */,
-				6EBC6FC22D1E484700FC280A /* SkillAssessmentMainViewController.swift in Sources */,
 				6E4BE2E72D1DB94F0054B3AC /* PBPreferencesViewController.swift in Sources */,
 				6E4BE2E82D1DB94F0054B3AC /* CVTemplateViewController.swift in Sources */,
 				6E4BE2E92D1DB94F0054B3AC /* ManageEducationViewController.swift in Sources */,
@@ -1246,7 +1205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2435952D05C1BB00B21510 /* testfinalfinalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1254,8 +1212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2435A12D05C1BB00B21510 /* testfinalfinalUITestsLaunchTests.swift in Sources */,
-				AC24359F2D05C1BB00B21510 /* testfinalfinalUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1506,7 +1462,6 @@
 		AC2435A82D05C1BB00B21510 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1525,7 +1480,6 @@
 		AC2435A92D05C1BB00B21510 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1544,7 +1498,6 @@
 		AC2435AB2D05C1BB00B21510 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1561,7 +1514,6 @@
 		AC2435AC2D05C1BB00B21510 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
