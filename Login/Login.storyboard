@@ -10,6 +10,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--JobSeekerLoginPage-->
+        <scene sceneID="8V8-ga-OxK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="JobSeekerLoginPage" id="yKS-WM-5Ac" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yKh-aB-W1R"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kla-td-FQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="-494"/>
+        </scene>
+        <!--adminHomePage-->
+        <scene sceneID="9lg-o1-4Ir">
+            <objects>
+                <viewControllerPlaceholder storyboardName="adminHomePage" id="pDr-Bu-DCd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kZf-eX-Gih"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SE5-ha-F5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344" y="-625"/>
+        </scene>
+        <!--employerHomePage-->
+        <scene sceneID="RIX-g3-Wsf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="employerHomePage" id="DfF-MC-r5Y" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Whx-V0-T5H"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08c-99-mtZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847" y="-478"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -19,10 +49,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="In-App Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-bA-zmT">
-                                <rect key="frame" x="103" y="93" width="186" height="186"/>
+                                <rect key="frame" x="103" y="152" width="186" height="186"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac6-qA-UA3">
-                                <rect key="frame" x="62" y="293" width="268" height="76.666666666666686"/>
+                                <rect key="frame" x="62" y="352" width="268" height="76.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76.666666666666629" id="iXy-mi-Cs4"/>
                                 </constraints>
@@ -81,6 +111,11 @@ Next Step Bahrain</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i6B-yZ-Jex"/>
+                    <connections>
+                        <segue destination="pDr-Bu-DCd" kind="show" identifier="goToAdminHomepage" id="BGw-lW-y2x"/>
+                        <segue destination="yKS-WM-5Ac" kind="show" identifier="goToJobSeekerHomepage" id="csg-5q-b6Z"/>
+                        <segue destination="DfF-MC-r5Y" kind="show" identifier="toEmployer" id="fzQ-YQ-jEM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,9 +213,9 @@ Next Step Bahrain</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpO-6w-vlc">
-                                <rect key="frame" x="77" y="595" width="239" height="44"/>
+                                <rect key="frame" x="41.666666666666657" y="595" width="310" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Log In with Google" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="filled" image="Google" imagePlacement="leading" title="Continue with Google" imagePadding="11" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -227,23 +262,14 @@ Next Step Bahrain</string>
                         <outlet property="errorLabel" destination="XVr-iY-SWq" id="QrN-m4-kt7"/>
                         <outlet property="googleLoginButton" destination="XpO-6w-vlc" id="FbH-vL-2wO"/>
                         <outlet property="password" destination="WsB-AO-rlR" id="BIY-qo-Ga1"/>
-                        <segue destination="UR8-iO-WJl" kind="show" identifier="LoggedIn" id="nm5-M1-g7p"/>
-                        <segue destination="WZJ-vy-Pdr" kind="show" identifier="goToMain" id="Sbl-TF-8NZ"/>
+                        <segue destination="DfF-MC-r5Y" kind="show" identifier="toEmployer" id="0Sa-nr-4JA"/>
+                        <segue destination="yKS-WM-5Ac" kind="show" identifier="goToJobSeekerHomepage" id="AxU-Ov-nUP"/>
+                        <segue destination="pDr-Bu-DCd" kind="show" identifier="goToAdminHomepage" id="aj4-84-uVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX2-Z7-Z4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791.60305343511448" y="4.9295774647887329"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="FK5-vX-3IT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="WZJ-vy-Pdr" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="jhu-GH-VBn"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="doD-Ft-xv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1401" y="-478"/>
+            <point key="canvasLocation" x="805" y="29"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="NCR-0R-tCO">
@@ -458,132 +484,32 @@ Next Step Bahrain</string>
                         <outlet property="jobSeekerButton" destination="1Dg-Ev-ctt" id="auP-hH-RSe"/>
                         <outlet property="lastNameTextField" destination="C0i-je-khc" id="U3O-3t-eWX"/>
                         <outlet property="passwordTextField" destination="4E7-O0-rOe" id="hd8-md-vOf"/>
-                        <segue destination="UR8-iO-WJl" kind="show" identifier="SignedUp" id="R37-a8-0cT"/>
+                        <segue destination="DfF-MC-r5Y" kind="show" identifier="toEmployer" id="l94-cd-LAG"/>
+                        <segue destination="yKS-WM-5Ac" kind="show" identifier="goToJobSeekerHomepage" id="i7d-OM-jcu"/>
+                        <segue destination="pDr-Bu-DCd" kind="show" identifier="goToAdminHomepage" id="ffD-Jf-or0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTe-dA-zkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475.5725190839694" y="4.9295774647887329"/>
-        </scene>
-        <!--Logged In View Controller-->
-        <scene sceneID="EMY-Ca-8Wh">
-            <objects>
-                <viewController id="UR8-iO-WJl" customClass="LoggedInViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cZ6-NX-D6t">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged In SuccessFuly As:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICz-sR-Kdu">
-                                <rect key="frame" x="94" y="98" width="229" height="196"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPL-4Q-rdE">
-                                <rect key="frame" x="155" y="368" width="82" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mg-DS-pHW">
-                                <rect key="frame" x="145" y="447" width="103" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLO-7V-Url">
-                                <rect key="frame" x="154" y="659" width="85" height="159"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
-                                <connections>
-                                    <action selector="LogOutButtonPressed:" destination="UR8-iO-WJl" eventType="touchUpInside" id="RHg-4R-kqF"/>
-                                    <segue destination="0yl-nl-3YL" kind="show" id="esG-Nq-Ssy"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="hky-YK-dbE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="os9-7b-qS6"/>
-                    <connections>
-                        <outlet property="emailLabel" destination="nPL-4Q-rdE" id="MqE-yL-Txc"/>
-                        <outlet property="userIDlabel" destination="7Mg-DS-pHW" id="SGC-pF-7wM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BOl-Eh-zds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2240" y="5"/>
-        </scene>
-        <!--Logged Out View Controller-->
-        <scene sceneID="HWc-Fd-33f">
-            <objects>
-                <viewController id="0yl-nl-3YL" customClass="LoggedOutViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ikP-fL-0LR">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged Out SuccessFuly" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjg-SY-gmc">
-                                <rect key="frame" x="94" y="98" width="237" height="196"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gr-mV-bCd">
-                                <rect key="frame" x="155" y="368" width="82" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8Q-4u-s1E">
-                                <rect key="frame" x="145" y="447" width="103" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzR-yi-NlL">
-                                <rect key="frame" x="137" y="642" width="126" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back To Main"/>
-                                <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="show" id="2CC-XQ-ynB"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Rv6-jw-27D"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="TFY-UW-K8B"/>
-                    <connections>
-                        <outlet property="emailLabel" destination="8gr-mV-bCd" id="eUn-eL-efO"/>
-                        <outlet property="userIDlabel" destination="b8Q-4u-s1E" id="lcE-hL-8iB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WkI-gu-jz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1475.5725190839694" y="764.78873239436621"/>
+            <point key="canvasLocation" x="1502" y="16"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nm5-M1-g7p"/>
         <segue reference="VEc-Nw-QnX"/>
         <segue reference="2mL-g9-4DK"/>
+        <segue reference="l94-cd-LAG"/>
+        <segue reference="BGw-lW-y2x"/>
+        <segue reference="i7d-OM-jcu"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Google" width="24" height="24"/>
         <image name="In-App Logo" width="186" height="186"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

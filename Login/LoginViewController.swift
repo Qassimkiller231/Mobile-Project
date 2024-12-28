@@ -32,6 +32,35 @@ class LoginViewController: UIViewController {
         
         
     }
+    func navigateBasedOnUserType(_ userType: String) {
+        // Decide navigation based on userType
+        switch userType {
+        case "admin":
+            goToAdminDashboard()
+        case "jobSeeker":
+            goToJobSeekerDashboard()
+        case "employer":
+            goToEmployerDashboard()
+        default:
+            print("Unknown userType. staying in login")
+        }
+    }
+
+func goToAdminDashboard() {
+    performSegue(withIdentifier: "goToAdminHomepage", sender: self)
+}
+
+func goToJobSeekerDashboard() {
+    performSegue(withIdentifier: "goToJobSeekerHomepage", sender: self)
+}
+func goToEmployerDashboard() {
+    performSegue(withIdentifier: "toEmployer", sender: self)
+}
+
+    
+
+    
+   
     
     func login(){
         // TODO: Validate Text Fields
@@ -49,10 +78,47 @@ class LoginViewController: UIViewController {
                 self.errorLabel.alpha = 1
             }
             else {
-                self.performSegue(withIdentifier: "goToMain", sender: self)
+                print(Auth.auth().currentUser?.uid)
+                self.fetchUserType(for: Auth.auth().currentUser!.uid) { userType in
+                    guard let userType = userType else {
+                        print("Failed to fetch userType or user not found.")
+                        return
+                    }
+                    
+                    print("UserType: \(userType)")
+                    self.navigateBasedOnUserType(userType)
+                }
+
+
             }
         }
     }
+    func fetchUserType(for uid: String, completion: @escaping (String?) -> Void) {
+        let db = Firestore.firestore()
+        let userRef = db.collection("Users").document(uid)
+        
+        userRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error fetching user type: \(error.localizedDescription)")
+                completion(nil) // Return nil on error
+                return
+            }
+
+            // Ensure the document exists
+            guard let document = document, document.exists else {
+                print("No user found with the specified uid.")
+                completion(nil) // Return nil if no document found
+                return
+            }
+
+            // Extract userType from the document data
+            let userType = document.data()?["userType"] as? String
+            print("Fetched userType: \(userType ?? "nil")")
+            completion(userType) // Return the fetched userType
+        }
+    }
+
+
     
     func loginWithGoogle() {
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
@@ -93,7 +159,6 @@ class LoginViewController: UIViewController {
                     if let document = document, document.exists {
                         // Document exists; user already in Firestore
                         print("User already exists in Firestore")
-                        self.performSegue(withIdentifier: "goToMain", sender: self)
                     } else {
                         // User doesn't exist; prompt for user details
                         self.promptForUserDetails { firstName, lastName, userType in
@@ -123,7 +188,7 @@ class LoginViewController: UIViewController {
                 self.showError("Error adding Firestore document: \(error.localizedDescription)")
             } else {
                 print("Firestore document added successfully.")
-                self.performSegue(withIdentifier: "goToMain", sender: self)
+                
             }
         }
     }

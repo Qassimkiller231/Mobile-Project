@@ -105,6 +105,12 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         
+        guard selectedButton != nil else {
+            let error = "Please select a role"
+            showError(error)
+            return
+        }
+        
         //validate fields
         let error = validateFields()
         
@@ -151,7 +157,7 @@ class SignUpViewController: UIViewController {
                     }
 
                     
-                    self.transitionToHome()
+                    self.navigateBasedOnUserType(userType ?? "")
                 }
             }
             
@@ -168,6 +174,31 @@ class SignUpViewController: UIViewController {
     func transitionToHome() {
         self.performSegue(withIdentifier: "SignedUp", sender: nil)
     }
+    
+    func navigateBasedOnUserType(_ userType: String) {
+        // Decide navigation based on userType
+        switch userType {
+        case "admin":
+            goToAdminDashboard()
+        case "jobSeeker":
+            goToJobSeekerDashboard()
+        case "employer":
+            goToEmployerDashboard()
+        default:
+            print("Unknown userType. staying in login")
+        }
+    }
+
+func goToAdminDashboard() {
+    performSegue(withIdentifier: "goToAdminHomepage", sender: self)
+}
+
+func goToJobSeekerDashboard() {
+    performSegue(withIdentifier: "goToJobSeekerHomepage", sender: self)
+}
+func goToEmployerDashboard() {
+    performSegue(withIdentifier: "toEmployer", sender: self)
+}
     
     /*
      // MARK: - Navigation

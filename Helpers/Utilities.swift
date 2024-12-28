@@ -402,3 +402,14 @@ class Utilities {
     
 }
 
+// logout code
+
+//do {
+//        try Auth.auth().signOut()
+//    GIDSignIn.sharedInstance.signOut()
+//        // Optionally, transition the user to a login screen or perform other actions.
+//        print("User signed out successfully")
+//    } catch let signOutError as NSError {
+//        print("Error signing out: \(signOutError.localizedDescription)")
+//    }
+
