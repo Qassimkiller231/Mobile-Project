@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Enums
 
-enum UserType: String{
+enum UserType: String,Codable{
     case admin
     case jobSeeker
     case employer
@@ -19,44 +19,42 @@ enum SkillNames : String{
     case skill1
     case skill2
 }
-enum jobTypes : String{
+enum jobTypes : String,Codable{
     case fullTime = "fulltime"
     case partTime = "part-time"
 }
-enum jobCategories : String{
+enum jobCategories : String, Codable{
     case software
     case hardware
     case finance
 }
-enum preferenceList: String{
+enum preferenceList: String,Codable{
     case experience
     case education
     case skills
 }
-enum jobPositions: String{
+enum jobPositions: String , Codable{
     case Designer = "Designer"
     case softwareDev = "Software Developer"
 }
-enum SalaryType : String{
+enum SalaryType : String, Codable{
     case hourly
     case monthly
 }
-enum applicationStatus : String{
+enum applicationStatus : String,Codable{
     case pending
     case accepted
     case rejected
 }
 
-var locations : [String] = [
-    "Manama","Muharraq","Isa town"
-]
+
 
 
 
 
 
 // MARK: Structs
-struct Education: Equatable {
+struct Education: Equatable,Codable {
     var educationFacility: String
     var educationLevel: String
     var degree: String
@@ -65,7 +63,7 @@ struct Education: Equatable {
     var city: String
     
 }
-struct Experience: Equatable {
+struct Experience: Equatable,Codable {
     var jobTitle: String
     var companyName: String
     var startDate: String
@@ -74,18 +72,18 @@ struct Experience: Equatable {
     
 }
 
-struct Skill {
+struct Skill: Codable {
     var skillName: String
     var skillLevel: String
 }
-struct CareerPath{
+struct CareerPath :Codable{
     var interests: [String]
     var skills: [Skill]
     var position: jobPositions
     var description: String
     
 }
-struct Preference{
+struct Preference : Codable{
     var prefrence : preferenceList
     var jobType: jobTypes
     
@@ -115,7 +113,7 @@ struct Test {
         return zip(questions, answers).filter { $0.isCorrectAnswer($1) }.count
     }
 }
-struct application {
+struct application : Codable {
     var dateOfApplication: Date
     var jobSeeker: JobSeeker
     var isShortlisted: Bool = false
@@ -123,7 +121,7 @@ struct application {
     var notes: String?
     var status: applicationStatus = .pending
 }
-struct Interview {
+struct Interview : Codable {
     var interviewDate: String
     var interviewTime: String
     var nameOfIntervieweed: String
@@ -185,7 +183,7 @@ struct Section {
     var minSalary: Int? = nil // Minimum Salary (as an integer value)
     var maxSalary: Int? = nil // Maximum Salary (as an integer value)
 }
-struct Notifcation {
+struct NotificationItem : Codable {
     var notificationName: String
     var notificationDescription: String
     var notificationDate: String
@@ -196,35 +194,79 @@ struct Notifcation {
 // MARK: Classes
 
 
-class AppUser {
-    static var IDS = 1
-    var userID: Int
+class AppUser: Codable {
+    var userID: String
     var firstName: String
     var lastName: String
     var email: String
     var password: String
     var type: UserType
-    init(firstName: String, lastName: String, email: String, password: String, type: UserType) {
-        self.userID = AppUser.IDS
-        AppUser.IDS += 1
+
+    init(userID:String,firstName: String, lastName: String, email: String, password: String, type: UserType) {
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.password = password
         self.type = type
+        self.userID = userID
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "userID"
+        case firstName = "firstName"
+        case lastName = "lastName"
+        case email = "email"
+        case password = "password"
+        case type = "type"
     }
 }
-
 class Profile: AppUser {
     var profileImage: String
     var phoneNumber: String
     var location: String
-    var notifications: [Notification] = []
-    init(profileImage: String, phoneNumber: String, location: String, firstName: String, lastName: String, email: String, password: String, type: UserType) {
+    var notifications: [NotificationItem] = []
+
+    // Custom initializer
+    init(userID: String, profileImage: String, phoneNumber: String, location: String, firstName: String, lastName: String, email: String, password: String, type: UserType) {
         self.profileImage = profileImage
         self.phoneNumber = phoneNumber
         self.location = location
-        super.init(firstName: firstName, lastName: lastName, email: email, password: password, type: type)
+        super.init(userID: userID, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
+    }
+
+    // MARK: Codable Conformance
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        // Decode properties of Profile
+        self.profileImage = try container.decode(String.self, forKey: .profileImage)
+        self.phoneNumber = try container.decode(String.self, forKey: .phoneNumber)
+        self.location = try container.decode(String.self, forKey: .location)
+        self.notifications = try container.decodeIfPresent([NotificationItem].self, forKey: .notifications) ?? []
+
+        // Decode properties of the parent class
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        // Encode properties of Profile
+        try container.encode(profileImage, forKey: .profileImage)
+        try container.encode(phoneNumber, forKey: .phoneNumber)
+        try container.encode(location, forKey: .location)
+        try container.encode(notifications, forKey: .notifications)
+
+        // Encode properties of the parent class
+        try super.encode(to: encoder)
+    }
+
+    // MARK: Coding Keys
+    private enum CodingKeys: String, CodingKey {
+        case profileImage
+        case phoneNumber
+        case location
+        case notifications
     }
 }
 
@@ -233,12 +275,49 @@ class Company: Profile {
     var industry: String
     var website: String
     var aboutUs: String
-    init(companyName: String,industry: String, website: String, aboutUs: String, firstName: String, lastName: String, email: String, password: String, type: UserType, profileImage: String, phoneNumber: String, location: String) {
+
+    // Custom initializer
+    init(userID: String, companyName: String, industry: String, website: String, aboutUs: String, firstName: String, lastName: String, email: String, password: String, type: UserType, profileImage: String, phoneNumber: String, location: String) {
         self.companyName = companyName
         self.industry = industry
         self.website = website
         self.aboutUs = aboutUs
-        super.init(profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
+        super.init(userID: userID, profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
+    }
+
+    // MARK: Codable Conformance
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        // Decode properties of Company
+        self.companyName = try container.decode(String.self, forKey: .companyName)
+        self.industry = try container.decode(String.self, forKey: .industry)
+        self.website = try container.decode(String.self, forKey: .website)
+        self.aboutUs = try container.decode(String.self, forKey: .aboutUs)
+
+        // Decode properties of the parent class (Profile)
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        // Encode properties of Company
+        try container.encode(companyName, forKey: .companyName)
+        try container.encode(industry, forKey: .industry)
+        try container.encode(website, forKey: .website)
+        try container.encode(aboutUs, forKey: .aboutUs)
+
+        // Encode properties of the parent class (Profile)
+        try super.encode(to: encoder)
+    }
+
+    // MARK: Coding Keys
+    private enum CodingKeys: String, CodingKey {
+        case companyName
+        case industry
+        case website
+        case aboutUs
     }
 }
 
@@ -251,7 +330,9 @@ class JobSeeker: Profile {
     var cv: String
     var suggestedCareerPaths: [CareerPath]?
     var applications: [application]?
-    init(personalSummary: String, educations: [Education]?, experiences: [Experience]?, skills: [Skill]?, preferences: [Preference]?, cv: String, suggestedCareerPaths: [CareerPath]?, firstName: String, lastName: String, email: String, password: String, type: UserType,profileImage: String, phoneNumber: String, location: String) {
+
+    // Custom initializer
+    init(userID: String, personalSummary: String, educations: [Education]?, experiences: [Experience]?, skills: [Skill]?, preferences: [Preference]?, cv: String, suggestedCareerPaths: [CareerPath]?, applications: [application]?, firstName: String, lastName: String, email: String, password: String, type: UserType, profileImage: String, phoneNumber: String, location: String) {
         self.personalSummary = personalSummary
         self.educations = educations
         self.experiences = experiences
@@ -259,10 +340,56 @@ class JobSeeker: Profile {
         self.preferences = preferences
         self.cv = cv
         self.suggestedCareerPaths = suggestedCareerPaths
-        super.init(profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
+        self.applications = applications
+        super.init(userID: userID, profileImage: profileImage, phoneNumber: phoneNumber, location: location, firstName: firstName, lastName: lastName, email: email, password: password, type: type)
     }
-    
-    
+
+    // MARK: Codable Conformance
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        // Decode properties of JobSeeker
+        self.personalSummary = try container.decode(String.self, forKey: .personalSummary)
+        self.educations = try container.decodeIfPresent([Education].self, forKey: .educations)
+        self.experiences = try container.decodeIfPresent([Experience].self, forKey: .experiences)
+        self.skills = try container.decodeIfPresent([Skill].self, forKey: .skills)
+        self.preferences = try container.decodeIfPresent([Preference].self, forKey: .preferences)
+        self.cv = try container.decode(String.self, forKey: .cv)
+        self.suggestedCareerPaths = try container.decodeIfPresent([CareerPath].self, forKey: .suggestedCareerPaths)
+        self.applications = try container.decodeIfPresent([application].self, forKey: .applications)
+
+        // Decode properties of the parent class (Profile)
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        // Encode properties of JobSeeker
+        try container.encode(personalSummary, forKey: .personalSummary)
+        try container.encodeIfPresent(educations, forKey: .educations)
+        try container.encodeIfPresent(experiences, forKey: .experiences)
+        try container.encodeIfPresent(skills, forKey: .skills)
+        try container.encodeIfPresent(preferences, forKey: .preferences)
+        try container.encode(cv, forKey: .cv)
+        try container.encodeIfPresent(suggestedCareerPaths, forKey: .suggestedCareerPaths)
+        try container.encodeIfPresent(applications, forKey: .applications)
+
+        // Encode properties of the parent class (Profile)
+        try super.encode(to: encoder)
+    }
+
+    // MARK: Coding Keys
+    private enum CodingKeys: String, CodingKey {
+        case personalSummary
+        case educations
+        case experiences
+        case skills
+        case preferences
+        case cv
+        case suggestedCareerPaths
+        case applications
+    }
 }
 
 class SkillAssessmentDashboard {
@@ -281,25 +408,27 @@ class SkillAssessmentDashboard {
     
 
 }
-class job {
+class job: Codable {
     var jobTitle: String
-    var company : Company
+    var company: Company
     var jobDescription: String
     var jobSalary: String
     var jobType: jobTypes
     var jobId: String
     var jobCategory: jobCategories
-    var jobPosition : jobPositions
+    var jobPosition: jobPositions
     var jobImage: String
     var jobSkills: [String]
     var jobPostedDate: String
-    var SalaryType: SalaryType
+    var salaryType: SalaryType
     var timeFromPost: String
     var deadline: String
-    var offer : String
+    var offer: String
     var isBookmarked: Bool = false
     var applications: [application]?
-    init(jobTitle: String, company: Company, jobDescription: String, jobSalary: String, jobType: jobTypes, jobId: String, jobCategory: jobCategories, jobPosition: jobPositions, jobImage: String, jobSkills: [String], jobPostedDate: String, SalaryType: SalaryType, timeFromPost: String, deadline: String, applications: [application]?, offer: String) {
+
+    // Custom initializer
+    init(jobTitle: String, company: Company, jobDescription: String, jobSalary: String, jobType: jobTypes, jobId: String, jobCategory: jobCategories, jobPosition: jobPositions, jobImage: String, jobSkills: [String], jobPostedDate: String, salaryType: SalaryType, timeFromPost: String, deadline: String, applications: [application]?, offer: String) {
         self.jobTitle = jobTitle
         self.company = company
         self.jobDescription = jobDescription
@@ -311,17 +440,83 @@ class job {
         self.jobImage = jobImage
         self.jobSkills = jobSkills
         self.jobPostedDate = jobPostedDate
-        self.SalaryType = SalaryType
+        self.salaryType = salaryType
         self.timeFromPost = timeFromPost
         self.deadline = deadline
         self.applications = applications
         self.offer = offer
     }
+
+    // MARK: Codable Conformance
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.jobTitle = try container.decode(String.self, forKey: .jobTitle)
+        self.company = try container.decode(Company.self, forKey: .company)
+        self.jobDescription = try container.decode(String.self, forKey: .jobDescription)
+        self.jobSalary = try container.decode(String.self, forKey: .jobSalary)
+        self.jobType = try container.decode(jobTypes.self, forKey: .jobType)
+        self.jobId = try container.decode(String.self, forKey: .jobId)
+        self.jobCategory = try container.decode(jobCategories.self, forKey: .jobCategory)
+        self.jobPosition = try container.decode(jobPositions.self, forKey: .jobPosition)
+        self.jobImage = try container.decode(String.self, forKey: .jobImage)
+        self.jobSkills = try container.decode([String].self, forKey: .jobSkills)
+        self.jobPostedDate = try container.decode(String.self, forKey: .jobPostedDate)
+        self.salaryType = try container.decode(SalaryType.self, forKey: .salaryType)
+        self.timeFromPost = try container.decode(String.self, forKey: .timeFromPost)
+        self.deadline = try container.decode(String.self, forKey: .deadline)
+        self.offer = try container.decode(String.self, forKey: .offer)
+        self.isBookmarked = try container.decode(Bool.self, forKey: .isBookmarked)
+        self.applications = try container.decodeIfPresent([application].self, forKey: .applications)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(jobTitle, forKey: .jobTitle)
+        try container.encode(company, forKey: .company)
+        try container.encode(jobDescription, forKey: .jobDescription)
+        try container.encode(jobSalary, forKey: .jobSalary)
+        try container.encode(jobType, forKey: .jobType)
+        try container.encode(jobId, forKey: .jobId)
+        try container.encode(jobCategory, forKey: .jobCategory)
+        try container.encode(jobPosition, forKey: .jobPosition)
+        try container.encode(jobImage, forKey: .jobImage)
+        try container.encode(jobSkills, forKey: .jobSkills)
+        try container.encode(jobPostedDate, forKey: .jobPostedDate)
+        try container.encode(salaryType, forKey: .salaryType)
+        try container.encode(timeFromPost, forKey: .timeFromPost)
+        try container.encode(deadline, forKey: .deadline)
+        try container.encode(offer, forKey: .offer)
+        try container.encode(isBookmarked, forKey: .isBookmarked)
+        try container.encodeIfPresent(applications, forKey: .applications)
+    }
+
+    // MARK: Coding Keys
+    private enum CodingKeys: String, CodingKey {
+        case jobTitle
+        case company
+        case jobDescription
+        case jobSalary
+        case jobType
+        case jobId
+        case jobCategory
+        case jobPosition
+        case jobImage
+        case jobSkills
+        case jobPostedDate
+        case salaryType
+        case timeFromPost
+        case deadline
+        case offer
+        case isBookmarked
+        case applications
+    }
 }
 
 // MARK: Arrays / Models
 var weightCategories : [String] =  ["Light", "Medium", "Heavy"]
-
+var locations : [String] = [
+    "Manama","Muharraq","Isa town"
+]
 
 var FinalEstimatedSalaries :[estimatedJob] = [
     estimatedJob(jobTitle: "job1", minimumSalary: "500", maximumSalary: "750", experience: "3 years", industry: "IT"),
@@ -375,8 +570,8 @@ var tableData: [table] = [
     table(title: "Choose Weight", options: ["Default","Custom"])
 ]
 
-var companySample = Company(companyName: "Bahrain Polytechnic",industry: "IT", website: "no website", aboutUs: "this is Bahrain Polytechnic", firstName: "Ghassan", lastName: "Alshajjar", email: "Qassimahmed231@gmail.com", password: "1319", type: .employer, profileImage: "no", phoneNumber: "35140480", location: "Aali")
-var JobSeekerSample = JobSeeker(personalSummary: "this is my summary, i am a slave to my master", educations: [Education(educationFacility: "ABG", educationLevel: "highSchool", degree: "highschool", startDate:"11/06/2004", endDate:"25/12/2024", city: "JidHafs")], experiences: nil, skills: nil, preferences: nil, cv: "idk", suggestedCareerPaths: nil, firstName: "Sayed Hamed", lastName: "idk", email: "SayedHamed2004@gmail.com", password: "slave", type: .jobSeeker, profileImage: "noimage", phoneNumber: "idk his phone num", location: "i forgot the location")
+var companySample = Company(userID: "string", companyName: "Bahrain Polytechnic",industry: "IT", website: "no website", aboutUs: "this is Bahrain Polytechnic", firstName: "Ghassan", lastName: "Alshajjar", email: "Qassimahmed231@gmail.com", password: "1319", type: .employer, profileImage: "no", phoneNumber: "35140480", location: "Aali")
+var JobSeekerSample = JobSeeker(userID: "UID",personalSummary: "this is my summary, i am a slave to my master", educations: [Education(educationFacility: "ABG", educationLevel: "highSchool", degree: "highschool", startDate:"11/06/2004", endDate:"25/12/2024", city: "JidHafs")], experiences: nil, skills: nil, preferences: nil, cv: "idk", suggestedCareerPaths: nil, applications: nil, firstName: "Sayed Hamed", lastName: "idk", email: "SayedHamed2004@gmail.com", password: "slave", type: .jobSeeker, profileImage: "noimage", phoneNumber: "idk his phone num", location: "i forgot the location")
 
 
 var sections: [Section] = [
@@ -386,6 +581,8 @@ var sections: [Section] = [
     Section(title: "Job Type", options: [jobTypes.fullTime.rawValue, jobTypes.partTime.rawValue]),
     Section(title: "Position", options: [jobPositions.Designer.rawValue , jobPositions.softwareDev.rawValue])
 ]
+var SQuser = AppUser(userID: "UserIDDD", firstName: "Sayed Qassim", lastName: "Alsari", email: "Qassimahmed231@gmail.com", password: "1319", type: .employer)
+
 
 
 
@@ -405,7 +602,7 @@ var sections: [Section] = [
 //var jobTypes :[String] = [
 //    "Full-time","Part-time","Project-based","Per hour"
 //]
-var types :[Profile] = [companySample,JobSeekerSample]
+//var types :[Profile] = [companySample,JobSeekerSample]
 var jobs: [job] = [
     job(
         jobTitle: "Software Developer",
@@ -419,7 +616,7 @@ var jobs: [job] = [
         jobImage: "no",
         jobSkills: ["Swift", "iOS Development"],
         jobPostedDate: "2024-12-20",
-        SalaryType: .monthly,
+        salaryType: .monthly,
         timeFromPost: "1 hour ago",
         deadline: "2024-12-31",
         applications: nil,
@@ -437,7 +634,7 @@ var jobs: [job] = [
         jobImage: "graphic_logo",
         jobSkills: ["Photoshop", "Illustrator", "Figma"],
         jobPostedDate: "2024-12-18",
-        SalaryType: .hourly,
+        salaryType: .hourly,
         timeFromPost: "3 days ago",
         deadline: "2025-01-05",
         applications: nil,
@@ -455,7 +652,7 @@ var jobs: [job] = [
         jobImage: "data_logo",
         jobSkills: ["Python", "Machine Learning", "SQL"],
         jobPostedDate: "2024-12-22",
-        SalaryType: .monthly,
+        salaryType: .monthly,
         timeFromPost: "2 days ago",
         deadline: "2025-01-15",
         applications: nil,
@@ -473,7 +670,7 @@ var jobs: [job] = [
         jobImage: "janitor_logo",
         jobSkills: ["Cleaning", "Organizing"],
         jobPostedDate: "2024-12-10",
-        SalaryType: .monthly,
+        salaryType: .monthly,
         timeFromPost: "14 days ago",
         deadline: "2024-12-31",
         applications: nil,
@@ -491,7 +688,7 @@ var jobs: [job] = [
         jobImage: "marketing_logo",
         jobSkills: ["SEO", "Content Marketing", "Social Media"],
         jobPostedDate: "2024-12-15",
-        SalaryType: .monthly,
+        salaryType: .monthly,
         timeFromPost: "9 days ago",
         deadline: "2025-01-10",
         applications: nil,
@@ -516,10 +713,12 @@ var skillAssessmentDashboards : [SkillAssessmentDashboard] = [
     SkillAssessmentDashboard(name: "Artificial Intelligence", filter1: "Type", filter1Options: ["machine learning","deep learning","natural language processing"], tests: [])
 ]
 
+var SQProfile = Profile(userID: "SayedQass", profileImage: "no", phoneNumber: "35140480", location: "Isa town", firstName: "Sayed Qassim AHmed", lastName: "Alsari", email: "Qassimahmed2111@gmail.com", password: "SQ", type: .employer)
 
+var polyCompany = Company(userID: "POLYISSHIT", companyName: "Polytechnic", industry: "idk", website: "we do not have one", aboutUs: "we are a shit college", firstName: "Ghassan", lastName: "Al IDK", email: "ALQAWAd", password: "mamamia", type: .employer, profileImage: "idk", phoneNumber: "2134", location: "Aali")
+var SayedHamed = JobSeeker(userID: "SHAMED", personalSummary: "no summary", educations: nil, experiences: nil, skills: nil, preferences: nil, cv: "idksk", suggestedCareerPaths: nil, applications: nil, firstName: "Sayed Hamed", lastName: "Mahmood", email: "SayedHamed231@gmail.com", password: "test", type: .jobSeeker, profileImage: "hello", phoneNumber: "1235", location: "Location")
 
-
-
+var testJob = job(jobTitle: "Title1", company: polyCompany , jobDescription: "IDK", jobSalary: "4500", jobType: .fullTime, jobId: "anything", jobCategory: .software, jobPosition: .Designer, jobImage: "test", jobSkills: ["whatever"], jobPostedDate: "now", salaryType: .monthly, timeFromPost: "now", deadline: "tom", applications: nil, offer: "this is a great offer")
 //
 //
 //

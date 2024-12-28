@@ -10,13 +10,101 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 import GoogleSignInSwift
+import FirebaseFirestore
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        uploadAppUserToFirestore(appUser: SQuser)
+//        print(SQProfile.userID)
+//        uploadProfileToFirestore(profile: SQProfile)
+//        uploadCompanyToFirestore(company: polyCompany)
+//        uploadJobSeekerToFirestore(jobSeeker: SayedHamed)
+        uploadJobToFirestore(job: testJob)
+        
         // Do any additional setup after loading the view.
 
+    }
+    func uploadJobToFirestore(job: job) {
+        let db = Firestore.firestore()
+        
+        do {
+            let encodedData = try Firestore.Encoder().encode(job)
+            db.collection("jobs").document(job.jobId).setData(encodedData) { error in
+                if let error = error {
+                    print("Error uploading job: \(error)")
+                } else {
+                    print("Job successfully uploaded!")
+                }
+            }
+        } catch {
+            print("Encoding error: \(error)")
+        }
+    }
+    func uploadJobSeekerToFirestore(jobSeeker: JobSeeker) {
+        let db = Firestore.firestore()
+        
+        do {
+            // Encode the JobSeeker object into a dictionary
+            let encodedData = try Firestore.Encoder().encode(jobSeeker)
+
+            // Use the userID as the document ID
+            db.collection("jobSeekers").document(jobSeeker.userID).setData(encodedData) { error in
+                if let error = error {
+                    print("Error uploading job seeker: \(error)")
+                } else {
+                    print("Job seeker successfully uploaded!")
+                }
+            }
+        } catch {
+            print("Encoding error: \(error)")
+        }
+    }
+    func uploadCompanyToFirestore(company: Company) {
+        let db = Firestore.firestore()
+        
+        do {
+            // Encode the Company object into a dictionary
+            let encodedData = try Firestore.Encoder().encode(company)
+
+            // Use the userID as the document ID
+            db.collection("companies").document(company.userID).setData(encodedData) { error in
+                if let error = error {
+                    print("Error uploading company: \(error)")
+                } else {
+                    print("Company successfully uploaded!")
+                }
+            }
+        } catch {
+            print("Encoding error: \(error)")
+        }
+    }
+    
+    func uploadProfileToFirestore(profile: Profile) {
+        let db = Firestore.firestore()
+
+        // Ensure userID is not empty
+        guard !profile.userID.isEmpty else {
+            print("Error: userID is empty.")
+            return
+        }
+
+        do {
+            // Encode the Profile object into a dictionary
+            let encodedData = try Firestore.Encoder().encode(profile)
+
+            // Use the userID as the document ID
+            db.collection("Profiles").document(profile.userID).setData(encodedData) { error in
+                if let error = error {
+                    print("Error uploading profile: \(error)")
+                } else {
+                    print("Profile successfully uploaded!")
+                }
+            }
+        } catch {
+            print("Encoding error: \(error)")
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -114,6 +202,28 @@ class ViewController: UIViewController {
         // Present the overlay
         self.present(overlayVC, animated: true, completion: nil)
     }
+    
+    func uploadAppUserToFirestore(appUser: AppUser) {
+        let db = Firestore.firestore()
+        
+        do {
+            // Encode the AppUser object into a dictionary
+            let encodedData = try Firestore.Encoder().encode(appUser)
+            
+            // Add the data to Firestore
+            db.collection("users").document("\(appUser.userID)").setData(encodedData) { error in
+                if let error = error {
+                    print("Error uploading user: \(error)")
+                } else {
+                    print("User \(appUser.userID) successfully uploaded!")
+                }
+            }
+        } catch {
+            print("Encoding error: \(error)")
+        }
+    }
+    
+    
     
     
 }
