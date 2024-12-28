@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol WebinarTableViewCellDelegate: AnyObject {
+    func webinarStatusDidChange(_ cell: WebinarTableViewCell, isRegistered: Bool)
+}
+
 class WebinarTableViewCell: UITableViewCell {
     static var identifier = "WebinarTableViewCell"
     
@@ -17,6 +21,11 @@ class WebinarTableViewCell: UITableViewCell {
     @IBOutlet weak var filter1Button: UIButton!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var statusButton: UIButton!
+    
+    weak var delegate: WebinarTableViewCellDelegate?
+    
+    private var isRegistered: Bool = false
+    
     static func nib() -> UINib {
         UINib(nibName: identifier, bundle: nil)
     }
@@ -38,6 +47,22 @@ class WebinarTableViewCell: UITableViewCell {
         filter3Button.setTitle(webinar.filters[2], for: .normal)
         startDateLabel.text = webinar.Date
         
+        isRegistered = webinar.isRegistered
+                updateStatusButtonTitle()
     }
     
+    private func updateStatusButtonTitle() {
+           let buttonTitle = isRegistered ? "Unregister" : "Register"
+           statusButton.setTitle(buttonTitle, for: .normal)
+       }
+    
+    
+    @IBAction func statusButtonTapped(_ sender: Any) {
+        // Toggle the registration status
+                isRegistered.toggle()
+        delegate?.webinarStatusDidChange(self, isRegistered: isRegistered)
+                
+                // Update the button title
+                updateStatusButtonTitle()
+    }
 }

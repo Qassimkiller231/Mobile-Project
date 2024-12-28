@@ -116,7 +116,7 @@ class LoginViewController: UIViewController {
         db.collection("Users").document(user.uid).setData([
             "firstName": firstName,
             "lastName": lastName,
-            "userType": userType,
+            "userType": userType == "Job Seeker" ? "jobSeeker" : "employer",
             "uid": user.uid
         ]) { error in
             if let error = error {

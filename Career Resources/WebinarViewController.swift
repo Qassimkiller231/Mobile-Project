@@ -7,7 +7,9 @@
 
 import UIKit
 
-class WebinarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class WebinarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,WebinarTableViewCellDelegate {
+
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +25,7 @@ class WebinarViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WebinarTableViewCell.identifier, for: indexPath) as! WebinarTableViewCell
+        cell.delegate = self
         cell.configure(with: webinars[indexPath.row])
         return cell
     }
@@ -48,5 +51,10 @@ class WebinarViewController: UIViewController,UITableViewDelegate,UITableViewDat
         // Pass the selected object to the new view controller.
     }
     
+    
+    func webinarStatusDidChange(_ cell: WebinarTableViewCell, isRegistered: Bool) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+                webinars[indexPath.row].isRegistered = isRegistered
+    }
 
 }

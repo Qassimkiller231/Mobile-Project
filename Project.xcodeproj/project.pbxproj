@@ -10,6 +10,7 @@
 		050C571F2D1E80F7004C1B48 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C571E2D1E80F7004C1B48 /* WelcomeViewController.swift */; };
 		050C57602D1E9465004C1B48 /* ProfileOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050C575F2D1E9465004C1B48 /* ProfileOverlayViewController.xib */; };
 		050C57612D1E9465004C1B48 /* ProfileOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C575E2D1E9465004C1B48 /* ProfileOverlayViewController.swift */; };
+		05F1A00C2D204C2400B72CF3 /* temp1~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F1A00B2D204C2400B72CF3 /* temp1~.storyboard */; };
 		05F734552D1C2F510009939A /* adminJobDetailsOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */; };
 		6E4BE27F2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE27D2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift */; };
 		6E4BE2802D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE27E2D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib */; };
@@ -25,7 +26,7 @@
 		6E4BE2DF2D1DB94F0054B3AC /* skillButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2B02D1DB94F0054B3AC /* skillButtonsTableViewCell.swift */; };
 		6E4BE2E02D1DB94F0054B3AC /* CVFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2962D1DB94F0054B3AC /* CVFinalViewController.swift */; };
 		6E4BE2E12D1DB94F0054B3AC /* PBSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2AF2D1DB94F0054B3AC /* PBSkillsViewController.swift */; };
-		6E4BE2E22D1DB94F0054B3AC /* UserEditorTableViewCell 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2872D1DB94F0054B3AC /* UserEditorTableViewCell 2.swift */; };
+		6E4BE2E22D1DB94F0054B3AC /* UserEditorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2872D1DB94F0054B3AC /* UserEditorTableViewCell.swift */; };
 		6E4BE2E32D1DB94F0054B3AC /* ApplicationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2C12D1DB94F0054B3AC /* ApplicationDetailsViewController.swift */; };
 		6E4BE2E42D1DB94F0054B3AC /* ManageExperienceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2AB2D1DB94F0054B3AC /* ManageExperienceTableViewController.swift */; };
 		6E4BE2E52D1DB94F0054B3AC /* PBPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2B62D1DB94F0054B3AC /* PBPersonalViewController.swift */; };
@@ -33,7 +34,7 @@
 		6E4BE2E72D1DB94F0054B3AC /* PBPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE29D2D1DB94F0054B3AC /* PBPreferencesViewController.swift */; };
 		6E4BE2E82D1DB94F0054B3AC /* CVTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2982D1DB94F0054B3AC /* CVTemplateViewController.swift */; };
 		6E4BE2E92D1DB94F0054B3AC /* ManageEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2A52D1DB94F0054B3AC /* ManageEducationViewController.swift */; };
-		6E4BE2EA2D1DB94F0054B3AC /* EditUserViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2862D1DB94F0054B3AC /* EditUserViewController 2.swift */; };
+		6E4BE2EA2D1DB94F0054B3AC /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2862D1DB94F0054B3AC /* EditUserViewController.swift */; };
 		6E4BE2EB2D1DB94F0054B3AC /* AdminUserEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2852D1DB94F0054B3AC /* AdminUserEditorViewController.swift */; };
 		6E4BE2EC2D1DB94F0054B3AC /* employerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2C72D1DB94F0054B3AC /* employerModels.swift */; };
 		6E4BE2ED2D1DB94F0054B3AC /* experienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2A82D1DB94F0054B3AC /* experienceTableViewCell.swift */; };
@@ -50,7 +51,7 @@
 		6E4BE2F82D1DB94F0054B3AC /* skillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2B22D1DB94F0054B3AC /* skillTableViewCell.swift */; };
 		6E4BE2F92D1DB94F0054B3AC /* ManageEducationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2A42D1DB94F0054B3AC /* ManageEducationTableViewController.swift */; };
 		6E4BE2FA2D1DB94F0054B3AC /* temp4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE2912D1DB94F0054B3AC /* temp4ViewController.swift */; };
-		6E4BE2FB2D1DB94F0054B3AC /* UserEditorTableViewCell 2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2882D1DB94F0054B3AC /* UserEditorTableViewCell 2.xib */; };
+		6E4BE2FB2D1DB94F0054B3AC /* UserEditorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2882D1DB94F0054B3AC /* UserEditorTableViewCell.xib */; };
 		6E4BE2FC2D1DB94F0054B3AC /* temp4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE2902D1DB94F0054B3AC /* temp4.xib */; };
 		6E4BE2FD2D1DB94F0054B3AC /* temp3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE28E2D1DB94F0054B3AC /* temp3.xib */; };
 		6E4BE2FE2D1DB94F0054B3AC /* temp2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE28C2D1DB94F0054B3AC /* temp2.xib */; };
@@ -191,13 +192,14 @@
 		050C571E2D1E80F7004C1B48 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		050C575E2D1E9465004C1B48 /* ProfileOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOverlayViewController.swift; sourceTree = "<group>"; };
 		050C575F2D1E9465004C1B48 /* ProfileOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOverlayViewController.xib; sourceTree = "<group>"; };
+		05F1A00A2D204C2400B72CF3 /* temp1~.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "temp1~.storyboard"; path = "Base.lproj/temp1~.storyboard"; sourceTree = "<group>"; };
 		05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adminJobDetailsOverlayViewController.swift; sourceTree = "<group>"; };
 		6E4BE27D2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerInsightsTableViewCell.swift; sourceTree = "<group>"; };
 		6E4BE27E2D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployerInsightsTableViewCell.xib; sourceTree = "<group>"; };
 		6E4BE2852D1DB94F0054B3AC /* AdminUserEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserEditorViewController.swift; sourceTree = "<group>"; };
-		6E4BE2862D1DB94F0054B3AC /* EditUserViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditUserViewController 2.swift"; sourceTree = "<group>"; };
-		6E4BE2872D1DB94F0054B3AC /* UserEditorTableViewCell 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEditorTableViewCell 2.swift"; sourceTree = "<group>"; };
-		6E4BE2882D1DB94F0054B3AC /* UserEditorTableViewCell 2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "UserEditorTableViewCell 2.xib"; sourceTree = "<group>"; };
+		6E4BE2862D1DB94F0054B3AC /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		6E4BE2872D1DB94F0054B3AC /* UserEditorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorTableViewCell.swift; sourceTree = "<group>"; };
+		6E4BE2882D1DB94F0054B3AC /* UserEditorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserEditorTableViewCell.xib; sourceTree = "<group>"; };
 		6E4BE28A2D1DB94F0054B3AC /* temp1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp1.swift; sourceTree = "<group>"; };
 		6E4BE28B2D1DB94F0054B3AC /* temp1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = temp1.xib; sourceTree = "<group>"; };
 		6E4BE28C2D1DB94F0054B3AC /* temp2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = temp2.xib; sourceTree = "<group>"; };
@@ -425,14 +427,15 @@
 		6E4BE29C2D1DB94F0054B3AC /* CVBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				6E4BE2922D1DB94F0054B3AC /* templates */,
 				6E4BE2942D1DB94F0054B3AC /* CVBuilder.storyboard */,
-				6E4BE2952D1DB94F0054B3AC /* CVColorViewController.swift */,
 				6E4BE2962D1DB94F0054B3AC /* CVFinalViewController.swift */,
-				6E4BE2972D1DB94F0054B3AC /* CVManager.swift */,
-				6E4BE2982D1DB94F0054B3AC /* CVTemplateViewController.swift */,
 				6E4BE2992D1DB94F0054B3AC /* CVView.swift */,
 				6E4BE29B2D1DB94F0054B3AC /* temp1~.storyboard */,
+				05F1A00B2D204C2400B72CF3 /* temp1~.storyboard */,
+				6E4BE2922D1DB94F0054B3AC /* templates */,
+				6E4BE2952D1DB94F0054B3AC /* CVColorViewController.swift */,
+				6E4BE2972D1DB94F0054B3AC /* CVManager.swift */,
+				6E4BE2982D1DB94F0054B3AC /* CVTemplateViewController.swift */,
 			);
 			path = CVBuilder;
 			sourceTree = "<group>";
@@ -593,9 +596,9 @@
 			isa = PBXGroup;
 			children = (
 				6E4BE2852D1DB94F0054B3AC /* AdminUserEditorViewController.swift */,
-				6E4BE2862D1DB94F0054B3AC /* EditUserViewController 2.swift */,
-				6E4BE2872D1DB94F0054B3AC /* UserEditorTableViewCell 2.swift */,
-				6E4BE2882D1DB94F0054B3AC /* UserEditorTableViewCell 2.xib */,
+				6E4BE2862D1DB94F0054B3AC /* EditUserViewController.swift */,
+				6E4BE2872D1DB94F0054B3AC /* UserEditorTableViewCell.swift */,
+				6E4BE2882D1DB94F0054B3AC /* UserEditorTableViewCell.xib */,
 			);
 			path = "Edit users";
 			sourceTree = "<group>";
@@ -1091,7 +1094,7 @@
 				6E74DBFB2D149D0900F0B84E /* MyTableViewCell.xib in Resources */,
 				6E74DC3A2D16158300F0B84E /* JobListing.storyboard in Resources */,
 				6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */,
-				6E4BE2FB2D1DB94F0054B3AC /* UserEditorTableViewCell 2.xib in Resources */,
+				6E4BE2FB2D1DB94F0054B3AC /* UserEditorTableViewCell.xib in Resources */,
 				6E4BE2FC2D1DB94F0054B3AC /* temp4.xib in Resources */,
 				050C57602D1E9465004C1B48 /* ProfileOverlayViewController.xib in Resources */,
 				6E4BE2FD2D1DB94F0054B3AC /* temp3.xib in Resources */,
@@ -1121,6 +1124,7 @@
 				6E74DC402D16158300F0B84E /* DropDownTableViewCell.xib in Resources */,
 				6ED1CDF62D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib in Resources */,
 				6ED0013E2D18391A00644B5A /* applicationHistoryTableViewCell.xib in Resources */,
+				05F1A00C2D204C2400B72CF3 /* temp1~.storyboard in Resources */,
 				6E74DC0F2D14D50000F0B84E /* ArticleTableViewCell.xib in Resources */,
 				6ED001372D1827D500644B5A /* NotifcationTableViewCell.xib in Resources */,
 				AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */,
@@ -1190,7 +1194,7 @@
 				6E4BE2DF2D1DB94F0054B3AC /* skillButtonsTableViewCell.swift in Sources */,
 				6E4BE2E02D1DB94F0054B3AC /* CVFinalViewController.swift in Sources */,
 				6E4BE2E12D1DB94F0054B3AC /* PBSkillsViewController.swift in Sources */,
-				6E4BE2E22D1DB94F0054B3AC /* UserEditorTableViewCell 2.swift in Sources */,
+				6E4BE2E22D1DB94F0054B3AC /* UserEditorTableViewCell.swift in Sources */,
 				6E4BE2E32D1DB94F0054B3AC /* ApplicationDetailsViewController.swift in Sources */,
 				6E4BE2E42D1DB94F0054B3AC /* ManageExperienceTableViewController.swift in Sources */,
 				6E4BE2E52D1DB94F0054B3AC /* PBPersonalViewController.swift in Sources */,
@@ -1198,7 +1202,7 @@
 				6E4BE2E72D1DB94F0054B3AC /* PBPreferencesViewController.swift in Sources */,
 				6E4BE2E82D1DB94F0054B3AC /* CVTemplateViewController.swift in Sources */,
 				6E4BE2E92D1DB94F0054B3AC /* ManageEducationViewController.swift in Sources */,
-				6E4BE2EA2D1DB94F0054B3AC /* EditUserViewController 2.swift in Sources */,
+				6E4BE2EA2D1DB94F0054B3AC /* EditUserViewController.swift in Sources */,
 				6E4BE2EB2D1DB94F0054B3AC /* AdminUserEditorViewController.swift in Sources */,
 				6E4BE2EC2D1DB94F0054B3AC /* employerModels.swift in Sources */,
 				6E4BE2ED2D1DB94F0054B3AC /* experienceTableViewCell.swift in Sources */,
@@ -1283,6 +1287,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		05F1A00B2D204C2400B72CF3 /* temp1~.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05F1A00A2D204C2400B72CF3 /* temp1~.storyboard */,
+			);
+			name = "temp1~.storyboard";
+			sourceTree = "<group>";
+		};
 		6E4BE2942D1DB94F0054B3AC /* CVBuilder.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
