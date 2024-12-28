@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 //        uploadProfileToFirestore(profile: SQProfile)
 //        uploadCompanyToFirestore(company: polyCompany)
 //        uploadJobSeekerToFirestore(jobSeeker: SayedHamed)
-//        uploadJobToFirestore(job: testJob)
+        uploadJobToFirestore(job: testJob)
         
         // Do any additional setup after loading the view.
 

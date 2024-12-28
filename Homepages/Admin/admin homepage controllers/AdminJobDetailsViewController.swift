@@ -27,7 +27,7 @@ class AdminJobDetailsViewController: UIViewController {
         titleLabel.text = job?.jobTitle
 //        profilePic.image = UIImage(named: job!.jobImage)
         descriptionTextLabel.text = job?.jobDescription
-        aboutUsTextLabel.text = job?.company.aboutUs
+        aboutUsTextLabel.text = job?.company?.aboutUs
         offerTextLabel.text = job?.offer
         // Do any additional setup after loading the view.
     }
@@ -87,7 +87,7 @@ class AdminJobDetailsViewController: UIViewController {
         if segue.identifier == "detailsToEditAboutUs" {
             let vc = segue.destination as! adminJobDetailsOverlayViewController
             vc.editTitle = "Edit About Us"
-            vc.editDescription = job!.company.aboutUs
+            vc.editDescription = job!.company?.aboutUs
             vc.delegate = self
         }
         if segue.identifier == "detailsToEditOffer" {
@@ -138,7 +138,7 @@ class AdminJobDetailsViewController: UIViewController {
         guard let updatedJob = job else { return }
         
         updatedJob.jobDescription = descriptionTextLabel.text ?? ""
-        updatedJob.company.aboutUs = aboutUsTextLabel.text ?? ""
+        updatedJob.company?.aboutUs = aboutUsTextLabel.text ?? ""
         updatedJob.offer = offerTextLabel.text ?? ""
         
         if let jobIndex = jobs.firstIndex(where: { $0.jobId == updatedJob.jobId }) {

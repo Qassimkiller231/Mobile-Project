@@ -58,11 +58,11 @@ class AdminJobListingCardTableViewCell: UITableViewCell {
     
     func configure(with job: job) {
         self.titleLabel.text = job.jobTitle
-        self.CompanyLabel.text = job.company.companyName
-        self.locationLabel.text = job.company.location
+        self.CompanyLabel.text = job.company?.companyName
+        self.locationLabel.text = job.company?.location
         self.timeLabel.text = "\(job.timeFromPost)"
-        self.priceLabel.text = "\(job.jobSalary)/\(job.SalaryType)"
-        self.profileImage.image = UIImage(named: job.company.profileImage)
+        self.priceLabel.text = "\(job.jobSalary)/\(job.salaryType)"
+        self.profileImage.image = UIImage(named: job.company?.profileImage ?? "")
         self.filter1.text = "\(job.jobCategory)"
         self.filter2.text = "\(job.jobPosition)"
         self.filter3.text = "\(job.jobType)"

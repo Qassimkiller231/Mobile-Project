@@ -6,7 +6,7 @@
 ////
 
 import Foundation
-
+import FirebaseFirestore
 // MARK: - Enums
 
 enum UserType: String,Codable{
@@ -411,7 +411,8 @@ class SkillAssessmentDashboard {
 }
 class job: Codable {
     var jobTitle: String
-    var company: Company
+    var company: Company? // Store the full Company object in memory
+    var companyID: String // Reference to the Company document in Firestore
     var jobDescription: String
     var jobSalary: String
     var jobType: jobTypes
@@ -428,10 +429,10 @@ class job: Codable {
     var isBookmarked: Bool = false
     var applications: [application]?
 
-    // Custom initializer
-    init(jobTitle: String, company: Company, jobDescription: String, jobSalary: String, jobType: jobTypes, jobId: String, jobCategory: jobCategories, jobPosition: jobPositions, jobImage: String, jobSkills: [String], jobPostedDate: String, salaryType: SalaryType, timeFromPost: String, deadline: String, applications: [application]?, offer: String) {
+    // MARK: Initializer
+    init(jobTitle: String, companyID: String, jobDescription: String, jobSalary: String, jobType: jobTypes, jobId: String, jobCategory: jobCategories, jobPosition: jobPositions, jobImage: String, jobSkills: [String], jobPostedDate: String, salaryType: SalaryType, timeFromPost: String, deadline: String, applications: [application]?, offer: String) {
         self.jobTitle = jobTitle
-        self.company = company
+        self.companyID = companyID
         self.jobDescription = jobDescription
         self.jobSalary = jobSalary
         self.jobType = jobType
@@ -449,10 +450,31 @@ class job: Codable {
     }
 
     // MARK: Codable Conformance
+    private enum CodingKeys: String, CodingKey {
+        case jobTitle
+        case companyID // Decode the reference instead of the full Company
+        case jobDescription
+        case jobSalary
+        case jobType
+        case jobId
+        case jobCategory
+        case jobPosition
+        case jobImage
+        case jobSkills
+        case jobPostedDate
+        case salaryType
+        case timeFromPost
+        case deadline
+        case offer
+        case isBookmarked
+        case applications
+    }
+
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+
         self.jobTitle = try container.decode(String.self, forKey: .jobTitle)
-        self.company = try container.decode(Company.self, forKey: .company)
+        self.companyID = try container.decode(String.self, forKey: .companyID) // Decode only the companyID
         self.jobDescription = try container.decode(String.self, forKey: .jobDescription)
         self.jobSalary = try container.decode(String.self, forKey: .jobSalary)
         self.jobType = try container.decode(jobTypes.self, forKey: .jobType)
@@ -472,8 +494,9 @@ class job: Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+
         try container.encode(jobTitle, forKey: .jobTitle)
-        try container.encode(company, forKey: .company)
+        try container.encode(companyID, forKey: .companyID) // Encode only the companyID
         try container.encode(jobDescription, forKey: .jobDescription)
         try container.encode(jobSalary, forKey: .jobSalary)
         try container.encode(jobType, forKey: .jobType)
@@ -489,27 +512,6 @@ class job: Codable {
         try container.encode(offer, forKey: .offer)
         try container.encode(isBookmarked, forKey: .isBookmarked)
         try container.encodeIfPresent(applications, forKey: .applications)
-    }
-
-    // MARK: Coding Keys
-    private enum CodingKeys: String, CodingKey {
-        case jobTitle
-        case company
-        case jobDescription
-        case jobSalary
-        case jobType
-        case jobId
-        case jobCategory
-        case jobPosition
-        case jobImage
-        case jobSkills
-        case jobPostedDate
-        case salaryType
-        case timeFromPost
-        case deadline
-        case offer
-        case isBookmarked
-        case applications
     }
 }
 
@@ -607,7 +609,7 @@ var SQuser = AppUser(userID: "UserIDDD", firstName: "Sayed Qassim", lastName: "A
 var jobs: [job] = [
     job(
         jobTitle: "Software Developer",
-        company: companySample,
+        companyID: "",
         jobDescription: "This is a software engineering job, you have no rights to work in this job.",
         jobSalary: "7800",
         jobType: .fullTime,
@@ -625,7 +627,7 @@ var jobs: [job] = [
     ),
     job(
         jobTitle: "Graphic Designer",
-        company: companySample,
+        companyID: "companySample",
         jobDescription: "We need a creative graphic designer with a passion for visual storytelling.",
         jobSalary: "5000",
         jobType: .partTime,
@@ -643,7 +645,7 @@ var jobs: [job] = [
     ),
     job(
         jobTitle: "Data Scientist",
-        company: companySample,
+        companyID: "companySample",
         jobDescription: "Analyze and interpret complex data to help improve business outcomes.",
         jobSalary: "12000",
         jobType: .fullTime,
@@ -661,7 +663,7 @@ var jobs: [job] = [
     ),
     job(
         jobTitle: "Janitor",
-        company: companySample,
+        companyID: "companySample",
         jobDescription: "Ensure cleanliness and orderliness in the office premises.",
         jobSalary: "2500",
         jobType: .fullTime,
@@ -679,7 +681,7 @@ var jobs: [job] = [
     ),
     job(
         jobTitle: "Marketing Specialist",
-        company: companySample,
+        companyID: "companySample",
         jobDescription: "Develop marketing strategies to increase brand awareness.",
         jobSalary: "8500",
         jobType: .fullTime,
@@ -719,8 +721,10 @@ var SQProfile = Profile(userID: "SayedQass", profileImage: "no", phoneNumber: "3
 var polyCompany = Company(userID: "POLYISSHIT", companyName: "Polytechnic", industry: "idk", website: "we do not have one", aboutUs: "we are a shit college", firstName: "Ghassan", lastName: "Al IDK", email: "ALQAWAd", password: "mamamia", type: .employer, profileImage: "idk", phoneNumber: "2134", location: "Aali")
 var SayedHamed = JobSeeker(userID: "SHAMED", personalSummary: "no summary", educations: nil, experiences: nil, skills: nil, preferences: nil, cv: "idksk", suggestedCareerPaths: nil, applications: nil, firstName: "Sayed Hamed", lastName: "Mahmood", email: "SayedHamed231@gmail.com", password: "test", type: .jobSeeker, profileImage: "hello", phoneNumber: "1235", location: "Location")
 
-var testJob = job(jobTitle: "Title1", company: polyCompany , jobDescription: "IDK", jobSalary: "4500", jobType: .fullTime, jobId: "anything", jobCategory: .software, jobPosition: .Designer, jobImage: "test", jobSkills: ["whatever"], jobPostedDate: "now", salaryType: .monthly, timeFromPost: "now", deadline: "tom", applications: nil, offer: "this is a great offer")
+var testJob = job(jobTitle: "Title1", companyID: polyCompany.userID , jobDescription: "IDK", jobSalary: "4500", jobType: .fullTime, jobId: "anything", jobCategory: .software, jobPosition: .Designer, jobImage: "test", jobSkills: ["whatever"], jobPostedDate: "now", salaryType: .monthly, timeFromPost: "now", deadline: "tom", applications: nil, offer: "this is a great offer")
 var companyProfile = polyCompany
+
+
 //
 //
 //

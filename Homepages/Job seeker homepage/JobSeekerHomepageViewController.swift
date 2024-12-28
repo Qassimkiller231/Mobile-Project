@@ -41,9 +41,34 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
                     if let currentCompany = self.currentProfile as? Company {
                         print("Fetched Company: \(currentCompany.companyName), Industry: \(currentCompany.industry)")
                 }
+//                print("test \(self.currentProfile?.companyName)")
                 
             case .failure(let error):
                 print("Error fetching company: \(error.localizedDescription)")
+            }
+            self.fetchJob(jobID: "anything") { result in
+                switch result {
+                case .success(let job):
+                    print("Fetched Job:")
+                    print("Title: \(job.jobTitle)")
+                    print("Description: \(job.jobDescription)")
+                    print("Salary: \(job.jobSalary)")
+                    print("Job Type: \(job.jobType)")
+                    print("Deadline: \(job.deadline)")
+
+                    // If the Company object is loaded, print its details
+                    if let company = job.company {
+                        print("Company Details:")
+                        print("Name: \(company.companyName)")
+                        print("Industry: \(company.industry)")
+                        print("Website: \(company.website)")
+                    } else {
+                        print("Company not loaded yet.")
+                    }
+
+                case .failure(let error):
+                    print("Error fetching job: \(error.localizedDescription)")
+                }
             }
         }
 //        currentProfile = JobSeekerSample
@@ -90,6 +115,50 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(bookmarkTapped))
         bookmark.addGestureRecognizer(bookmarkTap)
         
+    }
+    func fetchJob(jobID: String, completion: @escaping (Result<job, Error>) -> Void) {
+        let db = Firestore.firestore()
+
+        db.collection("jobs").document(jobID).getDocument { documentSnapshot, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let document = documentSnapshot, document.exists, let data = document.data() else {
+                completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Job not found."])))
+                return
+            }
+
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+                let job = try JSONDecoder().decode(job.self, from: jsonData)
+
+                // Fetch the associated Company using companyID
+                db.collection("companies").document(job.companyID).getDocument { companySnapshot, error in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+
+                    guard let companyData = companySnapshot?.data() else {
+                        completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Company not found."])))
+                        return
+                    }
+
+                    do {
+                        let companyJson = try JSONSerialization.data(withJSONObject: companyData, options: [])
+                        let company = try JSONDecoder().decode(Company.self, from: companyJson)
+                        job.company = company
+                        completion(.success(job))
+                    } catch {
+                        completion(.failure(error))
+                    }
+                }
+            } catch {
+                completion(.failure(error))
+            }
+        }
     }
     
    
@@ -235,7 +304,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
                 matches = matches && job.jobCategory.rawValue == jobCategoryFilter
             }
             if let locationFilter = filters["Location"] {
-                matches = matches && job.company.location == locationFilter
+                matches = matches && job.company?.location == locationFilter
             }
             if let minimumSalaryFilter = filters["Minimum Salary"] {
                 print("there is min")

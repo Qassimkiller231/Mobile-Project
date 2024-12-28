@@ -29,7 +29,7 @@ class JobDetailsViewController: UIViewController {
         titleLabel.text = job?.jobTitle
 //        profilePic.image = UIImage(named: job!.jobImage)
         descriptionTextLabel.text = job?.jobDescription
-        aboutUsTextLabel.text = job?.company.aboutUs
+        aboutUsTextLabel.text = job?.company?.aboutUs
         offerTextLabel.text = job?.offer
         // Do any additional setup after loading the view.
     }

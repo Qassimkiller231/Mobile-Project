@@ -376,20 +376,7 @@ class Utilities {
                     // Return a new `job` instance
                     return job(
                         jobTitle: jobTitle,
-                        company: Company(
-                            userID: "ss", companyName: "Default Company",
-                            industry: "Default Industry",
-                            website: "default.com",
-                            aboutUs: "Default About Us",
-                            firstName: "Default",
-                            lastName: "User",
-                            email: "default@company.com",
-                            password: "defaultPassword",
-                            type: .employer,
-                            profileImage: "default.jpg",
-                            phoneNumber: "1234567890",
-                            location: "Default Location"
-                        ), // Replace with actual company data if available
+                        companyID: "", // Replace with actual company data if available
                         jobDescription: jobDescription,
                         jobSalary: jobSalary,
                         jobType: jobType,
