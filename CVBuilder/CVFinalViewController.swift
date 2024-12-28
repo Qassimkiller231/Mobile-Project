@@ -10,17 +10,28 @@ import UIKit
 class CVFinalViewController: UIViewController {
 
     @IBOutlet weak var cvView: UIView!
+    @IBOutlet weak var colorWell: UIColorWell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        colorWell.selectedColor = UIColor.systemGray5
+        cvView.backgroundColor = UIColor.systemGray5
+        
+        colorWell.addTarget(self, action: #selector(colorDidChange(_:)), for: .valueChanged)
 
         // Do any additional setup after loading the view.
         loadSelectedTemplate()
             }
+    @objc private func colorDidChange(_ sender: UIColorWell) {
+        // Change the background color of cvView to the selected color
+        cvView.backgroundColor = sender.selectedColor ?? UIColor.white
+    }
+
             
     private func loadSelectedTemplate() {
         // Fetch the selected template from TemplateManager
-        let selectedTemplateName = TemplateManager.shared.selectedTemplateName
+        let selectedTemplateName = "temp1"
         print("Loading template: \(selectedTemplateName)")
         
         // Load the selected template from the XIB
@@ -69,7 +80,8 @@ class CVFinalViewController: UIViewController {
                 type: .jobSeeker,
                 profileImage: "profilePic",
                 phoneNumber: "123-456-7890",
-                location: "New York"
+                location: "New York",
+                uid:""
             )
             
             // Populate the template with JobSeeker data
@@ -107,7 +119,7 @@ class CVFinalViewController: UIViewController {
             print("PDF created at: \(tempFileURL)")
 
             // Present the save dialog to export the PDF
-            let documentPicker = UIDocumentPickerViewController(forExporting: [tempFileURL])
+            let documentPicker = UIDocumentPickerViewController(forExporting: [tempFileURL], asCopy: true)
             documentPicker.delegate = self
             present(documentPicker, animated: true, completion: nil)
 
@@ -120,8 +132,10 @@ class CVFinalViewController: UIViewController {
         }
     }
 
+
     @IBAction func saveToPdf(_ sender: Any) {
         exportCVToPDF()
+        performSegue(withIdentifier: "backToHomepage", sender: nil)
     }
     
     

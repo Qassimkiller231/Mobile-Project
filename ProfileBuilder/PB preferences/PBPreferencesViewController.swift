@@ -35,6 +35,8 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var internshipButton: UIButton!
     @IBOutlet weak var projectBasedButton: UIButton!
     
+    @IBOutlet weak var SaveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -66,15 +68,23 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBAction func saveAllButtonPressed(_ sender: Any) {
     }
-    /*
-    // MARK: - Navigation
+    
+    
+//    let alertController = UIAlertController(title: "Success", message: "Saved successfully", preferredStyle: .alert)
+//            
+//            // 3. Add an OK action to dismiss the alert
+//            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+//                // You can perform any additional actions here if needed
+//                print("Save successful!")
+//            }
+//            
+//            alertController.addAction(okAction)
+//            
+//            // 4. Present the alert
+//            self.present(alertController, animated: true, completion: nil)
+//        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToExperience" {
             if let expVC = segue.destination as? PBExperienceViewController {
@@ -143,7 +153,6 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.reloadData()
     }
     
-
 
 }
 

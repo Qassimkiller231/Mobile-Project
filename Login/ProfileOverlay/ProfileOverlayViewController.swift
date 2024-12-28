@@ -56,10 +56,10 @@ class ProfileOverlayViewController: UIViewController {
             }
     }
     @IBAction func CVBuilderButtonTapped(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
-//        let cvBuilderVC = storyboard.instantiateViewController(withIdentifier: "CVBuilderViewController")
-//            self.presentingViewController?.present(cvBuilderVC, animated: true, completion: nil)
-//            self.dismiss(animated: true, completion: nil) // Close the overlay
+        let storyboard = UIStoryboard(name: "CVBuilder", bundle: nil) // Replace "Main" with your storyboard name
+        let cvBuilderVC = storyboard.instantiateViewController(withIdentifier: "CVFinalViewController")
+            self.presentingViewController?.present(cvBuilderVC, animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil) // Close the overlay
     }
     @IBAction func logOutButtonTapped(_ sender: Any) {
         do {
