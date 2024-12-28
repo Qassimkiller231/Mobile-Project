@@ -39,60 +39,60 @@ class applicationTableViewCell: UITableViewCell {
     }
     
     func configure(with application: application) {
-        currentApplication = application
-        makeDateFormatter()
-
-        // Setting applicant name
-        applicantName.text = "\(application.jobSeeker.firstName) \(application.jobSeeker.lastName)"
-
-        // Determining current title (ongoing job or last job)
-        if let ongoingExperience = application.jobSeeker.experiences?.first(where: { $0.endDate.lowercased() == "ongoing" }) {
-            currentTitle.text = ongoingExperience.jobTitle
-        } else if let lastJob = application.jobSeeker.experiences?.sorted(by: { (exp1, exp2) -> Bool in
-            guard let date1 = df.date(from: exp1.endDate),
-                  let date2 = df.date(from: exp2.endDate) else { return false }
-            return date1 > date2
-        }).first {
-            currentTitle.text = lastJob.jobTitle
-        } else {
-            currentTitle.text = "No work experience"
-        }
-
-        // Calculating total years of experience
-            var totalExperience: Double = 0
-
-        if application.jobSeeker.experiences != nil  {
-                for experience in application.jobSeeker.experiences! {
-                    if let startDate = df.date(from: experience.startDate),
-                       let endDate = experience.endDate.lowercased() == "ongoing"
-                        ? Date()
-                        : df.date(from: experience.endDate) {
-                        let experienceDuration = Calendar.current.dateComponents([.month], from: startDate, to: endDate).month ?? 0
-                        totalExperience += Double(experienceDuration) / 12.0
-                    }
-                }
-
-                // Round down the experience to the nearest year
-                totalExperience = floor(totalExperience)
-                yearsOfExperience.text = String(format: "Years of Experience: %.0f", totalExperience)
-            } else {
-                yearsOfExperience.text = ""
-            }
-
-        // Setting date of application
-        dateOfApplication.text = "Date of Application: \(df.string(from: application.dateOfApplication))"
-        
-        if(application.isShortlisted){
-            shortlisted.isHidden = false
-        } else {
-            shortlisted.isHidden = true
-        }
-        
-        if let inter = application.interview {
-            interview.text = "Interview Date: \(inter.interviewDate)"
-        } else {
-            interview.text = ""
-        }
+//        currentApplication = application
+////        makeDateFormatter()
+//
+//        // Setting applicant name
+//        applicantName.text = "\(application.jobSeeker.firstName) \(application.jobSeeker.lastName)"
+//
+//        // Determining current title (ongoing job or last job)
+//        if let ongoingExperience = application.jobSeeker.experiences?.first(where: { $0.endDate.lowercased() == "ongoing" }) {
+//            currentTitle.text = ongoingExperience.jobTitle
+//        } else if let lastJob = application.jobSeeker.experiences?.sorted(by: { (exp1, exp2) -> Bool in
+//            guard let date1 = df.date(from: exp1.endDate),
+//                  let date2 = df.date(from: exp2.endDate) else { return false }
+//            return date1 > date2
+//        }).first {
+//            currentTitle.text = lastJob.jobTitle
+//        } else {
+//            currentTitle.text = "No work experience"
+//        }
+//
+//        // Calculating total years of experience
+//            var totalExperience: Double = 0
+//
+//        if application.jobSeeker.experiences != nil  {
+//                for experience in application.jobSeeker.experiences! {
+//                    if let startDate = df.date(from: experience.startDate),
+//                       let endDate = experience.endDate.lowercased() == "ongoing"
+//                        ? Date()
+//                        : df.date(from: experience.endDate) {
+//                        let experienceDuration = Calendar.current.dateComponents([.month], from: startDate, to: endDate).month ?? 0
+//                        totalExperience += Double(experienceDuration) / 12.0
+//                    }
+//                }
+//
+//                // Round down the experience to the nearest year
+//                totalExperience = floor(totalExperience)
+//                yearsOfExperience.text = String(format: "Years of Experience: %.0f", totalExperience)
+//            } else {
+//                yearsOfExperience.text = ""
+//            }
+//
+//        // Setting date of application
+//        dateOfApplication.text = "Date of Application: \(df.string(from: application.dateOfApplication))"
+//        
+//        if(application.isShortlisted){
+//            shortlisted.isHidden = false
+//        } else {
+//            shortlisted.isHidden = true
+//        }
+//        
+//        if let inter = application.interview {
+//            interview.text = "Interview Date: \(inter.interviewDate)"
+//        } else {
+//            interview.text = ""
+//        }
     }
 
 

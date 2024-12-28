@@ -55,37 +55,37 @@ class CVFinalViewController: UIViewController {
             ])
 
             // Create a JobSeeker instance
-            let sampleJobSeeker = JobSeeker(
-                personalSummary: "Experienced software developer with expertise in Swift and iOS development.",
-                educations: [
-                    Education(educationFacility: "Harvard University", educationLevel: "Bachelor's", degree: "B.Sc. in Computer Science", startDate: "2015", endDate: "2019", city: "Cambridge"),
-                    Education(educationFacility: "MIT", educationLevel: "Master's", degree: "M.Sc. in AI", startDate: "2020", endDate: "2022", city: "Cambridge")
-                ],
-                experiences: [
-                    Experience(jobTitle: "iOS Developer", companyName: "Apple", startDate: "2019", endDate: "2021", city: "Cupertino"),
-                    Experience(jobTitle: "Senior iOS Developer", companyName: "Google", startDate: "2021", endDate: "2024", city: "Mountain View")
-                ],
-                skills: [
-                    Skill(skillName: "Swift", skillLevel: "Expert"),
-                    Skill(skillName: "UI Design", skillLevel: "Advanced"),
-                    Skill(skillName: "Project Management", skillLevel: "Intermediate")
-                ],
-                preferences: [],
-                cv: "sampleCV.pdf",
-                suggestedCareerPaths: [],
-                firstName: "John",
-                lastName: "Doe",
-                email: "john.doe@example.com",
-                password: "password123",
-                type: .jobSeeker,
-                profileImage: "profilePic",
-                phoneNumber: "123-456-7890",
-                location: "New York",
-                uid:""
-            )
+//            let sampleJobSeeker = JobSeeker(
+//                personalSummary: "Experienced software developer with expertise in Swift and iOS development.",
+//                educations: [
+//                    Education(educationFacility: "Harvard University", educationLevel: "Bachelor's", degree: "B.Sc. in Computer Science", startDate: "2015", endDate: "2019", city: "Cambridge"),
+//                    Education(educationFacility: "MIT", educationLevel: "Master's", degree: "M.Sc. in AI", startDate: "2020", endDate: "2022", city: "Cambridge")
+//                ],
+//                experiences: [
+//                    Experience(jobTitle: "iOS Developer", companyName: "Apple", startDate: "2019", endDate: "2021", city: "Cupertino"),
+//                    Experience(jobTitle: "Senior iOS Developer", companyName: "Google", startDate: "2021", endDate: "2024", city: "Mountain View")
+//                ],
+//                skills: [
+//                    Skill(skillName: "Swift", skillLevel: "Expert"),
+//                    Skill(skillName: "UI Design", skillLevel: "Advanced"),
+//                    Skill(skillName: "Project Management", skillLevel: "Intermediate")
+//                ],
+//                preferences: [],
+//                cv: "sampleCV.pdf",
+//                suggestedCareerPaths: [],
+//                firstName: "John",
+//                lastName: "Doe",
+//                email: "john.doe@example.com",
+//                password: "password123",
+//                type: .jobSeeker,
+//                profileImage: "profilePic",
+//                phoneNumber: "123-456-7890",
+//                location: "New York",
+//
+//            )
             
             // Populate the template with JobSeeker data
-            templateView.populate(with: sampleJobSeeker)
+//            templateView.populate(with: sampleJobSeeker)
         } else {
             print("Failed to load template view.")
         }

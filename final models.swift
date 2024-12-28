@@ -127,25 +127,25 @@ struct Interview : Codable {
     var nameOfIntervieweed: String
 }
 
-struct jobMarketTrend{
+struct jobMarketTrend : Codable{
     var jobTitle: String
     var Skills: [Skill]
     var industry: String
     var growthRate: String
 }
-struct estimatedJob{
+struct estimatedJob : Codable{
     var jobTitle: String
     var minimumSalary: String
     var maximumSalary: String
     var experience: String
     var industry: String
 }
-struct Article {
+struct Article: Codable {
     var articleTitle: String
     var articleDescription: String
     
 }
-struct Guide {
+struct Guide: Codable {
     var guideTitle: String
     var guideDescription: String
     var guideVideo : String
@@ -153,18 +153,19 @@ struct Guide {
     
     
 }
-struct Video {
+struct Video : Codable {
     var videoTitle: String
     var videoURL: String
     var videoDescription: String
 }
 
-struct Webinar {
+struct Webinar : Codable {
     var WebnarTitle: String
     var Date: String
     var filters: [String]
     var videoURL: String
     var webnarDescription: String
+    var isRegistered: Bool = false
 }
 
 struct table{
@@ -719,6 +720,7 @@ var polyCompany = Company(userID: "POLYISSHIT", companyName: "Polytechnic", indu
 var SayedHamed = JobSeeker(userID: "SHAMED", personalSummary: "no summary", educations: nil, experiences: nil, skills: nil, preferences: nil, cv: "idksk", suggestedCareerPaths: nil, applications: nil, firstName: "Sayed Hamed", lastName: "Mahmood", email: "SayedHamed231@gmail.com", password: "test", type: .jobSeeker, profileImage: "hello", phoneNumber: "1235", location: "Location")
 
 var testJob = job(jobTitle: "Title1", company: polyCompany , jobDescription: "IDK", jobSalary: "4500", jobType: .fullTime, jobId: "anything", jobCategory: .software, jobPosition: .Designer, jobImage: "test", jobSkills: ["whatever"], jobPostedDate: "now", salaryType: .monthly, timeFromPost: "now", deadline: "tom", applications: nil, offer: "this is a great offer")
+var companyProfile = polyCompany
 //
 //
 //

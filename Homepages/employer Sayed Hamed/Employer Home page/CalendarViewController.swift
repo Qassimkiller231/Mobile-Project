@@ -22,12 +22,12 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         interviewsTable.register(UINib(nibName: "interviewCell", bundle: nil), forCellReuseIdentifier: "interviewCell")
         datePicker.minimumDate = Date()
         
-        df.dateFormat = "dd/MM/yyyy"
+//        df.dateFormat = "dd/MM/yyyy"
         // Add target-action for date picker value change
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
         
         // Initial filter and load
-        filterApplications()
+//        filterApplications()
 
 
         // Do any additional setup after loading the view.
@@ -35,21 +35,21 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
         // Update the applications based on the new date
-        filterApplications()
+//        filterApplications()
     }
     
-    func filterApplications() {
-        currentApplications = applications.filter {
-            guard let interview = $0.interview else {
-                return false
-            }
-            
-            let pickerDate = df.string(from: datePicker.date)
-            let matches = interview.interviewDate == pickerDate
-            return matches
-        }
-        interviewsTable.reloadData()
-    }
+//    func filterApplications() {
+//        currentApplications = applications.filter {
+//            guard let interview = $0.interview else {
+//                return false
+//            }
+//            
+//            let pickerDate = df.string(from: datePicker.date)
+//            let matches = interview.interviewDate == pickerDate
+//            return matches
+//        }
+//        interviewsTable.reloadData()
+//    }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

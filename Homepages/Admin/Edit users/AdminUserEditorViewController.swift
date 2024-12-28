@@ -55,7 +55,7 @@ class AdminUserEditorViewController: UIViewController,UITableViewDelegate,UITabl
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         
             // Remove the user from Firebase
-            Firestore.firestore().collection("users").document(user.uid).delete { error in
+            Firestore.firestore().collection("users").document(user.userID).delete { error in
                 if let error = error {
                     print("Error deleting user: \(error.localizedDescription)")
                 } else {

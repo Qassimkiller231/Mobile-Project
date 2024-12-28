@@ -26,6 +26,7 @@ class PBPersonalTableViewController: UITableViewController {
         if jobSeeker == nil {
                 let userType = UserType.jobSeeker // Replace with your actual user type logic
                 self.jobSeeker = JobSeeker(
+                    userID: "test",
                     personalSummary: "sample data",
                     educations: [], // Placeholder
                     experiences: [], // Placeholder
@@ -33,6 +34,7 @@ class PBPersonalTableViewController: UITableViewController {
                     preferences: [], // Placeholder
                     cv: "", // Placeholder
                     suggestedCareerPaths: [], // Placeholder
+                    applications: nil,
                     firstName: "firstName",
                     lastName: "lastName",
                     email: "email@gmail.com",
@@ -63,6 +65,7 @@ class PBPersonalTableViewController: UITableViewController {
         if jobSeeker == nil {
                 let userType = UserType.jobSeeker // Replace with your actual user type logic
                 self.jobSeeker = JobSeeker(
+                    userID: "test",
                     personalSummary: "sample data",
                     educations: [], // Placeholder
                     experiences: [], // Placeholder
@@ -70,6 +73,7 @@ class PBPersonalTableViewController: UITableViewController {
                     preferences: [], // Placeholder
                     cv: "", // Placeholder
                     suggestedCareerPaths: [], // Placeholder
+                    applications: nil,
                     firstName: "firstName",
                     lastName: "lastName",
                     email: "email@gmail.com",

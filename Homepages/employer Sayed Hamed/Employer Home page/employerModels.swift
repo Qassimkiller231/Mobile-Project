@@ -1,35 +1,36 @@
+////
+////  Models.swift
+////  testfinalfinal
+////
+////  Created by Guest User on 18/12/2024.
+////
 //
-//  Models.swift
-//  testfinalfinal
-//
-//  Created by Guest User on 18/12/2024.
-//
-
 import Foundation
-
-let df = DateFormatter()
-
-// NEW APPLICATION
-//struct application {
-//    var dateOfApplication: Date
-//    var profile: Profile
-//    var isShortlisted: Bool
-//    var interview: Interview?
-//    var status: applicationStatus
-//}
-
-// OLD APPLICATION
-//struct application {
-//    var applicantName: String
-//    var currentTitle: String
-//    var yearsOfExperience: Int
-//    var dateOfApplication: Date
-//    var isShortlisted: Bool = false
 //
-//}
-
-    
+let df = DateFormatter()
+//
+//// NEW APPLICATION
+////struct application {
+////    var dateOfApplication: Date
+////    var profile: Profile
+////    var isShortlisted: Bool
+////    var interview: Interview?
+////    var status: applicationStatus
+////}
+//
+//// OLD APPLICATION
+////struct application {
+////    var applicantName: String
+////    var currentTitle: String
+////    var yearsOfExperience: Int
+////    var dateOfApplication: Date
+////    var isShortlisted: Bool = false
+////
+////}
+//
+//    
 let sampleJobSeeker1 = JobSeeker(
+    userID: "testsds",
     personalSummary: "",
     educations: [],
     experiences: [
@@ -52,6 +53,7 @@ let sampleJobSeeker1 = JobSeeker(
     preferences: [],
     cv: "",
     suggestedCareerPaths: [],
+    applications: nil,
     firstName: "John",
     lastName: "Doe",
     email: "john.doe@example.com",
@@ -63,6 +65,7 @@ let sampleJobSeeker1 = JobSeeker(
 )
 
 let sampleJobSeeker2 = JobSeeker(
+    userID: "skajdsa",
     personalSummary: "",
     educations: [],
     experiences: [
@@ -85,6 +88,7 @@ let sampleJobSeeker2 = JobSeeker(
     preferences: [],
     cv: "",
     suggestedCareerPaths: [],
+    applications: nil,
     firstName: "Jane",
     lastName: "Smith",
     email: "jane.smith@example.com",
@@ -96,6 +100,7 @@ let sampleJobSeeker2 = JobSeeker(
 )
 
 let sampleJobSeeker3 = JobSeeker(
+    userID: "sadsa",
     personalSummary: "",
     educations: [],
     experiences: [],
@@ -103,6 +108,7 @@ let sampleJobSeeker3 = JobSeeker(
     preferences: [],
     cv: "",
     suggestedCareerPaths: [],
+    applications: nil,
     firstName: "Alice",
     lastName: "Brown",
     email: "alice.brown@example.com",
@@ -117,13 +123,13 @@ let application1 = application(dateOfApplication: Date(), jobSeeker: sampleJobSe
 let application2 = application(dateOfApplication: Date(), jobSeeker: sampleJobSeeker2, isShortlisted: true,interview: nil, status: .pending)
 let application3 = application(dateOfApplication: Date(), jobSeeker: sampleJobSeeker3, isShortlisted: false,interview: Interview(interviewDate: "28/12/2024", interviewTime: "10:10 AM", nameOfIntervieweed: "Alice Brown"), status: .pending)
 
-
-
-func makeDateFormatter(){
-    df.dateFormat = "dd/MM/yyyy"
-}
-
+//
+//
+//func makeDateFormatter(){
+//    df.dateFormat = "dd/MM/yyyy"
+//}
+//
 var applications: [application] = [application1,application2,application3]
-
-
-let companyProfile = Company(companyName:"Tech Summy",industry: "Tech", website: "Tech.com", aboutUs: "We are a tech company for techies", firstName: "Mohamed", lastName: "Abdo", email: "mohamedAbdo@example.com", password: "HAHA", type: .employer, profileImage: "", phoneNumber: "33445566", location: "Manama")
+//
+//
+//let companyProfile = Company(companyName:"Tech Summy",industry: "Tech", website: "Tech.com", aboutUs: "We are a tech company for techies", firstName: "Mohamed", lastName: "Abdo", email: "mohamedAbdo@example.com", password: "HAHA", type: .employer, profileImage: "", phoneNumber: "33445566", location: "Manama")

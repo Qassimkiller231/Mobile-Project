@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     
@@ -30,10 +31,22 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     var filteredJobs: [job] = []
     var currentJob: job?
     var currentProfile: Profile?
+    var profileID: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        currentProfile = JobSeekerSample
+        fetchData(userID: "POLYISSHIT", collectionName: "companies") { (result: Result<Company, Error>) in
+            switch result {
+            case .success(let company):
+                self.currentProfile = company
+                    if let currentCompany = self.currentProfile as? Company {
+                        print("Fetched Company: \(currentCompany.companyName), Industry: \(currentCompany.industry)")
+                }
+                
+            case .failure(let error):
+                print("Error fetching company: \(error.localizedDescription)")
+            }
+        }
+//        currentProfile = JobSeekerSample
         
         
         // Register the custom cell
@@ -77,6 +90,41 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(bookmarkTapped))
         bookmark.addGestureRecognizer(bookmarkTap)
         
+    }
+    
+   
+
+    func fetchData<T: Codable>(userID: String, collectionName: String, completion: @escaping (Result<T, Error>) -> Void) {
+        let db = Firestore.firestore()
+
+        // Fetch the document with the specified userID from the collection
+        db.collection(collectionName).document(userID).getDocument { documentSnapshot, error in
+            if let error = error {
+                // Return an error if the fetch fails
+                completion(.failure(error))
+                return
+            }
+
+            // Check if the document exists
+            guard let document = documentSnapshot, document.exists else {
+                completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Document not found."])))
+                return
+            }
+
+            do {
+                // Decode the document data into the specified Codable object type
+                if let data = document.data() {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+                    let decodedObject = try JSONDecoder().decode(T.self, from: jsonData)
+                    completion(.success(decodedObject))
+                } else {
+                    completion(.failure(NSError(domain: "", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to get document data."])))
+                }
+            } catch {
+                // Return a decoding error
+                completion(.failure(error))
+            }
+        }
     }
     
     @objc func bookmarkTapped() {

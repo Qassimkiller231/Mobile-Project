@@ -86,16 +86,6 @@ Next Step Bahrain</string>
             </objects>
             <point key="canvasLocation" x="55.725190839694655" y="4.9295774647887329"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="aHa-vn-zCg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="9zw-So-mua" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="RwB-Mq-4Ab"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DVv-ge-hI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="792" y="635"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="gzX-rA-loy">
             <objects>
@@ -237,7 +227,6 @@ Next Step Bahrain</string>
                         <outlet property="errorLabel" destination="XVr-iY-SWq" id="QrN-m4-kt7"/>
                         <outlet property="googleLoginButton" destination="XpO-6w-vlc" id="FbH-vL-2wO"/>
                         <outlet property="password" destination="WsB-AO-rlR" id="BIY-qo-Ga1"/>
-                        <segue destination="9zw-So-mua" kind="show" identifier="goToMain" id="lI8-1L-Hch"/>
                         <segue destination="UR8-iO-WJl" kind="show" identifier="LoggedIn" id="nm5-M1-g7p"/>
                         <segue destination="WZJ-vy-Pdr" kind="show" identifier="goToMain" id="Sbl-TF-8NZ"/>
                     </connections>
@@ -594,7 +583,7 @@ Next Step Bahrain</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

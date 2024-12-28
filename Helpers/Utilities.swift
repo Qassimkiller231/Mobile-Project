@@ -81,6 +81,7 @@ class Utilities {
                             
                             // Combine profile and job seeker data into a `JobSeeker` object
                             let jobSeekerProfile = JobSeeker(
+                                userID:"",
                                 personalSummary: jobSeekerData["personalSummary"] as? String ?? "",
                                 educations: nil, // Map `educations` if available
                                 experiences: nil, // Map `experiences` if available
@@ -88,6 +89,7 @@ class Utilities {
                                 preferences: nil, // Map `preferences` if available
                                 cv: "",
                                 suggestedCareerPaths: nil,
+                                applications: nil,
                                 firstName: userData["firstName"] as? String ?? "",
                                 lastName: userData["lastName"] as? String ?? "",
                                 email: userData["email"] as? String ?? "",
@@ -95,7 +97,7 @@ class Utilities {
                                 type: .jobSeeker,
                                 profileImage: profileData["profileImage"] as? String ?? "",
                                 phoneNumber: profileData["phoneNumber"] as? String ?? "",
-                                location: profileData["location"] as? String ?? "", uid: ""
+                                location: profileData["location"] as? String ?? ""
                             )
                             
                             completion(jobSeekerProfile, nil)
@@ -116,11 +118,10 @@ class Utilities {
                             
                             // Combine profile and company data into a `Company` object
                             let companyProfile = Company(
-                                companyName: companyData["companyName"] as? String ?? "",
+                                userID: "", companyName: companyData["companyName"] as? String ?? "",
                                 industry: companyData["industry"] as? String ?? "",
                                 website: companyData["website"] as? String ?? "",
                                 aboutUs: companyData["aboutUs"] as? String ?? "",
-                                uid: companyData["uid"] as? String ?? "",
                                 firstName: profileData["firstName"] as? String ?? "",
                                 lastName: profileData["lastName"] as? String ?? "",
                                 email: profileData["email"] as? String ?? "",
@@ -141,56 +142,56 @@ class Utilities {
             }
         }
         
-        static func fetchAllUsers(completion: @escaping ([AppUser], Error?) -> Void) {
-            let db = Firestore.firestore()
-            let usersRef = db.collection("Users")
-            
-            usersRef.getDocuments { (querySnapshot, err) in
-                if let err = err {
-                    print("Error fetching users: \(err)")
-                    completion([], err)
-                    return
-                }
-                
-                guard let documents = querySnapshot?.documents else {
-                    completion([], nil)
-                    return
-                }
-                
-                // Map Firestore documents to User objects
-                // Map Firestore documents to User objects
-                let users: [AppUser] = documents.compactMap { document in
-                    let data = document.data()
-                    
-                    // Ensure required fields exist
-                    guard let uid = data["uid"] as? String,
-                          let firstName = data["firstName"] as? String,
-                          let lastName = data["lastName"] as? String,
-                          let userTypeRaw = data["userType"] as? String,
-                          let userType = UserType(rawValue: userTypeRaw) else {
-                        print("Invalid or missing user data in document: \(document.documentID)")
-                        return nil
-                    }
-                    
-                    // Create and return a User object
-                    return AppUser(
-                        uid: uid,
-                        firstName: firstName,
-                        lastName: lastName,
-                        email: "",
-                        password: "", // Password not stored here
-                        type: userType
-                    )
-                }
-                
-                
-                
-                // Pass the users array to the completion handler
-                completion(users, nil)
-            }
-            
-            
-        }
+//        static func fetchAllUsers(completion: @escaping ([AppUser], Error?) -> Void) {
+//            let db = Firestore.firestore()
+//            let usersRef = db.collection("Users")
+//            
+//            usersRef.getDocuments { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error fetching users: \(err)")
+//                    completion([], err)
+//                    return
+//                }
+//                
+//                guard let documents = querySnapshot?.documents else {
+//                    completion([], nil)
+//                    return
+//                }
+//                
+//                // Map Firestore documents to User objects
+//                // Map Firestore documents to User objects
+//                let users: [AppUser] = documents.compactMap { document in
+//                    let data = document.data()
+//                    
+//                    // Ensure required fields exist
+//                    guard let uid = data["uid"] as? String,
+//                          let firstName = data["firstName"] as? String,
+//                          let lastName = data["lastName"] as? String,
+//                          let userTypeRaw = data["userType"] as? String,
+//                          let userType = UserType(rawValue: userTypeRaw) else {
+//                        print("Invalid or missing user data in document: \(document.documentID)")
+//                        return
+//                    }
+//                    
+//                    // Create and return a User object
+//                    return AppUser(
+//                        uid: uid,
+//                        firstName: firstName,
+//                        lastName: lastName,
+//                        email: "",
+//                        password: "", // Password not stored here
+//                        type: userType
+//                    )
+//                }
+//                
+//                
+//                
+//                // Pass the users array to the completion handler
+//                completion(users, nil)
+//            }
+//            
+//            
+//        }
         static func fetchUserData(completion: @escaping (Profile?, Error?) -> Void) {
             
             guard let currentUser = Auth.auth().currentUser else {
@@ -256,6 +257,7 @@ class Utilities {
                             
                             // Combine profile and job seeker data into a `JobSeeker` object
                             let jobSeekerProfile = JobSeeker(
+                                userID: "",
                                 personalSummary: jobSeekerData["personalSummary"] as? String ?? "",
                                 educations: nil, // Map `educations` if available
                                 experiences: nil, // Map `experiences` if available
@@ -263,6 +265,7 @@ class Utilities {
                                 preferences: nil, // Map `preferences` if available
                                 cv: jobSeekerData["cv"] as? String ?? "",
                                 suggestedCareerPaths: nil,
+                                applications: nil,
                                 firstName: profileData["firstName"] as? String ?? "",
                                 lastName: profileData["lastName"] as? String ?? "",
                                 email: profileData["email"] as? String ?? "",
@@ -270,7 +273,7 @@ class Utilities {
                                 type: .jobSeeker,
                                 profileImage: profileData["profileImage"] as? String ?? "",
                                 phoneNumber: profileData["phoneNumber"] as? String ?? "",
-                                location: profileData["location"] as? String ?? "", uid: ""
+                                location: profileData["location"] as? String ?? ""
                             )
                             
                             completion(jobSeekerProfile, nil)
@@ -291,11 +294,10 @@ class Utilities {
                             
                             // Combine profile and company data into a `Company` object
                             let companyProfile = Company(
-                                companyName: companyData["companyName"] as? String ?? "",
+                                userID: "String", companyName: companyData["companyName"] as? String ?? "",
                                 industry: companyData["industry"] as? String ?? "",
                                 website: companyData["website"] as? String ?? "",
                                 aboutUs: companyData["aboutUs"] as? String ?? "",
-                                uid: companyData["uid"] as? String ?? "",
                                 firstName: profileData["firstName"] as? String ?? "",
                                 lastName: profileData["lastName"] as? String ?? "",
                                 email: profileData["email"] as? String ?? "",
@@ -375,10 +377,10 @@ class Utilities {
                     return job(
                         jobTitle: jobTitle,
                         company: Company(
-                            companyName: "Default Company",
+                            userID: "ss", companyName: "Default Company",
                             industry: "Default Industry",
                             website: "default.com",
-                            aboutUs: "Default About Us", uid: "",
+                            aboutUs: "Default About Us",
                             firstName: "Default",
                             lastName: "User",
                             email: "default@company.com",
@@ -397,7 +399,7 @@ class Utilities {
                         jobImage: jobImage,
                         jobSkills: jobSkills,
                         jobPostedDate: jobPostedDate,
-                        SalaryType: salaryType,
+                        salaryType: salaryType,
                         timeFromPost: timeFromPost,
                         deadline: deadline,
                         applications: nil, // Add logic for applications if needed
