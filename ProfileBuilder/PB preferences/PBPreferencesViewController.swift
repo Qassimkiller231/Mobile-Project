@@ -70,19 +70,19 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     
-    let alertController = UIAlertController(title: "Success", message: "Saved successfully", preferredStyle: .alert)
-            
-            // 3. Add an OK action to dismiss the alert
-            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                // You can perform any additional actions here if needed
-                print("Save successful!")
-            }
-            
-            alertController.addAction(okAction)
-            
-            // 4. Present the alert
-            self.present(alertController, animated: true, completion: nil)
-        }
+//    let alertController = UIAlertController(title: "Success", message: "Saved successfully", preferredStyle: .alert)
+//            
+//            // 3. Add an OK action to dismiss the alert
+//            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+//                // You can perform any additional actions here if needed
+//                print("Save successful!")
+//            }
+//            
+//            alertController.addAction(okAction)
+//            
+//            // 4. Present the alert
+//            self.present(alertController, animated: true, completion: nil)
+//        }
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -153,7 +153,6 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.reloadData()
     }
     
-
 
 }
 
