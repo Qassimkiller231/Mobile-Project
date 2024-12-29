@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileOverlayViewController" customModule="Project" customModuleProvider="target">
             <connections>
+                <outlet property="cvBuilderButton" destination="dJy-S2-JhH" id="NOb-fh-XZs"/>
+                <outlet property="profileEditorButton" destination="2xd-iJ-Ezi" id="1zE-iy-KMe"/>
                 <outlet property="userTitle" destination="6is-hd-0TY" id="glT-MY-S6P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,7 +31,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xd-iJ-Ezi">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xd-iJ-Ezi">
                             <rect key="frame" x="49.999999999999986" y="131" width="170.66666666666663" height="44"/>
                             <color key="tintColor" red="0.42352941179999998" green="0.01176470588" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                             <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Edit Profile" imagePadding="20">
@@ -55,7 +57,7 @@
                                 <action selector="logOutButtonTapped:" destination="-1" eventType="touchUpInside" id="ER0-D5-jyN"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-S2-JhH">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-S2-JhH">
                             <rect key="frame" x="49.999999999999986" y="195" width="170.66666666666663" height="44"/>
                             <color key="tintColor" red="0.42352941179999998" green="0.01176470588" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                             <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="CV Builder" imagePadding="20">

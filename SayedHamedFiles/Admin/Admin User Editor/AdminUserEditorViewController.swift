@@ -41,16 +41,6 @@ class AdminUserEditorViewController: UIViewController,UITableViewDelegate,UITabl
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let user = users[indexPath.row]
         
-        if user.type.rawValue == "admin" {
-            let alert = UIAlertController(
-                title: "Edit Admin User",
-                message: "Admin users cannot be edited.",
-                preferredStyle: .alert
-            )
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            parent?.present(alert, animated: true, completion: nil)
-        }
-            
         // Show alert to confirm deletion
         let alert = UIAlertController(
             title: "Delete User",
@@ -65,7 +55,7 @@ class AdminUserEditorViewController: UIViewController,UITableViewDelegate,UITabl
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         
             // Remove the user from Firebase
-            Firestore.firestore().collection("users").document(user.userID).delete { error in
+            Firestore.firestore().collection("users").document(user.uid).delete { error in
                 if let error = error {
                     print("Error deleting user: \(error.localizedDescription)")
                 } else {

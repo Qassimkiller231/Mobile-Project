@@ -7,15 +7,25 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 import GoogleSignIn
 
 class ProfileOverlayViewController: UIViewController {
     @IBOutlet weak var userTitle: UILabel!
+    @IBOutlet weak var cvBuilderButton: UIButton!
+    @IBOutlet weak var profileEditorButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkUserTypeAndChange()
     }
     var dismissCompletion: (() -> Void)?
     override func viewWillDisappear(_ animated: Bool) {
@@ -32,8 +42,56 @@ class ProfileOverlayViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func checkUserTypeAndChange() {
+        let db = Firestore.firestore()
+        let userID = Auth.auth().currentUser?.uid
+        
+        if let userID {
+            let userRef = db.collection("Users").document(userID)
+            // Fetch user document to determine the userType
+            
+            userRef.getDocument { (userDocument, error) in
+                if let error = error {
+                    print("Error fetching user document: \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let userDocument = userDocument, userDocument.exists else {
+                    print("Document does not exist.")
+                    return
+                }
+                
+                guard let userData = userDocument.data(), let userType = userData["userType"] as? String else {
+                    print("User document missing or missing userType field.")
+                    return
+                }
+                switch userType {
+                case "admin":
+                    print("admin user")
+                    self.cvBuilderButton.isHidden = true
+                    self.profileEditorButton.isHidden = true
+                case "employer":
+                    print("employer user")
+                    self.cvBuilderButton.isHidden = true
+                    self.profileEditorButton.isHidden = true
+                case "jobSeeker":
+                    print("jobseeker user")
+                    self.cvBuilderButton.isHidden = false
+                    self.profileEditorButton.isHidden = false
+                default:
+                    print("user not logged in")
+                    self.cvBuilderButton.isHidden = true
+                    self.profileEditorButton.isHidden = true
+                }
+                
+            }
+        }
+    }
+    
     
     @IBAction func editProfileButtonTapped(_ sender: Any) {
+        
+        
         print("Edit Profile button tapped")
             
             let storyboard = UIStoryboard(name: "ProfileBuilder", bundle: nil)

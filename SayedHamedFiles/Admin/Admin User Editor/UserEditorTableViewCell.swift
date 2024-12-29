@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol UserEditorTableViewCellDelegate: AnyObject {
+    func deleteUser(cell: UserEditorTableViewCell)
+    func editUser(cell: UserEditorTableViewCell)
+}
+
 class UserEditorTableViewCell: UITableViewCell {
 
     @IBOutlet weak var userTitle: UILabel!
     @IBOutlet weak var userType: UILabel!
     @IBOutlet weak var userPic: UIImageView!
+    
+    weak var delegate: UserEditorTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,15 +31,17 @@ class UserEditorTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    func configure(with user: User) {
-//        userTitle.text = user.firstName
-//        userType.text = user.type
-//        userPic.image = user.type == .admin ? UIImage(systemName: "person.crown") : UIImage(systemName: "person")
-//    }
+    func configure(with user: AppUser) {
+        userTitle.text = user.firstName
+        userType.text = user.type.rawValue
+        userPic.image = user.type == .admin ? UIImage(systemName: "person.crown") : UIImage(systemName: "person")
+    }
     
     @IBAction func deleteUserButtonPressed(_ sender: Any) {
+        delegate?.deleteUser(cell: self)
     }
     @IBAction func editUserButtonPressed(_ sender: Any) {
+        delegate?.editUser(cell: self)
     }
     
 }
