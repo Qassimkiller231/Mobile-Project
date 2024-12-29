@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BV8-nd-VZ2" firstAttribute="leading" secondItem="zcJ-Wv-4bF" secondAttribute="leading" constant="37" id="567-27-VGy"/>
                             <constraint firstAttribute="trailing" secondItem="BV8-nd-VZ2" secondAttribute="trailing" constant="43" id="9Es-84-I3v"/>
@@ -55,6 +54,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="zcJ-Wv-4bF" firstAttribute="leading" secondItem="lEE-Mp-WLD" secondAttribute="leading" constant="16" id="71O-lF-7HG"/>
                     <constraint firstItem="0EA-tR-S8E" firstAttribute="leading" secondItem="lEE-Mp-WLD" secondAttribute="leading" constant="16" id="7x6-Ga-MOX"/>
@@ -66,6 +66,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="IgL-XB-Jha"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="selectOptionLabel" destination="BV8-nd-VZ2" id="oq8-4S-lKj"/>
                 <outlet property="titleLabel" destination="0EA-tR-S8E" id="d01-t2-VaW"/>
@@ -75,8 +76,5 @@
     </objects>
     <resources>
         <image name="Drop Down" width="360" height="62"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

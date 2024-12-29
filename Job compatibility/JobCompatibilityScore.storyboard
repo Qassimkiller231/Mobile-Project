@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Qr-dN-C5s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Qr-dN-C5s">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,6 +39,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Exit">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Gmo-BM-mVl" kind="unwind" unwindAction="unwindToHomepage:" id="KFZ-Uu-4Ma"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="80%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pS-1X-APr">
                                 <rect key="frame" x="96" y="274" width="37" height="21"/>
@@ -82,6 +85,7 @@
                     <navigationItem key="navigationItem" id="4iV-fw-Ly7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0la-PJ-mEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Gmo-BM-mVl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5292.3664122137407" y="-406.33802816901408"/>
         </scene>
@@ -204,13 +208,13 @@ Compatability</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9rG-Yg-v85">
                                 <rect key="frame" x="0.0" y="243.00000000000003" width="393" height="407.66666666666674"/>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Options" id="XDK-lG-dd0">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XDK-lG-dd0" id="nOd-h6-i9r">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -248,7 +252,7 @@ Compatability</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cK5-f6-wfE"/>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cK5-f6-wfE" firstAttribute="bottom" secondItem="zjH-Zr-xMV" secondAttribute="bottom" id="41N-u6-Njc"/>
                             <constraint firstItem="QQk-HR-2OV" firstAttribute="leading" secondItem="cK5-f6-wfE" secondAttribute="leading" id="7ie-Lh-1Qo"/>
@@ -325,7 +329,7 @@ Compatability</string>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ntz-mf-W8e"/>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ntz-mf-W8e" firstAttribute="trailing" secondItem="6k1-Im-lgk" secondAttribute="trailing" id="2IO-eO-Td5"/>
                             <constraint firstItem="6k1-Im-lgk" firstAttribute="leading" secondItem="ntz-mf-W8e" secondAttribute="leading" id="3V4-ja-1td"/>
@@ -373,7 +377,7 @@ Compatability</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aJQ-bm-f9n"/>
+        <segue reference="hli-A3-rHD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Compatability boxes" width="372" height="636"/>
