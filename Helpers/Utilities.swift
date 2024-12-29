@@ -375,7 +375,7 @@ class Utilities {
                     
                     // Return a new `job` instance
                     return job(
-                        jobTitle: jobTitle,
+                        jobTitle: jobTitle, company: polyCompany,
                         companyID: "", // Replace with actual company data if available
                         jobDescription: jobDescription,
                         jobSalary: jobSalary,

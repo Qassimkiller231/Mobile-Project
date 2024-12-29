@@ -119,9 +119,10 @@ let sampleJobSeeker3 = JobSeeker(
     location: "Hamad Town"
 )
 
-let application1 = application(dateOfApplication: Date(), jobSeeker: sampleJobSeeker1, isShortlisted: false,interview: nil, status: .pending)
-let application2 = application(dateOfApplication: Date(), jobSeeker: sampleJobSeeker2, isShortlisted: true,interview: nil, status: .pending)
-let application3 = application(dateOfApplication: Date(), jobSeeker: sampleJobSeeker3, isShortlisted: false,interview: Interview(interviewDate: "28/12/2024", interviewTime: "10:10 AM", nameOfIntervieweed: "Alice Brown"), status: .pending)
+
+let application1 = application(dateOfApplication: "", jobSeeker: sampleJobSeeker1, isShortlisted: false,interview: nil, status: .pending)
+let application2 = application(dateOfApplication: "", jobSeeker: sampleJobSeeker2, isShortlisted: true,interview: nil, status: .pending)
+let application3 = application(dateOfApplication: "", jobSeeker: sampleJobSeeker3, isShortlisted: false,interview: Interview(interviewDate: "28/12/2024", interviewTime: "10:10 AM", nameOfIntervieweed: "Alice Brown"), status: .pending)
 
 //
 //

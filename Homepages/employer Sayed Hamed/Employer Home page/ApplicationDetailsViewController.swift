@@ -45,7 +45,7 @@ class ApplicationDetailsViewController: UIViewController {
         applicantNameLabel.text = "\(application.jobSeeker.firstName) \(application.jobSeeker.lastName)"
         emailLabel.text = application.jobSeeker.email
         phoneNumberLabel.text = application.jobSeeker.phoneNumber
-        dateOfApplicationLabel.text = "Date of Application: \(df.string(from: application.dateOfApplication))"
+        dateOfApplicationLabel.text = "Date of Application: "
         
         // Determine the current or last job title
         if let ongoingExperience = application.jobSeeker.experiences?.first(where: { $0.endDate.lowercased() == "ongoing" }) {

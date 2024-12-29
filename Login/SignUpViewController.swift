@@ -194,7 +194,7 @@ func goToAdminDashboard() {
 }
 
 func goToJobSeekerDashboard() {
-    performSegue(withIdentifier: "goToJobSeekerHomepage", sender: self)
+    performSegue(withIdentifier: "toProfileBuilder", sender: self)
 }
 func goToEmployerDashboard() {
     performSegue(withIdentifier: "toEmployer", sender: self)

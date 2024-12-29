@@ -80,7 +80,7 @@ class applicationTableViewCell: UITableViewCell {
             }
 
         // Setting date of application
-        dateOfApplication.text = "Date of Application: \(df.string(from: application.dateOfApplication))"
+        dateOfApplication.text = "Date of Application: \(application.dateOfApplication)"
         
         if(application.isShortlisted){
             shortlisted.isHidden = false

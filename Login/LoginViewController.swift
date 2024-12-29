@@ -163,6 +163,7 @@ func goToEmployerDashboard() {
                         // User doesn't exist; prompt for user details
                         self.promptForUserDetails { firstName, lastName, userType in
                             self.addFirestoreDocumentForUser(email: email, user: currentUser, firstName: firstName, lastName: lastName, userType: userType)
+                            self.performSegue(withIdentifier: "toProfileBuilder", sender: self)
                         }
                     }
                 }

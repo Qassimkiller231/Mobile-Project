@@ -20,7 +20,7 @@ class ManageJobViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // Data model to store job info
     var newJob = job(
-        jobTitle: "",
+        jobTitle: "", company: polyCompany,
         companyID: "",
         jobDescription: "",
         jobSalary: "",

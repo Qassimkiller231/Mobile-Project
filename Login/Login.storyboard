@@ -265,11 +265,22 @@ Next Step Bahrain</string>
                         <segue destination="DfF-MC-r5Y" kind="show" identifier="toEmployer" id="0Sa-nr-4JA"/>
                         <segue destination="yKS-WM-5Ac" kind="show" identifier="goToJobSeekerHomepage" id="AxU-Ov-nUP"/>
                         <segue destination="pDr-Bu-DCd" kind="show" identifier="goToAdminHomepage" id="aj4-84-uVe"/>
+                        <segue destination="egX-U9-X4J" kind="show" identifier="toProfileBuilder" id="a0u-t9-57k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX2-Z7-Z4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="805" y="29"/>
+        </scene>
+        <!--ProfileBuilder-->
+        <scene sceneID="54F-tz-9gd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileBuilder" id="egX-U9-X4J" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eff-dQ-Bnd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOm-c9-V6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="474"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="NCR-0R-tCO">
@@ -484,9 +495,9 @@ Next Step Bahrain</string>
                         <outlet property="jobSeekerButton" destination="1Dg-Ev-ctt" id="auP-hH-RSe"/>
                         <outlet property="lastNameTextField" destination="C0i-je-khc" id="U3O-3t-eWX"/>
                         <outlet property="passwordTextField" destination="4E7-O0-rOe" id="hd8-md-vOf"/>
-                        <segue destination="DfF-MC-r5Y" kind="show" identifier="toEmployer" id="l94-cd-LAG"/>
                         <segue destination="yKS-WM-5Ac" kind="show" identifier="goToJobSeekerHomepage" id="i7d-OM-jcu"/>
                         <segue destination="pDr-Bu-DCd" kind="show" identifier="goToAdminHomepage" id="ffD-Jf-or0"/>
+                        <segue destination="egX-U9-X4J" kind="show" identifier="toProfileBuilder" id="Ont-P9-GWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTe-dA-zkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -496,10 +507,11 @@ Next Step Bahrain</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="VEc-Nw-QnX"/>
+        <segue reference="Ont-P9-GWh"/>
         <segue reference="2mL-g9-4DK"/>
-        <segue reference="l94-cd-LAG"/>
+        <segue reference="0Sa-nr-4JA"/>
         <segue reference="ffD-Jf-or0"/>
-        <segue reference="csg-5q-b6Z"/>
+        <segue reference="i7d-OM-jcu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Google" width="24" height="24"/>
@@ -509,7 +521,7 @@ Next Step Bahrain</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

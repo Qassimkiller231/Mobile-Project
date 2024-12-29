@@ -154,6 +154,7 @@
 		6ED0017B2D1B7DB100644B5A /* AdminJobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */; };
 		6ED1CDF52D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1CDF32D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift */; };
 		6ED1CDF62D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED1CDF42D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib */; };
+		6EE3E71A2D215396003984E2 /* Avatars.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE3E7192D215396003984E2 /* Avatars.xcassets */; };
 		6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */; };
 		6EE720482D0F906000E2801B /* JobSeekerHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */; };
 		6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */; };
@@ -321,6 +322,7 @@
 		6ED0017A2D1B7DB100644B5A /* AdminJobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminJobDetailsViewController.swift; sourceTree = "<group>"; };
 		6ED1CDF32D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRecommendationsTableViewCell.swift; sourceTree = "<group>"; };
 		6ED1CDF42D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobRecommendationsTableViewCell.xib; sourceTree = "<group>"; };
+		6EE3E7192D215396003984E2 /* Avatars.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Avatars.xcassets; sourceTree = "<group>"; };
 		6EE720432D0F8A6100E2801B /* JobSeekerLoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobSeekerLoginPage.storyboard; sourceTree = "<group>"; };
 		6EE720472D0F906000E2801B /* JobSeekerHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeekerHomepageViewController.swift; sourceTree = "<group>"; };
 		6EE720492D0F923A00E2801B /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -926,6 +928,7 @@
 			children = (
 				6ED0016A2D1ACF0200644B5A /* Assets.xcassets */,
 				6E4BE2CE2D1DB94F0054B3AC /* Assets 2.xcassets */,
+				6EE3E7192D215396003984E2 /* Avatars.xcassets */,
 				6EBC6FBC2D1DC82800FC280A /* Helpers */,
 				6E4BE3182D1DBA6F0054B3AC /* Login */,
 				6E9D69582D1F28C600767BEA /* Homepages */,
@@ -1101,6 +1104,7 @@
 				6E4BE3192D1DBA6F0054B3AC /* Login.storyboard in Resources */,
 				6E4BE31A2D1DBA6F0054B3AC /* GoogleService-Info.plist in Resources */,
 				6E4BE3012D1DB94F0054B3AC /* CVBuilder.storyboard in Resources */,
+				6EE3E71A2D215396003984E2 /* Avatars.xcassets in Resources */,
 				6E4BE3022D1DB94F0054B3AC /* skillTableViewCell.xib in Resources */,
 				6E4BE3042D1DB94F0054B3AC /* educationTableViewCell.xib in Resources */,
 				6E4BE3052D1DB94F0054B3AC /* interviewCell.xib in Resources */,

@@ -46,30 +46,91 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             case .failure(let error):
                 print("Error fetching company: \(error.localizedDescription)")
             }
-            self.fetchJob(jobID: "anything") { result in
+//            self.fetchAllJobs { result in
+//                switch result {
+//                case .success(let jobs):
+//                    print("Fetched \(jobs.count) jobs!")
+//                    for job in jobs {
+//                        print("Job Title: \(job.jobTitle)")
+//                        if let company = job.company {
+//                            print("Company Name: \(company.companyName)")
+//                        }
+//                    }
+//                case .failure(let error):
+//                    print("Error fetching jobs: \(error.localizedDescription)")
+//                }
+//            }
+            
+//            self.uploadJobs(jobs: jobs) { result in
+//                switch result {
+//                case .success:
+//                    print("Jobs uploaded successfully!")
+//                case .failure(let error):
+//                    print("Error uploading jobs: \(error.localizedDescription)")
+//                }
+//            }
+            
+            // Call fetchAllJobs to retrieve all jobs
+            self.fetchAllJobs { result in
                 switch result {
-                case .success(let job):
-                    print("Fetched Job:")
-                    print("Title: \(job.jobTitle)")
-                    print("Description: \(job.jobDescription)")
-                    print("Salary: \(job.jobSalary)")
-                    print("Job Type: \(job.jobType)")
-                    print("Deadline: \(job.deadline)")
-
-                    // If the Company object is loaded, print its details
-                    if let company = job.company {
-                        print("Company Details:")
-                        print("Name: \(company.companyName)")
-                        print("Industry: \(company.industry)")
-                        print("Website: \(company.website)")
-                    } else {
-                        print("Company not loaded yet.")
+                case .success(let jobs):
+                    print("Fetched \(jobs.count) jobs!") // Print the total number of jobs fetched
+                    for job in jobs {
+                        print("Job Title: \(job.jobTitle)")
+                        print("Job Description: \(job.jobDescription)")
+                        print("Company Name: \(job.company.companyName)") // Access the company's name
+                        print("Salary: \(job.jobSalary)")
+                        print("Deadline: \(job.deadline)")
+                        print("--------------------")
                     }
 
                 case .failure(let error):
-                    print("Error fetching job: \(error.localizedDescription)")
+                    print("Error fetching jobs: \(error.localizedDescription)")
                 }
             }
+            
+//            self.fetchJob(jobID: "1") { result in
+//                switch result {
+//                case .success(let job):
+//                    print("Fetched Job:")
+//                    print("Job Title: \(job.jobTitle)")
+//                    print("Job Description: \(job.jobDescription)")
+//                    print("Company Name: \(job.company.companyName)")
+//                    print("Salary: \(job.jobSalary)")
+//                    print("Deadline: \(job.deadline)")
+//                    print("--------------------")
+//                    
+//                case .failure(let error):
+//                    print("Error fetching job: \(error.localizedDescription)")
+//                }
+//            }
+//            self.fetchJobBasic(jobID: "1") { result in
+//                switch result {
+//                case .success(let data):
+//                    print("Job fetched successfully: \(data)")
+//                case .failure(let error):
+//                    print("Error fetching job: \(error.localizedDescription)")
+//                }
+//            }
+            
+            self.fetchAndDecodeJob(jobID: "1") { result in
+                switch result {
+                case .success(let job):
+                    print("Job fetched and decoded successfully:")
+                    print("Title: \(job.jobTitle)")
+                    print("Description: \(job.jobDescription)")
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+            
+            
+            
+            
+            
+            
+           
+            
         }
 //        currentProfile = JobSeekerSample
         
@@ -116,6 +177,139 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         bookmark.addGestureRecognizer(bookmarkTap)
         
     }
+    func fetchAndDecodeJob(jobID: String, completion: @escaping (Result<job, Error>) -> Void) {
+        let db = Firestore.firestore()
+        
+        db.collection("jobs").document(jobID).getDocument { documentSnapshot, error in
+            if let error = error {
+                print("Error fetching job: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            guard let document = documentSnapshot, document.exists, let data = document.data() else {
+                let error = NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Job not found."])
+                print(error.localizedDescription)
+                completion(.failure(error))
+                return
+            }
+            
+            // Debug: Print the raw Firestore data
+            print("Raw Firestore Data: \(data)")
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+                let job = try JSONDecoder().decode(job.self, from: jsonData)
+                print("Decoded Job: \(job.jobTitle)")
+                completion(.success(job))
+            } catch {
+                print("Error decoding job: \(error)")
+                completion(.failure(error))
+            }
+        }
+    }
+    func fetchJobBasic(jobID: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+        let db = Firestore.firestore()
+        
+        db.collection("jobs").document(jobID).getDocument { documentSnapshot, error in
+            if let error = error {
+                print("Error fetching job: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            guard let document = documentSnapshot, document.exists, let data = document.data() else {
+                let error = NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Job not found."])
+                print(error.localizedDescription)
+                completion(.failure(error))
+                return
+            }
+            
+            print("Fetched Job Data: \(data)")
+            completion(.success(data))
+        }
+    }
+    func fetchAllJobs(completion: @escaping (Result<[job], Error>) -> Void) {
+        let db = Firestore.firestore()
+        var jobs: [job] = []
+        let dispatchGroup = DispatchGroup()
+
+        db.collection("jobs").getDocuments { querySnapshot, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let documents = querySnapshot?.documents else {
+                completion(.success([]))
+                return
+            }
+
+            for document in documents {
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: document.data(), options: [])
+                    var job = try JSONDecoder().decode(job.self, from: jsonData)
+
+                    dispatchGroup.enter()
+                    db.collection("companies").document(job.companyID).getDocument { companySnapshot, error in
+                        if let error = error {
+                            print("Error fetching company for job \(job.jobTitle): \(error.localizedDescription)")
+                            dispatchGroup.leave()
+                            return
+                        }
+
+                        guard let companyData = companySnapshot?.data() else {
+                            print("Company not found for job \(job.jobTitle)")
+                            dispatchGroup.leave()
+                            return
+                        }
+
+                        do {
+                            let companyJson = try JSONSerialization.data(withJSONObject: companyData, options: [])
+                            let company = try JSONDecoder().decode(Company.self, from: companyJson)
+                            job.company = company
+                            jobs.append(job)
+                        } catch {
+                            print("Error decoding company for job \(job.jobTitle): \(error)")
+                        }
+
+                        dispatchGroup.leave()
+                    }
+                } catch {
+                    print("Error decoding job document: \(error)")
+                }
+            }
+
+            dispatchGroup.notify(queue: .main) {
+                completion(.success(jobs))
+            }
+        }
+    }
+    
+    
+    func uploadJobs(jobs: [job], completion: @escaping (Result<Void, Error>) -> Void) {
+        let db = Firestore.firestore()
+        let batch = db.batch()
+
+        do {
+            for job in jobs {
+                let jobData = try Firestore.Encoder().encode(job)
+                let documentRef = db.collection("jobs").document(job.jobId)
+                batch.setData(jobData, forDocument: documentRef)
+            }
+
+            batch.commit { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(()))
+                }
+            }
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
     func fetchJob(jobID: String, completion: @escaping (Result<job, Error>) -> Void) {
         let db = Firestore.firestore()
 
@@ -132,9 +326,9 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
-                let job = try JSONDecoder().decode(job.self, from: jsonData)
+                var job = try JSONDecoder().decode(job.self, from: jsonData)
 
-                // Fetch the associated Company using companyID
+                // Fetch the associated Company
                 db.collection("companies").document(job.companyID).getDocument { companySnapshot, error in
                     if let error = error {
                         completion(.failure(error))
@@ -304,7 +498,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
                 matches = matches && job.jobCategory.rawValue == jobCategoryFilter
             }
             if let locationFilter = filters["Location"] {
-                matches = matches && job.company?.location == locationFilter
+                matches = matches && job.company.location == locationFilter
             }
             if let minimumSalaryFilter = filters["Minimum Salary"] {
                 print("there is min")

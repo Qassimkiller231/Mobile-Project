@@ -29,7 +29,7 @@ class JobDetailsViewController: UIViewController {
         titleLabel.text = job?.jobTitle
 //        profilePic.image = UIImage(named: job!.jobImage)
         descriptionTextLabel.text = job?.jobDescription
-        aboutUsTextLabel.text = job?.company?.aboutUs
+        aboutUsTextLabel.text = job?.company.aboutUs
         offerTextLabel.text = job?.offer
         // Do any additional setup after loading the view.
     }
@@ -47,7 +47,7 @@ class JobDetailsViewController: UIViewController {
             if self .job?.applications == nil {
                 self .job?.applications = []
             }
-            let application = application(dateOfApplication: Date(), jobSeeker: JobSeekerSample)
+            let application = application(dateOfApplication: "", jobSeeker: JobSeekerSample)
             self.job?.applications?.append(application)
             self.performSegue(withIdentifier: "detailsToHomepage", sender: nil)
             print("added application from alert, count is\(self.job?.applications?.count ?? 0)")
