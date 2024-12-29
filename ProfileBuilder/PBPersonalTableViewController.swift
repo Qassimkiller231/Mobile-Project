@@ -7,6 +7,8 @@
 
 import UIKit
 import Foundation
+import FirebaseAuth
+import Firebase
 
 
 class PBPersonalTableViewController: UITableViewController {
@@ -53,15 +55,15 @@ class PBPersonalTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func validateInputs() -> Bool {
-//            guard let firstName = firstNameTextField.text, !firstName.isEmpty,
-//                  let lastName = lastNameTextField.text, !lastName.isEmpty,
-//                  let email = emailTextField.text, isValidEmail(email),
-//                  let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
-//                  let location = locationTextField.text, !location.isEmpty,
-//                  let personalSummary = personalSummaryTextView.text, !personalSummary.isEmpty else {
-//                return false
-//            }
-        // Create JobSeeker instance
+            guard let firstName = firstNameTextField.text, !firstName.isEmpty,
+                  let lastName = lastNameTextField.text, !lastName.isEmpty,
+                  let email = emailTextField.text, isValidEmail(email),
+                  let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
+                  let location = locationTextField.text, !location.isEmpty,
+                  let personalSummary = personalSummaryTextView.text, !personalSummary.isEmpty else {
+                return false
+            }
+//         Create JobSeeker instance
         if jobSeeker == nil {
                 let userType = UserType.jobSeeker // Replace with your actual user type logic
                 self.jobSeeker = JobSeeker(
@@ -84,15 +86,15 @@ class PBPersonalTableViewController: UITableViewController {
                     location: "location"
                 )
           }
-//            else {
-//                // If jobSeeker is already created, update the properties
-//                jobSeeker?.firstName = firstName
-//                jobSeeker?.lastName = lastName
-//                jobSeeker?.email = email
-//                jobSeeker?.phoneNumber = phoneNumber
-//                jobSeeker?.location = location
-//                jobSeeker?.personalSummary = personalSummary
-//            }
+            else {
+                // If jobSeeker is already created, update the properties
+                jobSeeker?.firstName = firstName
+                jobSeeker?.lastName = lastName
+                jobSeeker?.email = email
+                jobSeeker?.phoneNumber = phoneNumber
+                jobSeeker?.location = location
+                jobSeeker?.personalSummary = personalSummary
+            }
             
             return true
             }
@@ -102,71 +104,71 @@ class PBPersonalTableViewController: UITableViewController {
             return emailTest.evaluate(with: email)
         }
     
-//    func loadJobSeekerData() {
-//        print("Trying to load data")
-//        
-//        guard let userId = Auth.auth().currentUser?.uid else {
-//            print("User not signed in.")
-//            return
-//        }
-//
-//        let db = Firestore.firestore()
-//        
-//        // Reference to the documents for the current user
-//        let jobSeekerRef = db.collection("JobSeekers").document(userId)
-//        let userRef = db.collection("Users").whereField("uid", isEqualTo: userId)
-//        let profileRef = db.collection("Profiles").document(userId)
-//        print("userID: \(userId)")
-//        
-//        // Fetch the user data
-//        userRef.getDocuments { (querySnapshot, error) in
-//            if let error = error {
-//                print("Error loading user data: \(error.localizedDescription)")
-//                return
-//            }
-//            
-//            guard let userData = querySnapshot?.documents.first else {
-//                print("No user data found.")
-//                return
-//            }
-//
-//            // Fetch the profile data
-//            profileRef.getDocument { (profileDocument, error) in
-//                if let error = error {
-//                    print("Error loading profile data: \(error.localizedDescription)")
-//                    return
-//                }
-//                
-//                guard let profileData = profileDocument?.data() else {
-//                    print("No profile data found.")
-//                    return
-//                }
-//
-//                // Fetch the job seeker data
-//                jobSeekerRef.getDocument { (jobSeekerDocument, error) in
-//                    if let error = error {
-//                        print("Error loading job seeker data: \(error.localizedDescription)")
-//                        return
-//                    }
-//                    
-//                    guard let jobSeekerData = jobSeekerDocument?.data() else {
-//                        print("No JobSeeker reference found for user.")
-//                        // Optionally, inform the user that they need to fill in their profile.
-//                        return
-//                    }
-//
-//                    // Document exists, load the data
-//                    self.firstNameTextField.text = userData["firstName"] as? String
-//                    self.lastNameTextField.text = userData["lastName"] as? String
-//                    self.emailTextField.text = Auth.auth().currentUser?.email
-//                    self.phoneNumberTextField.text = profileData["phoneNumber"] as? String
-//                    self.locationTextField.text = profileData["location"] as? String
-//                    self.personalSummaryTextView.text = jobSeekerData["personalSummary"] as? String
-//                    // Load other fields as needed
-//                }
-//            }
-//        }
-//    }
+    func loadJobSeekerData() {
+        print("Trying to load data")
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("User not signed in.")
+            return
+        }
+
+        let db = Firestore.firestore()
+        
+        // Reference to the documents for the current user
+        let jobSeekerRef = db.collection("JobSeekers").document(userId)
+        let userRef = db.collection("Users").whereField("uid", isEqualTo: userId)
+        let profileRef = db.collection("Profiles").document(userId)
+        print("userID: \(userId)")
+        
+        // Fetch the user data
+        userRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error loading user data: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let userData = querySnapshot?.documents.first else {
+                print("No user data found.")
+                return
+            }
+
+            // Fetch the profile data
+            profileRef.getDocument { (profileDocument, error) in
+                if let error = error {
+                    print("Error loading profile data: \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let profileData = profileDocument?.data() else {
+                    print("No profile data found.")
+                    return
+                }
+
+                // Fetch the job seeker data
+                jobSeekerRef.getDocument { (jobSeekerDocument, error) in
+                    if let error = error {
+                        print("Error loading job seeker data: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    guard let jobSeekerData = jobSeekerDocument?.data() else {
+                        print("No JobSeeker reference found for user.")
+                        // Optionally, inform the user that they need to fill in their profile.
+                        return
+                    }
+
+                    // Document exists, load the data
+                    self.firstNameTextField.text = userData["firstName"] as? String
+                    self.lastNameTextField.text = userData["lastName"] as? String
+                    self.emailTextField.text = Auth.auth().currentUser?.email
+                    self.phoneNumberTextField.text = profileData["phoneNumber"] as? String
+                    self.locationTextField.text = profileData["location"] as? String
+                    self.personalSummaryTextView.text = jobSeekerData["personalSummary"] as? String
+                    // Load other fields as needed
+                }
+            }
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

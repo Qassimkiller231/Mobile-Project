@@ -321,6 +321,7 @@
                         <outlet property="profilePicImage" destination="oup-hh-NGF" id="sV0-5T-csU"/>
                         <outlet property="tableView" destination="S1T-ub-Bv4" id="4Gj-id-nAo"/>
                         <segue destination="MnA-0M-vUB" kind="show" identifier="viewApplications" id="Aqb-I2-u2s"/>
+                        <segue destination="tAn-FX-443" kind="show" identifier="ManageJob" id="feJ-fl-lTB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -336,7 +337,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lQO-pp-H9H">
-                                <rect key="frame" x="0.0" y="62" width="440" height="860"/>
+                                <rect key="frame" x="0.0" y="106" width="440" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -349,10 +350,11 @@
                             <constraint firstItem="lQO-pp-H9H" firstAttribute="leading" secondItem="Asa-bj-yHF" secondAttribute="leading" id="zhM-dM-f1N"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zO7-bl-UeJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1j-Uv-UU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2194.6564885496182" y="-784.50704225352115"/>
+            <point key="canvasLocation" x="1283" y="-732"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xvI-g3-58G">

@@ -52,11 +52,6 @@ class PBSkillsViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         tableView.register(UINib(nibName: "skillButtonsTableViewCell", bundle: nil), forCellReuseIdentifier: "skillButtonsTableViewCell")
         
-        // sample data
-        if jobSeeker?.skills?.isEmpty ?? true {
-            jobSeeker?.skills?.append(Skill(skillName: "HTML", skillLevel: "1"))
-            jobSeeker?.skills?.append(Skill(skillName: "CSS", skillLevel: "Expert"))
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

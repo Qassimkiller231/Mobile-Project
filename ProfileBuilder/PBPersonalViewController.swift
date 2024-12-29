@@ -18,7 +18,7 @@ class PBPersonalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("PBPersonalViewController loaded")
-//        personalTableViewController?.loadJobSeekerData()
+        personalTableViewController?.loadJobSeekerData()
         // Do any additional setup after loading the view.
     }
     
@@ -27,16 +27,16 @@ class PBPersonalViewController: UIViewController {
                 if let destinationVC = segue.destination as? PBEducationViewController {
                     // Validate inputs before proceeding
                     if let personalTableVC = personalTableViewController {
-                        destinationVC.jobSeeker = personalTableVC.jobSeeker}
-//                        if personalTableVC.validateInputs() {
-//                            // Pass the JobSeeker instance if validation is successful
-//                            destinationVC.jobSeeker = personalTableVC.jobSeeker
-//                        } else {
-//                            // Show an alert if validation fails
-//                            showAlert(message: "Please fill in all fields correctly.")
-//                            return
-//                        }
-//                    }
+                        destinationVC.jobSeeker = personalTableVC.jobSeeker
+                        if personalTableVC.validateInputs() {
+                            // Pass the JobSeeker instance if validation is successful
+                            destinationVC.jobSeeker = personalTableVC.jobSeeker
+                        } else {
+                            // Show an alert if validation fails
+                            showAlert(message: "Please fill in all fields correctly.")
+                            return
+                        }
+                    }
                 }
             }
         }

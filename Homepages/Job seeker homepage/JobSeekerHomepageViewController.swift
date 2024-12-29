@@ -34,6 +34,28 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     var profileID: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        Utilities.DataManager.fetchUserData { [weak self] (fetchedProfile, error) in
+//                if let error = error {
+//                    print("Error fetching profile: \(error.localizedDescription)")
+//                    return
+//                }
+//                
+//                guard let profile = fetchedProfile else {
+//                    print("No profile found for the current user.")
+//                    return
+//                }
+//                
+//                // Assign the fetched profile to the local variable
+//            self?.currentProfile = profile
+//                
+//                // Perform UI updates (e.g., load profile data into labels, image views, etc.)
+//                            }
+        
+        
+        
+        
+        
         fetchData(userID: "POLYISSHIT", collectionName: "companies") { (result: Result<Company, Error>) in
             switch result {
             case .success(let company):

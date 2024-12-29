@@ -20,11 +20,6 @@ class PBEducationViewController: UIViewController, UITableViewDelegate, UITableV
         educationsTableView.delegate = self
         educationsTableView.dataSource = self
         educationsTableView.register(educationTableViewCell.nib(), forCellReuseIdentifier: educationTableViewCell.identifier)
-        if jobSeeker?.educations?.isEmpty == true {
-            jobSeeker?.educations?.append(Education(educationFacility: "eduFac1", educationLevel: "eduLevel1", degree: "eduDegree1", startDate: "12/12/21", endDate: "20/12/23", city: "Muharraq"))
-            
-            print("this should be added")
-            }
         
         educationsTableView.reloadData()
     }

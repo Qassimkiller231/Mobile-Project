@@ -9,6 +9,8 @@ import UIKit
 
 class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSource, EmployerJobListinCellDelegate{
     
+    
+    
     func didTapViewApplications(cell: EmployerJobListingCardTableViewCell) {
         // Get the indexPath of the tapped cell
                guard let indexPath = tableView.indexPath(for: cell) else {
@@ -55,6 +57,13 @@ class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSour
             tableView.delegate = self
             tableView.dataSource = self
             tableView.register(EmployerJobListingCardTableViewCell.nib(), forCellReuseIdentifier: EmployerJobListingCardTableViewCell.identifier)
+            
+            
+            if Utilities.DataManager.profile == nil {
+                if let tabBarController = self.tabBarController {
+                    tabBarController.selectedIndex = 2 // Replace '2' with the index of the tab you want to switch to
+                }
+            }
         }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CompanyJobs.count

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseFirestore
 class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UISearchBarDelegate {
     
     
@@ -22,7 +22,7 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
         case projectBased = "Project-Based"
     }
 
-    var selectedJobType: JobType?
+    var selectedJobType: jobTypes?
     var preferenceList: [String] = [] // List of selected preferences
       var model: [String] = ["Programming", "Design", "Marketing", "Finance","Test1","Test2","John"] // Example data
     var filteredModel : [String] = []
@@ -67,6 +67,14 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     @IBAction func saveAllButtonPressed(_ sender: Any) {
+        for preference in preferenceList {
+            let preference = Preference(prefrence: preference, jobType: selectedJobType!)
+            jobSeeker!.preferences?.append(preference)
+            uploadJobSeekerToFirestore(jobSeeker: jobSeeker!)
+        }
+        
+        
+        
     }
     
     
@@ -93,7 +101,7 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
         }
     }
     
-    private func selectJobType(_ jobType: JobType) {
+    private func selectJobType(_ jobType: jobTypes) {
         selectedJobType = jobType
 
         // Reset opacity for all buttons
@@ -115,6 +123,8 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
             internshipButton.alpha = 1.0
         case .projectBased:
             projectBasedButton.alpha = 1.0
+        default:
+            return
         }
         
         print("selected job type: \(selectedJobType ?? .fullTime)")
@@ -152,6 +162,71 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.collectionViewLayout.invalidateLayout()
         collectionView.reloadData()
     }
+    func uploadJobSeekerToFirestore(jobSeeker: JobSeeker) {
+        let db = Firestore.firestore()
+        
+        do {
+            // Encode the JobSeeker object into a dictionary
+            let encodedData = try Firestore.Encoder().encode(jobSeeker)
+
+            // Use the userID as the document ID
+            db.collection("jobSeekers").document(jobSeeker.userID).setData(encodedData) { error in
+                if let error = error {
+                    print("Error uploading job seeker: \(error)")
+                } else {
+                    print("Job seeker successfully uploaded!")
+                }
+            }
+        } catch {
+            print("Encoding error: \(error)")
+        }
+    }
+    
+//    func uploadCompanyToFirestore(company: Company) {
+//        let db = Firestore.firestore()
+//        
+//        do {
+//            // Encode the Company object into a dictionary
+//            let encodedData = try Firestore.Encoder().encode(company)
+//
+//            // Use the userID as the document ID
+//            db.collection("companies").document(company.userID).setData(encodedData) { error in
+//                if let error = error {
+//                    print("Error uploading company: \(error)")
+//                } else {
+//                    print("Company successfully uploaded!")
+//                }
+//            }
+//        } catch {
+//            print("Encoding error: \(error)")
+//        }
+//    }
+    
+//    func uploadProfileToFirestore(profile: Profile) {
+//        let db = Firestore.firestore()
+//
+//        // Ensure userID is not empty
+//        guard !profile.userID.isEmpty else {
+//            print("Error: userID is empty.")
+//            return
+//        }
+//
+//        do {
+//            // Encode the Profile object into a dictionary
+//            let encodedData = try Firestore.Encoder().encode(profile)
+//
+//            // Use the userID as the document ID
+//            db.collection("Profiles").document(profile.userID).setData(encodedData) { error in
+//                if let error = error {
+//                    print("Error uploading profile: \(error)")
+//                } else {
+//                    print("Profile successfully uploaded!")
+//                }
+//            }
+//        } catch {
+//            print("Encoding error: \(error)")
+//        }
+//    }
     
 
 }

@@ -9,6 +9,10 @@ import UIKit
 
 class JobInputTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

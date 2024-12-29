@@ -22,6 +22,10 @@ enum SkillNames : String{
 enum jobTypes : String,Codable{
     case fullTime = "fulltime"
     case partTime = "part-time"
+    case contract = "contract"
+    case internship = "internship"
+    case freelance = "freelance"
+    case projectBased = "project based"
 }
 enum jobCategories : String, Codable{
     case software
@@ -84,7 +88,7 @@ struct CareerPath :Codable{
     
 }
 struct Preference : Codable{
-    var prefrence : preferenceList
+    var prefrence : String
     var jobType: jobTypes
     
     
@@ -619,99 +623,100 @@ var SQuser = AppUser(userID: "UserIDDD", firstName: "Sayed Qassim", lastName: "A
 //]
 //var types :[Profile] = [companySample,JobSeekerSample]
 var polyCompany = Company(userID: "POLYISSHIT", companyName: "Polytechnic", industry: "idk", website: "we do not have one", aboutUs: "we are a shit college", firstName: "Ghassan", lastName: "Al IDK", email: "ALQAWAd", password: "mamamia", type: .employer, profileImage: "idk", phoneNumber: "2134", location: "Aali")
+var jobs: [job] = []
 
-var jobs: [job] = [
-    job(
-        jobTitle: "Software Developer", company:polyCompany ,
-        companyID: "POLYISSHIT",
-        jobDescription: "This is a software engineering job, you have no rights to work in this job.",
-        jobSalary: "7800",
-        jobType: .fullTime,
-        jobId: "1",
-        jobCategory: .software,
-        jobPosition: .Designer,
-        jobImage: "no",
-        jobSkills: ["Swift", "iOS Development"],
-        jobPostedDate: "2024-12-20",
-        salaryType: .monthly,
-        timeFromPost: "1 hour ago",
-        deadline: "2024-12-31",
-        applications: [application(dateOfApplication:"20/12/2024", jobSeeker: JobSeekerSample, isShortlisted: true, status: .pending)],
-        offer: "This is our final offer, take it or leave it."
-    ),
-    job(
-        jobTitle: "Graphic Designer", company: polyCompany,
-        companyID: "POLYISSHIT",
-        jobDescription: "We need a creative graphic designer with a passion for visual storytelling.",
-        jobSalary: "5000",
-        jobType: .partTime,
-        jobId: "2",
-        jobCategory: .finance,
-        jobPosition: .Designer,
-        jobImage: "graphic_logo",
-        jobSkills: ["Photoshop", "Illustrator", "Figma"],
-        jobPostedDate: "2024-12-18",
-        salaryType: .hourly,
-        timeFromPost: "3 days ago",
-        deadline: "2025-01-05",
-        applications: nil,
-        offer: "Flexible working hours and competitive pay."
-    ),
-    job(
-        jobTitle: "Data Scientist", company: polyCompany,
-        companyID: "POLYISSHIT",
-        jobDescription: "Analyze and interpret complex data to help improve business outcomes.",
-        jobSalary: "12000",
-        jobType: .fullTime,
-        jobId: "3",
-        jobCategory: .finance,
-        jobPosition: .Designer,
-        jobImage: "data_logo",
-        jobSkills: ["Python", "Machine Learning", "SQL"],
-        jobPostedDate: "2024-12-22",
-        salaryType: .monthly,
-        timeFromPost: "2 days ago",
-        deadline: "2025-01-15",
-        applications: nil,
-        offer: "Generous benefits package and remote work options."
-    ),
-    job(
-        jobTitle: "Janitor", company: polyCompany,
-        companyID: "POLYISSHIT",
-        jobDescription: "Ensure cleanliness and orderliness in the office premises.",
-        jobSalary: "2500",
-        jobType: .fullTime,
-        jobId: "4",
-        jobCategory: .software,
-        jobPosition: .softwareDev,
-        jobImage: "janitor_logo",
-        jobSkills: ["Cleaning", "Organizing"],
-        jobPostedDate: "2024-12-10",
-        salaryType: .monthly,
-        timeFromPost: "14 days ago",
-        deadline: "2024-12-31",
-        applications: nil,
-        offer: "Flexible hours and supportive team environment."
-    ),
-    job(
-        jobTitle: "Marketing Specialist", company: polyCompany,
-        companyID: "POLYISSHIT",
-        jobDescription: "Develop marketing strategies to increase brand awareness.",
-        jobSalary: "8500",
-        jobType: .fullTime,
-        jobId: "5",
-        jobCategory: .software,
-        jobPosition: .softwareDev,
-        jobImage: "marketing_logo",
-        jobSkills: ["SEO", "Content Marketing", "Social Media"],
-        jobPostedDate: "2024-12-15",
-        salaryType: .monthly,
-        timeFromPost: "9 days ago",
-        deadline: "2025-01-10",
-        applications: nil,
-        offer: "Opportunity to work on high-impact campaigns."
-    )
-]
+//var jobs: [job] = [
+//    job(
+//        jobTitle: "Software Developer", company:polyCompany ,
+//        companyID: "POLYISSHIT",
+//        jobDescription: "This is a software engineering job, you have no rights to work in this job.",
+//        jobSalary: "7800",
+//        jobType: .fullTime,
+//        jobId: "1",
+//        jobCategory: .software,
+//        jobPosition: .Designer,
+//        jobImage: "no",
+//        jobSkills: ["Swift", "iOS Development"],
+//        jobPostedDate: "2024-12-20",
+//        salaryType: .monthly,
+//        timeFromPost: "1 hour ago",
+//        deadline: "2024-12-31",
+//        applications: [application(dateOfApplication:"20/12/2024", jobSeeker: JobSeekerSample, isShortlisted: true, status: .pending)],
+//        offer: "This is our final offer, take it or leave it."
+//    ),
+//    job(
+//        jobTitle: "Graphic Designer", company: polyCompany,
+//        companyID: "POLYISSHIT",
+//        jobDescription: "We need a creative graphic designer with a passion for visual storytelling.",
+//        jobSalary: "5000",
+//        jobType: .partTime,
+//        jobId: "2",
+//        jobCategory: .finance,
+//        jobPosition: .Designer,
+//        jobImage: "graphic_logo",
+//        jobSkills: ["Photoshop", "Illustrator", "Figma"],
+//        jobPostedDate: "2024-12-18",
+//        salaryType: .hourly,
+//        timeFromPost: "3 days ago",
+//        deadline: "2025-01-05",
+//        applications: nil,
+//        offer: "Flexible working hours and competitive pay."
+//    ),
+//    job(
+//        jobTitle: "Data Scientist", company: polyCompany,
+//        companyID: "POLYISSHIT",
+//        jobDescription: "Analyze and interpret complex data to help improve business outcomes.",
+//        jobSalary: "12000",
+//        jobType: .fullTime,
+//        jobId: "3",
+//        jobCategory: .finance,
+//        jobPosition: .Designer,
+//        jobImage: "data_logo",
+//        jobSkills: ["Python", "Machine Learning", "SQL"],
+//        jobPostedDate: "2024-12-22",
+//        salaryType: .monthly,
+//        timeFromPost: "2 days ago",
+//        deadline: "2025-01-15",
+//        applications: nil,
+//        offer: "Generous benefits package and remote work options."
+//    ),
+//    job(
+//        jobTitle: "Janitor", company: polyCompany,
+//        companyID: "POLYISSHIT",
+//        jobDescription: "Ensure cleanliness and orderliness in the office premises.",
+//        jobSalary: "2500",
+//        jobType: .fullTime,
+//        jobId: "4",
+//        jobCategory: .software,
+//        jobPosition: .softwareDev,
+//        jobImage: "janitor_logo",
+//        jobSkills: ["Cleaning", "Organizing"],
+//        jobPostedDate: "2024-12-10",
+//        salaryType: .monthly,
+//        timeFromPost: "14 days ago",
+//        deadline: "2024-12-31",
+//        applications: nil,
+//        offer: "Flexible hours and supportive team environment."
+//    ),
+//    job(
+//        jobTitle: "Marketing Specialist", company: polyCompany,
+//        companyID: "POLYISSHIT",
+//        jobDescription: "Develop marketing strategies to increase brand awareness.",
+//        jobSalary: "8500",
+//        jobType: .fullTime,
+//        jobId: "5",
+//        jobCategory: .software,
+//        jobPosition: .softwareDev,
+//        jobImage: "marketing_logo",
+//        jobSkills: ["SEO", "Content Marketing", "Social Media"],
+//        jobPostedDate: "2024-12-15",
+//        salaryType: .monthly,
+//        timeFromPost: "9 days ago",
+//        deadline: "2025-01-10",
+//        applications: nil,
+//        offer: "Opportunity to work on high-impact campaigns."
+//    )
+//]
 var adminSections : [Section] = [
     Section(title: "Job Type", options: [jobTypes.fullTime.rawValue,jobTypes.partTime.rawValue]),
     Section(title: "Industry",options: ["Software","Hardware","Finance","Healthcare","Education","Other"]),
