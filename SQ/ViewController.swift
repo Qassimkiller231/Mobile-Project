@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Entered Main View")
         
 //        uploadAppUserToFirestore(appUser: SQuser)
 //        print(SQProfile.userID)
@@ -146,7 +147,6 @@ class ViewController: UIViewController {
                     self.navigateBasedOnUserType(userType)
                 } else {
                     print("User type not found in document.")
-                    self.goToLogin()
                 }
             }
         }
@@ -162,7 +162,6 @@ class ViewController: UIViewController {
                 goToEmployerDashboard()
             default:
                 print("Unknown userType. Navigating to Login.")
-                goToLogin()
             }
         }
     

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,11 +15,71 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        // Initialize the UIWindow
+        window = UIWindow(windowScene: windowScene)
+
+        // Storyboards
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let jobSeekerStoryboard = UIStoryboard(name: "JobSeekerLoginPage", bundle: nil)
+        let employerStoryboard = UIStoryboard(name: "employerHomePage", bundle: nil)
+        let adminStoryboard = UIStoryboard(name: "adminHomePage", bundle: nil)
+
+        // Set a temporary loading screen as the initial view controller
+        let loadingViewController = loginStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController")
+        window?.rootViewController = loadingViewController
+        window?.makeKeyAndVisible()
+
+        // Check if a user is logged in
+        if let currentUser = Auth.auth().currentUser {
+            // Fetch user type from Firestore
+            let db = Firestore.firestore()
+            let userRef = db.collection("Users").document(currentUser.uid)
+
+            userRef.getDocument { [weak self] document, error in
+                guard let self = self else { return }
+
+                // Default to WelcomeViewController in case of an error
+                var initialViewController: UIViewController = loadingViewController
+
+                if let document = document, document.exists,
+                   let userType = document.data()?["userType"] as? String {
+                    // Navigate based on userType
+                    switch userType {
+                    case "admin":
+                        print("Loaded admin")
+                        initialViewController = adminStoryboard.instantiateViewController(withIdentifier: "AdminHomePageViewController")
+                    case "jobSeeker":
+                        print("Loaded jobSeeker")
+                        initialViewController = jobSeekerStoryboard.instantiateViewController(withIdentifier: "JobSeekerHomepageViewController")
+                    case "employer":
+                        print("Loaded employer")
+                        initialViewController = employerStoryboard.instantiateViewController(withIdentifier: "employerHomePage")
+                    default:
+                        print("Unknown userType, defaulting to WelcomeViewController")
+                        initialViewController = loginStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController")
+                    }
+                } else {
+                    print("No document or userType found, defaulting to WelcomeViewController")
+                    initialViewController = loginStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController")
+                }
+
+                // Update the rootViewController on the main thread
+                DispatchQueue.main.async {
+                    self.window?.rootViewController = initialViewController
+                    self.window?.makeKeyAndVisible()
+                }
+            }
+        } else {
+            // No user is logged in, show the Login screen
+            let initialViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+            window?.rootViewController = initialViewController
+            window?.makeKeyAndVisible()
+        }
     }
+
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

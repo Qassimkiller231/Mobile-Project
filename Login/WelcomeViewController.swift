@@ -17,12 +17,8 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         print("loaded WelcomeViewController")
         print("currentUser:\(currentUser?.email ?? "")")
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         checkUserTypeAndNavigate()
+        // Do any additional setup after loading the view.
     }
     
     func checkUserTypeAndNavigate() {
