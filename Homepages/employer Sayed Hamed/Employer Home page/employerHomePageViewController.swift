@@ -7,14 +7,42 @@
 
 import UIKit
 
-class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSource, EmployerJobListinCellDelegate{
+    
+    func didTapViewApplications(cell: EmployerJobListingCardTableViewCell) {
+        // Get the indexPath of the tapped cell
+               guard let indexPath = tableView.indexPath(for: cell) else {
+                   print("Error: Could not find indexPath for cell")
+                   return
+               }
+               // Get the corresponding job object
+               let selectedJob = jobs[indexPath.row]
+
+               // Navigate to JobApplicationsViewController
+               let storyboard = UIStoryboard(name: "employerHomePage", bundle: nil) // Replace "Main" with the storyboard containing JobApplicationsViewController
+               guard let jobApplicationsVC = storyboard.instantiateViewController(withIdentifier: "JobApplicationsViewController") as? JobApplicationsViewController else {
+                   print("Error: Could not instantiate JobApplicationsViewController")
+                   return
+               }
+                print("Selected job: \(selectedJob.jobTitle)")
+               // Pass the selected job to JobApplicationsViewController
+        jobApplicationsVC.currentJob = selectedJob
+
+               // Push JobApplicationsViewController to the navigation stack
+               navigationController?.pushViewController(jobApplicationsVC, animated: true)
+    }
+    
+    func didTapEditJobListingCard(cell: EmployerJobListingCardTableViewCell) {
+        return
+    }
+    
     
     
 
     @IBOutlet weak var profilePicImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    var CompanyJobs : [job]?
+    var CompanyJobs : [job] = jobs
     
     
         override func viewDidLoad() {
@@ -26,16 +54,15 @@ class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSour
 //            table view commands
             tableView.delegate = self
             tableView.dataSource = self
-//            tableView.register(applicationTableViewCell.nib(), forCellReuseIdentifier: applicationTableViewCell.identifier)
+            tableView.register(EmployerJobListingCardTableViewCell.nib(), forCellReuseIdentifier: EmployerJobListingCardTableViewCell.identifier)
         }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CompanyJobs?.count ?? 0
+        return CompanyJobs.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: applicationTableViewCell.identifier, for: indexPath) as! applicationTableViewCell
-//        cell.configure(with: CompanyJobs![indexPath.row])
-//        return cell
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: EmployerJobListingCardTableViewCell.identifier, for: indexPath) as! EmployerJobListingCardTableViewCell
+        cell.delegate = self
+        cell.configure(with: CompanyJobs[indexPath.row])
         return cell
     }
     

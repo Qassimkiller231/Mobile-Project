@@ -189,6 +189,15 @@ struct NotificationItem : Codable {
     var notificationDescription: String
     var notificationDate: String
     var category: String
+    
+    func toDictionary() -> [String: Any] {
+            return [
+                "notificationName": notificationName,
+                "notificationDescription": notificationDescription,
+                "notificationDate": notificationDate,
+                "category": category
+            ]
+        }
 }
 
 
@@ -622,7 +631,7 @@ var jobs: [job] = [
         salaryType: .monthly,
         timeFromPost: "1 hour ago",
         deadline: "2024-12-31",
-        applications: nil,
+        applications: [application(dateOfApplication: df.date(from: "20/12/2024") ?? Date(), jobSeeker: JobSeekerSample, isShortlisted: true, status: .pending)],
         offer: "This is our final offer, take it or leave it."
     ),
     job(

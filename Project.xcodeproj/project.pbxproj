@@ -11,6 +11,13 @@
 		050C57602D1E9465004C1B48 /* ProfileOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050C575F2D1E9465004C1B48 /* ProfileOverlayViewController.xib */; };
 		050C57612D1E9465004C1B48 /* ProfileOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C575E2D1E9465004C1B48 /* ProfileOverlayViewController.swift */; };
 		05F1A00C2D204C2400B72CF3 /* temp1~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F1A00B2D204C2400B72CF3 /* temp1~.storyboard */; };
+		05F1A0142D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F1A0122D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.xib */; };
+		05F1A0152D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F1A0112D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.swift */; };
+		05F1A0172D21166100B72CF3 /* ManageJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F1A0162D21166100B72CF3 /* ManageJobViewController.swift */; };
+		05F1A01C2D2117F600B72CF3 /* JobInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F1A01B2D2117F600B72CF3 /* JobInputTableViewCell.xib */; };
+		05F1A01D2D2117F600B72CF3 /* JobInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F1A01A2D2117F600B72CF3 /* JobInputTableViewCell.swift */; };
+		05F1A0212D21181800B72CF3 /* JobDropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F1A0202D21181800B72CF3 /* JobDropDownTableViewCell.xib */; };
+		05F1A0222D21181800B72CF3 /* JobDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F1A01F2D21181800B72CF3 /* JobDropDownTableViewCell.swift */; };
 		05F734552D1C2F510009939A /* adminJobDetailsOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */; };
 		6E4BE27F2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4BE27D2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift */; };
 		6E4BE2802D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BE27E2D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib */; };
@@ -191,6 +198,13 @@
 		050C575E2D1E9465004C1B48 /* ProfileOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOverlayViewController.swift; sourceTree = "<group>"; };
 		050C575F2D1E9465004C1B48 /* ProfileOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOverlayViewController.xib; sourceTree = "<group>"; };
 		05F1A00A2D204C2400B72CF3 /* temp1~.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "temp1~.storyboard"; path = "Base.lproj/temp1~.storyboard"; sourceTree = "<group>"; };
+		05F1A0112D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerJobListingCardTableViewCell.swift; sourceTree = "<group>"; };
+		05F1A0122D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployerJobListingCardTableViewCell.xib; sourceTree = "<group>"; };
+		05F1A0162D21166100B72CF3 /* ManageJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageJobViewController.swift; sourceTree = "<group>"; };
+		05F1A01A2D2117F600B72CF3 /* JobInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInputTableViewCell.swift; sourceTree = "<group>"; };
+		05F1A01B2D2117F600B72CF3 /* JobInputTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobInputTableViewCell.xib; sourceTree = "<group>"; };
+		05F1A01F2D21181800B72CF3 /* JobDropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDropDownTableViewCell.swift; sourceTree = "<group>"; };
+		05F1A0202D21181800B72CF3 /* JobDropDownTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobDropDownTableViewCell.xib; sourceTree = "<group>"; };
 		05F734542D1C2F510009939A /* adminJobDetailsOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adminJobDetailsOverlayViewController.swift; sourceTree = "<group>"; };
 		6E4BE27D2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerInsightsTableViewCell.swift; sourceTree = "<group>"; };
 		6E4BE27E2D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployerInsightsTableViewCell.xib; sourceTree = "<group>"; };
@@ -387,6 +401,26 @@
 			path = ProfileOverlay;
 			sourceTree = "<group>";
 		};
+		05F1A0132D20D7A300B72CF3 /* Employer Job Listing */ = {
+			isa = PBXGroup;
+			children = (
+				05F1A0112D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.swift */,
+				05F1A0122D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.xib */,
+			);
+			path = "Employer Job Listing";
+			sourceTree = "<group>";
+		};
+		05F1A01E2D2117FC00B72CF3 /* ManageJobCells */ = {
+			isa = PBXGroup;
+			children = (
+				05F1A01A2D2117F600B72CF3 /* JobInputTableViewCell.swift */,
+				05F1A01B2D2117F600B72CF3 /* JobInputTableViewCell.xib */,
+				05F1A01F2D21181800B72CF3 /* JobDropDownTableViewCell.swift */,
+				05F1A0202D21181800B72CF3 /* JobDropDownTableViewCell.xib */,
+			);
+			path = ManageJobCells;
+			sourceTree = "<group>";
+		};
 		6E4BE2812D1D4D760054B3AC /* Employer insights cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,12 +568,15 @@
 		6E4BE2C92D1DB94F0054B3AC /* Employer Home page */ = {
 			isa = PBXGroup;
 			children = (
+				05F1A0132D20D7A300B72CF3 /* Employer Job Listing */,
 				6E4BE2C02D1DB94F0054B3AC /* interview */,
 				6E4BE2C12D1DB94F0054B3AC /* ApplicationDetailsViewController.swift */,
+				05F1A01E2D2117FC00B72CF3 /* ManageJobCells */,
 				6E4BE2C22D1DB94F0054B3AC /* CalendarViewController.swift */,
 				6E4BE2C32D1DB94F0054B3AC /* CompanyProfileTableViewController.swift */,
 				6E4BE2C42D1DB94F0054B3AC /* CompanyProfileViewController.swift */,
 				6E4BE2C52D1DB94F0054B3AC /* employerHomePage.storyboard */,
+				05F1A0162D21166100B72CF3 /* ManageJobViewController.swift */,
 				6E4BE2C62D1DB94F0054B3AC /* employerHomePageViewController.swift */,
 				6E4BE2C72D1DB94F0054B3AC /* employerModels.swift */,
 				6E4BE2C82D1DB94F0054B3AC /* JobApplicationsViewController.swift */,
@@ -1073,8 +1110,10 @@
 			files = (
 				6EE720442D0F8A6100E2801B /* JobSeekerLoginPage.storyboard in Resources */,
 				6E74DBDF2D10BE2900F0B84E /* SalaryCell.xib in Resources */,
+				05F1A0142D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.xib in Resources */,
 				6ED001782D1B74E200644B5A /* AdminJobListingCardTableViewCell.xib in Resources */,
 				6E74DBFD2D149E9A00F0B84E /* Salay estimator tool.storyboard in Resources */,
+				05F1A01C2D2117F600B72CF3 /* JobInputTableViewCell.xib in Resources */,
 				6E9D69542D1F131400767BEA /* HeaderDashboardTableViewCell.xib in Resources */,
 				6ED001332D18259500644B5A /* Notification.storyboard in Resources */,
 				6E4BE2802D1D4D710054B3AC /* EmployerInsightsTableViewCell.xib in Resources */,
@@ -1117,6 +1156,7 @@
 				6E74DC3E2D16158300F0B84E /* AdminResource.storyboard in Resources */,
 				6E74DC402D16158300F0B84E /* DropDownTableViewCell.xib in Resources */,
 				6ED1CDF62D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.xib in Resources */,
+				05F1A0212D21181800B72CF3 /* JobDropDownTableViewCell.xib in Resources */,
 				6ED0013E2D18391A00644B5A /* applicationHistoryTableViewCell.xib in Resources */,
 				05F1A00C2D204C2400B72CF3 /* temp1~.storyboard in Resources */,
 				6E74DC0F2D14D50000F0B84E /* ArticleTableViewCell.xib in Resources */,
@@ -1154,11 +1194,13 @@
 				6ED001362D1827D500644B5A /* NotifcationTableViewCell.swift in Sources */,
 				6EE7204B2D0F923A00E2801B /* TagCollectionViewCell.swift in Sources */,
 				6ED0017B2D1B7DB100644B5A /* AdminJobDetailsViewController.swift in Sources */,
+				05F1A0222D21181800B72CF3 /* JobDropDownTableViewCell.swift in Sources */,
 				AC2435822D05C1B700B21510 /* ViewController.swift in Sources */,
 				6ED0012F2D18003500644B5A /* SuggestedPathsTableViewCell.swift in Sources */,
 				6E74DC042D14CC0700F0B84E /* ArticlesViewController.swift in Sources */,
 				6ED0013A2D182A0E00644B5A /* NotifcationViewController.swift in Sources */,
 				AC24357E2D05C1B700B21510 /* AppDelegate.swift in Sources */,
+				05F1A0172D21166100B72CF3 /* ManageJobViewController.swift in Sources */,
 				6E74DBE22D10BE2900F0B84E /* advancedFiltersViewController.swift in Sources */,
 				6E74DC172D15848300F0B84E /* VideoCollectionViewCell.swift in Sources */,
 				6EBC6FBD2D1DC82800FC280A /* Utilities.swift in Sources */,
@@ -1218,6 +1260,7 @@
 				6E74DBF92D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift in Sources */,
 				6E74DC082D14CF1500F0B84E /* VideosViewController.swift in Sources */,
 				6ED0016D2D1AE49B00644B5A /* JobDetailsViewController.swift in Sources */,
+				05F1A0152D20D7A300B72CF3 /* EmployerJobListingCardTableViewCell.swift in Sources */,
 				6E9D69552D1F131400767BEA /* HeaderDashboardTableViewCell.swift in Sources */,
 				6E74DBFA2D149D0900F0B84E /* LocationViewController.swift in Sources */,
 				6ED001792D1B74E200644B5A /* AdminJobListingCardTableViewCell.swift in Sources */,
@@ -1233,6 +1276,7 @@
 				6ED1CDF52D1CCB6D00912AC0 /* JobRecommendationsTableViewCell.swift in Sources */,
 				6E74DC572D17FDAB00F0B84E /* page2ViewController 2.swift in Sources */,
 				6E74DC1F2D15D80800F0B84E /* WebinarTableViewCell.swift in Sources */,
+				05F1A01D2D2117F600B72CF3 /* JobInputTableViewCell.swift in Sources */,
 				6E74DBE32D10BE2900F0B84E /* SalaryInputCell.swift in Sources */,
 				6E74DBE42D10BE2900F0B84E /* dropdownCell.swift in Sources */,
 				6E74DC132D15674B00F0B84E /* CareerResourceMainPageViewController.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 protocol ApplicationDetailsDelegate: AnyObject {
     func didUpdateApplication(_ application: application)
     func removeApplication(_ application: application)
+    func acceptCandidate(_ application: application)
 }
 
 class ApplicationDetailsViewController: UIViewController {
@@ -111,34 +112,53 @@ class ApplicationDetailsViewController: UIViewController {
     @IBAction func viewCVButtonPressed(_ sender: Any) {
     }
     @IBAction func acceptCandidateButtonPressed(_ sender: Any) {
-        // Code to accept the candidate
-        showAlert(title: "Accepted", message: "You have accepted the candidate.")
-    }
-    @IBAction func rejectButtonPressed(_ sender: Any) {
-        // Remove application from applications
-        if let application = currentApplication {
-               // Notify the delegate to remove the application from the list
-               delegate?.removeApplication(application) // Update the delegate function to handle removals
-           }
-        //Send notification to candidate
-        showRejectionAlert(title: "Rejected", message: "You have rejected the candidate.") {
-            // Dismiss this view controller
-            self.navigationController?.popViewController(animated: true)
-        }
+        guard let application = currentApplication else { return }
+            
+            // Show confirmation alert
+            let alert = UIAlertController(
+                title: "Confirm Acceptance",
+                message: "Are you sure you want to accept this candidate?",
+                preferredStyle: .alert
+            )
+            
+            // Add "Yes" action
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                // Code to accept the candidate
+                self.delegate?.acceptCandidate(application) // Notify the delegate
+                self.showAlert(title: "Accepted", message: "You have accepted the candidate.")
+            }))
+            
+            // Add "No" action
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            // Present the alert
+            self.present(alert, animated: true, completion: nil)
     }
     @IBAction func shortlistButtonPressed(_ sender: Any) {
-        if var application = currentApplication {
-                print("Toggling shortlisted status")
-                
-                // Toggle the shortlisted status
-                application.isShortlisted.toggle()
-
-                // Update the button title based on shortlisted status
-                shortlistButton.setTitle(application.isShortlisted ? "Unshortlist" : "Shortlist", for: .normal)
-
-                // Update the currentApplication object if needed
-                currentApplication = application
-            }
+        guard let application = currentApplication else { return }
+            
+            // Show confirmation alert
+            let alert = UIAlertController(
+                title: "Confirm Rejection",
+                message: "Are you sure you want to reject this candidate?",
+                preferredStyle: .alert
+            )
+            
+            // Add "Yes" action
+            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
+                // Code to reject the candidate
+                self.delegate?.removeApplication(application) // Notify the delegate
+                self.showRejectionAlert(title: "Rejected", message: "You have rejected the candidate.") {
+                    // Dismiss this view controller
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }))
+            
+            // Add "No" action
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            // Present the alert
+            self.present(alert, animated: true, completion: nil)
     }
     @IBAction func scheduleInterview(_ sender: Any) {
         // Create the pop-up view

@@ -7,29 +7,27 @@
 
 import UIKit
 
-class JobListingCardTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var CompanyLabel: UILabel!
-    
-    @IBOutlet weak var locationLabel: UILabel!
-    
-    @IBOutlet weak var filter1: UILabel!
-    
-    @IBOutlet weak var filter2: UILabel!
-    
-    @IBOutlet weak var filter3: UILabel!
+protocol EmployerJobListinCellDelegate: AnyObject{
+    func didTapViewApplications(cell: EmployerJobListingCardTableViewCell)
+    func didTapEditJobListingCard(cell: EmployerJobListingCardTableViewCell)
+}
+
+class EmployerJobListingCardTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    @IBOutlet weak var numberOfApplicantsLabel: UILabel!
+    @IBOutlet weak var jobCategoryLabel: UILabel!
+    @IBOutlet weak var jobTypeLabel: UILabel!
+    @IBOutlet weak var jobPositionLabel: UILabel!
+    @IBOutlet weak var jobTimeFromPostLabel: UILabel!
+    @IBOutlet weak var jobApplicationDeadlineLabel: UILabel!
     
-    @IBOutlet weak var priceLabel: UILabel!
+    weak var delegate: EmployerJobListinCellDelegate?
     
-    
-    static var identifier = "JobListingCardTableViewCell"
+    static var identifier = "EmployerJobListingCardTableViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: "JobListingCardTableViewCell", bundle: nil)
+        return UINib(nibName: "EmployerJobListingCardTableViewCell", bundle: nil)
     }
     
     
@@ -56,18 +54,19 @@ class JobListingCardTableViewCell: UITableViewCell {
     
     
     func configure(with job: job) {
-        self.titleLabel.text = job.jobName
-        self.CompanyLabel.text = job.companyName
-        self.locationLabel.text = job.companyLocation
-        self.timeLabel.text = "\(job.time) minutes ago"
-        self.priceLabel.text = "\(job.salary)/\(job.type)"
-        self.filter1.text = job.filters[0]
-        self.filter2.text = job.filters[1]
-        self.filter3.text = job.filters[2]
-        [filter1, filter2, filter3].forEach { label in
-            label?.layer.cornerRadius = 8 // Adjust corner radius
-            label?.layer.masksToBounds = true // Clip content to bounds
-        }
+        self.jobTitleLabel.text = job.jobTitle
+        self.numberOfApplicantsLabel.text = "Number of Applicants : \(job.applications?.count ?? 0)"
+        self.jobCategoryLabel.text = job.jobCategory.rawValue
+        self.jobTypeLabel.text = job.jobType.rawValue
+        self.jobPositionLabel.text = job.jobPosition.rawValue
+        self.jobTimeFromPostLabel.text = job.timeFromPost
+        self.jobApplicationDeadlineLabel.text = job.deadline
     }
     
+    @IBAction func editJobPressed(_ sender: Any) {
+        delegate?.didTapEditJobListingCard(cell: self)
+    }
+    @IBAction func viewApplicationsPressed(_ sender: Any) {
+        delegate?.didTapViewApplications(cell: self)
+    }
 }
