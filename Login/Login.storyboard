@@ -498,6 +498,7 @@ Next Step Bahrain</string>
                         <segue destination="yKS-WM-5Ac" kind="show" identifier="goToJobSeekerHomepage" id="i7d-OM-jcu"/>
                         <segue destination="pDr-Bu-DCd" kind="show" identifier="goToAdminHomepage" id="ffD-Jf-or0"/>
                         <segue destination="egX-U9-X4J" kind="show" identifier="toProfileBuilder" id="Ont-P9-GWh"/>
+                        <segue destination="DfF-MC-r5Y" kind="show" identifier="toEmployer" id="HsJ-bR-JqG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTe-dA-zkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -509,7 +510,7 @@ Next Step Bahrain</string>
         <segue reference="VEc-Nw-QnX"/>
         <segue reference="Ont-P9-GWh"/>
         <segue reference="2mL-g9-4DK"/>
-        <segue reference="0Sa-nr-4JA"/>
+        <segue reference="HsJ-bR-JqG"/>
         <segue reference="ffD-Jf-or0"/>
         <segue reference="i7d-OM-jcu"/>
     </inferredMetricsTieBreakers>

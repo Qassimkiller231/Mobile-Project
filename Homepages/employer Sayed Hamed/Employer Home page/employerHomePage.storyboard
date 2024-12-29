@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuf-eQ-6ix">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuf-eQ-6ix">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -264,7 +264,7 @@
                                 <rect key="frame" x="16" y="110" width="361" height="55"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oup-hh-NGF">
-                                        <rect key="frame" x="0.0" y="1" width="55" height="53.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.66666666666666785" width="55" height="53.666666666666657"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="svf-or-3fe"/>
@@ -278,7 +278,7 @@
                                         </connections>
                                     </searchBar>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.3.horizontal.decrease.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pHq-co-jdm">
-                                        <rect key="frame" x="306" y="1" width="55" height="53.666666666666671"/>
+                                        <rect key="frame" x="306" y="0.66666666666666785" width="55" height="53.666666666666657"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="BWu-iU-zXW"/>
@@ -366,7 +366,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k8F-Pn-B1Z">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.56470588239999997" green="0.10980392160000001" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="aGE-Yb-qd0" kind="relationship" relationship="viewControllers" id="yB1-e1-VGH"/>
@@ -378,11 +379,11 @@
             </objects>
             <point key="canvasLocation" x="-92.36641221374046" y="3.5211267605633805"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="lf5-jl-s4y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="aGE-Yb-qd0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uT6-Yo-bcL"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home" id="uT6-Yo-bcL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sml-ef-Ag1">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -442,7 +443,7 @@
                             <constraint firstItem="Yk5-CZ-pC7" firstAttribute="leading" secondItem="FLP-aA-nDm" secondAttribute="leading" constant="35" id="q0e-0d-Rcl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ntp-VW-oO1"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="Calendar" selectedImage="Calendar" id="Ntp-VW-oO1"/>
                     <navigationItem key="navigationItem" id="BlR-OE-R7R"/>
                     <connections>
                         <outlet property="datePicker" destination="Yk5-CZ-pC7" id="Bmj-wO-Ax1"/>
@@ -520,7 +521,7 @@
                             <constraint firstItem="h5T-zf-sSs" firstAttribute="centerX" secondItem="u6Z-ig-YV6" secondAttribute="centerX" id="pGi-Ax-l6F"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rc6-YJ-s6B"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="COmpany" selectedImage="COmpany" id="rc6-YJ-s6B"/>
                     <navigationItem key="navigationItem" id="t2d-im-Zdi"/>
                     <connections>
                         <outlet property="container" destination="Env-kZ-xF9" id="9cI-Bd-n2r"/>
@@ -1396,13 +1397,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="COmpany" width="37" height="48"/>
+        <image name="Calendar" width="55" height="54"/>
         <image name="Card" width="398" height="227"/>
+        <image name="Home" width="50" height="52"/>
         <image name="ProfilePic" width="380" height="380"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <image name="square.and.arrow.down.on.square.fill" catalog="system" width="124" height="128"/>
+        <image name="square.and.arrow.down.on.square.fill" catalog="system" width="126" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

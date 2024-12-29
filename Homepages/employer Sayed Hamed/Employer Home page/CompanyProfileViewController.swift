@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class CompanyProfileViewController: UIViewController{
 
     @IBOutlet weak var container: UIView!
     var companyProfileTableVC: CompanyProfileTableViewController?
+    var companyProfile: Company?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,19 +70,44 @@ class CompanyProfileViewController: UIViewController{
     
     
     @IBAction func saveButton(_ sender: Any) {
-        guard validateCompanyProfileData() else { return }
+//        guard validateCompanyProfileData() else { return }
         
         // Update the company profile
         if let tableVC = companyProfileTableVC{
-               companyProfile.companyName = tableVC.companyNameTextField.text ?? ""
-               companyProfile.industry = tableVC.industryTextField.text ?? ""
-               companyProfile.website = tableVC.websiteTextField.text ?? ""
-               companyProfile.location = tableVC.locationTextField.text ?? ""
-               companyProfile.aboutUs = tableVC.aboutUsTextField.text ?? ""
+            print("loading company")
+            self.companyProfile?.companyName = tableVC.companyNameTextField.text ?? ""
+            self.companyProfile?.industry = tableVC.industryTextField.text ?? ""
+            self.companyProfile?.website = tableVC.websiteTextField.text ?? ""
+            self.companyProfile?.location = tableVC.locationTextField.text ?? ""
+            self.companyProfile?.aboutUs = tableVC.aboutUsTextField.text ?? ""
+            
+            // Add logic to save or update the profile, such as calling an API or saving to local storage
+            if let companyProfile = companyProfile {
+                print("trying to upload company")
+                uploadCompanyToFirestore(company: companyProfile)
+                showSaveAlert(message: "Saved Successfully") }
+        }
+    }
+        func uploadCompanyToFirestore(company: Company) {
+            let db = Firestore.firestore()
+            
+            do {
+                // Encode the Company object into a dictionary
+                let encodedData = try Firestore.Encoder().encode(company)
 
-               // Add logic to save or update the profile, such as calling an API or saving to local storage
-               showSaveAlert(message: "Saved Successfully")
-           }
+                // Use the userID as the document ID
+                db.collection("companies").document(company.userID).setData(encodedData) { error in
+                    if let error = error {
+                        print("Error uploading company: \(error)")
+                    } else {
+                        print("Company successfully uploaded!")
+                    }
+                }
+            } catch {
+                print("Encoding error: \(error)")
+            }
+        }
+        
     }
     /*
     // MARK: - Navigation
@@ -92,7 +119,6 @@ class CompanyProfileViewController: UIViewController{
     }
     */
 
-}
 
 extension String {
     func isValidURL() -> Bool {
