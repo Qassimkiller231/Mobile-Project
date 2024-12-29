@@ -78,7 +78,7 @@ func goToEmployerDashboard() {
                 self.errorLabel.alpha = 1
             }
             else {
-                print(Auth.auth().currentUser?.uid)
+                print(Auth.auth().currentUser?.uid ?? "")
                 self.fetchUserType(for: Auth.auth().currentUser!.uid) { userType in
                     guard let userType = userType else {
                         print("Failed to fetch userType or user not found.")

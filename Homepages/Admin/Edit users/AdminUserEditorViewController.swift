@@ -94,9 +94,9 @@ class AdminUserEditorViewController: UIViewController,UITableViewDelegate,UITabl
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 parent?.present(alert, animated: true, completion: nil)
                 
-            case .employer:
+//            case .employer:
                 // Navigate to the company profile screen
-                let companyProfileVC = CompanyProfileViewController()
+//                let companyProfileVC = CompanyProfileViewController()
                 //                    companyProfileVC.user = user // Pass the user object to the company profile view
                 //                    companyProfileVC.hidesBottomBarWhenPushed = true
                 //                parent?.navigationController?.pushViewController(companyProfileVC, animated: true)
@@ -113,6 +113,8 @@ class AdminUserEditorViewController: UIViewController,UITableViewDelegate,UITabl
                    } else {
                        print("Error: Could not instantiate PBPersonalViewController from storyboard.")
                    }
+            default:
+                return
             }
         }
     

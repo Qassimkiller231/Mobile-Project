@@ -28,6 +28,7 @@ class Tracker_HistoryViewController: UIViewController,UITableViewDelegate,UITabl
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: applicationHistoryTableViewCell.identifier, for: indexPath)
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

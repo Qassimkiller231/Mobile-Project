@@ -86,8 +86,8 @@
                     <connections>
                         <outlet property="articlesButton" destination="GuD-gV-BNo" id="Ksd-jZ-cj1"/>
                         <outlet property="guidesButton" destination="qgg-Qo-Po8" id="Fc8-yw-OjG"/>
-                        <segue destination="PwA-MY-qkC" kind="show" id="UVu-ML-uEV"/>
-                        <segue destination="n8c-eP-gLw" kind="show" id="0VP-TF-2eE"/>
+                        <segue destination="PwA-MY-qkC" kind="show" identifier="toGuides" id="UVu-ML-uEV"/>
+                        <segue destination="n8c-eP-gLw" kind="show" identifier="toWebinars" id="0VP-TF-2eE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

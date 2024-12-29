@@ -622,7 +622,7 @@ var SQuser = AppUser(userID: "UserIDDD", firstName: "Sayed Qassim", lastName: "A
 //    "Full-time","Part-time","Project-based","Per hour"
 //]
 //var types :[Profile] = [companySample,JobSeekerSample]
-var polyCompany = Company(userID: "POLYISSHIT", companyName: "Polytechnic", industry: "idk", website: "we do not have one", aboutUs: "we are a shit college", firstName: "Ghassan", lastName: "Al IDK", email: "ALQAWAd", password: "mamamia", type: .employer, profileImage: "idk", phoneNumber: "2134", location: "Aali")
+var polyCompany = Company(userID: "poly", companyName: "Polytechnic", industry: "idk", website: "we do not have one", aboutUs: "we are a good college", firstName: "Ghassan", lastName: "Al Shajjar", email: "IDK", password: "mamamia", type: .employer, profileImage: "idk", phoneNumber: "2134", location: "Aali")
 var jobs: [job] = []
 
 //var jobs: [job] = [

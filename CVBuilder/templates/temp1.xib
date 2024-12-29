@@ -165,7 +165,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="dsadasdasgduwduqwdiuqwdgiudgquiwquidgqwiudwquidgqwiudqwudiqwhduihduiqwgduiqwdgiuqwdguiqwgduigqLOOOOOOooool" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hD-yc-uXr">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="dsadasdasgduwduqwdiuqwdgiudgquiwquidgqwiudwquidgqwiudqwudiqwhduihduiqwgduiqwdgiuqwdguiqwgduigqLOOOOOOooool" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hD-yc-uXr">
                     <rect key="frame" x="194" y="128" width="182" height="81.666666666666686"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>

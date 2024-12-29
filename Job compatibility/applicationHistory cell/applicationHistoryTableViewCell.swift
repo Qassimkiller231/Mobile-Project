@@ -48,5 +48,9 @@ class applicationHistoryTableViewCell: UITableViewCell {
             containerView.layer.borderWidth = 0.5
             containerView.layer.borderColor = UIColor.clear.cgColor
         }
+    func configure(with application: application) {
+        applicationStatusLabel.text = application.status.rawValue
+        
+    }
     
 }

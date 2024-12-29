@@ -64,6 +64,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
                     }
                     jobs = allJobs
                     self.displayedJobs = self.filterAppliedJobs(with: jobs)
+                    self.tableView.reloadData()
                 case .failure(let error):
                     print("Error fetching jobs: \(error.localizedDescription)")
                 }
@@ -208,7 +209,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             for document in documents {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: document.data(), options: [])
-                    var job = try JSONDecoder().decode(job.self, from: jsonData)
+                    let job = try JSONDecoder().decode(job.self, from: jsonData)
 
                     dispatchGroup.enter()
                     db.collection("companies").document(job.companyID).getDocument { companySnapshot, error in
@@ -286,7 +287,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
-                var job = try JSONDecoder().decode(job.self, from: jsonData)
+                let job = try JSONDecoder().decode(job.self, from: jsonData)
 
                 // Fetch the associated Company
                 db.collection("companies").document(job.companyID).getDocument { companySnapshot, error in
@@ -421,7 +422,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
                 // Add to bookmarkedJobs
                 self?.bookmarkedJobs.append(currentJob!)
                 print("Added: \(String(describing: currentJob?.jobTitle))")
-                print(self?.bookmarkedJobs.count)
+                print(self?.bookmarkedJobs.count ?? 0)
             }
             
             // Reload the specific row to update UI
@@ -462,7 +463,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         }
         if  segue.identifier == "detailsToHomepage" {
             print ("Came from details")
-            print ("added application to  \(currentJob?.jobTitle) by user \(currentJob?.applications?[(currentJob!.applications!.count - 1)].jobSeeker.firstName), total applications = \(currentJob?.applications?.count ?? 0)")
+            print ("added application to  \(currentJob?.jobTitle ?? "") by user \(currentJob?.applications?[(currentJob!.applications!.count - 1)].jobSeeker.firstName ?? ""), total applications = \(currentJob?.applications?.count ?? 0)")
             displayedJobs = filterAppliedJobs(with: jobs)
             tableView.reloadData()
         }
@@ -481,7 +482,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             }
             if let minimumSalaryFilter = filters["Minimum Salary"] {
                 print("there is min")
-                print(Int(job.jobSalary))
+                print(Int(job.jobSalary) ?? 0)
                 matches = matches && Int(job.jobSalary)! >= Int(minimumSalaryFilter)!
             }
             if let maximumSalaryFilter = filters["Maximum Salary"] {

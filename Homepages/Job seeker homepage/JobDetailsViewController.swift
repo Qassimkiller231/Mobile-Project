@@ -25,7 +25,6 @@ class JobDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(job?.jobTitle)
         titleLabel.text = job?.jobTitle
 //        profilePic.image = UIImage(named: job!.jobImage)
         descriptionTextLabel.text = job?.jobDescription

@@ -121,7 +121,7 @@ class AdminJobDetailsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
             // Perform deletion
             if let jobIndex = jobs.firstIndex(where: { $0.jobId == self.job?.jobId }) {
-                print(self.job?.jobTitle)
+                print(self.job?.jobTitle ?? "")
                 jobs.remove(at: jobIndex)
                 print(jobs.count)
                 print("Job deleted successfully")
