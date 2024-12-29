@@ -20,13 +20,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Applications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn2-wS-fdh">
                                 <rect key="frame" x="92" y="106" width="256" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5y-Un-KS8">
                                 <rect key="frame" x="167" y="150" width="106.33333333333331" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EU8-NS-ovx">
@@ -36,7 +36,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RzG-8p-6Pj">
                                 <rect key="frame" x="18" y="198.66666666666666" width="404" height="56"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5Kk-pR-70z">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="5Kk-pR-70z">
                                         <rect key="frame" x="0.0" y="0.0" width="404" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -47,7 +47,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="20L-bE-rc4"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EU8-NS-ovx" firstAttribute="trailing" secondItem="20L-bE-rc4" secondAttribute="trailing" id="2jr-hA-TlQ"/>
                             <constraint firstItem="RzG-8p-6Pj" firstAttribute="centerX" secondItem="kRK-D4-9yN" secondAttribute="centerX" id="CCV-7Y-9Ca"/>
@@ -269,7 +269,7 @@
                                             <constraint firstAttribute="width" constant="55" id="svf-or-3fe"/>
                                         </constraints>
                                     </imageView>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="i43-60-BPz">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="i43-60-BPz">
                                         <rect key="frame" x="60" y="0.0" width="288" height="55"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -303,7 +303,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="S1T-ub-Bv4" secondAttribute="trailing" id="9gY-Hg-szi"/>
                             <constraint firstItem="t9X-EO-LKj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="APU-4m-t1X"/>
@@ -342,7 +342,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Asa-bj-yHF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Asa-bj-yHF" firstAttribute="trailing" secondItem="lQO-pp-H9H" secondAttribute="trailing" id="I9H-g9-1EM"/>
                             <constraint firstItem="lQO-pp-H9H" firstAttribute="top" secondItem="Asa-bj-yHF" secondAttribute="top" id="QpC-gL-FNK"/>
@@ -1091,7 +1091,7 @@
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="fl2-a4-G6a" firstAttribute="leading" secondItem="FAT-BJ-iED" secondAttribute="leading" constant="59" id="5lg-m4-tvE"/>
                                                     <constraint firstItem="4iU-UI-btK" firstAttribute="leading" secondItem="FAT-BJ-iED" secondAttribute="leading" constant="70" id="6gi-cj-ipu"/>
@@ -1127,7 +1127,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="4uE-36-IiI" firstAttribute="top" secondItem="Xvv-UZ-Y1q" secondAttribute="top" constant="8" id="4C7-gp-jDd"/>
                                                     <constraint firstAttribute="bottom" secondItem="BwS-Fl-RG7" secondAttribute="bottom" constant="17" id="8ve-6e-iLD"/>
@@ -1175,7 +1175,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="JMR-Im-XfF" firstAttribute="leading" secondItem="SBy-yJ-mMA" secondAttribute="leading" constant="35" id="516-6w-yw0"/>
                                                     <constraint firstItem="hRz-Xa-0Ki" firstAttribute="top" secondItem="SBy-yJ-mMA" secondAttribute="top" constant="3" id="79F-Vh-kTb"/>
@@ -1226,7 +1226,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="dvq-bV-uzr" firstAttribute="top" secondItem="NWZ-Xo-Fw2" secondAttribute="top" constant="43" id="0LO-Xf-Y9M"/>
                                                     <constraint firstItem="CNJ-Zj-M2E" firstAttribute="top" secondItem="NWZ-Xo-Fw2" secondAttribute="top" constant="3" id="4Pl-Fq-6Me"/>
@@ -1267,7 +1267,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="FkY-qO-tea"/>
                                                     <constraint firstItem="aF5-PZ-zpb" firstAttribute="centerX" secondItem="yOi-qz-iOu" secondAttribute="centerX" id="cDP-kq-9mL"/>
@@ -1338,7 +1338,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="mng-td-PSV" firstAttribute="centerY" secondItem="saY-9d-yWG" secondAttribute="centerY" id="3oY-hJ-fdm"/>
                                                     <constraint firstItem="SS8-Qu-OWT" firstAttribute="leading" secondItem="AZ5-2J-9hP" secondAttribute="trailing" constant="20" id="Dcp-T2-XRI"/>
@@ -1362,7 +1362,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1c5-TQ-9sa"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jfS-J2-cZ9" firstAttribute="centerX" secondItem="0bt-jg-2et" secondAttribute="centerX" id="CTQ-Vl-26V"/>
                             <constraint firstItem="1c5-TQ-9sa" firstAttribute="bottom" secondItem="I1e-ro-Zvm" secondAttribute="bottom" id="DmL-Y1-1Nu"/>

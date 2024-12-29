@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
-
+import FirebaseAuth
 class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,36 +32,18 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     var currentJob: job?
     var currentProfile: Profile?
     var profileID: String?
+    var userID = Auth.auth().currentUser?.uid
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        Utilities.DataManager.fetchUserData { [weak self] (fetchedProfile, error) in
-//                if let error = error {
-//                    print("Error fetching profile: \(error.localizedDescription)")
-//                    return
-//                }
-//                
-//                guard let profile = fetchedProfile else {
-//                    print("No profile found for the current user.")
-//                    return
-//                }
-//                
-//                // Assign the fetched profile to the local variable
-//            self?.currentProfile = profile
-//                
-//                // Perform UI updates (e.g., load profile data into labels, image views, etc.)
-//                            }
         
         
-        
-        
-        
-        fetchData(userID: "POLYISSHIT", collectionName: "companies") { (result: Result<Company, Error>) in
+        fetchData(userID: userID ?? "", collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in
             switch result {
-            case .success(let company):
-                self.currentProfile = company
-                    if let currentCompany = self.currentProfile as? Company {
-                        print("Fetched Company: \(currentCompany.companyName), Industry: \(currentCompany.industry)")
+            case .success(let jobSeeker):
+                self.currentProfile = jobSeeker
+                if let currentJobSeeker = self.currentProfile as? JobSeeker {
+                    print("Fetched JobSeeker: \(currentJobSeeker.email), Phone Num: \(currentJobSeeker.phoneNumber)")
                 }
 //                print("test \(self.currentProfile?.companyName)")
                 
@@ -93,23 +75,23 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 //            }
             
             // Call fetchAllJobs to retrieve all jobs
-            self.fetchAllJobs { result in
-                switch result {
-                case .success(let jobs):
-                    print("Fetched \(jobs.count) jobs!") // Print the total number of jobs fetched
-                    for job in jobs {
-                        print("Job Title: \(job.jobTitle)")
-                        print("Job Description: \(job.jobDescription)")
-                        print("Company Name: \(job.company.companyName)") // Access the company's name
-                        print("Salary: \(job.jobSalary)")
-                        print("Deadline: \(job.deadline)")
-                        print("--------------------")
-                    }
-
-                case .failure(let error):
-                    print("Error fetching jobs: \(error.localizedDescription)")
-                }
-            }
+//            self.fetchAllJobs { result in
+//                switch result {
+//                case .success(let jobs):
+//                    print("Fetched \(jobs.count) jobs!") // Print the total number of jobs fetched
+//                    for job in jobs {
+//                        print("Job Title: \(job.jobTitle)")
+//                        print("Job Description: \(job.jobDescription)")
+//                        print("Company Name: \(job.company.companyName)") // Access the company's name
+//                        print("Salary: \(job.jobSalary)")
+//                        print("Deadline: \(job.deadline)")
+//                        print("--------------------")
+//                    }
+//
+//                case .failure(let error):
+//                    print("Error fetching jobs: \(error.localizedDescription)")
+//                }
+//            }
             
 //            self.fetchJob(jobID: "1") { result in
 //                switch result {
@@ -135,16 +117,16 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 //                }
 //            }
             
-            self.fetchAndDecodeJob(jobID: "1") { result in
-                switch result {
-                case .success(let job):
-                    print("Job fetched and decoded successfully:")
-                    print("Title: \(job.jobTitle)")
-                    print("Description: \(job.jobDescription)")
-                case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
-                }
-            }
+//            self.fetchAndDecodeJob(jobID: "1") { result in
+//                switch result {
+//                case .success(let job):
+//                    print("Job fetched and decoded successfully:")
+//                    print("Title: \(job.jobTitle)")
+//                    print("Description: \(job.jobDescription)")
+//                case .failure(let error):
+//                    print("Error: \(error.localizedDescription)")
+//                }
+//            }
             
             
             

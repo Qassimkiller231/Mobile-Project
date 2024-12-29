@@ -27,8 +27,9 @@ class PBPersonalTableViewController: UITableViewController {
         super.viewDidLoad()
         if jobSeeker == nil {
                 let userType = UserType.jobSeeker // Replace with your actual user type logic
+            let userID = Auth.auth().currentUser?.uid
                 self.jobSeeker = JobSeeker(
-                    userID: "test",
+                    userID: userID ?? "",
                     personalSummary: "sample data",
                     educations: [], // Placeholder
                     experiences: [], // Placeholder
@@ -66,9 +67,10 @@ class PBPersonalTableViewController: UITableViewController {
 //         Create JobSeeker instance
         if jobSeeker == nil {
                 let userType = UserType.jobSeeker // Replace with your actual user type logic
-                self.jobSeeker = JobSeeker(
-                    userID: "test",
-                    personalSummary: "sample data",
+            let userID = Auth.auth().currentUser!.uid
+            self.jobSeeker = JobSeeker(
+                    userID: userID,
+                    personalSummary: "",
                     educations: [], // Placeholder
                     experiences: [], // Placeholder
                     skills: [], // Placeholder
@@ -76,25 +78,25 @@ class PBPersonalTableViewController: UITableViewController {
                     cv: "", // Placeholder
                     suggestedCareerPaths: [], // Placeholder
                     applications: nil,
-                    firstName: "firstName",
-                    lastName: "lastName",
-                    email: "email@gmail.com",
-                    password: "defaultPassword", // Secure password handling needed
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "", // Secure password handling needed
                     type: userType,
                     profileImage: "", // Handle profile image appropriately
-                    phoneNumber: "3311",
-                    location: "location"
+                    phoneNumber: "",
+                    location: ""
                 )
           }
-            else {
-                // If jobSeeker is already created, update the properties
-                jobSeeker?.firstName = firstName
-                jobSeeker?.lastName = lastName
-                jobSeeker?.email = email
-                jobSeeker?.phoneNumber = phoneNumber
-                jobSeeker?.location = location
-                jobSeeker?.personalSummary = personalSummary
-            }
+//            else {
+//                // If jobSeeker is already created, update the properties
+//                jobSeeker?.firstName = firstName
+//                jobSeeker?.lastName = lastName
+//                jobSeeker?.email = email
+//                jobSeeker?.phoneNumber = phoneNumber
+//                jobSeeker?.location = location
+//                jobSeeker?.personalSummary = personalSummary
+//            }
             
             return true
             }

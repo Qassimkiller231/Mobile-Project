@@ -70,6 +70,7 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
         for preference in preferenceList {
             let preference = Preference(prefrence: preference, jobType: selectedJobType!)
             jobSeeker!.preferences?.append(preference)
+            
             uploadJobSeekerToFirestore(jobSeeker: jobSeeker!)
         }
         
@@ -163,6 +164,7 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.reloadData()
     }
     func uploadJobSeekerToFirestore(jobSeeker: JobSeeker) {
+        print("trying to upload job Seeker")
         let db = Firestore.firestore()
         
         do {
