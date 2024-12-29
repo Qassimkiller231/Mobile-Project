@@ -25,35 +25,66 @@ class PBPersonalTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if jobSeeker == nil {
-                let userType = UserType.jobSeeker // Replace with your actual user type logic
-            let userID = Auth.auth().currentUser?.uid
-                self.jobSeeker = JobSeeker(
-                    userID: userID ?? "",
-                    personalSummary: "sample data",
-                    educations: [], // Placeholder
-                    experiences: [], // Placeholder
-                    skills: [], // Placeholder
-                    preferences: [], // Placeholder
-                    cv: "", // Placeholder
-                    suggestedCareerPaths: [], // Placeholder
-                    applications: nil,
-                    firstName: "firstName",
-                    lastName: "lastName",
-                    email: "email@gmail.com",
-                    password: "defaultPassword", // Secure password handling needed
-                    type: userType,
-                    profileImage: "", // Handle profile image appropriately
-                    phoneNumber: "3311",
-                    location: "location"
-                )
-          }
+        guard let userID = Auth.auth().currentUser?.uid else {
+                print("No user ID available")
+                return
+            }
+            
+            fetchData(userID: userID, collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in
+                switch result {
+                case .success(let jobSeeker):
+                    self.jobSeeker = jobSeeker
+                    print("Fetched JobSeeker: \(jobSeeker.email), Phone Num: \(jobSeeker.phoneNumber)")
+                    
+                    // Perform actions with the fetched jobSeeker here
+                    if let currentJobSeeker = self.jobSeeker {
+                        self.loadData(profile: currentJobSeeker)
+                    }
+                    
+                case .failure(let error):
+                    print("Error fetching JobSeeker: \(error.localizedDescription)")
+                    
+                    // Handle the case where the profile is nil
+                    if self.jobSeeker == nil {
+                        let userType = UserType.jobSeeker // Replace with your actual user type logic
+                        self.jobSeeker = JobSeeker(
+                            userID: userID,
+                            personalSummary: "",
+                            educations: [], // Placeholder
+                            experiences: [], // Placeholder
+                            skills: [], // Placeholder
+                            preferences: [], // Placeholder
+                            cv: "", // Placeholder
+                            suggestedCareerPaths: [], // Placeholder
+                            applications: nil,
+                            firstName: "",
+                            lastName: "",
+                            email: "",
+                            password: "", // Secure password handling needed
+                            type: userType,
+                            profileImage: "", // Handle profile image appropriately
+                            phoneNumber: "",
+                            location: ""
+                        )
+                        print("Created a new JobSeeker object: \(self.jobSeeker?.userID ?? "No ID")")
+                    }
+                }
+            }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    func loadData(profile: JobSeeker) {
+        firstNameTextField.text = profile.firstName
+        lastNameTextField.text = profile.lastName
+        emailTextField.text = profile.email
+        phoneNumberTextField.text = profile.phoneNumber
+        locationTextField.text = profile.location
+        personalSummaryTextView.text = profile.personalSummary
     }
     func validateInputs() -> Bool {
             guard let firstName = firstNameTextField.text, !firstName.isEmpty,
@@ -231,6 +262,39 @@ class PBPersonalTableViewController: UITableViewController {
    
      @IBAction func editProfilePicButtonTapped(_ sender: Any) {
      }
+    
+    func fetchData<T: Codable>(userID: String, collectionName: String, completion: @escaping (Result<T, Error>) -> Void) {
+        let db = Firestore.firestore()
+
+        // Fetch the document with the specified userID from the collection
+        db.collection(collectionName).document(userID).getDocument { documentSnapshot, error in
+            if let error = error {
+                // Return an error if the fetch fails
+                completion(.failure(error))
+                return
+            }
+
+            // Check if the document exists
+            guard let document = documentSnapshot, document.exists else {
+                completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Document not found."])))
+                return
+            }
+
+            do {
+                // Decode the document data into the specified Codable object type
+                if let data = document.data() {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+                    let decodedObject = try JSONDecoder().decode(T.self, from: jsonData)
+                    completion(.success(decodedObject))
+                } else {
+                    completion(.failure(NSError(domain: "", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to get document data."])))
+                }
+            } catch {
+                // Return a decoding error
+                completion(.failure(error))
+            }
+        }
+    }
     
     /*
      // MARK: - Navigation

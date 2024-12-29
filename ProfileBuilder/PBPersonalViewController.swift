@@ -12,13 +12,15 @@ class PBPersonalViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nextButton: UIButton!
     var userToEdit :AppUser?
+    var profile : Profile?
     var personalTableViewController: PBPersonalTableViewController? {
             return children.compactMap { $0 as? PBPersonalTableViewController }.first
         }
     override func viewDidLoad() {
         super.viewDidLoad()
         print("PBPersonalViewController loaded")
-        personalTableViewController?.loadJobSeekerData()
+//        personalTableViewController?.loadJobSeekerData()
+        
         // Do any additional setup after loading the view.
     }
     

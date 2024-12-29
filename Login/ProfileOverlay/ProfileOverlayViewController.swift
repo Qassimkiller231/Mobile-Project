@@ -14,7 +14,7 @@ class ProfileOverlayViewController: UIViewController {
     @IBOutlet weak var userTitle: UILabel!
     @IBOutlet weak var cvBuilderButton: UIButton!
     @IBOutlet weak var profileEditorButton: UIButton!
-    
+    var profile : Profile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,13 +90,17 @@ class ProfileOverlayViewController: UIViewController {
     
     
     @IBAction func editProfileButtonTapped(_ sender: Any) {
-        
-        
         print("Edit Profile button tapped")
             
             let storyboard = UIStoryboard(name: "ProfileBuilder", bundle: nil)
             if let editProfileVC = storyboard.instantiateViewController(withIdentifier: "PBPersonalViewController") as? PBPersonalViewController {
                 print("PBPersonalViewController instantiated successfully")
+                
+                // Debug: Print the profile object before passing it
+                
+                
+                // Pass the profile to PBPersonalViewController
+                
                 
                 self.dismiss(animated: true) {
                     print("Overlay dismissed successfully")

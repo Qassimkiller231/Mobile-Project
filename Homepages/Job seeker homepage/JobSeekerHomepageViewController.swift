@@ -37,33 +37,43 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         super.viewDidLoad()
         
         
-        
-        fetchData(userID: userID ?? "", collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in
-            switch result {
-            case .success(let jobSeeker):
-                self.currentProfile = jobSeeker
-                if let currentJobSeeker = self.currentProfile as? JobSeeker {
-                    print("Fetched JobSeeker: \(currentJobSeeker.email), Phone Num: \(currentJobSeeker.phoneNumber)")
-                }
-//                print("test \(self.currentProfile?.companyName)")
-                
-            case .failure(let error):
-                print("Error fetching company: \(error.localizedDescription)")
-            }
-//            self.fetchAllJobs { result in
-//                switch result {
-//                case .success(let jobs):
-//                    print("Fetched \(jobs.count) jobs!")
-//                    for job in jobs {
-//                        print("Job Title: \(job.jobTitle)")
-//                        if let company = job.company {
-//                            print("Company Name: \(company.companyName)")
-//                        }
-//                    }
-//                case .failure(let error):
-//                    print("Error fetching jobs: \(error.localizedDescription)")
+//        fetchData(userID: userID ?? "", collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in
+//            switch result {
+//            case .success(let jobSeeker):
+//                self.currentProfile = jobSeeker
+//                if let currentJobSeeker = self.currentProfile as? JobSeeker {
+//                    print("Fetched JobSeeker: \(currentJobSeeker.email), Phone Num: \(currentJobSeeker.phoneNumber)")
 //                }
+////                print("test \(self.currentProfile?.companyName)")
+//                
+//            case .failure(let error):
+//                print("Error fetching company: \(error.localizedDescription)")
 //            }
+        let dispatchGroup = DispatchGroup()
+
+        dispatchGroup.enter()
+            self.fetchAllJobs { result in
+                switch result {
+                case .success(let allJobs):
+                    print("Fetched \(allJobs.count) jobs!")
+                    for job in allJobs {
+                        print("Job Title: \(job.jobTitle)")
+                         let company = job.company
+                            print("Company Name: \(company.companyName)")
+                        
+                    }
+                    jobs = allJobs
+                    self.displayedJobs = self.filterAppliedJobs(with: jobs)
+                case .failure(let error):
+                    print("Error fetching jobs: \(error.localizedDescription)")
+                }
+                dispatchGroup.leave()
+            }
+        dispatchGroup.notify(queue: .main) {
+            print("All jobs are fetched and ready.")
+            // Update UI or perform dependent actions here
+            self.tableView.reloadData()
+        }
             
 //            self.uploadJobs(jobs: jobs) { result in
 //                switch result {
@@ -135,7 +145,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             
            
             
-        }
+//        }
 //        currentProfile = JobSeekerSample
         
         
@@ -163,10 +173,10 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         tableView.register(JobListingCardTableViewCell.nib(), forCellReuseIdentifier: JobListingCardTableViewCell.identifier)
         
         
-        //        Search bar delegate
+        //Search bar delegate
         SearchBar.delegate = self
+        print("jobs count is: \(jobs.count)" )
         
-        displayedJobs = filterAppliedJobs(with: jobs)
         
         
         
@@ -422,6 +432,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     
     //    MARK: - Table view Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(displayedJobs.count)
         return displayedJobs.count
         
     }
@@ -532,7 +543,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
             
             // Instantiate ProfileOverlayViewController
             let overlayVC = ProfileOverlayViewController(nibName: "ProfileOverlayViewController", bundle: nil)
-            
+        overlayVC.profile = self.currentProfile!
             // Set the presentation style for an overlay effect
             overlayVC.modalPresentationStyle = .overCurrentContext
             overlayVC.modalTransitionStyle = .crossDissolve // Smooth fade-in effect
@@ -585,6 +596,7 @@ extension JobSeekerHomepageViewController: UICollectionViewDataSource, UICollect
             vc.job = currentJob
             
         }
+//        if segue.identifier == ""
     }
     
     
