@@ -562,21 +562,21 @@ var guides : [Guide] = [
     ]
 
 var videos : [Video] = [
-    Video(videoTitle: "Video1", videoURL: "test", videoDescription: "This is the first video"),
-    Video(videoTitle: "Video2", videoURL: "test", videoDescription: "This is the second video"),
-    Video(videoTitle: "Video3", videoURL: "test", videoDescription: "This is the third video"),
-    Video(videoTitle: "Video1", videoURL: "test", videoDescription: "This is the first video"),
-    Video(videoTitle: "Video2", videoURL: "test", videoDescription: "This is the second video"),
-    Video(videoTitle: "Video3", videoURL: "test", videoDescription: "This is the third video"),
-    Video(videoTitle: "Video1", videoURL: "test", videoDescription: "This is the first video"),
-    Video(videoTitle: "Video2", videoURL: "test", videoDescription: "This is the second video"),
-    Video(videoTitle: "Video3", videoURL: "test", videoDescription: "This is the third video"),
-    Video(videoTitle: "Video1", videoURL: "test", videoDescription: "This is the first video"),
-    Video(videoTitle: "Video2", videoURL: "test", videoDescription: "This is the second video"),
-    Video(videoTitle: "Video3", videoURL: "test", videoDescription: "This is the third video"),
-    Video(videoTitle: "Video3", videoURL: "test", videoDescription: "This is the third video")
+    Video(videoTitle: "Video1", videoURL: "moQnoSYPMmY", videoDescription: "This is the first video"),
+    Video(videoTitle: "Video2", videoURL: "0SHMSYGDJXQ", videoDescription: "This is the second video"),
+    Video(videoTitle: "Video3", videoURL: "5mL6c2UiEEY", videoDescription: "This is the third video"),
+    Video(videoTitle: "Video4", videoURL: "u8E0JC8C4-8", videoDescription: "This is the Fourth video"),
+    Video(videoTitle: "Video5", videoURL: "pVDVVksp4VI", videoDescription: "This is the Fifth video"),
+    Video(videoTitle: "Video6", videoURL: "uEdREDwcD_M", videoDescription: "This is the Sixth video"),
+    Video(videoTitle: "Video7", videoURL: "P4ZCs1gqc3I", videoDescription: "This is the Seventh video"),
+    Video(videoTitle: "Video8", videoURL: "uibHDPDaUjo", videoDescription: "This is the Eighth video"),
+    Video(videoTitle: "Video9", videoURL: "USxsTggFKhE", videoDescription: "This is the Nineth video"),
+    Video(videoTitle: "Video10", videoURL: "Y_coOg6oHAc", videoDescription: "This is the Tenth video"),
+    Video(videoTitle: "Video11", videoURL: "uTAaFExLgwQ", videoDescription: "This is the Eleventh video"),
+    Video(videoTitle: "Video12", videoURL: "JYub1Gnqllg", videoDescription: "This is the Twelevth video"),
+    Video(videoTitle: "Video13", videoURL: "8Nzzk7TvLrE", videoDescription: "This is the Thirteenth video")
+    ]
 
-]
 var webinars: [Webinar] = [
     Webinar(WebnarTitle: "Webinar1", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the first webinar"),
     Webinar(WebnarTitle: "Webinar2", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the second webinar"),
