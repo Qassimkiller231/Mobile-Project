@@ -625,6 +625,7 @@ var SQuser = AppUser(userID: "UserIDDD", firstName: "Sayed Qassim", lastName: "A
 var polyCompany = Company(userID: "poly", companyName: "Polytechnic", industry: "idk", website: "we do not have one", aboutUs: "we are a good college", firstName: "Ghassan", lastName: "Al Shajjar", email: "IDK", password: "mamamia", type: .employer, profileImage: "idk", phoneNumber: "2134", location: "Aali")
 var jobs: [job] = []
 
+
 //var jobs: [job] = [
 //    job(
 //        jobTitle: "Software Developer", company:polyCompany ,

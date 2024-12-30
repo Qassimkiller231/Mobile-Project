@@ -50,7 +50,12 @@ class applicationHistoryTableViewCell: UITableViewCell {
         }
     func configure(with application: application) {
         applicationStatusLabel.text = application.status.rawValue
+        dateStartedLabel.text = application.dateOfApplication
+        dateEndLabel.text = application.dateOfApplication
+        applicationNameLabel.text = application.jobSeeker.firstName
         
     }
+    
+    
     
 }

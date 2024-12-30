@@ -49,9 +49,8 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 //            case .failure(let error):
 //                print("Error fetching company: \(error.localizedDescription)")
 //            }
-        fetchJobSeeker(userID: userID ?? "")
-
-        
+//        fetchJobSeeker(userID: userID ?? "")
+        uploadCompanyToFirestore(company: polyCompany)
             self.fetchAllJobs { result in
                 switch result {
                 case .success(let allJobs):
@@ -187,6 +186,25 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(bookmarkTapped))
         bookmark.addGestureRecognizer(bookmarkTap)
         
+    }
+    func uploadCompanyToFirestore(company: Company) {
+        let db = Firestore.firestore()
+        
+        do {
+            // Encode the Company object into a dictionary
+            let encodedData = try Firestore.Encoder().encode(company)
+
+            // Use the userID as the document ID
+            db.collection("companies").document(company.userID).setData(encodedData) { error in
+                if let error = error {
+                    print("Error uploading company: \(error)")
+                } else {
+                    print("Company successfully uploaded!")
+                }
+            }
+        } catch {
+            print("Encoding error: \(error)")
+        }
     }
     
     

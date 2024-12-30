@@ -493,8 +493,8 @@
 			isa = PBXGroup;
 			children = (
 				6E4BE2AF2D1DB94F0054B3AC /* PBSkillsViewController.swift */,
-				6E4BE2B02D1DB94F0054B3AC /* skillButtonsTableViewCell.swift */,
 				6E4BE2B12D1DB94F0054B3AC /* skillButtonsTableViewCell.xib */,
+				6E4BE2B02D1DB94F0054B3AC /* skillButtonsTableViewCell.swift */,
 				6E4BE2B22D1DB94F0054B3AC /* skillTableViewCell.swift */,
 				6E4BE2B32D1DB94F0054B3AC /* skillTableViewCell.xib */,
 			);
