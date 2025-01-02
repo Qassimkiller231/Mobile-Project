@@ -83,6 +83,13 @@
                         <color key="backgroundColor" red="0.95294117647058818" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="4iV-fw-Ly7"/>
+                    <connections>
+                        <outlet property="distancePercentLabel" destination="cjU-D2-gqp" id="u3G-q5-LNi"/>
+                        <outlet property="finalPercentLabel" destination="Ywk-pW-m7I" id="rra-PT-0kn"/>
+                        <outlet property="preferencesPercentLabel" destination="axE-JV-5Te" id="Cma-x5-MqH"/>
+                        <outlet property="qualificationsPercentLabel" destination="AMj-Rx-E1Z" id="O6x-wa-iWu"/>
+                        <outlet property="salaryPercentLabel" destination="6pS-1X-APr" id="eq1-o2-rHH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0la-PJ-mEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Gmo-BM-mVl" userLabel="Exit" sceneMemberID="exit"/>

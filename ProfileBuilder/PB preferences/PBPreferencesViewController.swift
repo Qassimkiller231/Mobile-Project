@@ -69,7 +69,7 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
     @IBAction func saveAllButtonPressed(_ sender: Any) {
         for preference in preferenceList {
             let preference = Preference(prefrence: preference, jobType: selectedJobType!)
-            jobSeeker!.preferences?.append(preference)
+            jobSeeker!.preferences?.append("")
             
             uploadJobSeekerToFirestore(jobSeeker: jobSeeker!)
         }

@@ -131,6 +131,8 @@ struct Interview : Codable {
     var interviewDate: String
     var interviewTime: String
     var nameOfIntervieweed: String
+    var location: String?
+    var jobTitle: String?
 }
 
 struct jobMarketTrend : Codable{
@@ -342,13 +344,13 @@ class JobSeeker: Profile {
     var educations: [Education]?
     var experiences: [Experience]?
     var skills: [Skill]?
-    var preferences: [Preference]?
+    var preferences: [String]?
     var cv: String
     var suggestedCareerPaths: [CareerPath]?
     var applications: [application]?
 
     // Custom initializer
-    init(userID: String, personalSummary: String, educations: [Education]?, experiences: [Experience]?, skills: [Skill]?, preferences: [Preference]?, cv: String, suggestedCareerPaths: [CareerPath]?, applications: [application]?, firstName: String, lastName: String, email: String, password: String, type: UserType, profileImage: String, phoneNumber: String, location: String) {
+    init(userID: String, personalSummary: String, educations: [Education]?, experiences: [Experience]?, skills: [Skill]?, preferences: [String]?, cv: String, suggestedCareerPaths: [CareerPath]?, applications: [application]?, firstName: String, lastName: String, email: String, password: String, type: UserType, profileImage: String, phoneNumber: String, location: String) {
         self.personalSummary = personalSummary
         self.educations = educations
         self.experiences = experiences
@@ -369,7 +371,7 @@ class JobSeeker: Profile {
         self.educations = try container.decodeIfPresent([Education].self, forKey: .educations)
         self.experiences = try container.decodeIfPresent([Experience].self, forKey: .experiences)
         self.skills = try container.decodeIfPresent([Skill].self, forKey: .skills)
-        self.preferences = try container.decodeIfPresent([Preference].self, forKey: .preferences)
+        self.preferences = try container.decodeIfPresent([String].self, forKey: .preferences)
         self.cv = try container.decode(String.self, forKey: .cv)
         self.suggestedCareerPaths = try container.decodeIfPresent([CareerPath].self, forKey: .suggestedCareerPaths)
         self.applications = try container.decodeIfPresent([application].self, forKey: .applications)

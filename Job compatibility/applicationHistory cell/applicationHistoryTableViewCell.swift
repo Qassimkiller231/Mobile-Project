@@ -53,11 +53,28 @@ class applicationHistoryTableViewCell: UITableViewCell {
         applicationStatusLabel.text = application.status.rawValue
         dateStartedLabel.text = application.dateOfApplication
         dateEndLabel.text = application.dateOfApplication
-        applicationNameLabel.text = String(application.applicationNo!)
+        applicationNameLabel.text = application.jobTitle
     }
     
     func configureInterview(with application: application) {
-        
+        applicationStatusLabel.text = application.interview?.location
+        dateStartedLabel.text = application.interview?.interviewDate
+        dateEndLabel.text = application.interview?.interviewTime
+        applicationNameLabel.text = application.jobTitle
+    }
+    
+    func configureApplicationHeader() {
+        applicationStatusLabel.text = "Status"
+        dateStartedLabel.text = "Date Started"
+        dateEndLabel.text = "Date Ended"
+        applicationNameLabel.text = "Job Title"
+    }
+    
+    func configureInterviewHeader() {
+        applicationStatusLabel.text = "Location"
+        dateStartedLabel.text = "Interview Date"
+        dateEndLabel.text = "Interview Time"
+        applicationNameLabel.text = "Job Title"
     }
     
     

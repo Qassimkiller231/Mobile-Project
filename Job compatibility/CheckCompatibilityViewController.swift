@@ -11,20 +11,40 @@ import UIKit
 
 class CheckCompatibilityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var model: [table] = tableData
+    var model: [table] = sampleTableData 
+    var filteredApplications : [application] = []
+    var currentProfile : JobSeeker?
+    
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var CheckResultButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentProfile = SampleProfile
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(DropDownTableViewCell.nib(), forCellReuseIdentifier: DropDownTableViewCell.identifier)
 //        tableView.backgroundColor = .clear
+        filteredApplications = filterApplicationsByProfile(applications: sampleApplications, profile: currentProfile! )
+        updateModelData()
     }
 
     // MARK: - TableView Methods
+    
+    func updateModelData() {
+        for application in filteredApplications {
+            if let jobTitle = application.jobTitle{
+                model[0].options.append(jobTitle)
+            }
+
+        }
+    }
+    
+    func filterApplicationsByProfile(applications: [application], profile: JobSeeker) -> [application] {
+        return applications.filter { $0.jobSeeker.userID == profile.userID }
+    }
+    
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return model.count
