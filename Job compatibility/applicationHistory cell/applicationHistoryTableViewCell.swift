@@ -2,7 +2,7 @@
 //  applicationHistoryTableViewCell.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 22/12/2024.
+//  Created by Scoobysnac on 22/12/2024.
 //
 
 import UIKit
@@ -49,10 +49,14 @@ class applicationHistoryTableViewCell: UITableViewCell {
             containerView.layer.borderColor = UIColor.clear.cgColor
         }
     func configure(with application: application) {
+        //tracker and history
         applicationStatusLabel.text = application.status.rawValue
         dateStartedLabel.text = application.dateOfApplication
         dateEndLabel.text = application.dateOfApplication
-        applicationNameLabel.text = application.jobSeeker.firstName
+        applicationNameLabel.text = String(application.applicationNo!)
+    }
+    
+    func configureInterview(with application: application) {
         
     }
     

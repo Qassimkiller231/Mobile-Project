@@ -118,12 +118,14 @@ struct Test {
     }
 }
 struct application : Codable {
+    var applicationNo: Int?
     var dateOfApplication: String
     var jobSeeker: JobSeeker
     var isShortlisted: Bool = false
     var interview: Interview?
     var notes: String?
     var status: applicationStatus = .pending
+    var jobTitle: String?
 }
 struct Interview : Codable {
     var interviewDate: String

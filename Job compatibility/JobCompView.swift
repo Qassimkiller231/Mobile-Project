@@ -2,7 +2,7 @@
 //  JobCompView.swift
 //  testfinalfinal
 //
-//  Created by Ebrahim Aqeel Matrook Alderazi on 15/12/2024.
+//  Created by Guest User on 15/12/2024.
 //
 
 import UIKit
@@ -28,8 +28,7 @@ class JobCompView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     
-    
-    @IBAction func ApplyButtonTap(_ sender: UIButton) {
+    @IBAction func CheckResukts(_ sender: Any) {
         showAlert()
     }
     

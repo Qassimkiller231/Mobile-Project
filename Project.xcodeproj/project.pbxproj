@@ -164,6 +164,7 @@
 		AC2435822D05C1B700B21510 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2435812D05C1B700B21510 /* ViewController.swift */; };
 		AC2435852D05C1B700B21510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435832D05C1B700B21510 /* Main.storyboard */; };
 		AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */; };
+		ACADCE022D26AA0800687292 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADCE012D26AA0800687292 /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -336,6 +337,7 @@
 		AC24358B2D05C1BA00B21510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC2435902D05C1BB00B21510 /* testfinalfinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC24359A2D05C1BB00B21510 /* testfinalfinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACADCE012D26AA0800687292 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -798,6 +800,7 @@
 			children = (
 				6EBC6FBB2D1DC82800FC280A /* Utilities.swift */,
 				6E74DBE72D14423300F0B84E /* final models.swift */,
+				ACADCE012D26AA0800687292 /* SampleData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1195,6 +1198,7 @@
 				6E4BE2E02D1DB94F0054B3AC /* CVFinalViewController.swift in Sources */,
 				6E4BE2E12D1DB94F0054B3AC /* PBSkillsViewController.swift in Sources */,
 				6E4BE2E22D1DB94F0054B3AC /* UserEditorTableViewCell.swift in Sources */,
+				ACADCE022D26AA0800687292 /* SampleData.swift in Sources */,
 				6E4BE2E32D1DB94F0054B3AC /* ApplicationDetailsViewController.swift in Sources */,
 				6E4BE2E42D1DB94F0054B3AC /* ManageExperienceTableViewController.swift in Sources */,
 				6E4BE2E52D1DB94F0054B3AC /* PBPersonalViewController.swift in Sources */,

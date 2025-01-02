@@ -2,7 +2,7 @@
 //  CheckCompatibilityViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 15/12/2024.
+//  Created by Scoobysnac on 15/12/2024.
 //
 
 import UIKit

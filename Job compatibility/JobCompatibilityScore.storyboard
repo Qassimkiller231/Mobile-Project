@@ -308,7 +308,7 @@ Compatability</string>
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-xu-VcW">
-                                <rect key="frame" x="84.666666666666686" y="725.66666666666663" width="224" height="54"/>
+                                <rect key="frame" x="84" y="707" width="224" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="gDg-bu-zqH"/>
                                     <constraint firstAttribute="width" constant="224" id="uVz-9g-tdi"/>
@@ -322,9 +322,11 @@ Compatability</string>
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="CheckResukts:" destination="Rl0-do-TS7" eventType="touchUpInside" id="iVb-ZP-XRu"/>
                                     <action selector="CheckResultTapped:" destination="Rl0-do-TS7" eventType="touchUpInside" id="d9d-1W-DO7"/>
                                     <action selector="CheckResultTapped:" destination="rMZ-VD-0a0" eventType="touchUpInside" id="lO6-Er-BOd"/>
                                     <action selector="jobCompatibilityButtonPressed:" destination="59S-z1-Szm" eventType="touchUpInside" id="Izu-d3-N6I"/>
+                                    <segue destination="eH6-uj-39d" kind="show" id="u3B-cl-Kwy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -333,7 +335,7 @@ Compatability</string>
                         <constraints>
                             <constraint firstItem="ntz-mf-W8e" firstAttribute="trailing" secondItem="6k1-Im-lgk" secondAttribute="trailing" id="2IO-eO-Td5"/>
                             <constraint firstItem="6k1-Im-lgk" firstAttribute="leading" secondItem="ntz-mf-W8e" secondAttribute="leading" id="3V4-ja-1td"/>
-                            <constraint firstItem="CLv-xu-VcW" firstAttribute="top" secondItem="481-2h-wv1" secondAttribute="bottom" constant="37" id="DAw-7l-hw3"/>
+                            <constraint firstItem="CLv-xu-VcW" firstAttribute="top" secondItem="481-2h-wv1" secondAttribute="bottom" constant="18.333333333333258" id="DAw-7l-hw3"/>
                             <constraint firstItem="ntz-mf-W8e" firstAttribute="trailing" secondItem="qAr-UP-3mN" secondAttribute="trailing" constant="26" id="IJr-g5-Zbj"/>
                             <constraint firstItem="qAr-UP-3mN" firstAttribute="top" secondItem="6k1-Im-lgk" secondAttribute="bottom" constant="21" id="Mux-Pr-1Xk"/>
                             <constraint firstItem="6k1-Im-lgk" firstAttribute="top" secondItem="ntz-mf-W8e" secondAttribute="top" constant="62" id="VXY-pY-qP5"/>
@@ -347,7 +349,6 @@ Compatability</string>
                     <navigationItem key="navigationItem" id="6iF-ul-pSH"/>
                     <connections>
                         <outlet property="tableView" destination="481-2h-wv1" id="hhp-c6-uNT"/>
-                        <segue destination="eH6-uj-39d" kind="show" identifier="adjustToFinal" id="aJQ-bm-f9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ9-0M-c8C" sceneMemberID="firstResponder"/>
