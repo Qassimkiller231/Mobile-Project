@@ -10,8 +10,13 @@ import UIKit
 class EmployerInsightsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    var profile : JobSeeker?
+    var profileApplications : [application]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        profile = SampleProfile2
+        profileApplications = profile?.applications
+        employerInsights = sampleJobs2
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EmployerInsightsTableViewCell.nib(), forCellReuseIdentifier: EmployerInsightsTableViewCell.identifier)

@@ -50,17 +50,13 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 //                print("Error fetching company: \(error.localizedDescription)")
 //            }
 //        fetchJobSeeker(userID: userID ?? "")
-        uploadCompanyToFirestore(company: polyCompany)
+//        uploadCompanyToFirestore(company: polyCompany)
+        
+        
             self.fetchAllJobs { result in
                 switch result {
                 case .success(let allJobs):
                     print("Fetched \(allJobs.count) jobs!")
-                    for job in allJobs {
-                        print("Job Title: \(job.jobTitle)")
-                         let company = job.company
-                            print("Company Name: \(company.companyName)")
-                        
-                    }
                     jobs = allJobs
                     self.displayedJobs = self.filterAppliedJobs(with: jobs)
                     self.tableView.reloadData()
@@ -81,24 +77,7 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
 //            }
             
             // Call fetchAllJobs to retrieve all jobs
-//            self.fetchAllJobs { result in
-//                switch result {
-//                case .success(let jobs):
-//                    print("Fetched \(jobs.count) jobs!") // Print the total number of jobs fetched
-//                    for job in jobs {
-//                        print("Job Title: \(job.jobTitle)")
-//                        print("Job Description: \(job.jobDescription)")
-//                        print("Company Name: \(job.company.companyName)") // Access the company's name
-//                        print("Salary: \(job.jobSalary)")
-//                        print("Deadline: \(job.deadline)")
-//                        print("--------------------")
-//                    }
 //
-//                case .failure(let error):
-//                    print("Error fetching jobs: \(error.localizedDescription)")
-//                }
-//            }
-            
 //            self.fetchJob(jobID: "1") { result in
 //                switch result {
 //                case .success(let job):

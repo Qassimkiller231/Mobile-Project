@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobRecommendationsTableViewCell" rowHeight="235" id="KGk-i7-Jjw" customClass="JobRecommendationsTableViewCell" customModule="testfinalfinal" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobRecommendationsTableViewCell" rowHeight="235" id="KGk-i7-Jjw" customClass="JobRecommendationsTableViewCell" customModule="Project" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="398" height="283"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -37,6 +37,9 @@
                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="applyButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vjq-Z3-MIF"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgQ-Lh-G68">
                         <rect key="frame" x="20" y="92.666666666666671" width="358" height="20.333333333333329"/>

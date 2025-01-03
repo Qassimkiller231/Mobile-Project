@@ -77,14 +77,14 @@ class Tracker_HistoryViewController: UIViewController,UITableViewDelegate,UITabl
      
         
             
-            sampleApplications[0].interview = sampleInterviews[0]
-            sampleApplications[1].interview = sampleInterviews[1]
-            sampleApplications[2].interview = sampleInterviews[2]
-            sampleApplications[3].interview = sampleInterviews[3]
-            sampleApplications[4].interview = sampleInterviews[4]
-            sampleApplications[5].interview = sampleInterviews[5]
-            sampleApplications[6].interview = sampleInterviews[6]
-            sampleApplications[7].interview = sampleInterviews[7]
+        sampleApplications[0].interview = sampleInterviews[0]
+        sampleApplications[1].interview = sampleInterviews[1]
+        sampleApplications[2].interview = sampleInterviews[2]
+        sampleApplications[3].interview = sampleInterviews[3]
+        sampleApplications[4].interview = sampleInterviews[4]
+        sampleApplications[5].interview = sampleInterviews[5]
+        sampleApplications[6].interview = sampleInterviews[6]
+        sampleApplications[7].interview = sampleInterviews[7]
 
 
         
@@ -136,6 +136,7 @@ class Tracker_HistoryViewController: UIViewController,UITableViewDelegate,UITabl
         // Pass the selected object to the new view controller.
     }
     */
+    
     @IBAction func jobCompatibilityButtonPressed(_ sender: Any) {
     }
     

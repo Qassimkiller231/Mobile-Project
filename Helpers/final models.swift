@@ -31,6 +31,9 @@ enum jobCategories : String, Codable{
     case software
     case hardware
     case finance
+    case design
+    case management
+    case marketing
 }
 enum preferenceList: String,Codable{
     case experience
@@ -40,10 +43,34 @@ enum preferenceList: String,Codable{
 enum jobPositions: String , Codable{
     case Designer = "Designer"
     case softwareDev = "Software Developer"
+    case SoftwareEngineer = "Software Engineer"
+    case CloudEngineer = "Cloud Engineer"
+    case DataScientist = "Data Scientist"
+    case CyberSecuritySpecialist = "Cyber Security Specialist"
+    case NetworkAdministrator = "Network Administrator"
+    case MobileAppDeveloper = "Mobile App Developer"
+    case SystemArchitect = "System Architect"
+    case FrontendDeveloper = "Frontend Developer"
+    case DatabaseAdministrator = "Database Administrator"
+    case ITSupportSpecialist = "IT Support Specialist"
+    case MachineLearningEngineer = "Machine Learning Engineer"
+    case DevOpsEngineer = "DevOps Engineer"
+    case UXDesigner = "UX Designer"
+    case EmbeddedSystemsEngineer = "Embedded Systems Engineer"
+    case BlockchainDeveloper = "Blockchain Developer"
+    case PenetrationTester = "Penetration Tester"
+    case DataVisualizationSpecialist = "Data Visualization Specialist"
+    case RoboticsEngineer = "Robotics Engineer"
+    case GameDeveloper = "Game Developer"
+    case ITManager = "IT Manager"
+    case projectManager  = "Project Manager"
+    case marketingSpecialist = "Marketing Specialist"
+    case itSupport = "IT Support"
 }
 enum SalaryType : String, Codable{
     case hourly
     case monthly
+    case yearly
 }
 enum applicationStatus : String,Codable{
     case pending
@@ -80,11 +107,13 @@ struct Skill: Codable {
     var skillName: String
     var skillLevel: String
 }
+
 struct CareerPath :Codable{
     var interests: [String]
     var skills: [Skill]
     var position: jobPositions
     var description: String
+    var isExpanded: Bool = false
     
 }
 struct Preference : Codable{
@@ -730,8 +759,8 @@ var adminSections : [Section] = [
     Section(title: "Work preference",options: ["Remote","On-site"])
     
 ]
-var jobRecommendations : [job] = jobs
-var employerInsights : [job] = jobs
+
+var employerInsights : [job] = []
 var skillAssessmentDashboards : [SkillAssessmentDashboard] = [
     SkillAssessmentDashboard(name: "Programming", filter1: "Language", filter1Options: ["C#","Java","Python"], tests: []),
     SkillAssessmentDashboard(name: "Analytics", filter1: "Type", filter1Options: ["type1","type2","type3"], tests: []),

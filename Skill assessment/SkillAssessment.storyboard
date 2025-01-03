@@ -263,10 +263,10 @@ Note: you cannot ask the user for the age directly</string>
                                 <color key="textColor" red="0.30196078430000001" green="0.0039215686269999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30R-dl-3g9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30R-dl-3g9">
                                 <rect key="frame" x="0.0" y="158" width="393" height="660"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yDc-2q-wUU">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yDc-2q-wUU">
                                         <rect key="frame" x="16.666666666666657" y="50" width="360" height="813"/>
                                         <subviews>
                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="umh-nI-uLU">
@@ -488,7 +488,7 @@ applications, and enhancing automation.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GV-Bx-0uT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="-15"/>
+            <point key="canvasLocation" x="1147" y="-4"/>
         </scene>
     </scenes>
     <resources>

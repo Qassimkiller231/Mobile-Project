@@ -12,6 +12,7 @@ class JobRecommendationsTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         UINib(nibName: identifer, bundle: nil)
     }
+    var applyButtonTapped: (() -> Void)?
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var applyButton: UIButton!
@@ -30,5 +31,11 @@ class JobRecommendationsTableViewCell: UITableViewCell {
         titleLabel.text = job.jobTitle
         descriptionLabel.text = job.jobDescription
     }
+    
+    @IBAction func applyButtonTapped(_ sender: Any) {
+        applyButtonTapped?()
+    }
+    
+    
     
 }

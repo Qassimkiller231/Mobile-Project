@@ -8,10 +8,9 @@
 import UIKit
 
 
-
 class CheckCompatibilityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var model: [table] = sampleTableData 
+    var model: [table] = sampleTableData
     var filteredApplications : [application] = []
     var currentProfile : JobSeeker?
     

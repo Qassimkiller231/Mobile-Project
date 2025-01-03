@@ -9,38 +9,65 @@ import UIKit
 
 class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableview: UITableView!
-    var sections: [Section] = [
-        Section(title: "Section 1", options: ["Item 1", "Item 2", "Item 3"]),
-        Section(title: "Section 2", options: ["Item 4", "Item 5", "Item 6"]),
-        Section(title: "Section 3", options: ["Item 7", "Item 8", "Item 9"])
-    ]
+    var careerPaths: [(category: String, matches: [CareerPath], isExpanded: Bool)] = []
+    var currentProfile: JobSeeker?
+    
     override func viewDidLoad() {
+        currentProfile = SampleProfile2
+        
         tableview.register(SuggestedPathsTableViewCell.nib(), forCellReuseIdentifier: SuggestedPathsTableViewCell.identifier)
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
+        
         // Do any additional setup after loading the view.
-        
-        
+        careerPaths = getMatchedCategories(for: currentProfile!, from: careerPathsGrouped)
                
     }
+    func getMatchedCategories(for jobSeeker: JobSeeker, from allCareerPathsGrouped: [(category: String, paths: [CareerPath])]) -> [(category: String, matches: [CareerPath], isExpanded: Bool)] {
+        var matchedCategories: [(category: String, matches: [CareerPath], isExpanded: Bool)] = []
+
+        for (category, paths) in allCareerPathsGrouped {
+            // Find matching CareerPaths for skills or preferences
+            let matchingPaths = paths.filter { careerPath in
+                // Check if any JobSeeker skill matches the CareerPath skills
+                let skillMatch = jobSeeker.skills?.contains { seekerSkill in
+                    careerPath.skills.contains { pathSkill in pathSkill.skillName == seekerSkill.skillName }
+                } ?? false
+
+                // Check if any JobSeeker preference matches the CareerPath interests
+                let preferenceMatch = jobSeeker.preferences?.contains { preference in
+                    careerPath.interests.contains(preference)
+                } ?? false
+
+                return skillMatch || preferenceMatch
+            }
+
+            // Add category with `isExpanded = false` if there are matching paths
+            if !matchingPaths.isEmpty {
+                matchedCategories.append((category: category, matches: matchingPaths, isExpanded: false))
+            }
+        }
+
+        return matchedCategories
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return careerPaths.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].isExpanded ? 1 + (sections[section].options?.count ?? 0) : 1
+        return careerPaths[section].isExpanded ?  1 + careerPaths[section].matches.count : 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
                 // Header cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: SuggestedPathsTableViewCell.identifier, for: indexPath) as! SuggestedPathsTableViewCell
-                cell.configure(with: sections[indexPath.section].title) // Use the title for the header
+            cell.configure(with: careerPaths[indexPath.section].category) // Use the title for the header
                 return cell
             } else {
                 // Option cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: "OptionsCell", for: indexPath)
-                cell.textLabel?.text = sections[indexPath.section].options?[indexPath.row - 1] // Adjust the index
+                cell.textLabel?.text = careerPaths[indexPath.section].matches[indexPath.row - 1].position .rawValue// Adjust the index
                 return cell
             }
     }
@@ -49,7 +76,7 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            sections[indexPath.section].isExpanded.toggle()
+            careerPaths[indexPath.section].isExpanded.toggle()
             tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
         }
         

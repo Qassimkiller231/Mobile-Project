@@ -24,7 +24,7 @@ class PBPreferencesViewController: UIViewController, UICollectionViewDelegate, U
 
     var selectedJobType: jobTypes?
     var preferenceList: [String] = [] // List of selected preferences
-      var model: [String] = ["Programming", "Design", "Marketing", "Finance","Test1","Test2","John"] // Example data
+      var model: [String] = allPreferences  // Example data
     var filteredModel : [String] = []
     @IBOutlet weak var searchBar: UISearchBar!
     
