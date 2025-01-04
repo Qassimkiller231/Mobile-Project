@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseAuth
+@MainActor
 
 class Utilities {
     
@@ -18,10 +19,81 @@ class Utilities {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
-    struct DataManager {
+    class DataManager  {
+        static var shared = DataManager()
         static var Jobs: [job] = []
         static var profile: Profile?
         static var allUsers: [AppUser] = []
+        static var allCompanies : [Company] = []
+        static var allJobs : [job] = []
+        private let db = Firestore.firestore()
+            private(set) var companies: [Company] = []
+        
+        static func uploadCompany(_ company: Company) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("MuntadherCompanies") // Collection for storing companies
+                
+                do {
+                    let documentRef = try collectionRef.addDocument(from: company)
+                    documentRef.setData(try Firestore.Encoder().encode(company)) { error in
+                        if let error = error {
+                            print("Failed to upload company: \(error.localizedDescription)")
+                        } else {
+                            print("Company successfully uploaded!")
+                        }
+                    }
+                } catch {
+                    print("Failed to encode company: \(error.localizedDescription)")
+                }
+            }
+        
+        
+        
+        
+        static func uploadCompanies(_ companies: [Company]) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("MuntadherCompanies")
+                
+                for company in companies {
+                    do {
+                        let documentRef = try collectionRef.addDocument(from: company)
+                        documentRef.setData(try Firestore.Encoder().encode(company)) { error in
+                            if let error = error {
+                                print("Failed to upload company: \(error.localizedDescription)")
+                            } else {
+                                print("Company successfully uploaded!")
+                            }
+                        }
+                    } catch {
+                        print("Failed to encode company: \(error.localizedDescription)")
+                    }
+                }
+            }
+        
+        func fetchCompanies() async throws {
+                let collectionRef = db.collection("MuntadherCompanies")
+                let snapshot = try await collectionRef.getDocuments()
+                let fetchedCompanies = try snapshot.documents.map { document in
+                    try document.data(as: Company.self)
+                }
+                self.companies = fetchedCompanies
+                print("Successfully fetched \(fetchedCompanies.count) companies.")
+            }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         static func getProfile(userID: String, completion: @escaping (Profile?, Error?) -> Void) {

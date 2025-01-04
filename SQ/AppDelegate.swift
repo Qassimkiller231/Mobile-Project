@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
+        Task {
+                   do {
+                       try await Utilities.DataManager.shared.fetchCompanies()
+                       print("Companies fetched at app launch: \(Utilities.DataManager.shared.companies.count)")
+                   } catch {
+                       print("Error fetching companies at launch: \(error.localizedDescription)")
+                   }
+               }
         // Override point for customization after application launch.
         return true
     }

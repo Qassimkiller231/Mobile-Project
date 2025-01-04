@@ -13,192 +13,194 @@ var SampleProfile = JobSeeker(userID: "1", personalSummary: "hi", educations: ni
 var SampleCompany = Company(userID: "poly", companyName:"reboot" , industry: "ITCS", website: "reboot.com", aboutUs: "nil", firstName: "Ali", lastName: "abdulla", email: "aliabdulla@gmail.com", password: "password0", type:.employer, profileImage: "nil", phoneNumber: "84325634", location: "aldana")
 
 var jobseeker2 = JobSeeker(userID: "2", personalSummary: "this is jobSeeker 2", educations: nil, experiences: nil, skills: nil, preferences: ["Remote work", "Flexible hours", "Team collaboration"], cv: "CV", suggestedCareerPaths: nil, applications: nil, firstName: "Ammar", lastName: "AlAradi", email: "Ammar@gmail.com", password: "1319S!", type: .jobSeeker, profileImage: "nil", phoneNumber: "21342342", location: "Aali")
+//
 
-var sampleCompanies: [Company] = [
-    Company(userID: "tech_guru", companyName: "Innovate Tech", industry: "IT", website: "innovatetech.com", aboutUs: "Leading solutions in AI and cloud computing.", firstName: "John", lastName: "Smith", email: "johnsmith@innovatetech.com", password: "password1", type: .employer, profileImage: "nil", phoneNumber: "37480917", location: "Diraz"),
-    
-    Company(userID: "design_pro", companyName: "Creative Designs", industry: "Design", website: "creativedesigns.com", aboutUs: "Your partner in innovative design solutions.", firstName: "Emily", lastName: "Johnson", email: "emilyj@creativedesigns.com", password: "password2", type: .employer, profileImage: "nil", phoneNumber: "3276581", location: "Sadad"),
-    
-    Company(userID: "health_corp", companyName: "Health Corp", industry: "Healthcare", website: "healthcorp.com", aboutUs: "Committed to better health for everyone.", firstName: "Michael", lastName: "Brown", email: "michaelb@healthcorp.com", password: "password3", type: .employer, profileImage: "nil", phoneNumber: "39470685", location: "Muharaq"),
-    
-    Company(userID: "fin_advisors", companyName: "Finance Advisors", industry: "Finance", website: "financeadvisors.com", aboutUs: "Expert financial advice for your future.", firstName: "Sarah", lastName: "Davis", email: "sarahd@financeadvisors.com", password: "password4", type: .employer, profileImage: "nil", phoneNumber: "3456789", location: "isa town"),
-    
-    Company(userID: "edu_innovators", companyName: "Edu Innovators", industry: "Education", website: "eduinnovators.com", aboutUs: "Pioneering educational solutions.", firstName: "David", lastName: "Martinez", email: "davidm@eduinnovators.com", password: "password5", type: .employer, profileImage: "nil", phoneNumber: "45678901", location: "Sitra"),
-    
-    Company(userID: "green_tech", companyName: "Green Tech Solutions", industry: "Environmental", website: "greentech.com", aboutUs: "Sustainable technology for a better planet.", firstName: "Jessica", lastName: "Garcia", email: "jessicag@greentech.com", password: "password6", type: .employer, profileImage: "nil", phoneNumber: "5678901234", location: "Riffa"),
-    
-    Company(userID: "media_group", companyName: "Media Group", industry: "Media", website: "mediagroup.com", aboutUs: "Connecting people through media.", firstName: "William", lastName: "Wilson", email: "williamw@mediagroup.com", password: "password7", type: .employer, profileImage: "nil", phoneNumber: "67890123", location: "Sanabis"),
-    
-    Company(userID: "retail_outlet", companyName: "Retail Outlet", industry: "Retail", website: "retailoutlet.com", aboutUs: "Your one-stop shop for everything.", firstName: "Sophia", lastName: "Anderson", email: "sophiaa@retailoutlet.com", password: "password8", type: .employer, profileImage: "nil", phoneNumber: "78901234", location: "Adliyah")
-]
+var sampleCompanies :[Company] = []
+//var sampleCompanies: [Company] = [
+//    Company(userID: "tech_guru", companyName: "Innovate Tech", industry: "IT", website: "innovatetech.com", aboutUs: "Leading solutions in AI and cloud computing.", firstName: "John", lastName: "Smith", email: "johnsmith@innovatetech.com", password: "password1", type: .employer, profileImage: "nil", phoneNumber: "37480917", location: "Diraz"),
+//    
+//    Company(userID: "design_pro", companyName: "Creative Designs", industry: "Design", website: "creativedesigns.com", aboutUs: "Your partner in innovative design solutions.", firstName: "Emily", lastName: "Johnson", email: "emilyj@creativedesigns.com", password: "password2", type: .employer, profileImage: "nil", phoneNumber: "3276581", location: "Sadad"),
+//    
+//    Company(userID: "health_corp", companyName: "Health Corp", industry: "Healthcare", website: "healthcorp.com", aboutUs: "Committed to better health for everyone.", firstName: "Michael", lastName: "Brown", email: "michaelb@healthcorp.com", password: "password3", type: .employer, profileImage: "nil", phoneNumber: "39470685", location: "Muharaq"),
+//    
+//    Company(userID: "fin_advisors", companyName: "Finance Advisors", industry: "Finance", website: "financeadvisors.com", aboutUs: "Expert financial advice for your future.", firstName: "Sarah", lastName: "Davis", email: "sarahd@financeadvisors.com", password: "password4", type: .employer, profileImage: "nil", phoneNumber: "3456789", location: "isa town"),
+//    
+//    Company(userID: "edu_innovators", companyName: "Edu Innovators", industry: "Education", website: "eduinnovators.com", aboutUs: "Pioneering educational solutions.", firstName: "David", lastName: "Martinez", email: "davidm@eduinnovators.com", password: "password5", type: .employer, profileImage: "nil", phoneNumber: "45678901", location: "Sitra"),
+//    
+//    Company(userID: "green_tech", companyName: "Green Tech Solutions", industry: "Environmental", website: "greentech.com", aboutUs: "Sustainable technology for a better planet.", firstName: "Jessica", lastName: "Garcia", email: "jessicag@greentech.com", password: "password6", type: .employer, profileImage: "nil", phoneNumber: "5678901234", location: "Riffa"),
+//    
+//    Company(userID: "media_group", companyName: "Media Group", industry: "Media", website: "mediagroup.com", aboutUs: "Connecting people through media.", firstName: "William", lastName: "Wilson", email: "williamw@mediagroup.com", password: "password7", type: .employer, profileImage: "nil", phoneNumber: "67890123", location: "Sanabis"),
+//    
+//    Company(userID: "retail_outlet", companyName: "Retail Outlet", industry: "Retail", website: "retailoutlet.com", aboutUs: "Your one-stop shop for everything.", firstName: "Sophia", lastName: "Anderson", email: "sophiaa@retailoutlet.com", password: "password8", type: .employer, profileImage: "nil", phoneNumber: "78901234", location: "Adliyah")
+//]
 
 var sampleTableData: [table] = [
     table(title: "Pick an Application", options: []),
     table(title: "Choose Weight", options: ["Default","Custom"])
 ]
 
-
-var sampleJobs: [job] = [
-    job(
-        jobTitle: "AI Developer",
-        company: sampleCompanies[0],
-        companyID: sampleCompanies[0].userID,
-        jobDescription: "Develop AI algorithms and machine learning models.",
-        jobSalary: "$90,000 - $120,000",
-        jobType: .fullTime,
-        jobId: "job001",
-        jobCategory: .software,
-        jobPosition: .softwareDev,
-        jobImage: "ai_developer.png",
-        jobSkills: ["Python", "Machine Learning", "TensorFlow"],
-        jobPostedDate: "2025-01-01",
-        salaryType: .monthly,
-        timeFromPost: "2 days ago",
-        deadline: "2025-03-01",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    
-    job(
-        jobTitle: "Designer",
-        company: sampleCompanies[1],
-        companyID: sampleCompanies[1].userID,
-        jobDescription: "Create visually stunning designs for various media.",
-        jobSalary: "$60,000 - $80,000",
-        jobType: .fullTime,
-        jobId: "job002",
-        jobCategory: .software,
-        jobPosition: .Designer,
-        jobImage: "graphic_designer.png",
-        jobSkills: ["Adobe Photoshop", "Illustrator", "Creativity"],
-        jobPostedDate: "2025-01-02",
-        salaryType: .monthly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-03-02",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    
-    job(
-        jobTitle: "Analyst",
-        company: sampleCompanies[2],
-        companyID: sampleCompanies[2].userID,
-        jobDescription: "Analyze healthcare data to improve patient outcomes.",
-        jobSalary: "$70,000 - $90,000",
-        jobType: .fullTime,
-        jobId: "job003",
-        jobCategory: .software,
-        jobPosition: .Designer,
-        jobImage: "healthcare_analyst.png",
-        jobSkills: ["Data Analysis", "Statistics", "Healthcare Knowledge"],
-        jobPostedDate: "2025-01-03",
-        salaryType: .monthly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-03-03",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    
-    job(
-        jobTitle: "Consultant",
-        company: sampleCompanies[3],
-        companyID: sampleCompanies[3].userID,
-        jobDescription: "Provide expert financial advice to clients.",
-        jobSalary: "$80,000 - $100,000",
-        jobType: .fullTime,
-        jobId: "job004",
-        jobCategory: .finance,
-        jobPosition: .Designer,
-        jobImage: "financial_consultant.png",
-        jobSkills: ["Financial Analysis", "Client Management", "Investment Strategies"],
-        jobPostedDate: "2025-01-04",
-        salaryType: .monthly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-03-04",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    
-    job(
-        jobTitle: "Developer",
-        company: sampleCompanies[4],
-        companyID: sampleCompanies[4].userID,
-        jobDescription: "Create and improve educational materials.",
-        jobSalary: "$65,000 - $85,000",
-        jobType: .fullTime,
-        jobId: "job005",
-        jobCategory:.finance,
-        jobPosition: .Designer,
-        jobImage: "curriculum_developer.png",
-        jobSkills: ["Curriculum Design", "Teaching Experience", "Creativity"],
-        jobPostedDate: "2025-01-05",
-        salaryType: .monthly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-03-05",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    
-    job(
-        jobTitle: "Consultant",
-        company: sampleCompanies[5],
-        companyID: sampleCompanies[5].userID,
-        jobDescription: "Advise companies on sustainable practices.",
-        jobSalary: "$75,000 - $95,000",
-        jobType: .fullTime,
-        jobId: "job006",
-        jobCategory: .finance,
-        jobPosition: .Designer,
-        jobImage: "sustainability_consultant.png",
-        jobSkills: ["Environmental Science", "Consulting", "Project Management"],
-        jobPostedDate: "2025-01-06",
-        salaryType: .monthly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-03-06",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    
-    job(
-        jobTitle: "Writer",
-        company: sampleCompanies[6],
-        companyID: sampleCompanies[6].userID,
-        jobDescription: "Create engaging content for various platforms.",
-        jobSalary: "$50,000 - $70,000",
-        jobType: .fullTime,
-        jobId: "job007",
-        jobCategory: .finance,
-        jobPosition: .Designer,
-        jobImage: "content_writer.png",
-        jobSkills: ["Writing", "SEO", "Creativity"],
-        jobPostedDate: "2025-01-07",
-        salaryType: .monthly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-03-07",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    
-    job(
-        jobTitle: "Manager",
-        company: sampleCompanies[7],
-        companyID: sampleCompanies[7].userID,
-        jobDescription: "Oversee retail operations and ensure customer satisfaction.",
-        jobSalary: "$55,000 - $75,000",
-        jobType: .fullTime,
-        jobId: "job008",
-        jobCategory: .finance,
-        jobPosition: .Designer,
-        jobImage: "retail_manager.png",
-        jobSkills: ["Customer Service", "Management", "Sales Strategies"],
-        jobPostedDate: "2025-01-08",
-        salaryType: .monthly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-03-08",
-        applications: nil,
-        offer: "Part-Time, health benefits"
-    )
-]
+var sampleJobs : [job] = []
+//var sampleJobs: [job] = [
+//    job(
+//        jobTitle: "AI Developer",
+//        company: sampleCompanies[0],
+//        companyID: sampleCompanies[0].userID,
+//        jobDescription: "Develop AI algorithms and machine learning models.",
+//        jobSalary: "$90,000 - $120,000",
+//        jobType: .fullTime,
+//        jobId: "job001",
+//        jobCategory: .software,
+//        jobPosition: .softwareDev,
+//        jobImage: "ai_developer.png",
+//        jobSkills: ["Python", "Machine Learning", "TensorFlow"],
+//        jobPostedDate: "2025-01-01",
+//        salaryType: .monthly,
+//        timeFromPost: "2 days ago",
+//        deadline: "2025-03-01",
+//        applications: nil,
+//        offer: "Full-time, health benefits"
+//    ),
+//    
+//    job(
+//        jobTitle: "Designer",
+//        company: sampleCompanies[1],
+//        companyID: sampleCompanies[1].userID,
+//        jobDescription: "Create visually stunning designs for various media.",
+//        jobSalary: "$60,000 - $80,000",
+//        jobType: .fullTime,
+//        jobId: "job002",
+//        jobCategory: .software,
+//        jobPosition: .Designer,
+//        jobImage: "graphic_designer.png",
+//        jobSkills: ["Adobe Photoshop", "Illustrator", "Creativity"],
+//        jobPostedDate: "2025-01-02",
+//        salaryType: .monthly,
+//        timeFromPost: "1 day ago",
+//        deadline: "2025-03-02",
+//        applications: nil,
+//        offer: "Full-time, health benefits"
+//    ),
+//    
+//    job(
+//        jobTitle: "Analyst",
+//        company: sampleCompanies[2],
+//        companyID: sampleCompanies[2].userID,
+//        jobDescription: "Analyze healthcare data to improve patient outcomes.",
+//        jobSalary: "$70,000 - $90,000",
+//        jobType: .fullTime,
+//        jobId: "job003",
+//        jobCategory: .software,
+//        jobPosition: .Designer,
+//        jobImage: "healthcare_analyst.png",
+//        jobSkills: ["Data Analysis", "Statistics", "Healthcare Knowledge"],
+//        jobPostedDate: "2025-01-03",
+//        salaryType: .monthly,
+//        timeFromPost: "1 day ago",
+//        deadline: "2025-03-03",
+//        applications: nil,
+//        offer: "Full-time, health benefits"
+//    ),
+//    
+//    job(
+//        jobTitle: "Consultant",
+//        company: sampleCompanies[3],
+//        companyID: sampleCompanies[3].userID,
+//        jobDescription: "Provide expert financial advice to clients.",
+//        jobSalary: "$80,000 - $100,000",
+//        jobType: .fullTime,
+//        jobId: "job004",
+//        jobCategory: .finance,
+//        jobPosition: .Designer,
+//        jobImage: "financial_consultant.png",
+//        jobSkills: ["Financial Analysis", "Client Management", "Investment Strategies"],
+//        jobPostedDate: "2025-01-04",
+//        salaryType: .monthly,
+//        timeFromPost: "1 day ago",
+//        deadline: "2025-03-04",
+//        applications: nil,
+//        offer: "Full-time, health benefits"
+//    ),
+//    
+//    job(
+//        jobTitle: "Developer",
+//        company: sampleCompanies[4],
+//        companyID: sampleCompanies[4].userID,
+//        jobDescription: "Create and improve educational materials.",
+//        jobSalary: "$65,000 - $85,000",
+//        jobType: .fullTime,
+//        jobId: "job005",
+//        jobCategory:.finance,
+//        jobPosition: .Designer,
+//        jobImage: "curriculum_developer.png",
+//        jobSkills: ["Curriculum Design", "Teaching Experience", "Creativity"],
+//        jobPostedDate: "2025-01-05",
+//        salaryType: .monthly,
+//        timeFromPost: "1 day ago",
+//        deadline: "2025-03-05",
+//        applications: nil,
+//        offer: "Full-time, health benefits"
+//    ),
+//    
+//    job(
+//        jobTitle: "Consultant",
+//        company: sampleCompanies[5],
+//        companyID: sampleCompanies[5].userID,
+//        jobDescription: "Advise companies on sustainable practices.",
+//        jobSalary: "$75,000 - $95,000",
+//        jobType: .fullTime,
+//        jobId: "job006",
+//        jobCategory: .finance,
+//        jobPosition: .Designer,
+//        jobImage: "sustainability_consultant.png",
+//        jobSkills: ["Environmental Science", "Consulting", "Project Management"],
+//        jobPostedDate: "2025-01-06",
+//        salaryType: .monthly,
+//        timeFromPost: "1 day ago",
+//        deadline: "2025-03-06",
+//        applications: nil,
+//        offer: "Full-time, health benefits"
+//    ),
+//    
+//    job(
+//        jobTitle: "Writer",
+//        company: sampleCompanies[6],
+//        companyID: sampleCompanies[6].userID,
+//        jobDescription: "Create engaging content for various platforms.",
+//        jobSalary: "$50,000 - $70,000",
+//        jobType: .fullTime,
+//        jobId: "job007",
+//        jobCategory: .finance,
+//        jobPosition: .Designer,
+//        jobImage: "content_writer.png",
+//        jobSkills: ["Writing", "SEO", "Creativity"],
+//        jobPostedDate: "2025-01-07",
+//        salaryType: .monthly,
+//        timeFromPost: "1 day ago",
+//        deadline: "2025-03-07",
+//        applications: nil,
+//        offer: "Full-time, health benefits"
+//    ),
+//    
+//    job(
+//        jobTitle: "Manager",
+//        company: sampleCompanies[7],
+//        companyID: sampleCompanies[7].userID,
+//        jobDescription: "Oversee retail operations and ensure customer satisfaction.",
+//        jobSalary: "$55,000 - $75,000",
+//        jobType: .fullTime,
+//        jobId: "job008",
+//        jobCategory: .finance,
+//        jobPosition: .Designer,
+//        jobImage: "retail_manager.png",
+//        jobSkills: ["Customer Service", "Management", "Sales Strategies"],
+//        jobPostedDate: "2025-01-08",
+//        salaryType: .monthly,
+//        timeFromPost: "1 day ago",
+//        deadline: "2025-03-08",
+//        applications: nil,
+//        offer: "Part-Time, health benefits"
+//    )
+//]
 //
 //var sampleJobs: [job] = [
 //    job(

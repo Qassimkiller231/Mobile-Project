@@ -35,8 +35,20 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     var userID = Auth.auth().currentUser?.uid
     override func viewDidLoad() {
         super.viewDidLoad()
+//        Utilities.DataManager.fetchAllCompanies(completion: {
+//            fetchedCompanies in  DispatchQueue.main.async {
+//                sampleCompanies = fetchedCompanies
+//            }
+//        })
+        if Utilities.DataManager.shared.companies.isEmpty {
+                    print("No companies available. DataManager is still fetching data.")
+                } else {
+                    print("Companies are ready: \(Utilities.DataManager.shared.companies)")
+                    tableView.dataSource = self
+                    tableView.reloadData()
+                }
         
-        
+       
 //        fetchData(userID: userID ?? "", collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in
 //            switch result {
 //            case .success(let jobSeeker):
@@ -150,7 +162,6 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         
         //Search bar delegate
         SearchBar.delegate = self
-        print("jobs count is: \(jobs.count)" )
         
         
         
