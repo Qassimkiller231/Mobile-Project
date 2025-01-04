@@ -10,26 +10,26 @@
 import Foundation
 var SampleProfile = JobSeeker(userID: "1", personalSummary: "hi", educations: nil, experiences: [Experience(jobTitle: "Bachelor's Degree in Design", companyName: "SampleCompany", startDate: "10/10/2013", endDate: "12/06/2015", city: "Manama")], skills: nil, preferences:["Creative environment", "Opportunities for professional development", "Work-life balance"], cv: "nil", suggestedCareerPaths: nil, applications: nil, firstName: "Muntadher", lastName: "Abdulrahman", email: "202203075@student.polytechnic.bh", password: "Scoobysnac77!", type: .jobSeeker, profileImage: "nil", phoneNumber: "39658382", location: "Malkiya")
 
-var SampleCompany = Company(userID: "poly", companyName:"reboot" , industry: "ITCS", website: "reboot.com", aboutUs: "nil", firstName: "Ali", lastName: "abdulla", email: "aliabdulla@gmail.com", password: "1234", type:.employer, profileImage: "nil", phoneNumber: "84325634", location: "aldana")
+var SampleCompany = Company(userID: "poly", companyName:"reboot" , industry: "ITCS", website: "reboot.com", aboutUs: "nil", firstName: "Ali", lastName: "abdulla", email: "aliabdulla@gmail.com", password: "password0", type:.employer, profileImage: "nil", phoneNumber: "84325634", location: "aldana")
 
 var jobseeker2 = JobSeeker(userID: "2", personalSummary: "this is jobSeeker 2", educations: nil, experiences: nil, skills: nil, preferences: ["Remote work", "Flexible hours", "Team collaboration"], cv: "CV", suggestedCareerPaths: nil, applications: nil, firstName: "Ammar", lastName: "AlAradi", email: "Ammar@gmail.com", password: "1319S!", type: .jobSeeker, profileImage: "nil", phoneNumber: "21342342", location: "Aali")
 
 var sampleCompanies: [Company] = [
-    Company(userID: "tech_guru", companyName: "Innovate Tech", industry: "IT", website: "innovatetech.com", aboutUs: "Leading solutions in AI and cloud computing.", firstName: "John", lastName: "Smith", email: "johnsmith@innovatetech.com", password: "password1", type: .employer, profileImage: "nil", phoneNumber: "1234567890", location: "New York"),
+    Company(userID: "tech_guru", companyName: "Innovate Tech", industry: "IT", website: "innovatetech.com", aboutUs: "Leading solutions in AI and cloud computing.", firstName: "John", lastName: "Smith", email: "johnsmith@innovatetech.com", password: "password1", type: .employer, profileImage: "nil", phoneNumber: "37480917", location: "Diraz"),
     
-    Company(userID: "design_pro", companyName: "Creative Designs", industry: "Design", website: "creativedesigns.com", aboutUs: "Your partner in innovative design solutions.", firstName: "Emily", lastName: "Johnson", email: "emilyj@creativedesigns.com", password: "password2", type: .employer, profileImage: "nil", phoneNumber: "0987654321", location: "San Francisco"),
+    Company(userID: "design_pro", companyName: "Creative Designs", industry: "Design", website: "creativedesigns.com", aboutUs: "Your partner in innovative design solutions.", firstName: "Emily", lastName: "Johnson", email: "emilyj@creativedesigns.com", password: "password2", type: .employer, profileImage: "nil", phoneNumber: "3276581", location: "Sadad"),
     
-    Company(userID: "health_corp", companyName: "Health Corp", industry: "Healthcare", website: "healthcorp.com", aboutUs: "Committed to better health for everyone.", firstName: "Michael", lastName: "Brown", email: "michaelb@healthcorp.com", password: "password3", type: .employer, profileImage: "nil", phoneNumber: "2345678901", location: "Chicago"),
+    Company(userID: "health_corp", companyName: "Health Corp", industry: "Healthcare", website: "healthcorp.com", aboutUs: "Committed to better health for everyone.", firstName: "Michael", lastName: "Brown", email: "michaelb@healthcorp.com", password: "password3", type: .employer, profileImage: "nil", phoneNumber: "39470685", location: "Muharaq"),
     
-    Company(userID: "fin_advisors", companyName: "Finance Advisors", industry: "Finance", website: "financeadvisors.com", aboutUs: "Expert financial advice for your future.", firstName: "Sarah", lastName: "Davis", email: "sarahd@financeadvisors.com", password: "password4", type: .employer, profileImage: "nil", phoneNumber: "3456789012", location: "Los Angeles"),
+    Company(userID: "fin_advisors", companyName: "Finance Advisors", industry: "Finance", website: "financeadvisors.com", aboutUs: "Expert financial advice for your future.", firstName: "Sarah", lastName: "Davis", email: "sarahd@financeadvisors.com", password: "password4", type: .employer, profileImage: "nil", phoneNumber: "3456789", location: "isa town"),
     
-    Company(userID: "edu_innovators", companyName: "Edu Innovators", industry: "Education", website: "eduinnovators.com", aboutUs: "Pioneering educational solutions.", firstName: "David", lastName: "Martinez", email: "davidm@eduinnovators.com", password: "password5", type: .employer, profileImage: "nil", phoneNumber: "4567890123", location: "Seattle"),
+    Company(userID: "edu_innovators", companyName: "Edu Innovators", industry: "Education", website: "eduinnovators.com", aboutUs: "Pioneering educational solutions.", firstName: "David", lastName: "Martinez", email: "davidm@eduinnovators.com", password: "password5", type: .employer, profileImage: "nil", phoneNumber: "45678901", location: "Sitra"),
     
-    Company(userID: "green_tech", companyName: "Green Tech Solutions", industry: "Environmental", website: "greentech.com", aboutUs: "Sustainable technology for a better planet.", firstName: "Jessica", lastName: "Garcia", email: "jessicag@greentech.com", password: "password6", type: .employer, profileImage: "nil", phoneNumber: "5678901234", location: "Austin"),
+    Company(userID: "green_tech", companyName: "Green Tech Solutions", industry: "Environmental", website: "greentech.com", aboutUs: "Sustainable technology for a better planet.", firstName: "Jessica", lastName: "Garcia", email: "jessicag@greentech.com", password: "password6", type: .employer, profileImage: "nil", phoneNumber: "5678901234", location: "Riffa"),
     
-    Company(userID: "media_group", companyName: "Media Group", industry: "Media", website: "mediagroup.com", aboutUs: "Connecting people through media.", firstName: "William", lastName: "Wilson", email: "williamw@mediagroup.com", password: "password7", type: .employer, profileImage: "nil", phoneNumber: "6789012345", location: "Miami"),
+    Company(userID: "media_group", companyName: "Media Group", industry: "Media", website: "mediagroup.com", aboutUs: "Connecting people through media.", firstName: "William", lastName: "Wilson", email: "williamw@mediagroup.com", password: "password7", type: .employer, profileImage: "nil", phoneNumber: "67890123", location: "Sanabis"),
     
-    Company(userID: "retail_outlet", companyName: "Retail Outlet", industry: "Retail", website: "retailoutlet.com", aboutUs: "Your one-stop shop for everything.", firstName: "Sophia", lastName: "Anderson", email: "sophiaa@retailoutlet.com", password: "password8", type: .employer, profileImage: "nil", phoneNumber: "7890123456", location: "Boston")
+    Company(userID: "retail_outlet", companyName: "Retail Outlet", industry: "Retail", website: "retailoutlet.com", aboutUs: "Your one-stop shop for everything.", firstName: "Sophia", lastName: "Anderson", email: "sophiaa@retailoutlet.com", password: "password8", type: .employer, profileImage: "nil", phoneNumber: "78901234", location: "Adliyah")
 ]
 
 var sampleTableData: [table] = [
@@ -196,7 +196,7 @@ var sampleJobs: [job] = [
         timeFromPost: "1 day ago",
         deadline: "2025-03-08",
         applications: nil,
-        offer: "Full-time, health benefits"
+        offer: "Part-Time, health benefits"
     )
 ]
 //
@@ -426,21 +426,21 @@ var sampleApplications: [application] = [
 ]
 
 var sampleInterviews: [Interview] = [
-    Interview(interviewDate: "2025-01-10", interviewTime: "10:00 AM", nameOfIntervieweed: "Ali Abdulla", location: "Zoom"),
+    Interview(interviewDate: "2025-01-10", interviewTime: "10:00 AM", nameOfIntervieweed: "Ali Abdulla", location: "Sitra"),
     
-    Interview(interviewDate: "2025-01-11", interviewTime: "2:00 PM", nameOfIntervieweed: "Jane Doe", location: "Company Office, San Francisco"),
+    Interview(interviewDate: "2025-01-11", interviewTime: "2:00 PM", nameOfIntervieweed: "Sarah", location: "Company Office, Muharaq"),
     
-    Interview(interviewDate: "2025-01-12", interviewTime: "11:00 AM", nameOfIntervieweed: "Ali Abdulla", location: "Zoom"),
+    Interview(interviewDate: "2025-01-12", interviewTime: "11:00 AM", nameOfIntervieweed: "Ali Abdulla", location: "Adliyah"),
     
-    Interview(interviewDate: "2025-01-13", interviewTime: "3:00 PM", nameOfIntervieweed: "Jane Doe", location: "Company Office, Chicago"),
+    Interview(interviewDate: "2025-01-13", interviewTime: "3:00 PM", nameOfIntervieweed: "Sarah", location: "Miami"),
     
-    Interview(interviewDate: "2025-01-14", interviewTime: "1:00 PM", nameOfIntervieweed: "Ali Abdulla", location: "Zoom"),
+    Interview(interviewDate: "2025-01-14", interviewTime: "1:00 PM", nameOfIntervieweed: "Ali Abdulla", location: "Riffa"),
     
-    Interview(interviewDate: "2025-01-15", interviewTime: "4:00 PM", nameOfIntervieweed: "Jane Doe", location: "Company Office, Boston"),
+    Interview(interviewDate: "2025-01-15", interviewTime: "4:00 PM", nameOfIntervieweed: "Sarah", location: "Manama"),
     
-    Interview(interviewDate: "2025-01-16", interviewTime: "9:00 AM", nameOfIntervieweed: "Ali Abdulla", location: "Zoom"),
+    Interview(interviewDate: "2025-01-16", interviewTime: "9:00 AM", nameOfIntervieweed: "Ali Abdulla", location: "Sadad"),
     
-    Interview(interviewDate: "2025-01-17", interviewTime: "2:30 PM", nameOfIntervieweed: "Jane Doe", location: "Company Office, Miami")
+    Interview(interviewDate: "2025-01-17", interviewTime: "2:30 PM", nameOfIntervieweed: "Sarah", location: "Sanabis")
 ]
 
 // Assuming sampleJobs is already populated
