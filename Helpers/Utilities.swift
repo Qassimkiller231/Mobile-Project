@@ -24,6 +24,268 @@ class Utilities {
         static var allUsers: [AppUser] = []
         
         
+        static func takeCurrentProfile(_ profile: Profile) {
+            DataManager.profile = profile
+        }
+        static func uploadCareerPath(_ careerPath: CareerPath) {
+                let db = Firestore.firestore() // Firestore database reference
+                let collectionRef = db.collection("career_paths") // Reference to "career_paths" collection
+                
+                do {
+                    // Convert CareerPath object to a dictionary and add to Firestore
+                    let documentRef = try collectionRef.addDocument(from: careerPath)
+                    documentRef.setData(try Firestore.Encoder().encode(careerPath)) { error in
+                        if let error = error {
+                            print("Failed to upload career path: \(error.localizedDescription)")
+                        } else {
+                            print("Career path successfully uploaded!")
+                        }
+                    }
+                } catch {
+                    // Handle encoding errors
+                    print("Failed to encode career path: \(error.localizedDescription)")
+                }
+            }
+        
+        
+        static func uploadCareerPaths(_ careerPaths: [CareerPath]) {
+                let db = Firestore.firestore() // Firestore database reference
+                let collectionRef = db.collection("careerPaths") // Reference to "career_paths" collection
+                
+                for careerPath in careerPaths {
+                    do {
+                        // Add each CareerPath to Firestore
+                        let documentRef = try collectionRef.addDocument(from: careerPath)
+                        documentRef.setData(try Firestore.Encoder().encode(careerPath)) { error in
+                            if let error = error {
+                                print("Failed to upload career path: \(error.localizedDescription)")
+                            } else {
+                                print("Career path successfully uploaded!")
+                            }
+                        }
+                    } catch {
+                        // Handle encoding errors
+                        print("Failed to encode career path: \(error.localizedDescription)")
+                    }
+                }
+            }
+        
+        
+        
+        
+        
+        static func fetchAllCareerPaths(completion: @escaping ([CareerPath]) -> Void) {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("careerPaths")
+            
+            collectionRef.getDocuments { snapshot, error in
+                if let error = error {
+                    print("Failed to fetch career paths: \(error.localizedDescription)")
+                    completion([]) // Return an empty array on failure
+                    return
+                }
+                
+                guard let documents = snapshot?.documents else {
+                    print("No career paths found.")
+                    completion([]) // Return an empty array if no documents are found
+                    return
+                }
+                
+                do {
+                    // Decode each document into a CareerPath object
+                    let careerPaths = try documents.map { document in
+                        try document.data(as: CareerPath.self)
+                    }
+                    print("Successfully fetched \(careerPaths.count) career paths.")
+                    completion(careerPaths) // Return the array of CareerPath objects
+                } catch {
+                    print("Failed to decode career paths: \(error.localizedDescription)")
+                    completion([]) // Return an empty array on decoding failure
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        static func uploadMarketTrend(_ marketTrend: MarketTrend) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("market_trends")
+                
+                do {
+                    let documentRef = try collectionRef.addDocument(from: marketTrend)
+                    documentRef.setData(try Firestore.Encoder().encode(marketTrend)) { error in
+                        if let error = error {
+                            print("Failed to upload market trend: \(error.localizedDescription)")
+                        } else {
+                            print("Market trend successfully uploaded!")
+                        }
+                    }
+                } catch {
+                    print("Failed to encode market trend: \(error.localizedDescription)")
+                }
+            }
+        
+        
+        
+        static func uploadMarketTrends(_ marketTrends: [MarketTrend]) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("market_trends")
+                
+                for marketTrend in marketTrends {
+                    do {
+                        let documentRef = try collectionRef.addDocument(from: marketTrend)
+                        documentRef.setData(try Firestore.Encoder().encode(marketTrend)) { error in
+                            if let error = error {
+                                print("Failed to upload market trend: \(error.localizedDescription)")
+                            } else {
+                                print("Market trend successfully uploaded!")
+                            }
+                        }
+                    } catch {
+                        print("Failed to encode market trend: \(error.localizedDescription)")
+                    }
+                }
+            }
+        
+        
+        
+        
+        
+        static func fetchAllMarketTrends(completion: @escaping ([MarketTrend]) -> Void) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("market_trends")
+                
+                collectionRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Failed to fetch market trends: \(error.localizedDescription)")
+                        completion([]) // Return an empty array on failure
+                        return
+                    }
+                    
+                    guard let documents = snapshot?.documents else {
+                        print("No market trends found.")
+                        completion([]) // Return an empty array if no documents
+                        return
+                    }
+                    
+                    do {
+                        let marketTrends = try documents.map { document in
+                            try document.data(as: MarketTrend.self)
+                        }
+                        print("Successfully fetched \(marketTrends.count) market trends.")
+                        completion(marketTrends)
+                    } catch {
+                        print("Failed to decode market trends: \(error.localizedDescription)")
+                        completion([])
+                    }
+                }
+            }
+        
+        static func uploadJob(_ job: job) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("Matrookjobs") // Collection for storing jobs
+                
+                do {
+                    let documentRef = try collectionRef.addDocument(from: job)
+                    documentRef.setData(try Firestore.Encoder().encode(job)) { error in
+                        if let error = error {
+                            print("Failed to upload job: \(error.localizedDescription)")
+                        } else {
+                            print("Job successfully uploaded!")
+                        }
+                    }
+                } catch {
+                    print("Failed to encode job: \(error.localizedDescription)")
+                }
+            }
+        
+        
+        static func uploadJobs(_ jobs: [job]) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("Matrookjobs")
+                
+                for singleJob in jobs {
+                    do {
+                        let documentRef = try collectionRef.addDocument(from: singleJob)
+                        documentRef.setData(try Firestore.Encoder().encode(singleJob)) { error in
+                            if let error = error {
+                                print("Failed to upload job: \(error.localizedDescription)")
+                            } else {
+                                print("Job successfully uploaded!")
+                            }
+                        }
+                    } catch {
+                        print("Failed to encode job: \(error.localizedDescription)")
+                    }
+                }
+            }
+        
+        
+        static func fetchAllJobs(completion: @escaping ([job]) -> Void) {
+                let db = Firestore.firestore()
+                let collectionRef = db.collection("Matrookjobs")
+                
+                collectionRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Failed to fetch jobs: \(error.localizedDescription)")
+                        completion([]) // Return an empty array on failure
+                        return
+                    }
+                    
+                    guard let documents = snapshot?.documents else {
+                        print("No jobs found.")
+                        completion([]) // Return an empty array if no documents
+                        return
+                    }
+                    
+                    do {
+                        let jobs = try documents.map { document in
+                            try document.data(as: job.self)
+                        }
+                        print("Successfully fetched \(jobs.count) jobs.")
+                        completion(jobs) // Return the array of job objects
+                    } catch {
+                        print("Failed to decode jobs: \(error.localizedDescription)")
+                        completion([])
+                    }
+                }
+            }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         static func getProfile(userID: String, completion: @escaping (Profile?, Error?) -> Void) {
             let db = Firestore.firestore()
             let userRef = db.collection("Users").document(userID)

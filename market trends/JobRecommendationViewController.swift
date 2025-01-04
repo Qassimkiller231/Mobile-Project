@@ -11,15 +11,25 @@ class JobRecommendationViewController: UIViewController,UITableViewDelegate,UITa
 
     @IBOutlet weak var tableView: UITableView!
     var jobRecommendations : [job] = []
-    var profile = SampleProfile2
+    var profile : JobSeeker?
     override func viewDidLoad() {
         super.viewDidLoad()
+        profile = Utilities.DataManager.profile as? JobSeeker
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(JobRecommendationsTableViewCell.nib(), forCellReuseIdentifier: JobRecommendationsTableViewCell.identifer)
-        jobRecommendations = filterJobs(basedOn: SampleProfile2, from: sampleJobs2)
+        Utilities.DataManager.fetchAllJobs(completion: {
+            [weak self] fetchedJobs in DispatchQueue.main.async {
+                sampleJobs2 = fetchedJobs
+                self?.jobRecommendations = (self?.filterJobs(basedOn: self!.profile!, from: sampleJobs2))!
+                self?.tableView.reloadData()
+            }
+        })
+       
+        
         // Do any additional setup after loading the view.
     }
+    
     func filterJobs(basedOn profile: JobSeeker, from jobs: [job]) -> [job] {
         return jobs.filter { job in
             // Check if any jobSkill matches the JobSeeker's preferences

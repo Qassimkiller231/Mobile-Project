@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct MarketTrend {
+struct MarketTrend : Codable {
     var jobTitle: String
     var jobDescription: String
     var growthRate: Double
@@ -59,243 +59,34 @@ func filterCareerPaths(for jobSeeker: JobSeeker, allPaths: [CareerPath]) -> [Str
     return groupedPaths
 }
 
-let allCareerPaths = [
-    CareerPath(interests: ["Skill Development", "Professional Certifications"], skills: [Skill(skillName: "Programming", skillLevel: "Advanced")], position: .SoftwareEngineer, description: "Software Engineer specializing in full-stack development"),
-    CareerPath(interests: ["Remote Work", "Industry News"], skills: [Skill(skillName: "Cloud Computing", skillLevel: "Intermediate")], position: .CloudEngineer, description: "Cloud Engineer managing scalable cloud solutions"),
-    CareerPath(interests: ["Career Advice", "Networking"], skills: [Skill(skillName: "Data Analysis", skillLevel: "Advanced")], position: .DataScientist, description: "Data Scientist focusing on predictive analytics"),
-    CareerPath(interests: ["Industry News", "Workshops & Events"], skills: [Skill(skillName: "Cybersecurity", skillLevel: "Expert")], position: .CyberSecuritySpecialist, description: "Cybersecurity Specialist protecting IT infrastructure"),
-    CareerPath(interests: ["Professional Certifications", "Mentorship"], skills: [Skill(skillName: "Network Configuration", skillLevel: "Advanced")], position: .NetworkAdministrator, description: "Network Administrator managing enterprise networks"),
-    CareerPath(interests: ["Skill Development", "Freelance Work"], skills: [Skill(skillName: "App Development", skillLevel: "Intermediate")], position: .MobileAppDeveloper, description: "Mobile App Developer building Android and iOS apps"),
-    CareerPath(interests: ["Networking", "Diversity & Inclusion"], skills: [Skill(skillName: "System Design", skillLevel: "Expert")], position: .SystemArchitect, description: "System Architect designing enterprise IT systems"),
-    CareerPath(interests: ["Remote Work", "Freelance Work"], skills: [Skill(skillName: "Web Development", skillLevel: "Intermediate")], position: .FrontendDeveloper, description: "Frontend Developer creating responsive web interfaces"),
-    CareerPath(interests: ["Industry News", "Skill Development"], skills: [Skill(skillName: "Database Management", skillLevel: "Advanced")], position: .DatabaseAdministrator, description: "Database Administrator optimizing database performance"),
-    CareerPath(interests: ["Mentorship", "Career Advice"], skills: [Skill(skillName: "Technical Support", skillLevel: "Intermediate")], position: .ITSupportSpecialist, description: "IT Support Specialist resolving technical issues"),
-    CareerPath(interests: ["Skill Development", "Professional Certifications"], skills: [Skill(skillName: "Machine Learning", skillLevel: "Advanced")], position: .MachineLearningEngineer, description: "Machine Learning Engineer creating AI models"),
-    CareerPath(interests: ["Remote Work", "Networking"], skills: [Skill(skillName: "DevOps", skillLevel: "Expert")], position: .DevOpsEngineer, description: "DevOps Engineer ensuring smooth deployment pipelines"),
-    CareerPath(interests: ["Freelance Work", "Workshops & Events"], skills: [Skill(skillName: "UI/UX Design", skillLevel: "Intermediate")], position: .UXDesigner, description: "UX Designer crafting user-friendly interfaces"),
-    CareerPath(interests: ["Skill Development", "Industry News"], skills: [Skill(skillName: "Embedded Systems", skillLevel: "Advanced")], position: .EmbeddedSystemsEngineer, description: "Embedded Systems Engineer developing IoT devices"),
-    CareerPath(interests: ["Networking", "Mentorship"], skills: [Skill(skillName: "Blockchain Development", skillLevel: "Intermediate")], position: .BlockchainDeveloper, description: "Blockchain Developer creating decentralized apps"),
-    CareerPath(interests: ["Professional Certifications", "Workshops & Events"], skills: [Skill(skillName: "Penetration Testing", skillLevel: "Advanced")], position: .PenetrationTester, description: "Penetration Tester identifying system vulnerabilities"),
-    CareerPath(interests: ["Industry News", "Remote Work"], skills: [Skill(skillName: "Data Visualization", skillLevel: "Advanced")], position: .DataVisualizationSpecialist, description: "Data Visualization Specialist creating dashboards"),
-    CareerPath(interests: ["Skill Development", "Mentorship"], skills: [Skill(skillName: "Robotics Programming", skillLevel: "Intermediate")], position: .RoboticsEngineer, description: "Robotics Engineer developing automation solutions"),
-    CareerPath(interests: ["Freelance Work", "Networking"], skills: [Skill(skillName: "Game Development", skillLevel: "Intermediate")], position: .GameDeveloper, description: "Game Developer creating immersive experiences"),
-    CareerPath(interests: ["Skill Development", "Career Advice"], skills: [Skill(skillName: "IT Management", skillLevel: "Expert")], position: .ITManager, description: "IT Manager overseeing IT operations")
-]
-let careerPathsGrouped: [(category: String, paths: [CareerPath])] = [
-    (
-        category: "Software Development",
-        paths: allCareerPaths.filter { $0.position == .SoftwareEngineer || $0.position == .MobileAppDeveloper || $0.position == .EmbeddedSystemsEngineer || $0.position == .GameDeveloper }
-    ),
-    (
-        category: "Data and Analytics",
-        paths: allCareerPaths.filter { $0.position == .DataScientist || $0.position == .DatabaseAdministrator || $0.position == .DataVisualizationSpecialist || $0.position == .MachineLearningEngineer }
-    ),
-    (
-        category: "Networking and Cloud",
-        paths: allCareerPaths.filter { $0.position == .CloudEngineer || $0.position == .NetworkAdministrator || $0.position == .DevOpsEngineer || $0.position == .SystemArchitect }
-    ),
-    (
-        category: "Security and IT Support",
-        paths: allCareerPaths.filter { $0.position == .CyberSecuritySpecialist || $0.position == .PenetrationTester || $0.position == .ITSupportSpecialist }
-    ),
-    (
-        category: "IT Leadership and Management",
-        paths: allCareerPaths.filter { $0.position == .ITManager || $0.position == .UXDesigner || $0.position == .RoboticsEngineer || $0.position == .BlockchainDeveloper }
-    )
-]
+//let allCareerPaths = [
+//    CareerPath(interests: ["Skill Development", "Professional Certifications"], skills: [Skill(skillName: "Programming", skillLevel: "Advanced")], position: .SoftwareEngineer, description: "Software Engineer specializing in full-stack development"),
+//    CareerPath(interests: ["Remote Work", "Industry News"], skills: [Skill(skillName: "Cloud Computing", skillLevel: "Intermediate")], position: .CloudEngineer, description: "Cloud Engineer managing scalable cloud solutions"),
+//    CareerPath(interests: ["Career Advice", "Networking"], skills: [Skill(skillName: "Data Analysis", skillLevel: "Advanced")], position: .DataScientist, description: "Data Scientist focusing on predictive analytics"),
+//    CareerPath(interests: ["Industry News", "Workshops & Events"], skills: [Skill(skillName: "Cybersecurity", skillLevel: "Expert")], position: .CyberSecuritySpecialist, description: "Cybersecurity Specialist protecting IT infrastructure"),
+//    CareerPath(interests: ["Professional Certifications", "Mentorship"], skills: [Skill(skillName: "Network Configuration", skillLevel: "Advanced")], position: .NetworkAdministrator, description: "Network Administrator managing enterprise networks"),
+//    CareerPath(interests: ["Skill Development", "Freelance Work"], skills: [Skill(skillName: "App Development", skillLevel: "Intermediate")], position: .MobileAppDeveloper, description: "Mobile App Developer building Android and iOS apps"),
+//    CareerPath(interests: ["Networking", "Diversity & Inclusion"], skills: [Skill(skillName: "System Design", skillLevel: "Expert")], position: .SystemArchitect, description: "System Architect designing enterprise IT systems"),
+//    CareerPath(interests: ["Remote Work", "Freelance Work"], skills: [Skill(skillName: "Web Development", skillLevel: "Intermediate")], position: .FrontendDeveloper, description: "Frontend Developer creating responsive web interfaces"),
+//    CareerPath(interests: ["Industry News", "Skill Development"], skills: [Skill(skillName: "Database Management", skillLevel: "Advanced")], position: .DatabaseAdministrator, description: "Database Administrator optimizing database performance"),
+//    CareerPath(interests: ["Mentorship", "Career Advice"], skills: [Skill(skillName: "Technical Support", skillLevel: "Intermediate")], position: .ITSupportSpecialist, description: "IT Support Specialist resolving technical issues"),
+//    CareerPath(interests: ["Skill Development", "Professional Certifications"], skills: [Skill(skillName: "Machine Learning", skillLevel: "Advanced")], position: .MachineLearningEngineer, description: "Machine Learning Engineer creating AI models"),
+//    CareerPath(interests: ["Remote Work", "Networking"], skills: [Skill(skillName: "DevOps", skillLevel: "Expert")], position: .DevOpsEngineer, description: "DevOps Engineer ensuring smooth deployment pipelines"),
+//    CareerPath(interests: ["Freelance Work", "Workshops & Events"], skills: [Skill(skillName: "UI/UX Design", skillLevel: "Intermediate")], position: .UXDesigner, description: "UX Designer crafting user-friendly interfaces"),
+//    CareerPath(interests: ["Skill Development", "Industry News"], skills: [Skill(skillName: "Embedded Systems", skillLevel: "Advanced")], position: .EmbeddedSystemsEngineer, description: "Embedded Systems Engineer developing IoT devices"),
+//    CareerPath(interests: ["Networking", "Mentorship"], skills: [Skill(skillName: "Blockchain Development", skillLevel: "Intermediate")], position: .BlockchainDeveloper, description: "Blockchain Developer creating decentralized apps"),
+//    CareerPath(interests: ["Professional Certifications", "Workshops & Events"], skills: [Skill(skillName: "Penetration Testing", skillLevel: "Advanced")], position: .PenetrationTester, description: "Penetration Tester identifying system vulnerabilities"),
+//    CareerPath(interests: ["Industry News", "Remote Work"], skills: [Skill(skillName: "Data Visualization", skillLevel: "Advanced")], position: .DataVisualizationSpecialist, description: "Data Visualization Specialist creating dashboards"),
+//    CareerPath(interests: ["Skill Development", "Mentorship"], skills: [Skill(skillName: "Robotics Programming", skillLevel: "Intermediate")], position: .RoboticsEngineer, description: "Robotics Engineer developing automation solutions"),
+//    CareerPath(interests: ["Freelance Work", "Networking"], skills: [Skill(skillName: "Game Development", skillLevel: "Intermediate")], position: .GameDeveloper, description: "Game Developer creating immersive experiences"),
+//    CareerPath(interests: ["Skill Development", "Career Advice"], skills: [Skill(skillName: "IT Management", skillLevel: "Expert")], position: .ITManager, description: "IT Manager overseeing IT operations")
+//]
+var allCareerPaths : [CareerPath] = []
+var careerPathsGrouped: [(category: String, paths: [CareerPath])] = []
 
 
-let sampleJobs2: [job] = [
-    job(
-        jobTitle: "AI Developer",
-        company: sampleCompanies[0],
-        companyID: sampleCompanies[0].userID,
-        jobDescription: "Develop AI algorithms and machine learning models.",
-        jobSalary: "$90,000 - $120,000",
-        jobType: .fullTime,
-        jobId: "jobAIDev001",
-        jobCategory: .software,
-        jobPosition: .softwareDev,
-        jobImage: "ai_developer.png",
-        jobSkills: ["Python", "Machine Learning", allPreferences[4]], // Skill Development
-        jobPostedDate: "2025-01-01",
-        salaryType: .monthly,
-        timeFromPost: "2 days ago",
-        deadline: "2025-03-01",
-        applications: nil,
-        offer: "Full-time, health benefits"
-    ),
-    job(
-        jobTitle: "UI/UX Designer",
-        company: sampleCompanies[1],
-        companyID: sampleCompanies[1].userID,
-        jobDescription: "Design user-friendly interfaces for web and mobile apps.",
-        jobSalary: "$70,000 - $100,000",
-        jobType: .fullTime,
-        jobId: "jobUIDesign002",
-        jobCategory: .design,
-        jobPosition: .Designer,
-        jobImage: "ui_ux_designer.png",
-        jobSkills: ["Adobe XD", "Figma", allPreferences[1]], // Networking
-        jobPostedDate: "2025-01-02",
-        salaryType: .yearly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-02-15",
-        applications: nil,
-        offer: "Remote work options available"
-    ),
-    job(
-        jobTitle: "Data Scientist",
-        company: sampleCompanies[0],
-        companyID: sampleCompanies[0].userID,
-        jobDescription: "Analyze data and develop machine learning solutions.",
-        jobSalary: "$100,000 - $140,000",
-        jobType: .fullTime,
-        jobId: "jobDataSci003",
-        jobCategory: .software,
-        jobPosition: .DataScientist,
-        jobImage: "data_scientist.png",
-        jobSkills: ["Python", "Data Analysis", allPreferences[3]], // Industry News
-        jobPostedDate: "2025-01-01",
-        salaryType: .monthly,
-        timeFromPost: "3 days ago",
-        deadline: "2025-03-10",
-        applications: nil,
-        offer: "Flexible work hours"
-    ),
-    job(
-        jobTitle: "Project Manager",
-        company: sampleCompanies[3],
-        companyID: sampleCompanies[3].userID,
-        jobDescription: "Lead teams to deliver projects on time and within scope.",
-        jobSalary: "$110,000 - $150,000",
-        jobType: .fullTime,
-        jobId: "jobProjMan004",
-        jobCategory: .management,
-        jobPosition: .projectManager,
-        jobImage: "project_manager.png",
-        jobSkills: ["Leadership", allPreferences[7], allPreferences[2]], // Workshops & Events, Career Advice
-        jobPostedDate: "2025-01-03",
-        salaryType: .yearly,
-        timeFromPost: "1 day ago",
-        deadline: "2025-02-28",
-        applications: nil,
-        offer: "Healthcare and stock options"
-    ),
-    job(
-        jobTitle: "Frontend Developer",
-        company: sampleCompanies[0],
-        companyID: sampleCompanies[0].userID,
-        jobDescription: "Develop responsive front-end web applications.",
-        jobSalary: "$80,000 - $110,000",
-        jobType: .fullTime,
-        jobId: "jobFrontend005",
-        jobCategory: .software,
-        jobPosition: .FrontendDeveloper,
-        jobImage: "frontend_dev.png",
-        jobSkills: ["JavaScript", "React", allPreferences[11]], // Remote Work
-        jobPostedDate: "2025-01-01",
-        salaryType: .monthly,
-        timeFromPost: "4 days ago",
-        deadline: "2025-02-20",
-        applications: nil,
-        offer: "Hybrid work policy"
-    ),
-    job(
-        jobTitle: "Digital Marketing Specialist",
-        company: sampleCompanies[6],
-        companyID: sampleCompanies[6].userID,
-        jobDescription: "Execute marketing campaigns across digital channels.",
-        jobSalary: "$60,000 - $90,000",
-        jobType: .fullTime,
-        jobId: "jobDigiMark006",
-        jobCategory: .marketing,
-        jobPosition: .marketingSpecialist,
-        jobImage: "digital_marketing.png",
-        jobSkills: ["SEO", "Content Writing", allPreferences[5]], // Mentorship
-        jobPostedDate: "2025-01-04",
-        salaryType: .yearly,
-        timeFromPost: "Just posted",
-        deadline: "2025-03-01",
-        applications: nil,
-        offer: "Performance bonuses available"
-    ),
-    job(
-        jobTitle: "Cloud Engineer",
-        company: sampleCompanies[0],
-        companyID: sampleCompanies[0].userID,
-        jobDescription: "Build and maintain cloud infrastructure.",
-        jobSalary: "$100,000 - $130,000",
-        jobType: .fullTime,
-        jobId: "jobCloudEng007",
-        jobCategory: .software,
-        jobPosition: .CloudEngineer,
-        jobImage: "cloud_engineer.png",
-        jobSkills: ["AWS", "Cloud Computing", allPreferences[10]], // Professional Certifications
-        jobPostedDate: "2025-01-02",
-        salaryType: .monthly,
-        timeFromPost: "2 days ago",
-        deadline: "2025-03-10",
-        applications: nil,
-        offer: "401k and stock options"
-    ),
-    job(
-        jobTitle: "Cybersecurity Analyst",
-        company: sampleCompanies[0],
-        companyID: sampleCompanies[0].userID,
-        jobDescription: "Monitor and protect IT infrastructure from threats.",
-        jobSalary: "$95,000 - $125,000",
-        jobType: .fullTime,
-        jobId: "jobCyberSec008",
-        jobCategory: .software,
-        jobPosition: .CyberSecuritySpecialist,
-        jobImage: "cybersecurity.png",
-        jobSkills: ["Cybersecurity", "Penetration Testing", allPreferences[7]], // Workshops & Events
-        jobPostedDate: "2025-01-05",
-        salaryType: .monthly,
-        timeFromPost: "Just posted",
-        deadline: "2025-02-28",
-        applications: nil,
-        offer: "Health insurance and paid vacation"
-    ),
-    job(
-        jobTitle: "IT Support Specialist",
-        company: sampleCompanies[7],
-        companyID: sampleCompanies[7].userID,
-        jobDescription: "Provide technical support to employees and clients.",
-        jobSalary: "$50,000 - $70,000",
-        jobType: .fullTime,
-        jobId: "jobITSupport009",
-        jobCategory: .software,
-        jobPosition: .itSupport,
-        jobImage: "it_support.png",
-        jobSkills: ["Technical Support", "Troubleshooting", allPreferences[2]], // Career Advice
-        jobPostedDate: "2025-01-03",
-        salaryType: .yearly,
-        timeFromPost: "2 days ago",
-        deadline: "2025-03-05",
-        applications: nil,
-        offer: "Employee discounts"
-    ),
-    job(
-        jobTitle: "Blockchain Developer",
-        company: sampleCompanies[0],
-        companyID: sampleCompanies[0].userID,
-        jobDescription: "Develop decentralized applications and smart contracts.",
-        jobSalary: "$110,000 - $140,000",
-        jobType: .fullTime,
-        jobId: "jobBlockchain010",
-        jobCategory: .software,
-        jobPosition: .BlockchainDeveloper,
-        jobImage: "blockchain_dev.png",
-        jobSkills: ["Blockchain", "Smart Contracts", allPreferences[4]], // Skill Development
-        jobPostedDate: "2025-01-01",
-        salaryType: .monthly,
-        timeFromPost: "3 days ago",
-        deadline: "2025-03-10",
-        applications: nil,
-        offer: "Full-time, remote options available"
-    )
+var sampleJobs2: [job] = [
+    
 ]
 
 let allApplications: [application] = [

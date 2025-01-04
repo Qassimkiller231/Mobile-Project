@@ -33,8 +33,33 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     var currentProfile: Profile?
     var profileID: String?
     var userID = Auth.auth().currentUser?.uid
+    var testCareerPaths : [CareerPath] = []
+    var testMarketTrends : [MarketTrend] = []
+    var testSamJobs : [job] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.DataManager.takeCurrentProfile(SampleProfile2)
+//        Utilities.DataManager.uploadJobs(sampleJobs2)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
 //        fetchData(userID: userID ?? "", collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in
@@ -150,7 +175,6 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         
         //Search bar delegate
         SearchBar.delegate = self
-        print("jobs count is: \(jobs.count)" )
         
         
         
@@ -164,8 +188,19 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
         profilePic.addGestureRecognizer(tapGesture)
         let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(bookmarkTapped))
         bookmark.addGestureRecognizer(bookmarkTap)
+//        Utilities.DataManager.uploadCareerPaths(allCareerPaths)
+//        Utilities.DataManager.fetchAllCareerPaths { [weak self] fetchedCareerPaths in
+//            self?.testCareerPaths = fetchedCareerPaths
+//            print(self?.testCareerPaths)
+//               
+//               // Example: If you need to reload a tableView or update UI, you can do it here
+//               // self?.tableView.reloadData()
+//           }
+        
+        
         
     }
+    
     func uploadCompanyToFirestore(company: Company) {
         let db = Firestore.firestore()
         

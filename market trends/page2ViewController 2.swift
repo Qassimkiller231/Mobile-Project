@@ -11,18 +11,50 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableview: UITableView!
     var careerPaths: [(category: String, matches: [CareerPath], isExpanded: Bool)] = []
     var currentProfile: JobSeeker?
-    
     override func viewDidLoad() {
-        currentProfile = SampleProfile2
+        currentProfile = Utilities.DataManager.profile as? JobSeeker
         
         tableview.register(SuggestedPathsTableViewCell.nib(), forCellReuseIdentifier: SuggestedPathsTableViewCell.identifier)
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
-        
+        Utilities.DataManager.fetchAllCareerPaths {
+            [weak self] fetchedPaths in DispatchQueue.main.async { [self] in
+                allCareerPaths = fetchedPaths
+                self?.loadCareerPathsGrouped()
+                self?.careerPaths = (self?.getMatchedCategories(for: self!.currentProfile!, from: careerPathsGrouped))!
+                self?.tableview.reloadData()
+            }
+        }
         // Do any additional setup after loading the view.
-        careerPaths = getMatchedCategories(for: currentProfile!, from: careerPathsGrouped)
+        
                
+    }
+    
+    func loadCareerPathsGrouped() {
+         careerPathsGrouped  = [
+            (
+                category: "Software Development",
+                paths: allCareerPaths.filter { $0.position == .SoftwareEngineer || $0.position == .MobileAppDeveloper || $0.position == .EmbeddedSystemsEngineer || $0.position == .GameDeveloper }
+            ),
+            (
+                category: "Data and Analytics",
+                paths: allCareerPaths.filter { $0.position == .DataScientist || $0.position == .DatabaseAdministrator || $0.position == .DataVisualizationSpecialist || $0.position == .MachineLearningEngineer }
+            ),
+            (
+                category: "Networking and Cloud",
+                paths: allCareerPaths.filter { $0.position == .CloudEngineer || $0.position == .NetworkAdministrator || $0.position == .DevOpsEngineer || $0.position == .SystemArchitect }
+            ),
+            (
+                category: "Security and IT Support",
+                paths: allCareerPaths.filter { $0.position == .CyberSecuritySpecialist || $0.position == .PenetrationTester || $0.position == .ITSupportSpecialist }
+            ),
+            (
+                category: "IT Leadership and Management",
+                paths: allCareerPaths.filter { $0.position == .ITManager || $0.position == .UXDesigner || $0.position == .RoboticsEngineer || $0.position == .BlockchainDeveloper }
+            )
+        ]
+        
     }
     func getMatchedCategories(for jobSeeker: JobSeeker, from allCareerPathsGrouped: [(category: String, paths: [CareerPath])]) -> [(category: String, matches: [CareerPath], isExpanded: Bool)] {
         var matchedCategories: [(category: String, matches: [CareerPath], isExpanded: Bool)] = []
