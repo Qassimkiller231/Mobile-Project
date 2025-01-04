@@ -167,6 +167,8 @@
 		AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */; };
 		ACADCE022D26AA0800687292 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADCE012D26AA0800687292 /* SampleData.swift */; };
 		ACADCE042D26D6BE00687292 /* SampleCompatibilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADCE032D26D6BE00687292 /* SampleCompatibilityData.swift */; };
+		ACE34AF42D2944A10091C998 /* jobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE34AF22D2944A10091C998 /* jobsTableViewCell.swift */; };
+		ACE34AF52D2944A10091C998 /* jobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE34AF32D2944A10091C998 /* jobsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,6 +344,8 @@
 		AC24359A2D05C1BB00B21510 /* testfinalfinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACADCE012D26AA0800687292 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		ACADCE032D26D6BE00687292 /* SampleCompatibilityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCompatibilityData.swift; sourceTree = "<group>"; };
+		ACE34AF22D2944A10091C998 /* jobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobsTableViewCell.swift; sourceTree = "<group>"; };
+		ACE34AF32D2944A10091C998 /* jobsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = jobsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -652,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				6E74DBFC2D149E9A00F0B84E /* Salay estimator tool.storyboard */,
+				ACE34AF62D2944B60091C998 /* jobs cell */,
 				6E74DBF02D149D0900F0B84E /* estimated Salary Cells */,
 				6E74DBF12D149D0900F0B84E /* EstimatedSalaryViewController.swift */,
 				6E74DBF22D149D0900F0B84E /* FinalEstimatedSalaryViewController.swift */,
@@ -979,6 +984,15 @@
 			path = SQ;
 			sourceTree = "<group>";
 		};
+		ACE34AF62D2944B60091C998 /* jobs cell */ = {
+			isa = PBXGroup;
+			children = (
+				ACE34AF22D2944A10091C998 /* jobsTableViewCell.swift */,
+				ACE34AF32D2944A10091C998 /* jobsTableViewCell.xib */,
+			);
+			path = "jobs cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1138,6 +1152,7 @@
 				6ED001372D1827D500644B5A /* NotifcationTableViewCell.xib in Resources */,
 				AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */,
 				6ED0016B2D1ACF0200644B5A /* Assets.xcassets in Resources */,
+				ACE34AF52D2944A10091C998 /* jobsTableViewCell.xib in Resources */,
 				AC2435852D05C1B700B21510 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1258,6 +1273,7 @@
 				6ED0013D2D18391A00644B5A /* applicationHistoryTableViewCell.swift in Sources */,
 				6E4BE27F2D1D4D710054B3AC /* EmployerInsightsTableViewCell.swift in Sources */,
 				AC2435802D05C1B700B21510 /* SceneDelegate.swift in Sources */,
+				ACE34AF42D2944A10091C998 /* jobsTableViewCell.swift in Sources */,
 				6ED001742D1B715800644B5A /* AdminHomePageViewController.swift in Sources */,
 				6E74DC062D14CEE400F0B84E /* PerfectResumeViewController.swift in Sources */,
 				6E74DC0C2D14CF5800F0B84E /* GuideDetailsViewController.swift in Sources */,

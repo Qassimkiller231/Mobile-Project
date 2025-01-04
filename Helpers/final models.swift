@@ -13,6 +13,7 @@ enum UserType: String,Codable{
     case admin
     case jobSeeker
     case employer
+    case guest
     
 }
 enum SkillNames : String{
@@ -595,19 +596,19 @@ var guides : [Guide] = [
     ]
 
 var videos : [Video] = [
-    Video(videoTitle: "Video1", videoURL: "moQnoSYPMmY", videoDescription: "This is the first video"),
-    Video(videoTitle: "Video2", videoURL: "0SHMSYGDJXQ", videoDescription: "This is the second video"),
-    Video(videoTitle: "Video3", videoURL: "5mL6c2UiEEY", videoDescription: "This is the third video"),
-    Video(videoTitle: "Video4", videoURL: "u8E0JC8C4-8", videoDescription: "This is the Fourth video"),
-    Video(videoTitle: "Video5", videoURL: "pVDVVksp4VI", videoDescription: "This is the Fifth video"),
-    Video(videoTitle: "Video6", videoURL: "uEdREDwcD_M", videoDescription: "This is the Sixth video"),
-    Video(videoTitle: "Video7", videoURL: "P4ZCs1gqc3I", videoDescription: "This is the Seventh video"),
-    Video(videoTitle: "Video8", videoURL: "uibHDPDaUjo", videoDescription: "This is the Eighth video"),
-    Video(videoTitle: "Video9", videoURL: "USxsTggFKhE", videoDescription: "This is the Nineth video"),
-    Video(videoTitle: "Video10", videoURL: "Y_coOg6oHAc", videoDescription: "This is the Tenth video"),
-    Video(videoTitle: "Video11", videoURL: "uTAaFExLgwQ", videoDescription: "This is the Eleventh video"),
-    Video(videoTitle: "Video12", videoURL: "JYub1Gnqllg", videoDescription: "This is the Twelevth video"),
-    Video(videoTitle: "Video13", videoURL: "8Nzzk7TvLrE", videoDescription: "This is the Thirteenth video")
+    Video(videoTitle: "How to Pick Your Career", videoURL: "moQnoSYPMmY", videoDescription: "This is the first video"),
+    Video(videoTitle: "Helping People Find Their Perfect Job", videoURL: "0SHMSYGDJXQ", videoDescription: "This is the second video"),
+    Video(videoTitle: "Your IT Career 2024 will depend on this video", videoURL: "5mL6c2UiEEY", videoDescription: "This is the third video"),
+    Video(videoTitle: "How To Get Into Tech In 2025", videoURL: "u8E0JC8C4-8", videoDescription: "This is the Fourth video"),
+    Video(videoTitle: "How to switch from Non IT to IT", videoURL: "pVDVVksp4VI", videoDescription: "This is the Fifth video"),
+    Video(videoTitle: "Managers & Executives Career Guide", videoURL: "uEdREDwcD_M", videoDescription: "This is the Sixth video"),
+    Video(videoTitle: "Level Up Your IT Career", videoURL: "P4ZCs1gqc3I", videoDescription: "This is the Seventh video"),
+    Video(videoTitle: "IT career paths", videoURL: "uibHDPDaUjo", videoDescription: "This is the Eighth video"),
+    Video(videoTitle: "Soft Skills", videoURL: "USxsTggFKhE", videoDescription: "This is the Nineth video"),
+    Video(videoTitle: "the TOP 10 hottest IT Jobs", videoURL: "Y_coOg6oHAc", videoDescription: "This is the Tenth video"),
+    Video(videoTitle: "the hacker’s roadmap", videoURL: "uTAaFExLgwQ", videoDescription: "This is the Eleventh video"),
+    Video(videoTitle: "Top 5 Non-Coding Tech Jobs", videoURL: "JYub1Gnqllg", videoDescription: "This is the Twelevth video"),
+    Video(videoTitle: "Top 23 Tech Jobs", videoURL: "8Nzzk7TvLrE", videoDescription: "This is the Thirteenth video")
     ]
 
 var webinars: [Webinar] = [

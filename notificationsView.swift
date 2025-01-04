@@ -13,6 +13,7 @@ class notificationsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkForpermission()
+        
         // Do any additional setup after loading the view.
     }
 

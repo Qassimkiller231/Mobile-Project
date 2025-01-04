@@ -11,10 +11,11 @@ class MyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var jobLabel: UILabel!
     @IBOutlet weak var SalaryLabel: UILabel!
-    static func nib() -> UINib {
-        UINib(nibName: "MyTableViewCell", bundle: nil)
-    }
     static var identifier = "MyTableViewCell"
+    static func nib() -> UINib {
+        UINib(nibName: identifier, bundle: nil)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
