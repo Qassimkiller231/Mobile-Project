@@ -572,22 +572,22 @@ var locations : [String] = [
 ]
 
 var FinalEstimatedSalaries :[estimatedJob] = [
-    estimatedJob(jobTitle: "job1", minimumSalary: "500", maximumSalary: "750", experience: "3 years", industry: "IT"),
-    estimatedJob(jobTitle: "job4", minimumSalary: "800", maximumSalary: "1050", experience: "9 years", industry: "IT"),
-    estimatedJob(jobTitle: "job5", minimumSalary: "900", maximumSalary: "1150", experience: "11 years", industry: "IT")
+    estimatedJob(jobTitle: "IT Manager", minimumSalary: "500", maximumSalary: "750", experience: "3 years", industry: "IT"),
+    estimatedJob(jobTitle: "Software Developer", minimumSalary: "800", maximumSalary: "1050", experience: "9 years", industry: "IT"),
+    estimatedJob(jobTitle: "Systems Analyst", minimumSalary: "900", maximumSalary: "1150", experience: "11 years", industry: "IT")
 ]
 var estimatedSalaries : [estimatedJob] = [
-    estimatedJob(jobTitle: "job1", minimumSalary: "500", maximumSalary: "750", experience: "3 years", industry: "IT"),
-    estimatedJob(jobTitle: "job2", minimumSalary: "600", maximumSalary: "850", experience: "5 years", industry: "IT"),
-    estimatedJob(jobTitle: "job3", minimumSalary: "700", maximumSalary: "950", experience: "7 years", industry: "IT"),
-    estimatedJob(jobTitle: "job4", minimumSalary: "800", maximumSalary: "1050", experience: "9 years", industry: "IT"),
-    estimatedJob(jobTitle: "job5", minimumSalary: "900", maximumSalary: "1150", experience: "11 years", industry: "IT"),
-    estimatedJob(jobTitle: "job6", minimumSalary: "1000", maximumSalary: "1250", experience: "13 years", industry: "IT")
+    estimatedJob(jobTitle: "Network Administrator", minimumSalary: "500", maximumSalary: "750", experience: "3 years", industry: "IT"),
+    estimatedJob(jobTitle: "Database Administrator", minimumSalary: "600", maximumSalary: "850", experience: "5 years", industry: "IT"),
+    estimatedJob(jobTitle: "DevOps Engineer", minimumSalary: "700", maximumSalary: "950", experience: "7 years", industry: "IT"),
+    estimatedJob(jobTitle: "Cloud Solutions Architect", minimumSalary: "800", maximumSalary: "1050", experience: "9 years", industry: "IT"),
+    estimatedJob(jobTitle: "Cybersecurity Analyst", minimumSalary: "900", maximumSalary: "1150", experience: "11 years", industry: "IT"),
+    estimatedJob(jobTitle: "IT Support Specialist", minimumSalary: "1000", maximumSalary: "1250", experience: "13 years", industry: "IT")
 ]
 var articles : [Article] = [
-    Article(articleTitle: "Article1", articleDescription: "this is article 1"),
-    Article(articleTitle: "Article2", articleDescription: "this is article 2"),
-    Article(articleTitle: "Article3", articleDescription: "this is article 3")
+    Article(articleTitle: "Protecting Your Data in a Digital World", articleDescription: "In an age where our lives are increasingly intertwined with technology, safeguarding personal and sensitive information has never been more crucial. This article explores the various threats to data security in a digital landscape, including cyberattacks, data breaches, and identity theft.We delve into essential strategies for protecting your data, such as implementing strong passwords, using two-factor authentication, and recognizing phishing scams. Additionally, we discuss the importance of regular software updates and data encryption.With practical tips and expert insights, this article empowers readers to take control of their digital security. Whether you're an individual looking to protect personal information or a business aiming to secure client data, this guide provides valuable tools and knowledge to navigate the complexities of data protection in today's connected world."),
+    Article(articleTitle: "Top Programming Languages to Learn in 2025", articleDescription: "As the tech landscape continues to evolve, staying ahead in the programming world is essential for both aspiring developers and seasoned professionals. This article highlights the top programming languages that are set to dominate the industry in 2025, offering insights into their applications, demand, and future prospects.We begin by examining the enduring popularity of languages like Python and JavaScript, known for their versatility and robust community support. Next, we explore emerging languages such as Rust and Go, which are gaining traction for their performance and efficiency in cloud computing and systems programming.Additionally, the article delves into the growing significance of languages tailored for data science and artificial intelligence, such as R and Julia. Readers will also discover the importance of learning languages suited for mobile app development, like Swift and Kotlin.Packed with expert opinions and real-world applications, this guide serves as a roadmap for anyone looking to enhance their programming skills and align their career with the future of technology. Whether you're starting your coding journey or looking to expand your repertoire, this article will help you make informed choices about which languages to focus on in the coming years."),
+    Article(articleTitle: "Building a Successful Career in IT: Tips from Industry Experts", articleDescription: "Embarking on a career in information technology (IT) can be both exciting and challenging. In this article, we gather insights and advice from seasoned industry experts to help you navigate your path to success in the ever-evolving tech landscape.We explore key strategies for building a solid foundation, including the importance of continuous learning and staying updated with emerging technologies. The article highlights the value of networking and mentorship, providing actionable tips on how to connect with professionals who can guide you in your career journey.Moreover, we discuss the significance of soft skills—such as communication, teamwork, and problem-solving—that can set you apart in a competitive job market. Experts share their personal experiences, shedding light on the diverse career paths available in IT, from software development to cybersecurity.Whether you're a recent graduate or a professional seeking to pivot in your career, this article equips you with the knowledge and tools to make informed decisions and achieve your career goals in IT. With practical advice and real-world examples, you’ll be inspired to take proactive steps toward a fulfilling and successful career in the tech industry.")
 ]
 var guides : [Guide] = [
     Guide(guideTitle: "Guide 1", guideDescription: "this is Guide 1 details, bro rbor bro", guideVideo: "test", guideAudio: "test2"),
@@ -596,25 +596,25 @@ var guides : [Guide] = [
     ]
 
 var videos : [Video] = [
-    Video(videoTitle: "How to Pick Your Career", videoURL: "moQnoSYPMmY", videoDescription: "This is the first video"),
-    Video(videoTitle: "Helping People Find Their Perfect Job", videoURL: "0SHMSYGDJXQ", videoDescription: "This is the second video"),
-    Video(videoTitle: "Your IT Career 2024 will depend on this video", videoURL: "5mL6c2UiEEY", videoDescription: "This is the third video"),
-    Video(videoTitle: "How To Get Into Tech In 2025", videoURL: "u8E0JC8C4-8", videoDescription: "This is the Fourth video"),
-    Video(videoTitle: "How to switch from Non IT to IT", videoURL: "pVDVVksp4VI", videoDescription: "This is the Fifth video"),
-    Video(videoTitle: "Managers & Executives Career Guide", videoURL: "uEdREDwcD_M", videoDescription: "This is the Sixth video"),
-    Video(videoTitle: "Level Up Your IT Career", videoURL: "P4ZCs1gqc3I", videoDescription: "This is the Seventh video"),
-    Video(videoTitle: "IT career paths", videoURL: "uibHDPDaUjo", videoDescription: "This is the Eighth video"),
-    Video(videoTitle: "Soft Skills", videoURL: "USxsTggFKhE", videoDescription: "This is the Nineth video"),
-    Video(videoTitle: "the TOP 10 hottest IT Jobs", videoURL: "Y_coOg6oHAc", videoDescription: "This is the Tenth video"),
-    Video(videoTitle: "the hacker’s roadmap", videoURL: "uTAaFExLgwQ", videoDescription: "This is the Eleventh video"),
-    Video(videoTitle: "Top 5 Non-Coding Tech Jobs", videoURL: "JYub1Gnqllg", videoDescription: "This is the Twelevth video"),
-    Video(videoTitle: "Top 23 Tech Jobs", videoURL: "8Nzzk7TvLrE", videoDescription: "This is the Thirteenth video")
+    Video(videoTitle: "How to Pick Your Career", videoURL: "moQnoSYPMmY", videoDescription: "Discover ikigai framework’s limitations to inform career choices."),
+    Video(videoTitle: "Helping People Find Their Perfect Job", videoURL: "0SHMSYGDJXQ", videoDescription: "career guide"),
+    Video(videoTitle: "Your IT Career 2024 will depend on this video", videoURL: "5mL6c2UiEEY", videoDescription: "TIf you want to advance your IT career, this video is a must watch video. In this video I am going to take a look at the current state of IT and provide you with my input and guidance on how to position yourself for a successful career year 2024."),
+    Video(videoTitle: "How To Get Into Tech In 2025", videoURL: "u8E0JC8C4-8", videoDescription: "Full Tech Career Roadmap + Action Steps | Zero To I.T. Hero"),
+    Video(videoTitle: "How to switch from Non IT to IT", videoURL: "pVDVVksp4VI", videoDescription: "Are you considering a career shift from non-IT to IT? This comprehensive guide provides step-by-step instructions, essential resources, and valuable insights to help you navigate this transition successfully."),
+    Video(videoTitle: "Managers & Executives Career Guide", videoURL: "uEdREDwcD_M", videoDescription: "Investing in your career is crucial not just for immediate success but for long-term sustainability and growth. Most professionals believe in investing in their careers and in professional development. "),
+    Video(videoTitle: "Level Up Your IT Career", videoURL: "P4ZCs1gqc3I", videoDescription: "Ready to leap from Helpdesk Technician to IT Manager? Discover if you've got what it takes in our latest video!"),
+    Video(videoTitle: "IT career paths", videoURL: "uibHDPDaUjo", videoDescription: "The best IT (information technology) career paths for beginners should also give you enough job opportunities later to develop a successful tech career."),
+    Video(videoTitle: "Soft Skills", videoURL: "USxsTggFKhE", videoDescription: "The distinction between Soft Skills and The Complete Software Developer's Career Guide has been a topic of frequent questions from you folks."),
+    Video(videoTitle: "the TOP 10 hottest IT Jobs", videoURL: "Y_coOg6oHAc", videoDescription: "In this video, we discuss the top 10 hottest IT jobs in 2023 and 2024 based on the 2023 Dice Tech Salary Survey."),
+    Video(videoTitle: "the hacker’s roadmap", videoURL: "uTAaFExLgwQ", videoDescription: "Are you wanting to get started in IT in 2023? Do you want to become a Hacker? A Network Engineer? Cloud Engineer? System Administrator? In this video, NetworkChuck will show you the path to getting started in IT and Cybersecurity that will help you reach these goals. "),
+    Video(videoTitle: "Top 5 Non-Coding Tech Jobs", videoURL: "JYub1Gnqllg", videoDescription: "Become and Information Security Analyst or Security Engineer"),
+    Video(videoTitle: "Top 23 Tech Jobs", videoURL: "8Nzzk7TvLrE", videoDescription: "These are the top 23 highest paying jobs in tech, both non-technical and technical, so you can pick the right one for you or to better understand your teammates.")
     ]
 
 var webinars: [Webinar] = [
-    Webinar(WebnarTitle: "Webinar1", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the first webinar"),
-    Webinar(WebnarTitle: "Webinar2", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the second webinar"),
-    Webinar(WebnarTitle: "Webinar3", Date: "starting today", filters: ["Filter1", "Filter2", "Filter3"], videoURL: "test", webnarDescription: "This is the third webinar"),
+    Webinar(WebnarTitle: "From Classroom to Boardroom: Navigating Career Paths in Tech", Date: "12:00", filters: ["Programming", "Software Engineer", "all IT"], videoURL: "mOCcnOBse4k", webnarDescription: "From Classroom to Boardroom: Navigating Career Paths in Tech, where we bring together industry leaders to share their insights and experiences as women in the field of Information and Communications Technology (ICT)."),
+    Webinar(WebnarTitle: "Ace Your Interview: Don't Make These Mistakes", Date: "Running Now", filters: ["DataBase", "Networking", "Cyber Cecurity"], videoURL: "YLz5qjraJSE", webnarDescription: "Nothing's perfect, but some mistakes are certainly avoidable. The UA Eller MBA Program would like to help you prepare for your admissions interview, by reviewing common interviewing mistakes and providing you with tips to ensure you have a successful experience."),
+    Webinar(WebnarTitle: "The Future of IT: Trends Shaping Tomorrow's Job Market", Date: "Running Now", filters: ["IoT", "Networking", "Cyber Cecurity"], videoURL: "o0szkK2vrMY", webnarDescription: "ech Trends Shaping the Future of Work - Data Science, AI & ML"),
     
 ]
 
