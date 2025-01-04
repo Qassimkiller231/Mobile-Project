@@ -165,6 +165,9 @@
 		AC2435822D05C1B700B21510 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2435812D05C1B700B21510 /* ViewController.swift */; };
 		AC2435852D05C1B700B21510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435832D05C1B700B21510 /* Main.storyboard */; };
 		AC24358A2D05C1BA00B21510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2435882D05C1BA00B21510 /* LaunchScreen.storyboard */; };
+		AC4762EC2D2944D800CA113A /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4762EA2D2944D800CA113A /* JobsTableViewCell.swift */; };
+		AC4762ED2D2944D800CA113A /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4762EB2D2944D800CA113A /* JobsTableViewCell.xib */; };
+		AC4762F22D29488600CA113A /* MarketTrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4762F12D29488600CA113A /* MarketTrendViewController.swift */; };
 		ACADCE022D26AA0800687292 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADCE012D26AA0800687292 /* SampleData.swift */; };
 		ACADCE042D26D6BE00687292 /* SampleCompatibilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADCE032D26D6BE00687292 /* SampleCompatibilityData.swift */; };
 /* End PBXBuildFile section */
@@ -340,6 +343,9 @@
 		AC24358B2D05C1BA00B21510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC2435902D05C1BB00B21510 /* testfinalfinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC24359A2D05C1BB00B21510 /* testfinalfinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testfinalfinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4762EA2D2944D800CA113A /* JobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
+		AC4762EB2D2944D800CA113A /* JobsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
+		AC4762F12D29488600CA113A /* MarketTrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTrendViewController.swift; sourceTree = "<group>"; };
 		ACADCE012D26AA0800687292 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		ACADCE032D26D6BE00687292 /* SampleCompatibilityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCompatibilityData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -755,6 +761,8 @@
 				6E74DC4C2D17FDAB00F0B84E /* page2ViewController 2.swift */,
 				6E74DC4D2D17FDAB00F0B84E /* JobRecommendationViewController.swift */,
 				6E74DC502D17FDAB00F0B84E /* Resources.storyboard */,
+				AC4762F12D29488600CA113A /* MarketTrendViewController.swift */,
+				AC4762EE2D2945A500CA113A /* Dashboard */,
 				6E74DC512D17FDAB00F0B84E /* resourceMainViewController.swift */,
 			);
 			path = "market trends";
@@ -979,6 +987,15 @@
 			path = SQ;
 			sourceTree = "<group>";
 		};
+		AC4762EE2D2945A500CA113A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC4762EA2D2944D800CA113A /* JobsTableViewCell.swift */,
+				AC4762EB2D2944D800CA113A /* JobsTableViewCell.xib */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1108,6 +1125,7 @@
 				6EC4411C2D1CB10700D51114 /* adminAdvancedFilters.storyboard in Resources */,
 				6E4BE2FB2D1DB94F0054B3AC /* UserEditorTableViewCell.xib in Resources */,
 				050C57602D1E9465004C1B48 /* ProfileOverlayViewController.xib in Resources */,
+				AC4762ED2D2944D800CA113A /* JobsTableViewCell.xib in Resources */,
 				6E4BE2FF2D1DB94F0054B3AC /* ProfileBuilder.storyboard in Resources */,
 				6E4BE3002D1DB94F0054B3AC /* PreferenceCollectionViewCell.xib in Resources */,
 				6E4BE3192D1DBA6F0054B3AC /* Login.storyboard in Resources */,
@@ -1204,12 +1222,14 @@
 				6E4BE2DF2D1DB94F0054B3AC /* skillButtonsTableViewCell.swift in Sources */,
 				6E4BE2E02D1DB94F0054B3AC /* CVFinalViewController.swift in Sources */,
 				6E4BE2E12D1DB94F0054B3AC /* PBSkillsViewController.swift in Sources */,
+				AC4762F22D29488600CA113A /* MarketTrendViewController.swift in Sources */,
 				6E4BE2E22D1DB94F0054B3AC /* UserEditorTableViewCell.swift in Sources */,
 				ACADCE022D26AA0800687292 /* SampleData.swift in Sources */,
 				6E4BE2E32D1DB94F0054B3AC /* ApplicationDetailsViewController.swift in Sources */,
 				6E4BE2E42D1DB94F0054B3AC /* ManageExperienceTableViewController.swift in Sources */,
 				6E4BE2E52D1DB94F0054B3AC /* PBPersonalViewController.swift in Sources */,
 				6E4BE2E62D1DB94F0054B3AC /* PBEducationViewController.swift in Sources */,
+				AC4762EC2D2944D800CA113A /* JobsTableViewCell.swift in Sources */,
 				6E4BE2E72D1DB94F0054B3AC /* PBPreferencesViewController.swift in Sources */,
 				6E4BE2E92D1DB94F0054B3AC /* ManageEducationViewController.swift in Sources */,
 				6E4BE2EA2D1DB94F0054B3AC /* EditUserViewController.swift in Sources */,

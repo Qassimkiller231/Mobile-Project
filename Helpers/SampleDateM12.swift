@@ -6,7 +6,27 @@
 //
 
 import Foundation
+struct MarketTrend {
+    var jobTitle: String
+    var jobDescription: String
+    var growthRate: Double
+}
+
+var allMarketTrends: [MarketTrend] = [
+    MarketTrend(jobTitle: "Software Developer", jobDescription: "High demand due to increased digital transformation.", growthRate: 22.0),
+    MarketTrend(jobTitle: "Data Scientist", jobDescription: "Significant growth driven by data-driven decision-making.", growthRate: 60.0),
+    MarketTrend(jobTitle: "UX Designer", jobDescription: "Rising importance of user experience in digital products.", growthRate: 25.0),
+    MarketTrend(jobTitle: "Cyber Security Analyst", jobDescription: "Increased threats have heightened demand for security experts.", growthRate: 75.0),
+    MarketTrend(jobTitle: "Cloud Engineer", jobDescription: "Growth in cloud adoption across various industries.", growthRate: 50.0),
+    MarketTrend(jobTitle: "Digital Marketing Specialist", jobDescription: "E-commerce growth has led to a higher demand for digital marketing.", growthRate: 20.0),
+    MarketTrend(jobTitle: "DevOps Engineer", jobDescription: "Demand for agile development practices has surged.", growthRate: 35.0),
+    MarketTrend(jobTitle: "AI/Machine Learning Engineer", jobDescription: "Rapid advancements in AI technology have driven job creation.", growthRate: 90.0),
+    MarketTrend(jobTitle: "Healthcare Administrator", jobDescription: "Increased focus on healthcare management post-pandemic.", growthRate: 15.0),
+    MarketTrend(jobTitle: "Product Manager", jobDescription: "Growing need for aligning product strategy with market needs.", growthRate: 10.0)
+]
+
 var SampleProfile2 = JobSeeker(userID: "1", personalSummary: "hi", educations: nil, experiences: [Experience(jobTitle: "Bachelor's Degree in Design", companyName: "SampleCompany", startDate: "10/10/2013", endDate: "12/06/2015", city: "Manama")], skills: [Skill(skillName: "Programming", skillLevel: "advanced")], preferences:["Skill Development","Mentorship","Full-time work","Professional Certifications"], cv: "nil", suggestedCareerPaths: nil, applications: nil, firstName: "Muntadher", lastName: "Abdulrahman", email: "202203075@student.polytechnic.bh", password: "Scoobysnac77!", type: .jobSeeker, profileImage: "nil", phoneNumber: "39658382", location: "Malkiya")
+var SampleProfile3 = JobSeeker(userID: "2", personalSummary: "hola", educations: nil, experiences: [Experience(jobTitle: "Bachelor's Degree in Developing", companyName: "SampleCompany", startDate: "10/10/2015", endDate: "12/06/2020", city: "Diraz")], skills: [Skill(skillName: "DataBase", skillLevel: "advanced")], preferences:["Skill Development","Networking","Part-time work","Professional Certifications"], cv: "nil", suggestedCareerPaths: nil, applications: nil, firstName: "Hussain", lastName: "AlAkraf", email: "197201111@student.polytechnic.bh", password: "Akrafy!", type: .jobSeeker, profileImage: "nil", phoneNumber: "38353928", location: "Diraz")
 //var careerPaths : [CareerPath] = [
 //    CareerPath(interests: ["Programming","Design","Marketing"], skills: [], position: .Designer, description: <#T##String#>)
 //]
