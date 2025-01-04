@@ -9,6 +9,7 @@ import Foundation
 
 
 struct JobCompatibility {
+    var applicaton : application?
     var jobTitle :String
     var salary: Double
     var qualifications: [String]
