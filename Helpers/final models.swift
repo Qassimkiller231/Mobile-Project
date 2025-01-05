@@ -368,7 +368,7 @@ class Company: Profile {
     }
 }
 
-class JobSeeker: Profile {
+class JobSeeker: Profile  {
     var personalSummary: String
     var educations: [Education]?
     var experiences: [Experience]?

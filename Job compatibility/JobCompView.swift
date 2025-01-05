@@ -16,7 +16,9 @@ class JobCompView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
      var model: [String] = ["Salary and Benifits", " Qualifications", "Distance and Commute", "Working Hours"]
     
-   var sliderValues: [Float] = [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0,]
+   //var sliderValues: [Float] = [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0,]
+    
+    var sliderValues: [Float] = [25.0, 25.0, 25.0, 25.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +31,24 @@ class JobCompView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBAction func CheckResukts(_ sender: Any) {
-        showAlert()
+        let totalWeight = sliderValues.reduce(0, +)
+        if totalWeight != 100.0 {
+            showValidationError()
+        } else {
+            performSegue(withIdentifier: "adjustToFinal", sender: nil)
+        }
     }
     
+    func showValidationError() {
+            let alert = UIAlertController(title: "Invalid Weights",
+                                           message: "The total weight must equal 100%. Please adjust your sliders.",
+                                           preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
     
-    func showAlert() {
-        // Create the alert
-        let alert = UIAlertController(title: "Successful",message: "Weight has been updated",
-                                      preferredStyle: .alert)
-        
-        // Add an "OK" action to the alert
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okAction)
-        
-        // Present the alert
-        present(alert, animated: true, completion: nil)
-    }
+    
+    
     
     
         
