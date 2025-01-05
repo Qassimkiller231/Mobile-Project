@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
-
-struct JobCompatibility {
+struct JobCompatibility: Codable {
     var applicaton : application?
     var jobTitle :String
     var salary: Double
@@ -17,7 +17,7 @@ struct JobCompatibility {
     var location: String
 }
 
-struct CategoryDistance {
+struct CategoryDistance : Codable {
     var from: String
     var to: String
     var distance: Double // Distance in kilometers
@@ -41,7 +41,7 @@ let categoryDistances: [CategoryDistance] = [
     CategoryDistance(from: "Category 4", to: "Category 3", distance: 22.0),
 ]
 
-struct LocationCategory {
+struct LocationCategory : Codable {
     var name: String
     var locations: [String]
 }
