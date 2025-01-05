@@ -15,7 +15,7 @@ class EmployerInsightsViewController: UIViewController,UITableViewDelegate,UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         profile = SampleProfile2
-        profileApplications = profile?.applications
+//        profileApplications = profile?.applications
         employerInsights = sampleJobs2
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,11 +27,26 @@ class EmployerInsightsViewController: UIViewController,UITableViewDelegate,UITab
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployerInsightsTableViewCell.identifier, for: indexPath) as! EmployerInsightsTableViewCell
+        employerInsights[indexPath.row].jobDescription = "\(employerInsights[indexPath.row].applications?.count ?? 0) people applied to this job, You have a chance"
+        if hasProfileApplied(to: employerInsights[indexPath.row], profileID: profile!.userID) {
+            employerInsights[indexPath.row].jobDescription = "\(employerInsights[indexPath.row].applications?.count ?? 0) people applied to this job, - You applied too, You have a chance"
+        }
         cell.configure(with: employerInsights[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 158
+    }
+    func hasProfileApplied(to job: job, profileID: String) -> Bool {
+        // Check if the job has any applications
+        guard let applications = job.applications else {
+            return false
+        }
+
+        // Check if any application belongs to the given profileID
+        return applications.contains { application in
+            application.jobSeeker.userID == profileID
+        }
     }
     
 

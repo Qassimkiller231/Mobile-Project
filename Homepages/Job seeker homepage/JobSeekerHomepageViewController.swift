@@ -39,8 +39,9 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.DataManager.takeCurrentProfile(SampleProfile2)
+        Utilities.DataManager.shared.takeCurrentProfile(SampleProfile2)
 //        Utilities.DataManager.uploadJobs(sampleJobs2)
+        
         
         
         

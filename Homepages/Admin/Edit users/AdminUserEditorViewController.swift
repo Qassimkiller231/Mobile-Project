@@ -21,7 +21,7 @@ class AdminUserEditorViewController: UIViewController,UITableViewDelegate,UITabl
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "UserEditorTableViewCell", bundle: nil), forCellReuseIdentifier: "UserEditorTableViewCell")
-        users = Utilities.DataManager.allUsers
+        users = Utilities.DataManager.shared.allUsers
         // Do any additional setup after loading the view.
     }
     

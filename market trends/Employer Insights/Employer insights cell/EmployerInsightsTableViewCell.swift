@@ -14,7 +14,7 @@ class EmployerInsightsTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var jobTitleLabel: UILabel!
     @IBOutlet weak var jobDescriptionLabel: UILabel!
-    
+    var appliedToJob: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()

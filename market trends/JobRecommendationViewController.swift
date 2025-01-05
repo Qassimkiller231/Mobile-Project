@@ -14,17 +14,25 @@ class JobRecommendationViewController: UIViewController,UITableViewDelegate,UITa
     var profile : JobSeeker?
     override func viewDidLoad() {
         super.viewDidLoad()
-        profile = Utilities.DataManager.profile as? JobSeeker
+        profile = Utilities.DataManager.shared.profile as? JobSeeker
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(JobRecommendationsTableViewCell.nib(), forCellReuseIdentifier: JobRecommendationsTableViewCell.identifer)
-        Utilities.DataManager.fetchAllJobs(completion: {
-            [weak self] fetchedJobs in DispatchQueue.main.async {
+        
+        Task {
+            do {
+                let fetchedJobs = try await Utilities.DataManager.shared.fetchAllJobs()
                 sampleJobs2 = fetchedJobs
-                self?.jobRecommendations = (self?.filterJobs(basedOn: self!.profile!, from: sampleJobs2))!
-                self?.tableView.reloadData()
+                jobRecommendations = filterJobs(basedOn: profile!, from: sampleJobs2)
+                
+//                print("Fetched Jobs: \(fetchedJobs)")
+                print("job recmomendations array is \(jobRecommendations)")
+                print(profile!.firstName)
+                tableView.reloadData()
+            } catch {
+                print("Error fetching jobs: \(error.localizedDescription)")
             }
-        })
+        }
        
         
         // Do any additional setup after loading the view.

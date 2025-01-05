@@ -12,13 +12,13 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var careerPaths: [(category: String, matches: [CareerPath], isExpanded: Bool)] = []
     var currentProfile: JobSeeker?
     override func viewDidLoad() {
-        currentProfile = Utilities.DataManager.profile as? JobSeeker
+        currentProfile = Utilities.DataManager.shared.profile as? JobSeeker
         
         tableview.register(SuggestedPathsTableViewCell.nib(), forCellReuseIdentifier: SuggestedPathsTableViewCell.identifier)
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
-        Utilities.DataManager.fetchAllCareerPaths {
+        Utilities.DataManager.shared.fetchAllCareerPaths {
             [weak self] fetchedPaths in DispatchQueue.main.async { [self] in
                 allCareerPaths = fetchedPaths
                 self?.loadCareerPathsGrouped()

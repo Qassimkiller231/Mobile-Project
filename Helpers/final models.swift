@@ -34,6 +34,11 @@ enum jobCategories : String, Codable{
     case design
     case management
     case marketing
+    case dataScience
+    case cybersecurity
+    case gameDev
+    case devOps
+    case networking
 }
 enum preferenceList: String,Codable{
     case experience
@@ -66,6 +71,9 @@ enum jobPositions: String , Codable{
     case projectManager  = "Project Manager"
     case marketingSpecialist = "Marketing Specialist"
     case itSupport = "IT Support"
+    case backendDev = "Backend Developer"
+    case networkEngineer = "Nerwork Engineer"
+  
 }
 enum SalaryType : String, Codable{
     case hourly

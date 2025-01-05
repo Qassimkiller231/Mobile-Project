@@ -18,16 +18,17 @@ class Utilities {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
-    struct DataManager {
-        static var Jobs: [job] = []
-        static var profile: Profile?
-        static var allUsers: [AppUser] = []
+    class DataManager {
+        static var shared = DataManager()
+         var Jobs: [job] = []
+        var profile: Profile = SampleProfile2
+         var allUsers: [AppUser] = []
         
         
-        static func takeCurrentProfile(_ profile: Profile) {
-            DataManager.profile = profile
+         func takeCurrentProfile(_ profile1: Profile) {
+             Utilities.DataManager.shared.profile = profile1
         }
-        static func uploadCareerPath(_ careerPath: CareerPath) {
+         func uploadCareerPath(_ careerPath: CareerPath) {
                 let db = Firestore.firestore() // Firestore database reference
                 let collectionRef = db.collection("career_paths") // Reference to "career_paths" collection
                 
@@ -48,7 +49,7 @@ class Utilities {
             }
         
         
-        static func uploadCareerPaths(_ careerPaths: [CareerPath]) {
+         func uploadCareerPaths(_ careerPaths: [CareerPath]) {
                 let db = Firestore.firestore() // Firestore database reference
                 let collectionRef = db.collection("careerPaths") // Reference to "career_paths" collection
                 
@@ -74,7 +75,7 @@ class Utilities {
         
         
         
-        static func fetchAllCareerPaths(completion: @escaping ([CareerPath]) -> Void) {
+         func fetchAllCareerPaths(completion: @escaping ([CareerPath]) -> Void) {
             let db = Firestore.firestore()
             let collectionRef = db.collection("careerPaths")
             
@@ -110,7 +111,7 @@ class Utilities {
         
         
         
-        static func uploadMarketTrend(_ marketTrend: MarketTrend) {
+         func uploadMarketTrend(_ marketTrend: MarketTrend) {
                 let db = Firestore.firestore()
                 let collectionRef = db.collection("market_trends")
                 
@@ -130,7 +131,7 @@ class Utilities {
         
         
         
-        static func uploadMarketTrends(_ marketTrends: [MarketTrend]) {
+         func uploadMarketTrends(_ marketTrends: [MarketTrend]) {
                 let db = Firestore.firestore()
                 let collectionRef = db.collection("market_trends")
                 
@@ -154,37 +155,24 @@ class Utilities {
         
         
         
-        static func fetchAllMarketTrends(completion: @escaping ([MarketTrend]) -> Void) {
-                let db = Firestore.firestore()
-                let collectionRef = db.collection("market_trends")
-                
-                collectionRef.getDocuments { snapshot, error in
-                    if let error = error {
-                        print("Failed to fetch market trends: \(error.localizedDescription)")
-                        completion([]) // Return an empty array on failure
-                        return
-                    }
-                    
-                    guard let documents = snapshot?.documents else {
-                        print("No market trends found.")
-                        completion([]) // Return an empty array if no documents
-                        return
-                    }
-                    
-                    do {
-                        let marketTrends = try documents.map { document in
-                            try document.data(as: MarketTrend.self)
-                        }
-                        print("Successfully fetched \(marketTrends.count) market trends.")
-                        completion(marketTrends)
-                    } catch {
-                        print("Failed to decode market trends: \(error.localizedDescription)")
-                        completion([])
-                    }
+        func fetchAllMarketTrends() async throws -> [MarketTrend] {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("market_trends")
+            
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let marketTrends = try snapshot.documents.map { document in
+                    try document.data(as: MarketTrend.self)
                 }
+                print("Successfully fetched \(marketTrends.count) market trends.")
+                return marketTrends
+            } catch {
+                print("Failed to fetch or decode market trends: \(error.localizedDescription)")
+                throw error
             }
+        }
         
-        static func uploadJob(_ job: job) {
+         func uploadJob(_ job: job) {
                 let db = Firestore.firestore()
                 let collectionRef = db.collection("Matrookjobs") // Collection for storing jobs
                 
@@ -203,7 +191,7 @@ class Utilities {
             }
         
         
-        static func uploadJobs(_ jobs: [job]) {
+         func uploadJobs(_ jobs: [job]) {
                 let db = Firestore.firestore()
                 let collectionRef = db.collection("Matrookjobs")
                 
@@ -224,35 +212,22 @@ class Utilities {
             }
         
         
-        static func fetchAllJobs(completion: @escaping ([job]) -> Void) {
-                let db = Firestore.firestore()
-                let collectionRef = db.collection("Matrookjobs")
-                
-                collectionRef.getDocuments { snapshot, error in
-                    if let error = error {
-                        print("Failed to fetch jobs: \(error.localizedDescription)")
-                        completion([]) // Return an empty array on failure
-                        return
-                    }
-                    
-                    guard let documents = snapshot?.documents else {
-                        print("No jobs found.")
-                        completion([]) // Return an empty array if no documents
-                        return
-                    }
-                    
-                    do {
-                        let jobs = try documents.map { document in
-                            try document.data(as: job.self)
-                        }
-                        print("Successfully fetched \(jobs.count) jobs.")
-                        completion(jobs) // Return the array of job objects
-                    } catch {
-                        print("Failed to decode jobs: \(error.localizedDescription)")
-                        completion([])
-                    }
+        func fetchAllJobs() async throws -> [job] {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Matrookjobs")
+            
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let jobs = try snapshot.documents.map { document in
+                    try document.data(as: job.self)
                 }
+                print("Successfully fetched \(jobs.count) jobs.")
+                return jobs
+            } catch {
+                print("Failed to fetch or decode jobs: \(error.localizedDescription)")
+                throw error
             }
+        }
         
         
         
@@ -607,7 +582,7 @@ class Utilities {
                     return
                 }
                 
-                Utilities.DataManager.Jobs = documents.compactMap { document -> job? in
+                Utilities.DataManager.shared.Jobs = documents.compactMap { document -> job? in
                     let data = document.data()
                     
                     // Map Firestore document fields to job properties
@@ -656,7 +631,7 @@ class Utilities {
                     )
                 }
                 
-                print("Loaded \(Utilities.DataManager.Jobs.count) jobs.")
+                print("Loaded \(Utilities.DataManager.shared.Jobs.count) jobs.")
                 completion(nil)
             }
         }

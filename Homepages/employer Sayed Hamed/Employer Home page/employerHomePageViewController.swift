@@ -59,7 +59,7 @@ class employerHomePage: UIViewController,UITableViewDelegate,UITableViewDataSour
             tableView.register(EmployerJobListingCardTableViewCell.nib(), forCellReuseIdentifier: EmployerJobListingCardTableViewCell.identifier)
             
             
-            if Utilities.DataManager.profile == nil {
+            if Utilities.DataManager.shared.profile == nil {
                 if let tabBarController = self.tabBarController {
                     tabBarController.selectedIndex = 2 // Replace '2' with the index of the tab you want to switch to
                 }

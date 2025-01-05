@@ -15,9 +15,18 @@ class MarketTrendViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(JobsTableViewCell.nib(), forCellReuseIdentifier: JobsTableViewCell.identifer)
-        
+        Task {
+            do {
+                let marketTrends = try await Utilities.DataManager.shared.fetchAllMarketTrends()
+                allMarketTrends = marketTrends
+                sortMarketTrends()
+                tableView.reloadData()
+            } catch {
+                print("Error fetching market trends: \(error.localizedDescription)")
+            }
+        }
         // Sort the market trends
-        sortMarketTrends()
+        
     }
     
     func sortMarketTrends() {
