@@ -8,7 +8,7 @@
 import UIKit
 
 class IndustryTypeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
-    var industries: [String] = ["Agriculture","Automotive","Banking","Consulting","Education","Healthcare","Energy","Finance","Food","Fitness","Insurance","Technology","Travel"]
+    var industries: [String] = ["IT","Finance","Healthcare","Education","Food","Travel","Automotive","Construction","Manufacturing","Other"]
     var filteredIndustries: [String] = []
     @IBOutlet var tableview: UITableView!
     @IBOutlet var searchbar: UISearchBar!

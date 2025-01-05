@@ -48,21 +48,21 @@ class WebinarTableViewCell: UITableViewCell {
         startDateLabel.text = webinar.Date
         
         isRegistered = webinar.isRegistered
-                updateStatusButtonTitle()
+//                updateStatusButtonTitle()
     }
     
-    private func updateStatusButtonTitle() {
-           let buttonTitle = isRegistered ? "Unregister" : "Register"
-           statusButton.setTitle(buttonTitle, for: .normal)
-       }
+//    private func updateStatusButtonTitle() {
+//           let buttonTitle = isRegistered ? "Unregister" : "Register"
+//           statusButton.setTitle(buttonTitle, for: .normal)
+//       }
     
     
-    @IBAction func statusButtonTapped(_ sender: Any) {
-        // Toggle the registration status
-                isRegistered.toggle()
-        delegate?.webinarStatusDidChange(self, isRegistered: isRegistered)
-                
-                // Update the button title
-                updateStatusButtonTitle()
-    }
+//    @IBAction func statusButtonTapped(_ sender: Any) {
+//        // Toggle the registration status
+//                isRegistered.toggle()
+//        delegate?.webinarStatusDidChange(self, isRegistered: isRegistered)
+//                
+//                // Update the button title
+////                updateStatusButtonTitle()
+//    }
 }

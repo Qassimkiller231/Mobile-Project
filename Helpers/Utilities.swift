@@ -18,10 +18,188 @@ class Utilities {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
-    struct DataManager {
-        static var Jobs: [job] = []
-        static var profile: Profile?
-        static var allUsers: [AppUser] = []
+    class DataManager {
+        static var shared = DataManager()
+         var Jobs: [job] = []
+         var profile: Profile?
+         var allUsers: [AppUser] = []
+        private let db = Firestore.firestore()
+        
+        func uploadArticle(_ article: Article) async throws {
+            let collectionRef = db.collection("Articles")
+            
+            do {
+                // Add a document and set data asynchronously
+                let documentRef = try await collectionRef.addDocument(data: try Firestore.Encoder().encode(article))
+                print("Article successfully uploaded with ID: \(documentRef.documentID)")
+            } catch {
+                print("Failed to upload article: \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+        
+        func uploadArticles(_ articles: [Article]) async throws {
+            let collectionRef = db.collection("Articles")
+            
+            for article in articles {
+                do {
+                    // Use the async version of addDocument and setData
+                    let documentRef = try await collectionRef.addDocument(data: try Firestore.Encoder().encode(article))
+                    print("Article successfully uploaded with ID: \(documentRef.documentID)")
+                } catch {
+                    print("Failed to upload article: \(error.localizedDescription)")
+                    throw error
+                }
+            }
+        }
+        func fetchAllArticles() async throws -> [Article] {
+            let collectionRef = db.collection("Articles")
+            
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let fetchedArticles = try snapshot.documents.map { document in
+                    try document.data(as: Article.self)
+                }
+                print("Successfully fetched \(fetchedArticles.count) articles.")
+                return fetchedArticles
+            } catch {
+                print("Failed to fetch articles: \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+        func uploadVideos(_ videos: [Video]) async throws {
+            let collectionRef = db.collection("Videos")
+            
+            for video in videos {
+                do {
+                    // Use the async version of addDocument
+                    let documentRef = try await collectionRef.addDocument(data: try Firestore.Encoder().encode(video))
+                    print("Video successfully uploaded with ID: \(documentRef.documentID)")
+                } catch {
+                    print("Failed to upload video: \(error.localizedDescription)")
+                    throw error
+                }
+            }
+        }
+        func fetchAllVideos() async throws -> [Video] {
+            let collectionRef = db.collection("Videos")
+            
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let fetchedVideos = try snapshot.documents.map { document in
+                    try document.data(as: Video.self)
+                }
+                print("Successfully fetched \(fetchedVideos.count) videos.")
+                return fetchedVideos
+            } catch {
+                print("Failed to fetch videos: \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+        
+        func uploadWebinars(_ webinars: [Webinar]) async throws {
+            let collectionRef = db.collection("Webinars")
+            
+            for webinar in webinars {
+                do {
+                    // Use the async version of addDocument
+                    let documentRef = try await collectionRef.addDocument(data: try Firestore.Encoder().encode(webinar))
+                    print("Webinar successfully uploaded with ID: \(documentRef.documentID)")
+                } catch {
+                    print("Failed to upload webinar: \(error.localizedDescription)")
+                    throw error
+                }
+            }
+        }
+        
+        
+        func fetchAllWebinars() async throws -> [Webinar] {
+            let collectionRef = db.collection("Webinars")
+            
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let fetchedWebinars = try snapshot.documents.map { document in
+                    try document.data(as: Webinar.self)
+                }
+                print("Successfully fetched \(fetchedWebinars.count) webinars.")
+                return fetchedWebinars
+            } catch {
+                print("Failed to fetch webinars: \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+        func uploadEstimatedJobs(_ estimatedJobs: [estimatedJob]) async throws {
+            let collectionRef = db.collection("EstimatedJobs")
+            
+            for job in estimatedJobs {
+                do {
+                    // Use the async version of addDocument
+                    let documentRef = try await collectionRef.addDocument(data: try Firestore.Encoder().encode(job))
+                    print("Estimated Job successfully uploaded with ID: \(documentRef.documentID)")
+                } catch {
+                    print("Failed to upload estimated job: \(error.localizedDescription)")
+                    throw error
+                }
+            }
+        }
+        
+        func fetchAllEstimatedJobs() async throws -> [estimatedJob] {
+            let collectionRef = db.collection("EstimatedJobs")
+            
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let fetchedJobs = try snapshot.documents.map { document in
+                    try document.data(as: estimatedJob.self)
+                }
+                print("Successfully fetched \(fetchedJobs.count) estimated jobs.")
+                return fetchedJobs
+            } catch {
+                print("Failed to fetch estimated jobs: \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         static func getProfile(userID: String, completion: @escaping (Profile?, Error?) -> Void) {
@@ -345,7 +523,7 @@ class Utilities {
                     return
                 }
                 
-                Utilities.DataManager.Jobs = documents.compactMap { document -> job? in
+                Utilities.DataManager.shared.Jobs = documents.compactMap { document -> job? in
                     let data = document.data()
                     
                     // Map Firestore document fields to job properties
@@ -394,7 +572,7 @@ class Utilities {
                     )
                 }
                 
-                print("Loaded \(Utilities.DataManager.Jobs.count) jobs.")
+                print("Loaded \(Utilities.DataManager.shared.Jobs.count) jobs.")
                 completion(nil)
             }
         }

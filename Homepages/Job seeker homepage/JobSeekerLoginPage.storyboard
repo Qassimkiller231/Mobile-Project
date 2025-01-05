@@ -134,9 +134,8 @@
                                     <segue destination="NCM-re-e9c" kind="show" id="2kP-Bj-79n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYk-5s-vWf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYk-5s-vWf">
                                 <rect key="frame" x="0.0" y="224" width="146" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="salary estimator"/>
                                 <connections>
@@ -148,6 +147,7 @@
                         <color key="backgroundColor" red="0.95294117649999999" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0Nu-TJ-Y1H" firstAttribute="top" secondItem="S1T-ub-Bv4" secondAttribute="bottom" id="0DG-FL-Y0O"/>
+                            <constraint firstItem="S1T-ub-Bv4" firstAttribute="top" secondItem="gYk-5s-vWf" secondAttribute="bottom" constant="15" id="7b8-tl-3CG"/>
                             <constraint firstItem="DYZ-uJ-wMc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="92p-94-naX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="S1T-ub-Bv4" secondAttribute="trailing" id="9gY-Hg-szi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DYZ-uJ-wMc" secondAttribute="trailing" constant="70" id="9n5-Zl-8WJ"/>
@@ -159,9 +159,12 @@
                             <constraint firstItem="x4Q-xR-WND" firstAttribute="top" secondItem="cEU-ka-a0x" secondAttribute="bottom" constant="8" symbolic="YES" id="KbN-Vv-izG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="t9X-EO-LKj" secondAttribute="trailing" constant="16" id="NFE-D0-60N"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="S1T-ub-Bv4" secondAttribute="bottom" constant="40" id="RLV-6Z-YPN"/>
+                            <constraint firstItem="gYk-5s-vWf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aea-K6-x4H"/>
                             <constraint firstItem="S1T-ub-Bv4" firstAttribute="top" secondItem="x4Q-xR-WND" secondAttribute="bottom" constant="22" id="cZz-db-BuL"/>
+                            <constraint firstItem="x4Q-xR-WND" firstAttribute="leading" secondItem="gYk-5s-vWf" secondAttribute="trailing" constant="199.66999999999999" id="dod-hD-mtt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cEU-ka-a0x" secondAttribute="trailing" constant="20" id="ewV-si-B0n"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0Nu-TJ-Y1H" secondAttribute="bottom" id="l9T-JG-zrE"/>
+                            <constraint firstItem="gYk-5s-vWf" firstAttribute="top" secondItem="t9X-EO-LKj" secondAttribute="bottom" constant="66" id="llf-Hv-Nl5"/>
                             <constraint firstItem="0Nu-TJ-Y1H" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mZ8-Nw-fHt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="x4Q-xR-WND" secondAttribute="trailing" constant="22.329999999999998" id="rFO-ZP-QxB"/>
                             <constraint firstItem="0Nu-TJ-Y1H" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="tb4-t5-m6B"/>

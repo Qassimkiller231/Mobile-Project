@@ -18,6 +18,17 @@ class WebinarViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(WebinarTableViewCell.nib(), forCellReuseIdentifier: WebinarTableViewCell.identifier)
+        
+        Task {
+            do {
+                let webinars1 = try await Utilities.DataManager.shared.fetchAllWebinars()
+                webinars = webinars1
+                print("Fetched Webinars: \(webinars)")
+                tableView.reloadData()
+            } catch {
+                print("Error fetching webinars: \(error.localizedDescription)")
+            }
+        }
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

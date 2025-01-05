@@ -18,6 +18,17 @@ class VideosViewController: UIViewController,UICollectionViewDelegate,UICollecti
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        Task {
+            do {
+                let videos1 = try await Utilities.DataManager.shared.fetchAllVideos()
+                videos = videos1
+                collectionView.reloadData()
+                print("Fetched Videos: \(videos)")
+                
+            } catch {
+                print("Error fetching videos: \(error.localizedDescription)")
+            }
+        }
         // Do any additional setup after loading the view.
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

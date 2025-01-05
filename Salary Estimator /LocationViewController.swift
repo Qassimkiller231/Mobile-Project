@@ -9,12 +9,12 @@ import UIKit
 
 class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     var locations:[String]=[
-        "Bahrain","Saudi","India"
+        "Bahrain","Saudi Arabia","India"
     ]
     var filteredLocations:[String]=[]
     
     var experience:[String]=[
-        "no experience","some experience","very experience"
+        "no experience" ,"1 year","2 years","3 years","4 years","5 years","6 years","7 years","8 years","9 years","10 years","11 years","12 years","13 years","14 years","15 years","16 years","17 years","18 years","19 years","20 years","21 years","22 years","23 years","24 years","25 years","26 years","27 years","28 years","29 years","30 years"
     ]
     
     var filteredExperiences:[String]=[]

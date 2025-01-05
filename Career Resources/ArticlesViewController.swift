@@ -16,8 +16,7 @@ class ArticlesViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     var currentType : Pagetype = .article
-    var articles : [Article] = []
-    var guides : [Guide] = []
+    var allArticles : [Article] = []
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +25,18 @@ class ArticlesViewController: UIViewController,UITableViewDataSource,UITableView
         tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleTableViewCell")
         // Do any additional setup after loading the view.
         tableView.backgroundColor = .clear
+        Task {
+            do {
+                let articles = try await Utilities.DataManager.shared.fetchAllArticles()
+                allArticles = articles
+                
+                print("Fetched Articles: \(articles)")
+                tableView.reloadData()
+            } catch {
+                print("Error fetching articles: \(error.localizedDescription)")
+            }
+        }
+        
     }
     
     
@@ -34,7 +45,7 @@ class ArticlesViewController: UIViewController,UITableViewDataSource,UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentType == .article {
-            return articles.count
+            return allArticles.count
         } else {
             return guides.count
         }
@@ -43,9 +54,7 @@ class ArticlesViewController: UIViewController,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell") as! ArticleTableViewCell
         if currentType == .article {
-            cell.configure(with: articles[indexPath.row].articleTitle)
-        } else if currentType == .guide {
-            cell.configure(with: guides[indexPath.row].guideTitle)
+            cell.configure(with: allArticles[indexPath.row].articleTitle)
         }
         
         cell.backgroundColor = .clear
@@ -57,7 +66,7 @@ class ArticlesViewController: UIViewController,UITableViewDataSource,UITableView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if currentType == .article {
-            let selectedArticle = articles[indexPath.row]
+            let selectedArticle = allArticles[indexPath.row]
             let storyboard = UIStoryboard(name: "CareerResource", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ArticleDetailsViewController") as! PerfectResumeViewController
             vc.article = selectedArticle

@@ -19,11 +19,31 @@ class FinalEstimatedSalaryViewController: UIViewController,UITableViewDelegate,U
         tableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
+        model = filterEstimatedJobs(jobs: estimatedSalaries, filters: selectedFilters)
         filteredModel = model
         searchBar.delegate = self
         // Do any additional setup after loading the view.
     }
-    
+    func filterEstimatedJobs(jobs: [estimatedJob], filters: [String: String]) -> [estimatedJob] {
+        return jobs.filter { job in
+            // Check if the job matches all the selected filters
+            for (key, value) in filters {
+                switch key {
+                case "Industry":
+                    if job.industry != value { return false }
+                case "Experience":
+                    if job.experience != value { return false }
+                case "Location":
+                    if job.location != value { return false }
+                    // If location is part of the estimatedJob struct in the future
+                    // Replace the condition below to match the job's location
+                default:
+                    continue
+                }
+            }
+            return true
+        }
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return filteredModel.count
     }

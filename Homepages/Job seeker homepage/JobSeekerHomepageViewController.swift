@@ -36,7 +36,6 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
 //        fetchData(userID: userID ?? "", collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in
 //            switch result {
 //            case .success(let jobSeeker):

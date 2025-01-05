@@ -15,6 +15,17 @@ class EstimatedSalaryViewController: UIViewController,UITableViewDelegate,UITabl
         tableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
+        Task {
+            do {
+                let estimatedJobs1 = try await Utilities.DataManager.shared.fetchAllEstimatedJobs()
+                model = estimatedJobs1
+                estimatedSalaries = estimatedJobs1
+                tableView.reloadData()
+                print("Fetched Estimated Jobs: \(estimatedJobs1)")
+            } catch {
+                print("Error fetching estimated jobs: \(error.localizedDescription)")
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
