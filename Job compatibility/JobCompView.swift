@@ -30,14 +30,14 @@ class JobCompView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     
-    @IBAction func CheckResukts(_ sender: Any) {
-        let totalWeight = sliderValues.reduce(0, +)
-        if totalWeight != 100.0 {
-            showValidationError()
-        } else {
-            performSegue(withIdentifier: "adjustToFinal", sender: nil)
-        }
-    }
+//    @IBAction func CheckResukts(_ sender: Any) {
+//        let totalWeight = sliderValues.reduce(0, +)
+//        if totalWeight != 100.0 {
+//            showValidationError()
+//        } else {
+//            performSegue(withIdentifier: "adjustToFinal", sender: nil)
+//        }
+//    }
     
     func showValidationError() {
             let alert = UIAlertController(title: "Invalid Weights",
@@ -66,9 +66,9 @@ class JobCompView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     
-    @IBAction func CheckResultTapped(_ sender: Any) {
-        performSegue(withIdentifier: "adjustToFinal", sender: nil)
-    }
+//    @IBAction func CheckResultTapped(_ sender: Any) {
+//        performSegue(withIdentifier: "adjustToFinal", sender: nil)
+//    }
     
     
 
