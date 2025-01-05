@@ -49,5 +49,27 @@ class FinalEstimatedSalaryViewController: UIViewController,UITableViewDelegate,U
         tableView.reloadData()
     }
     
-
+    // MARK: - Filtering Function
+    
+    func filterJobs(jobs: [estimatedJob], selectedFilters: [String: String]) -> [estimatedJob] {
+        return jobs.filter { job in
+            // Check if each filter is met
+            var matches = true
+            
+            if let locationFilter = selectedFilters["Location"], !locationFilter.isEmpty {
+                // Assuming job has a property 'location' that you need to compare
+                // matches = matches && job.location == locationFilter
+            }
+            
+            if let experienceFilter = selectedFilters["Experience"], !experienceFilter.isEmpty {
+                matches = matches && job.experience == experienceFilter
+            }
+            
+            if let industryFilter = selectedFilters["Industry"], !industryFilter.isEmpty {
+                matches = matches && job.industry == industryFilter
+            }
+            
+            return matches
+        }
+    }
 }
