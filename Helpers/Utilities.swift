@@ -21,15 +21,15 @@ class Utilities {
     }
     class DataManager  {
         static var shared = DataManager()
-        static var Jobs: [job] = []
-        static var profile: Profile?
-        static var allUsers: [AppUser] = []
-        static var allCompanies : [Company] = []
-        static var allJobs : [job] = []
+         var Jobs: [job] = []
+         var profile: Profile?
+         var allUsers: [AppUser] = []
+         var allCompanies : [Company] = []
+         var allJobs : [job] = []
         private let db = Firestore.firestore()
             private(set) var companies: [Company] = []
         
-        static func uploadCompany(_ company: Company) {
+         func uploadCompany(_ company: Company) {
                 let db = Firestore.firestore()
                 let collectionRef = db.collection("MuntadherCompanies") // Collection for storing companies
                 
@@ -50,7 +50,7 @@ class Utilities {
         
         
         
-        static func uploadCompanies(_ companies: [Company]) {
+         func uploadCompanies(_ companies: [Company]) {
                 let db = Firestore.firestore()
                 let collectionRef = db.collection("MuntadherCompanies")
                 
@@ -79,6 +79,122 @@ class Utilities {
                 self.companies = fetchedCompanies
                 print("Successfully fetched \(fetchedCompanies.count) companies.")
             }
+        
+        
+        
+         func uploadApplication(_ application: application) {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Applications") // Collection for storing applications
+            
+            do {
+                let documentRef = try collectionRef.addDocument(from: application)
+                documentRef.setData(try Firestore.Encoder().encode(application)) { error in
+                    if let error = error {
+                        print("Failed to upload application: \(error.localizedDescription)")
+                    } else {
+                        print("Application successfully uploaded!")
+                    }
+                }
+            } catch {
+                print("Failed to encode application: \(error.localizedDescription)")
+            }
+        }
+        
+        
+        
+         func uploadApplications(_ applications: [application]) {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Applications") // Collection for storing applications
+            
+            for application in applications {
+                do {
+                    let documentRef = try collectionRef.addDocument(from: application)
+                    documentRef.setData(try Firestore.Encoder().encode(application)) { error in
+                        if let error = error {
+                            print("Failed to upload application: \(error.localizedDescription)")
+                        } else {
+                            print("Application successfully uploaded!")
+                        }
+                    }
+                } catch {
+                    print("Failed to encode application: \(error.localizedDescription)")
+                }
+            }
+        }
+        
+        
+         func fetchAllApplications() async throws -> [application] {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Applications")
+            
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let fetchedApplications = try snapshot.documents.map { document in
+                    try document.data(as: application.self)
+                }
+                print("Successfully fetched \(fetchedApplications.count) applications.")
+                return fetchedApplications
+            } catch {
+                print("Failed to fetch applications: \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+         func fetchApplicationsForJobSeeker(jobSeekerID: String) async throws -> [application] {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Applications")
+            
+            do {
+                let snapshot = try await collectionRef.whereField("jobSeeker.userID", isEqualTo: jobSeekerID).getDocuments()
+                let fetchedApplications = try snapshot.documents.map { document in
+                    try document.data(as: application.self)
+                }
+                print("Successfully fetched \(fetchedApplications.count) applications for job seeker \(jobSeekerID).")
+                return fetchedApplications
+            } catch {
+                print("Failed to fetch applications for job seeker \(jobSeekerID): \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+         func fetchApplicationsForJob(jobTitle: String) async throws -> [application] {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Applications")
+            
+            do {
+                let snapshot = try await collectionRef.whereField("jobTitle", isEqualTo: jobTitle).getDocuments()
+                let fetchedApplications = try snapshot.documents.map { document in
+                    try document.data(as: application.self)
+                }
+                print("Successfully fetched \(fetchedApplications.count) applications for job \(jobTitle).")
+                return fetchedApplications
+            } catch {
+                print("Failed to fetch applications for job \(jobTitle): \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+         func fetchApplicationByNumber(applicationNo: Int) async throws -> application? {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Applications")
+            
+            do {
+                let snapshot = try await collectionRef.whereField("applicationNo", isEqualTo: applicationNo).getDocuments()
+                guard let document = snapshot.documents.first else {
+                    print("No application found with applicationNo \(applicationNo).")
+                    return nil
+                }
+                let fetchedApplication = try document.data(as: application.self)
+                print("Successfully fetched application with applicationNo \(applicationNo).")
+                return fetchedApplication
+            } catch {
+                print("Failed to fetch application with applicationNo \(applicationNo): \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+        
+        
         
         
         
@@ -417,7 +533,7 @@ class Utilities {
                     return
                 }
                 
-                Utilities.DataManager.Jobs = documents.compactMap { document -> job? in
+                Utilities.DataManager.shared.Jobs = documents.compactMap { document -> job? in
                     let data = document.data()
                     
                     // Map Firestore document fields to job properties
@@ -466,7 +582,7 @@ class Utilities {
                     )
                 }
                 
-                print("Loaded \(Utilities.DataManager.Jobs.count) jobs.")
+                print("Loaded \(Utilities.DataManager.shared.Jobs.count) jobs.")
                 completion(nil)
             }
         }
