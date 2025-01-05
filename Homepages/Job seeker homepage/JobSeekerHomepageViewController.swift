@@ -47,6 +47,10 @@ class JobSeekerHomepageViewController: UIViewController,UITableViewDelegate,UITa
                     tableView.dataSource = self
                     tableView.reloadData()
                 }
+       
+            
+        
+        
         
        
 //        fetchData(userID: userID ?? "", collectionName: "jobSeekers") { (result: Result<JobSeeker, Error>) in

@@ -193,6 +193,55 @@ class Utilities {
             }
         }
         
+        func uploadAllJobs(_ jobs: [job]) async throws {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("MuntadherJobs")
+
+            for job in jobs {
+                do {
+                    let documentRef = try collectionRef.addDocument(from: job)
+                    try await documentRef.setData(Firestore.Encoder().encode(job))
+                    print("Job uploaded successfully: \(job.jobTitle)")
+                } catch {
+                    print("Failed to upload job \(job.jobTitle): \(error.localizedDescription)")
+                    throw error
+                }
+            }
+        }
+        
+        func fetchAllJobs() async throws -> [job] {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("MuntadherJobs")
+
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let jobs = try snapshot.documents.map { document in
+                    try document.data(as: job.self)
+                }
+                print("Successfully fetched \(jobs.count) jobs.")
+                return jobs
+            } catch {
+                print("Failed to fetch jobs: \(error.localizedDescription)")
+                throw error
+            }
+        }
+        
+        func uploadAllJobCompatibilities(_ jobCompatibilities: [JobCompatibility]) async throws {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("job_compatibilities")
+
+            for jobCompatibility in jobCompatibilities {
+                do {
+                    try collectionRef.addDocument(from: jobCompatibility) 
+                    print("Uploaded Job Compatibility for job: \(jobCompatibility.jobTitle)")
+                } catch {
+                    print("Failed to upload Job Compatibility for job: \(jobCompatibility.jobTitle), Error: \(error.localizedDescription)")
+                    throw error
+                }
+            }
+        }
+        
+        
         
         
         

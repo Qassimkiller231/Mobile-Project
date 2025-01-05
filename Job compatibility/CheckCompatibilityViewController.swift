@@ -18,6 +18,7 @@ class CheckCompatibilityViewController: UIViewController, UITableViewDelegate, U
 
     @IBOutlet weak var CheckResultButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    var selectedApplication : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         currentProfile = SampleProfile
@@ -25,7 +26,6 @@ class CheckCompatibilityViewController: UIViewController, UITableViewDelegate, U
         tableView.dataSource = self
         tableView.register(DropDownTableViewCell.nib(), forCellReuseIdentifier: DropDownTableViewCell.identifier)
 //        tableView.backgroundColor = .clear
-        filteredApplications = filterApplicationsByProfile(applications: sampleApplications, profile: currentProfile! )
         updateModelData()
     }
 
@@ -73,6 +73,10 @@ class CheckCompatibilityViewController: UIViewController, UITableViewDelegate, U
         if indexPath.row != 0 {
             let selectedOption = model[indexPath.section].options[indexPath.row - 1]
             model[indexPath.section].selectedOption = selectedOption
+            if indexPath.section == 0 {
+                selectedApplication = selectedOption
+            }
+            
         }
         tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
     }
@@ -90,7 +94,7 @@ class CheckCompatibilityViewController: UIViewController, UITableViewDelegate, U
         if model[1].selectedOption == "Custom" {
             identifier = "compatibilityToCustomWeight"
         } else {
-            identifier = "CompatibilityToResults"
+            identifier = "compatibilityToResult"
         }
         performSegue(withIdentifier: identifier, sender: nil)
     }
@@ -100,7 +104,8 @@ class CheckCompatibilityViewController: UIViewController, UITableViewDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "compatibilityToResult" {
             let vc = segue.destination as! compatabilityResult
-            vc.application =  model[0].selectedOption
+            vc.application = selectedApplication
+           
         }
     }
 }

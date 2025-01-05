@@ -25,17 +25,165 @@ class compatabilityResult: UIViewController {
     var application : String?
     var jobCompat: JobCompatibility?
     var resultType : CompatibilityResult = .defaultWeight
-
+    
+        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // If the selected option is already passed, update the label
         
         currentUser = SampleProfile
-        if let jobTitle = currentJob?.jobTitle {
-                   jobCompat = jobCompatibilities.first { $0.jobTitle == jobTitle }
+        Task {
+            do {
+                let jobs = try await Utilities.DataManager.shared.fetchAllJobs()
+                currentJob = getJobByJobTitle(applicationJobTitle: application!, allJobs: jobs)
+                print("\(currentJob!.jobTitle), \(currentJob!.jobSalary), \(currentJob!.company.location), \(currentJob!.jobSkills)")
+                print("test2 \(currentUser?.skills)")
+                if let compatibility = compareJobWithCompatibility(currentJob: currentJob!, jobCompatibilities: jobCompatibilities, profile: currentUser!) {
+                    print("Salary Compatibility: \(compatibility.salary)%")
+                    print("Qualifications Compatibility: \(compatibility.qualifications)%")
+                    print("Commute Compatibility: \(compatibility.commute)%")
+                    print("Preferences Compatibility: \(compatibility.preferences)%")
+                    print("Final Compatibility: \(compatibility.final)%")
+                } else {
+                    print("No matching JobCompatibility object found.")
+                }
+                
+            } catch {
+                print("Failed to fetch jobs: \(error.localizedDescription)")
+            }
         }
-        calculatePercentages()
+        
+    }
+    
+    func compareJobWithCompatibility(
+        currentJob: job,
+        jobCompatibilities: [JobCompatibility],
+        profile: JobSeeker
+    ) -> (salary: Double, qualifications: Double, commute: Double, preferences: Double, final: Double)? {
+        // Find the corresponding JobCompatibility object
+        guard let jobCompatibility = jobCompatibilities.first(where: { $0.jobTitle == currentJob.jobTitle }) else {
+            print("No JobCompatibility object found for the current job: \(currentJob.jobTitle)")
+            return nil
+        }
+
+        // Weights for different attributes
+        let salaryWeight = 20.0
+        let qualificationsWeight = 30.0
+        let commuteWeight = 20.0
+        let preferencesWeight = 30.0
+        let totalWeight = salaryWeight + qualificationsWeight + commuteWeight + preferencesWeight
+
+        var salaryScore = 0.0
+        var qualificationsScore = 0.0
+        var commuteScore = 0.0
+        var preferencesScore = 0.0
+
+        // 1. Salary and Benefits
+        if let currentJobSalary = Double(currentJob.jobSalary.replacingOccurrences(of: "$", with: "").replacingOccurrences(of: ",", with: "")) {
+            let jobCompatibilitySalary = jobCompatibility.salary
+            let difference = abs(currentJobSalary - jobCompatibilitySalary)
+            salaryScore = difference <= 20000 ? salaryWeight : salaryWeight * (1 - (difference / 50000))
+        }
+
+        // 2. Qualifications Match
+        if let profileSkills = profile.skills {
+            let matchingQualifications = jobCompatibility.qualifications.filter { profileSkills.map { $0.skillName }.contains($0) }
+            let qualificationsMatchRatio = Double(matchingQualifications.count) / Double(jobCompatibility.qualifications.count)
+            qualificationsScore = qualificationsMatchRatio * qualificationsWeight
+        } else if let profileExperience = profile.experiences {
+            let relevantExperience = profileExperience.filter { $0.jobTitle == currentJob.jobTitle }
+            qualificationsScore = !relevantExperience.isEmpty ? qualificationsWeight : 0
+        }
+
+        // 3. Commute Distance
+        if jobCompatibility.location == profile.location {
+            commuteScore = commuteWeight
+        }
+
+        // 4. Preferences Match
+        if let profilePreferences = profile.preferences {
+            let matchingPreferences = jobCompatibility.preferences.filter { profilePreferences.contains($0) }
+            let preferencesMatchRatio = Double(matchingPreferences.count) / Double(jobCompatibility.preferences.count)
+            preferencesScore = preferencesMatchRatio * preferencesWeight
+        }
+
+        // Calculate final compatibility percentage
+        let finalScore = (salaryScore + qualificationsScore + commuteScore + preferencesScore) / totalWeight * 100
+        salaryPercentLabel.text = "\(Int((salaryScore / salaryWeight) * 100))%"
+            qualificationsPercentLabel.text = "\(Int((qualificationsScore / qualificationsWeight) * 100))%"
+            distancePercentLabel.text = "\(Int((commuteScore / commuteWeight) * 100))%"
+            preferencesPercentLabel.text = "\(Int((preferencesScore / preferencesWeight) * 100))%"
+            finalPercentLabel.text = "\(Int(finalScore))%"
+        return (
+            salary: (salaryScore / salaryWeight) * 100,
+            qualifications: (qualificationsScore / qualificationsWeight) * 100,
+            commute: (commuteScore / commuteWeight) * 100,
+            preferences: (preferencesScore / preferencesWeight) * 100,
+            final: finalScore
+        )
+    }
+    
+    func calculateLocationScore(profileLocation: String, jobLocation: String, locationCategories: [LocationCategory], categoryDistances: [CategoryDistance], maxDistanceThreshold: Double = 50.0) -> Double {
+        // Helper function to get the category of a location
+        func getCategory(for location: String) -> String? {
+            for category in locationCategories {
+                if category.locations.contains(location) {
+                    return category.name
+                }
+            }
+            return nil
+        }
+
+        // Get the categories for the profile location and job location
+        let profileCategory = getCategory(for: profileLocation)
+        let jobCategory = getCategory(for: jobLocation)
+
+        // Calculate the location score
+        if let profileCategory = profileCategory, let jobCategory = jobCategory {
+            if profileCategory == jobCategory {
+                // Perfect match if the locations belong to the same category
+                return 100.0
+            } else if let distance = categoryDistances.first(where: { $0.from == profileCategory && $0.to == jobCategory })?.distance {
+                // Normalize the distance to a percentage
+                return max(0, 100 * (1 - (distance / maxDistanceThreshold)))
+            }
+        }
+
+        // Return 0 if no matching category or distance is found
+        return 0.0
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func getJobByJobTitle(applicationJobTitle: String, allJobs: [job]) -> job? {
+        // Iterate through all jobs
+        for job in allJobs {
+            // Check if the job has any applications
+            if let jobApplications = job.applications, !jobApplications.isEmpty {
+                // Check if the job title matches the provided application job title
+                if job.jobTitle == applicationJobTitle {
+                    return job // Return the matching job
+                }
+            }
+        }
+        
+        print("No job found with title: \(applicationJobTitle)")
+        return nil // Return nil if no match is found
     }
     
     // MARK: - Delegate Method (if you want to use it here)
