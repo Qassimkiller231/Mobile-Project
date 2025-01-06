@@ -2,7 +2,7 @@
 //  EstimatedSalaryViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 14/12/2024.
+//
 //
 
 import UIKit
@@ -15,17 +15,20 @@ class EstimatedSalaryViewController: UIViewController,UITableViewDelegate,UITabl
         tableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
+        
         Task {
             do {
                 let estimatedJobs1 = try await Utilities.DataManager.shared.fetchAllEstimatedJobs()
-                model = estimatedJobs1
-                estimatedSalaries = estimatedJobs1
+                model = estimatedJobs1 // this is for the page only
+                estimatedSalaries = estimatedJobs1 // this is for filtering for next pages
                 tableView.reloadData()
                 print("Fetched Estimated Jobs: \(estimatedJobs1)")
             } catch {
                 print("Error fetching estimated jobs: \(error.localizedDescription)")
             }
-        }
+        } // fetching
         // Do any additional setup after loading the view.
     }
     

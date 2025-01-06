@@ -2,7 +2,7 @@
 //  IndustryTypeViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 14/12/2024.
+//  
 //
 
 import UIKit
@@ -51,7 +51,7 @@ class IndustryTypeViewController: UIViewController, UITableViewDelegate,UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toFinalFilters" {
             let vc = segue.destination as! FinalEstimatedSalaryViewController
-            vc.selectedFilters = self.selectedFilters
+            vc.selectedFilters = self.selectedFilters // will push the dictionary 
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

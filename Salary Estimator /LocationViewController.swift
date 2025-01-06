@@ -2,7 +2,7 @@
 //  LocationViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 14/12/2024.
+//
 //
 
 import UIKit
@@ -27,8 +27,8 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filteredLocations=locations
-        filteredExperiences=experience
+        filteredLocations=locations // this is to show all locations at first
+        filteredExperiences=experience // this is to show all experiences at first
         
         for Subview in view.subviews{
             if let tableView=Subview as? UITableView{
@@ -38,7 +38,7 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
             if let searchBar=Subview as? UISearchBar{
                 searchBar.delegate=self
             }
-        }
+        } // i did this because i used tags
         // Do any additional setup after loading the view.
     }
     

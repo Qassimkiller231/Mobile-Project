@@ -2,7 +2,7 @@
 //  MyTableViewCell.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 14/12/2024.
+// 
 //
 
 import UIKit

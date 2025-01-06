@@ -2,7 +2,7 @@
 //  VideosViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 20/12/2024.
+//  
 //
 
 import UIKit
@@ -14,13 +14,20 @@ class VideosViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     var currentVideo : Video?
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        
         Task {
             do {
-                let videos1 = try await Utilities.DataManager.shared.fetchAllVideos()
+                let videos1 = try await Utilities.DataManager.shared.fetchAllVideos() // takes the fetch and puts it in a variable
                 videos = videos1
                 collectionView.reloadData()
                 print("Fetched Videos: \(videos)")
@@ -28,15 +35,20 @@ class VideosViewController: UIViewController,UICollectionViewDelegate,UICollecti
             } catch {
                 print("Error fetching videos: \(error.localizedDescription)")
             }
-        }
+        } // fetching
+        
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         videos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! VideoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! VideoCollectionViewCell // custom cell casting
         cell.configure(with: videos[indexPath.row].videoTitle)
         return cell
     }
@@ -54,7 +66,7 @@ class VideosViewController: UIViewController,UICollectionViewDelegate,UICollecti
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailVideo" {
-            let vc = segue.destination as! DetailedVideoViewController
+            let vc = segue.destination as! DetailedVideoViewController // instantiate
                 vc.video = currentVideo // Ensure currentVideo is set before this segue
             
         }

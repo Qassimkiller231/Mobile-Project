@@ -2,7 +2,7 @@
 //  WebinarViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 20/12/2024.
+//  
 //
 
 import UIKit
@@ -17,18 +17,18 @@ class WebinarViewController: UIViewController,UITableViewDelegate,UITableViewDat
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(WebinarTableViewCell.nib(), forCellReuseIdentifier: WebinarTableViewCell.identifier)
+        tableView.register(WebinarTableViewCell.nib(), forCellReuseIdentifier: WebinarTableViewCell.identifier) // register the cell
         
         Task {
             do {
                 let webinars1 = try await Utilities.DataManager.shared.fetchAllWebinars()
                 webinars = webinars1
                 print("Fetched Webinars: \(webinars)")
-                tableView.reloadData()
+                tableView.reloadData() // update the UI
             } catch {
                 print("Error fetching webinars: \(error.localizedDescription)")
             }
-        }
+        } // fetching
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +56,7 @@ class WebinarViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "webinarToDetail" {
             let detailVC = segue.destination as! DetailedVideoViewController
-            detailVC.webinar = webinars[tableView.indexPathForSelectedRow!.row]
+            detailVC.webinar = webinars[tableView.indexPathForSelectedRow!.row] // give the webinar to the next page
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

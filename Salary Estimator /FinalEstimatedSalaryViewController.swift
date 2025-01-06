@@ -2,7 +2,7 @@
 //  FinalEstimatedSalaryViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 14/12/2024.
+//  
 //
 
 import UIKit
@@ -19,8 +19,10 @@ class FinalEstimatedSalaryViewController: UIViewController,UITableViewDelegate,U
         tableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
         model = filterEstimatedJobs(jobs: estimatedSalaries, filters: selectedFilters)
-        filteredModel = model
+        filteredModel = model// this is for the searchbar
         searchBar.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -35,8 +37,6 @@ class FinalEstimatedSalaryViewController: UIViewController,UITableViewDelegate,U
                     if job.experience != value { return false }
                 case "Location":
                     if job.location != value { return false }
-                    // If location is part of the estimatedJob struct in the future
-                    // Replace the condition below to match the job's location
                 default:
                     continue
                 }
@@ -44,6 +44,8 @@ class FinalEstimatedSalaryViewController: UIViewController,UITableViewDelegate,U
             return true
         }
     }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return filteredModel.count
     }

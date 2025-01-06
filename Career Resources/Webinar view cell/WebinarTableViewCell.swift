@@ -2,7 +2,7 @@
 //  WebinarTableViewCell.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 20/12/2024.
+// 
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  CareerResourceMainPageViewController.swift
 //  testfinalfinal
 //
-//  Created by Sayed Qassim on 20/12/2024.
+// 
 //
 
 import UIKit
@@ -21,7 +21,6 @@ class CareerResourceMainPageViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CareerResource", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ArticlesViewController") as! ArticlesViewController
         vc.currentType = .article
-//        vc.articles = articles
         navigationController?.pushViewController(vc, animated: true)
         
     }
