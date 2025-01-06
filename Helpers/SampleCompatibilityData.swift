@@ -47,9 +47,9 @@ struct LocationCategory : Codable {
 }
 
 let locationCategories: [LocationCategory] = [
-    LocationCategory(name: "Category 1", locations: ["Malkiya", "Saddad"]),
-    LocationCategory(name: "Category 2", locations: ["Manama", "Adliyah"]),
-    LocationCategory(name: "Category 3", locations: ["Aali", "Isa town"]),
+    LocationCategory(name: "Category 1", locations: ["Malkiya", "Sadad","Sanabis"]),
+    LocationCategory(name: "Category 2", locations: ["Manama", "Adliyah","Sitra","Diraz"]),
+    LocationCategory(name: "Category 3", locations: ["Aali", "isa town","Riffa"]),
     LocationCategory(name: "Category 4", locations: ["Muharaq", "Dair", "Qalali"])
 ]
 

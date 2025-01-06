@@ -98,9 +98,10 @@ class compatabilityResult: UIViewController {
         }
 
         // 3. Commute Distance
-        if jobCompatibility.location == profile.location {
-            commuteScore = commuteWeight
-        }
+        // Get categories for job and user locations
+        print("Current job location: " + currentJob.company.location)
+        commuteScore = calculateLocationScore(profileLocation: profile.location, jobLocation: currentJob.company.location, locationCategories: locationCategories, categoryDistances: categoryDistances)
+
 
         // 4. Preferences Match
         if let profilePreferences = profile.preferences {
@@ -135,35 +136,29 @@ class compatabilityResult: UIViewController {
             }
             return nil
         }
+        
+
 
         // Get the categories for the profile location and job location
         let profileCategory = getCategory(for: profileLocation)
         let jobCategory = getCategory(for: jobLocation)
 
+        print("Progile categ: \(profileCategory)")
+        print("job Cat: \(jobCategory)")
         // Calculate the location score
         if let profileCategory = profileCategory, let jobCategory = jobCategory {
             if profileCategory == jobCategory {
                 // Perfect match if the locations belong to the same category
-                return 100.0
+                return 100.0 / 5
             } else if let distance = categoryDistances.first(where: { $0.from == profileCategory && $0.to == jobCategory })?.distance {
                 // Normalize the distance to a percentage
-                return max(0, 100 * (1 - (distance / maxDistanceThreshold)))
+                return min(100,(100 - distance)/10)
             }
         }
 
         // Return 0 if no matching category or distance is found
         return 0.0
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
