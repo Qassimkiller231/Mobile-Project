@@ -38,9 +38,10 @@ class compatabilityResult: UIViewController {
             do {
                 let jobs = try await Utilities.DataManager.shared.fetchAllJobs()
                 currentJob = getJobByJobTitle(applicationJobTitle: application!, allJobs: jobs)
+                let jobCompatibilities1 = try await Utilities.DataManager.shared.fetchAllJobCompatibilities()
                 print("\(currentJob!.jobTitle), \(currentJob!.jobSalary), \(currentJob!.company.location), \(currentJob!.jobSkills)")
                 print("test2 \(currentUser?.skills)")
-                if let compatibility = compareJobWithCompatibility(currentJob: currentJob!, jobCompatibilities: jobCompatibilities, profile: currentUser!) {
+                if let compatibility = compareJobWithCompatibility(currentJob: currentJob!, jobCompatibilities: jobCompatibilities1, profile: currentUser!) {
                     print("Salary Compatibility: \(compatibility.salary)%")
                     print("Qualifications Compatibility: \(compatibility.qualifications)%")
                     print("Commute Compatibility: \(compatibility.commute)%")

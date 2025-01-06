@@ -278,7 +278,22 @@ class Utilities {
                 }
             }
         }
-        
+        func fetchAllJobCompatibilities() async throws -> [JobCompatibility] {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("job_compatibilities")
+
+            do {
+                let snapshot = try await collectionRef.getDocuments()
+                let jobCompatibilities = try snapshot.documents.map { document in
+                    try document.data(as: JobCompatibility.self)
+                }
+                print("Successfully fetched \(jobCompatibilities.count) job compatibilities.")
+                return jobCompatibilities
+            } catch {
+                print("Failed to fetch job compatibilities: \(error.localizedDescription)")
+                throw error
+            }
+        }
         
         
         
