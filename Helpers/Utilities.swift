@@ -50,25 +50,47 @@ class Utilities {
         
         
         
-         func uploadCompanies(_ companies: [Company]) {
-                let db = Firestore.firestore()
-                let collectionRef = db.collection("MuntadherCompanies")
-                
-                for company in companies {
-                    do {
-                        let documentRef = try collectionRef.addDocument(from: company)
-                        documentRef.setData(try Firestore.Encoder().encode(company)) { error in
-                            if let error = error {
-                                print("Failed to upload company: \(error.localizedDescription)")
-                            } else {
-                                print("Company successfully uploaded!")
-                            }
+//         func uploadCompanies(_ companies: [Company]) {
+//                let db = Firestore.firestore()
+//                let collectionRef = db.collection("MuntadherCompanies")
+//                
+//                for company in companies {
+//                    do {
+//                        let documentRef = try collectionRef.addDocument(from: company)
+//                        documentRef.setData(try Firestore.Encoder().encode(company)) { error in
+//                            if let error = error {
+//                                print("Failed to upload company: \(error.localizedDescription)")
+//                            } else {
+//                                print("Company successfully uploaded!")
+//                            }
+//                        }
+//                    } catch {
+//                        print("Failed to encode company: \(error.localizedDescription)")
+//                    }
+//                }
+//            }
+        func uploadCompanies(_ companies: [Company]) {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("MuntadherCompanies")
+            
+            for company in companies {
+                do {
+                    // Specify the document ID as the companyID
+                    let documentRef = collectionRef.document(company.userID)
+                    
+                    // Use setData to upload the company data with the specified document ID
+                    try documentRef.setData(from: company) { error in
+                        if let error = error {
+                            print("Failed to upload company with ID \(company.userID): \(error.localizedDescription)")
+                        } else {
+                            print("Company with ID \(company.userID) successfully uploaded!")
                         }
-                    } catch {
-                        print("Failed to encode company: \(error.localizedDescription)")
                     }
+                } catch {
+                    print("Failed to encode company with ID \(company.userID): \(error.localizedDescription)")
                 }
             }
+        }
         
         func fetchCompanies() async throws {
                 let collectionRef = db.collection("MuntadherCompanies")
@@ -211,14 +233,30 @@ class Utilities {
         
         func fetchAllJobs() async throws -> [job] {
             let db = Firestore.firestore()
-            let collectionRef = db.collection("MuntadherJobs")
+            let jobsCollectionRef = db.collection("MuntadherJobs")
+            let companiesCollectionRef = db.collection("MuntadherCompanies")
 
             do {
-                let snapshot = try await collectionRef.getDocuments()
-                let jobs = try snapshot.documents.map { document in
+                // Fetch all jobs
+                let snapshot = try await jobsCollectionRef.getDocuments()
+                var jobs = try snapshot.documents.map { document in
                     try document.data(as: job.self)
                 }
-                print("Successfully fetched \(jobs.count) jobs.")
+
+                // Fetch companies for each job
+                for i in 0..<jobs.count {
+                    let companyID = jobs[i].companyID
+                    let companyDoc = try await companiesCollectionRef.document(companyID).getDocument()
+                    
+                    if let companyData = companyDoc.data() {
+                        let company = try Firestore.Decoder().decode(Company.self, from: companyData)
+                        jobs[i].company = company // Update the job's company property
+                    } else {
+                        print("No company found for companyID: \(companyID)")
+                    }
+                }
+
+                print("Successfully fetched \(jobs.count) jobs with their companies.")
                 return jobs
             } catch {
                 print("Failed to fetch jobs: \(error.localizedDescription)")
