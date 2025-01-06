@@ -12,19 +12,21 @@ class MarketTrendViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
         tableView.register(JobsTableViewCell.nib(), forCellReuseIdentifier: JobsTableViewCell.identifer)
         Task {
             do {
                 let marketTrends = try await Utilities.DataManager.shared.fetchAllMarketTrends()
                 allMarketTrends = marketTrends
                 sortMarketTrends()
-                tableView.reloadData()
+                tableView.reloadData() // update the UI
             } catch {
                 print("Error fetching market trends: \(error.localizedDescription)")
             }
-        }
+        } // this is fetching
         // Sort the market trends
         
     }

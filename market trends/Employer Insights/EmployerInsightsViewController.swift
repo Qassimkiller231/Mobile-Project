@@ -8,26 +8,33 @@
 import UIKit
 
 class EmployerInsightsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var profile : JobSeeker?
     var profileApplications : [application]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         profile = SampleProfile2
-//        profileApplications = profile?.applications
+        
         employerInsights = sampleJobs2
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EmployerInsightsTableViewCell.nib(), forCellReuseIdentifier: EmployerInsightsTableViewCell.identifier)
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return employerInsights.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EmployerInsightsTableViewCell.identifier, for: indexPath) as! EmployerInsightsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: EmployerInsightsTableViewCell.identifier, for: indexPath) as! EmployerInsightsTableViewCell // custom cell , casting
         employerInsights[indexPath.row].jobDescription = "\(employerInsights[indexPath.row].applications?.count ?? 0) people applied to this job, You have a chance"
+        
         if hasProfileApplied(to: employerInsights[indexPath.row], profileID: profile!.userID) {
             employerInsights[indexPath.row].jobDescription = "\(employerInsights[indexPath.row].applications?.count ?? 0) people applied to this job, - You applied too, You have a chance"
         }

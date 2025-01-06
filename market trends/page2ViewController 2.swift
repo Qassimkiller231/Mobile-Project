@@ -12,20 +12,24 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var careerPaths: [(category: String, matches: [CareerPath], isExpanded: Bool)] = []
     var currentProfile: JobSeeker?
     override func viewDidLoad() {
-        currentProfile = Utilities.DataManager.shared.profile as? JobSeeker
+        currentProfile = Utilities.DataManager.shared.profile as? JobSeeker // taking profile from datamanager which is accessed by all view controllers
         
         tableview.register(SuggestedPathsTableViewCell.nib(), forCellReuseIdentifier: SuggestedPathsTableViewCell.identifier)
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
+        
+        
+        
         Utilities.DataManager.shared.fetchAllCareerPaths {
             [weak self] fetchedPaths in DispatchQueue.main.async { [self] in
-                allCareerPaths = fetchedPaths
+                allCareerPaths = fetchedPaths // add the fetched paths to the array
                 self?.loadCareerPathsGrouped()
                 self?.careerPaths = (self?.getMatchedCategories(for: self!.currentProfile!, from: careerPathsGrouped))!
-                self?.tableview.reloadData()
+                self?.tableview.reloadData() // this makes it to update the table view
             }
         }
+        
         // Do any additional setup after loading the view.
         
                
@@ -83,12 +87,14 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         return matchedCategories
     }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return careerPaths.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return careerPaths[section].isExpanded ?  1 + careerPaths[section].matches.count : 1
+        return careerPaths[section].isExpanded ?  1 + careerPaths[section].matches.count : 1 // if the row is expanded, show the options, else only show the header
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
@@ -108,8 +114,8 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            careerPaths[indexPath.section].isExpanded.toggle()
-            tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
+            careerPaths[indexPath.section].isExpanded.toggle() // this makes the row expanded
+            tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic) // this reloads the section to update the UI
         }
         
         }

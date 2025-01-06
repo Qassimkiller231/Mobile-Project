@@ -12,7 +12,7 @@ class JobRecommendationsTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         UINib(nibName: identifer, bundle: nil)
     }
-    var applyButtonTapped: (() -> Void)?
+    var applyButtonTapped: (() -> Void)? // call back function
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var applyButton: UIButton!

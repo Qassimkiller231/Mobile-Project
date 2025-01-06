@@ -28,7 +28,7 @@ class JobRecommendationViewController: UIViewController,UITableViewDelegate,UITa
 //                print("Fetched Jobs: \(fetchedJobs)")
                 print("job recmomendations array is \(jobRecommendations)")
                 print(profile!.firstName)
-                tableView.reloadData()
+                tableView.reloadData() //updates the UI
             } catch {
                 print("Error fetching jobs: \(error.localizedDescription)")
             }
@@ -46,6 +46,8 @@ class JobRecommendationViewController: UIViewController,UITableViewDelegate,UITa
             }
         }
     }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return jobRecommendations.count
     }

@@ -41,12 +41,16 @@ class JobDetailsViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    
+    
+    
     @IBAction func ApplyButtonTapped(_ sender: Any) {
         showAlert(message: "Do you want to apply to this Job?") {
             if self .job?.applications == nil {
                 self .job?.applications = []
             }
-            let application = application(dateOfApplication: "", jobSeeker: JobSeekerSample)
+            let application = application(dateOfApplication: "", jobSeeker: SampleProfile2)
             self.job?.applications?.append(application)
             self.performSegue(withIdentifier: "detailsToHomepage", sender: nil)
             print("added application from alert, count is\(self.job?.applications?.count ?? 0)")
@@ -54,6 +58,8 @@ class JobDetailsViewController: UIViewController {
             print("ok")
         }
     }
+    
+    
     func showAlert(message: String, onYes: @escaping () -> Void, onNo: @escaping () -> Void) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
 
